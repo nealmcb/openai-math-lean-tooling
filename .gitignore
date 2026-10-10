@@ -1,0 +1,15 @@
+# nested clone of openai/math (63 GB with build outputs): pinned by commit in MANIFEST.txt instead
+src/
+# external tool clones/builds and toolchain downloads: pinned by commit in MANIFEST.txt
+ext/
+# compressed generated C archives (8 GB), scratch files, scratch lists
+archive/
+scratch/
+# bulky raw per-run logs and monitor samples (summaries and tables are kept)
+results/**/stdout.log
+results/**/samples.jsonl
+results/**/logs/
+results/cmp-all/restore.lst
+results/cmp-all/archive.lst
+results/cmp-all/PAUSED_PIDS
+results/cmp-all/*.out
