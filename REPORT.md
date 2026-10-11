@@ -14,7 +14,7 @@ v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Raw data is under res
 - The one module predicted to fail at 65530 is the root `OAI.lean` (about 143k mappings, 149k before
   calibration, from the whole-library model in section 3a; not measured). No other module is
   predicted above 61,124. The failure mode itself was reproduced with a file importing Mathlib plus
-  9,273 built OAI modules: it fails at 65530 with `failed to read file ...olean` and succeeds at
+  9,272 built OAI modules: it fails at 65530 with `failed to read file ...olean` and succeeds at
   262144.
 - About a third of the library has been compiled. The rest is untested, so "the default is enough
   for everything except the root" is a prediction (calibrated against 13 measurements, section 3a),
@@ -57,7 +57,7 @@ memory area). Modules built with Lean's module system (Mathlib, Lean core) also 
     VMAs per process ~ 40 + 5 * (module-system modules in the import closure) + 1 * (ordinary modules)
 
 `vm.max_map_count` limits each process separately, not the machine. Checks: `import Mathlib` alone
-has 10,744 module-system modules and 53,800 VMAs; Mathlib plus 9,273 OAI modules gave 65,681 (11,265
+has 10,744 module-system modules and 53,800 VMAs; Mathlib plus 9,272 OAI modules gave 65,681 (11,265
 module-system modules x 5 + 9,269 ordinary modules); `Progressions.Main` predicted about 58.4k,
 observed 58,571. Sampling can miss peaks, so sampled values are lower bounds, but a successful build
 proves the true peak never passed the limit.
@@ -69,7 +69,7 @@ proves the true peak never passed the limit.
 | import Mathlib | 65530 | ok | 53,800 | 11 s |
 | ComparatorChallenges build | 65530 | ok, 9,409 jobs | 53,864 | 562 s |
 | Progressions.Main build | 65530 | ok, 13,697 jobs | 58,571 | 14,116 s (machine shared and loaded) |
-| Mathlib + 9,273 OAI modules | 65530 | fails (`failed to read file`) | 65,532 | 10 s |
+| Mathlib + 9,272 OAI modules | 65530 | fails (`failed to read file`) | 65,532 | 10 s |
 | same file | 262144 | ok | 65,679 | 15 s |
 | full OAI build, interrupted | 65530 | no failure in about 4,400 modules, stopped for disk | about 54,000 | about 97 min |
 | `OstmannPrimes` build, then check | 65530 | both ok | 58,212 (build), 58,175 (check) | 65 min, 34 min |
@@ -105,6 +105,22 @@ which 11,472 use the module system.
 - The root `OAI.lean` is predicted at 148,915 (about 142,700 after the 0.958 calibration): 11,379
   module-system externals x 5 plus 91,762 in-repo modules. It is the only module that needs more
   than the Ubuntu default; 262,144 would be ample. Not measured.
+
+- **Memory of the root import, measured at five sizes** (`tools/import_memory_probe.py`,
+  `results/import-memory-probe.json`). Importing Mathlib plus a random sample of built OAI modules
+  (and everything they import), then reading the process's memory split from `/proc`: Mathlib alone
+  has 6.3 GiB resident, of which only 0.43 GiB is private heap and 5.89 GiB is mapped `.olean` file
+  pages. With 9,271 OAI modules mapped (9.3 GB of `.olean` files) the process is 10.2 GiB resident:
+  0.81 GiB private heap (0.042 MiB per OAI module) and 9.42 GiB mapped file pages (about 41% of the
+  file bytes are touched). The mapped pages are shared and evictable page cache, not memory the
+  process must keep. The sampling also shows how strongly modules depend on each other: 1,000 random
+  imports already pull in 7,681 OAI modules, and 3,000 pull in 8,902. Extrapolating to the root's
+  91,762 modules (70 to 90 GB of `.olean` files): about 4 GiB of private heap (range 3 to 8 GiB),
+  and up to roughly 33 to 41 GiB of mapped file pages that the kernel can drop under pressure. So
+  the root import needs little real memory; the earlier estimate of about 46 GiB resident was mostly
+  page cache. The caveats are that the sample is of modules built so far and that extension state
+  (simp sets, instances) could grow faster than linearly; the measured growth shows no sign of that
+  up to 9,271 modules.
 
 ## 3b. Mathlib growth and when common Linux defaults will fail
 
@@ -159,12 +175,24 @@ written by `tools/export_results.py`).
   module (`ErdosReciprocal`), `OstmannPrimes`, `OstmannComplete`, `MUBSix`, `PattersonFirstMoment`
   (the largest family outside `OAI.lean`), `KoebeCircleDomains`, `PolycyclicRecognition`,
   `StrongKadisonKastler`, and 16 small ones. The run goes largest first, then smallest to largest.
-- **Check time:** median 287 s. The slowest are `MUBSix` 16,981 s (4.7 h, 26.1 GiB),
-  `StrongKadisonKastler` 5,351 s, `DirichletSevenEighths` 3,839 s, `ErdosReciprocal` 2,472 s and
-  `OstmannPrimes` 2,045 s. The second and third include periods when the run was paused by hand (its
-  siblings took about 560 s); `StrongKadisonKastler` includes a 41-minute pause. Check time is not
-  predicted by closure size: `MUBSix` (3,381 modules) took 4.7 h and `OstmannComplete` (3,207) took
-  307 s.
+- **Check time** (active time, excluding pauses, for the snapshot of 27 configurations): median 287
+  s. The slowest are `MUBSix` 16,981 s (4.7 h, 26.1 GiB), `StrongKadisonKastler` 2,914 s,
+  `ErdosReciprocal` 2,472 s, `OstmannPrimes` 2,045 s and `DirichletSevenEighths` 1,660 s. The raw
+  wall-clock values for `StrongKadisonKastler` (5,351 s) and `DirichletSevenEighths` (3,839 s)
+  included 2,437 s and 2,179 s of manual pauses; `DirichletSevenEighths` is still about three times
+  its siblings (555 to 564 s), for a reason that was not investigated. Check time is not predicted
+  by closure size: `MUBSix` (3,381 modules) took 4.7 h and `OstmannComplete` (3,207) took 307 s.
+  Later in the run the slowest checks were `TriangularEnergy` (5,713 s), `TriangularGaussian` (5,378
+  s), `AtomicGaussian` (5,336 s) and `SKRatio` (4,154 s).
+- **Pauses.** The run was frozen by hand five times (all logged in `driver.log` by `tools/pause.sh`
+  and `tools/resume.sh`): 457 s, 345 s and 1,377 s on 2026-10-10 morning, 2,437 s that afternoon,
+  and 4,882 s on 2026-10-11, 9,498 s (2.6 hours) in all. Raw records are left as measured;
+  `tools/pauses.py` computes how much of any interval a pause covered, and `configs.csv` has
+  `check_paused_s`, `check_active_s`, `build_paused_s` and `build_active_s` (and `build_share_s` is
+  computed from the active build time). Of the 315 accepted configurations, two checks and one build
+  overlapped a pause: the `KoebeCircleDomains` build is 2,204 s active (4,383 s raw), and the two
+  checks above. The 16 compile-time artifacts in `module-times.csv.gz` (section above) come from the
+  same pauses.
 - **Check memory:** up to 26.1 GiB (`MUBSix`), 14.3 GiB (`ErdosReciprocal`), about 6.5 GiB for small
   ones. Measured for the 12 configurations run after the monitor was fixed.
 - **Mapping counts in checks:** about 53.8k for any configuration, because the exporter imports
@@ -186,32 +214,34 @@ written by `tools/export_results.py`).
   18.0 hours. The columns `batch_configs` and `modules_compiled_in_this_build` show which case
   applies. Real compile cost is better read from the per-module data below. Check times
   (`check_wall_s`) are per configuration and not shared.
-- **Per-module data.** `results/module-times.csv.gz` has one row for each of the about 48,200
-  modules with a recorded compile in the raw Lake logs (which are too bulky to keep in git): area,
+- **Per-module data.** `results/module-times.csv.gz` has one row for each of the 60,767 modules with
+  a recorded compile at the last export (the statistics below are from an earlier export of about
+  48,200) with a recorded compile in the raw Lake logs (which are too bulky to keep in git): area,
   first compile time in seconds, number of compiles (3 modules were compiled more than once), source
   size, in-repo closure size and predicted mapping count. The times are wall-clock under load, so
   they are upper bounds on isolated compile time; they sum to about 260 module-hours, which divided
   by the 16 concurrent threads is a lower bound of roughly 16 hours of wall time. Modules that were
   only replayed from cache have no row. Per-module mapping counts were not recorded; only
   per-process peaks were, and the predicted counts are in `results/predicted-vmas.jsonl`.
-- **How much module compile times vary** (about 48,200 modules, `results/module-times.csv.gz`;
-  wall-clock under load, so upper bounds). A lot, with a heavy tail: the median is 12 s, the 90th
-  percentile 29 s, the 99th 181 s, the 99.9th 680 s and the maximum 1,652 s. A third of the modules
-  take under 10 s and 90% under 30 s, yet the slowest 1% (481 modules) account for 17% of all
-  compile time and the slowest 10% for 45%. Source size explains only part of it: on a log-log fit
-  the slope is 0.45 and r-squared 0.39, and even at similar size the 10th to 90th percentile spread
-  is 2 to 3 times (median 10 s at 1 to 2 KB of source, 17 s at 8 to 16 KB, 36 s at 32 to 64 KB, 162
-  s at 128 to 256 KB). The two slowest real modules are single enormous files:
-  `OAI.Analysis.NuclearUltrapower.SOSResidual` (993 KB of source, 1,652 s) and
+- **How much module compile times vary** (an export of about 48,200 modules,
+  `results/module-times.csv.gz`; wall-clock under load, so upper bounds). A lot, with a heavy tail:
+  the median is 12 s, the 90th percentile 29 s, the 99th 181 s, the 99.9th 680 s and the maximum
+  1,652 s. A third of the modules take under 10 s and 90% under 30 s, yet the slowest 1% (481
+  modules) account for 17% of all compile time and the slowest 10% for 45%. Source size explains
+  only part of it: on a log-log fit the slope is 0.45 and r-squared 0.39, and even at similar size
+  the 10th to 90th percentile spread is 2 to 3 times (median 10 s at 1 to 2 KB of source, 17 s at 8
+  to 16 KB, 36 s at 32 to 64 KB, 162 s at 128 to 256 KB). The two slowest real modules are single
+  enormous files: `OAI.Analysis.NuclearUltrapower.SOSResidual` (993 KB of source, 1,652 s) and
   `OAI.Topology.EilenbergGanea.SeedContraction` (427 KB, 1,600 s). By area, `OAI.Analysis` is 41% of
   all recorded compile time (107 of 261 module-hours) from 23% of the modules, averaging 35 s a
   module against 11 s for the 14,141 `OAI.NumberTheory` modules (44 hours). Sixteen small
   `OAI.Analysis` modules show about 1,390 s each only because they were mid-compile during a
-  23-minute manual pause (flagged in the file as `likely_pause_artifact`); they would otherwise head
-  the slowest list, and shorter pauses left smaller traces that cannot be separated from real
-  durations. The practical reading is that total build time is dominated by a small fraction of
-  heavy modules, and that the critical path, not the average, decides how long a particular result
-  takes.
+  23-minute manual pause, and ten more modules in the later export show about 4,900 s because of the
+  81-minute pause on 2026-10-11 (26 are flagged in the file as `likely_pause_artifact`); they would
+  otherwise head the slowest list, and shorter pauses left smaller traces that cannot be separated
+  from real durations. The practical reading is that total build time is dominated by a small
+  fraction of heavy modules, and that the critical path, not the average, decides how long a
+  particular result takes.
 - **Timing caveats:** the machine is a Framework 13 laptop with a Core i5-1340P (4 performance cores
   with hyper-threading plus 8 efficiency cores, 16 threads), running at its 100 C thermal limit
   during builds (load 20 to 30). Other work ran at the same time and the run was paused by hand at

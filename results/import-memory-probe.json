@@ -1,0 +1,62 @@
+[
+ {
+  "requested_imports": 0,
+  "mapped_olean_files": 10744,
+  "mapped_oai_oleans": 0,
+  "mapped_oai_olean_bytes": 0,
+  "vmas": 53810,
+  "seconds_to_settle": 9,
+  "VmRSS": 6.32,
+  "RssAnon": 0.43,
+  "RssFile": 5.89,
+  "RssShmem": 0.0
+ },
+ {
+  "requested_imports": 1000,
+  "mapped_olean_files": 18946,
+  "mapped_oai_oleans": 7681,
+  "mapped_oai_olean_bytes": 7947559048,
+  "vmas": 64097,
+  "seconds_to_settle": 20,
+  "VmRSS": 9.63,
+  "RssAnon": 0.76,
+  "RssFile": 8.87,
+  "RssShmem": 0.0
+ },
+ {
+  "requested_imports": 3000,
+  "mapped_olean_files": 20166,
+  "mapped_oai_oleans": 8902,
+  "mapped_oai_olean_bytes": 9042019856,
+  "vmas": 65313,
+  "seconds_to_settle": 14,
+  "VmRSS": 10.09,
+  "RssAnon": 0.78,
+  "RssFile": 9.31,
+  "RssShmem": 0.0
+ },
+ {
+  "requested_imports": 6000,
+  "mapped_olean_files": 20435,
+  "mapped_oai_oleans": 9170,
+  "mapped_oai_olean_bytes": 9236914184,
+  "vmas": 65586,
+  "seconds_to_settle": 14,
+  "VmRSS": 10.18,
+  "RssAnon": 0.78,
+  "RssFile": 9.4,
+  "RssShmem": 0.0
+ },
+ {
+  "requested_imports": 9272,
+  "mapped_olean_files": 20536,
+  "mapped_oai_oleans": 9271,
+  "mapped_oai_olean_bytes": 9283003048,
+  "vmas": 65691,
+  "seconds_to_settle": 14,
+  "VmRSS": 10.23,
+  "RssAnon": 0.81,
+  "RssFile": 9.42,
+  "RssShmem": 0.0
+ }
+]

@@ -1,417 +1,417 @@
-config,status,solution_module,in_repo_closure,predicted_vmas,measured_check_peak_vmas,measured_build_peak_vmas,build_wall_s,batch_configs,modules_compiled_in_this_build,build_scope,check_wall_s,check_peak_rss_gib,nanoda,theorems,solution_lines,order_position,started,detail,build_share_s
-CommonBasesFPRAS,accepted,OAI.Combinatorics.MatroidCounting.CommonBases,1,56351,,,146.9,1,,this config,78.695,,False,1,,15,2026-10-10T00:13:17+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),146.9
-HoneycombFreeEnergy,accepted,OAI.Probability.Honeycomb.FreeEnergy,1,56351,,,11.6,1,,this config,39.612,,False,1,,16,2026-10-10T00:17:03+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),11.6
-LogBrunnMinkowski,accepted,OAI.Geometry.LogVolume.BrunnMinkowski,1,56351,,,480.5,1,,this config,630.355,,False,1,,17,2026-10-10T00:17:54+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),480.5
-PlanarAndersonSpectrum,accepted,OAI.MathematicalPhysics.PlanarAnderson.Spectrum,1,56351,,,82.3,1,,this config,227.558,,False,1,,18,2026-10-10T00:36:25+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),82.3
-FiniteCongruenceGraph,accepted,OAI.Algebra.Universal.GraphCriterion,2,14487,,,8.5,1,,this config,30.687,,False,1,,19,2026-10-10T00:41:35+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),8.5
-TruffetCounterexample,accepted,OAI.Optimization.Tropical.TruffetCounterexample,2,56352,,,80.5,1,,this config,82.982,,False,1,,20,2026-10-10T00:42:14+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),80.5
-SpinAngle,accepted,OAI.RepresentationTheory.SpinAngle.TypeAngle,3,56353,,,366.4,1,,this config,439.435,,False,1,,21,2026-10-10T00:44:58+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),366.4
-TraceIdealTransportSupport,accepted,OAI.Analysis.TraceCone.IdealTransport,3,26893,53783,22969,15.4,1,3,this config,147.361,6.5,True,17,425,22,2026-10-10T03:42:45+00:00,,15.4
-BogomolovPopInjectivity,accepted,OAI.Algebra.BogomolovPop.Injectivity,5,56355,53789,5925,6.9,1,0,this config,110.22,6.5,False,1,322,23,2026-10-10T03:45:28+00:00,,6.9
-FourRowPermanent,accepted,OAI.Combinatorics.Permanent.Main,5,56355,53786,55954,2141.5,12,2147,batch 11 (shared by 12 configs),55.059,6.1,False,1,116,24,2026-10-10T22:12:16+00:00,,178.5
-HadamardCubeFiber,accepted,OAI.LinearAlgebra.Hadamard.Main,6,56356,53790,55954,2141.5,12,2147,batch 11 (shared by 12 configs),53.751,6.1,False,1,117,25,2026-10-10T22:12:16+00:00,,178.5
-BalancedBoxRouting,accepted,OAI.Analysis.BoxTransport.Routing,7,56357,53791,55954,2141.5,12,2147,batch 11 (shared by 12 configs),124.71,6.2,False,1,188,26,2026-10-10T22:13:10+00:00,,178.5
-HilbertCrouzeix,accepted,OAI.Analysis.HilbertCrouzeix.Main,7,56357,53791,55954,2141.5,12,2147,batch 11 (shared by 12 configs),151.214,6.3,False,4,2,27,2026-10-10T22:13:12+00:00,,178.5
-PlaneColoring,accepted,OAI.Geometry.PlaneColoring.Main,9,56359,53794,55954,2141.5,12,2147,batch 11 (shared by 12 configs),54.19,6.1,False,1,1,28,2026-10-10T22:15:16+00:00,,178.5
-TriangularCovering,accepted,OAI.Geometry.TriangularCovering.Main,9,56359,53793,55954,2141.5,12,2147,batch 11 (shared by 12 configs),272.051,6.3,False,1,68,29,2026-10-10T22:15:44+00:00,,178.5
-MidpointLenses,accepted,OAI.Analysis.SegmentLenses.Main,11,56361,53795,55954,2141.5,12,2147,batch 11 (shared by 12 configs),229.277,6.2,False,1,20,30,2026-10-10T22:16:11+00:00,,178.5
-SurfaceConeCandidateSupport,accepted,OAI.AlgebraicGeometry.SurfaceCones.CandidateRing,11,56361,53794,55954,2141.5,12,2147,batch 11 (shared by 12 configs),281.712,6.4,False,1,29,31,2026-10-10T22:20:01+00:00,,178.5
-DoublingHilbert,accepted,OAI.Geometry.DoublingHilbert.Main,12,56362,53793,55954,2141.5,12,2147,batch 11 (shared by 12 configs),238.518,6.3,False,1,69,32,2026-10-10T22:20:17+00:00,,178.5
-RecursivePotentials,accepted,OAI.Analysis.RecursivePotentials.Challenge,12,56362,53794,55954,2141.5,12,2147,batch 11 (shared by 12 configs),176.423,6.3,False,1,267,33,2026-10-10T22:21:57+00:00,,178.5
-CartierChartCompactnessSupport,accepted,OAI.AlgebraicGeometry.CartierSections.ChartCompactness,13,28118,24145,55954,2141.5,12,2147,batch 11 (shared by 12 configs),123.253,3.4,False,1,61,34,2026-10-10T22:24:17+00:00,,178.5
-Rokhlin,accepted,OAI.Dynamics.MultipleMixing.Main,13,56363,53798,53878,2114.4,12,134,batch 12 (shared by 12 configs),405.497,6.9,False,1,328,35,2026-10-10T22:51:55+00:00,,176.2
-LogKodairaFiberNegative,accepted,OAI.AlgebraicGeometry.LogKodaira.FiberNegative,14,56364,53796,53878,2114.4,12,134,batch 12 (shared by 12 configs),264.113,6.4,False,1,80,36,2026-10-10T22:51:55+00:00,,176.2
-AbhyankarSathaye,accepted,OAI.AlgebraicGeometry.AbhyankarSathaye.Counterexample,15,21025,15494,53878,2114.4,12,134,batch 12 (shared by 12 configs),29.681,2.1,False,1,45,37,2026-10-10T22:51:55+00:00,,176.2
-BufferedIsing,accepted,OAI.Probability.Ising.Main,15,56365,53797,53878,2114.4,12,134,batch 12 (shared by 12 configs),76.305,6.2,False,1,93,38,2026-10-10T22:52:25+00:00,,176.2
-CHObstruction,accepted,OAI.ModelTheory.Categoricity.Main,15,56365,53799,53878,2114.4,12,134,batch 12 (shared by 12 configs),50.854,6.1,False,1,270,39,2026-10-10T22:53:42+00:00,,176.2
-FixedClauseThreshold,accepted,OAI.Probability.RandomSAT.Main,15,56365,53799,53878,2114.4,12,134,batch 12 (shared by 12 configs),56.586,6.1,False,1,134,40,2026-10-10T22:54:33+00:00,,176.2
-GaussianFiniteEntropy,accepted,OAI.Probability.Localization.Main,15,56365,53798,53878,2114.4,12,134,batch 12 (shared by 12 configs),227.827,6.2,False,1,28,41,2026-10-10T22:55:31+00:00,,176.2
-SplitTangentIntegrability,accepted,OAI.Geometry.SplitTangent.RationalVariation,15,56365,53792,53878,2114.4,12,134,batch 12 (shared by 12 configs),470.746,6.5,False,1,197,42,2026-10-10T22:56:19+00:00,,176.2
-EuclideanRamseyNine,accepted,OAI.Combinatorics.EuclideanRamsey.NineStatement,16,56366,53797,53878,2114.4,12,134,batch 12 (shared by 12 configs),161.909,6.2,False,1,36,43,2026-10-10T22:58:42+00:00,,176.2
-Naimark,accepted,OAI.Analysis.Naimark.Tracial,16,56366,53799,53878,2114.4,12,134,batch 12 (shared by 12 configs),399.718,6.5,False,1,284,44,2026-10-10T22:59:20+00:00,,176.2
-OneWayLiveness,accepted,OAI.Combinatorics.Automata.Main,16,56366,53798,53878,2114.4,12,134,batch 12 (shared by 12 configs),76.318,6.1,False,1,75,45,2026-10-10T23:01:25+00:00,,176.2
-SmoothInitialForm,accepted,OAI.Algebra.Determinantal.InitialForm,17,56367,53803,53878,2114.4,12,134,batch 12 (shared by 12 configs),186.38,6.4,False,1,159,46,2026-10-10T23:02:42+00:00,,176.2
-GrahamSpherical,accepted,OAI.Combinatorics.SphericalRamsey.Main,18,25038,21053,53890,533.1,12,202,batch 13 (shared by 12 configs),75.79,3.0,False,1,33,47,2026-10-10T23:06:02+00:00,,44.4
-MatchingEntropy,accepted,OAI.Combinatorics.PerfectMatching.Main,18,56368,53800,53890,533.1,12,202,batch 13 (shared by 12 configs),109.657,6.3,False,1,213,48,2026-10-10T23:06:02+00:00,,44.4
-ConjugatePoints,accepted,OAI.Geometry.ConjugatePoints.ThreeManifold,19,56369,53803,53890,533.1,12,202,batch 13 (shared by 12 configs),288.289,6.6,False,1,271,49,2026-10-10T23:06:02+00:00,,44.4
-TwoWayComplementation,accepted,OAI.Combinatorics.TwoWayAutomata.Main,19,56369,53804,53890,533.1,12,202,batch 13 (shared by 12 configs),52.455,6.1,False,1,139,50,2026-10-10T23:07:19+00:00,,44.4
-ArtinCAT0,accepted,OAI.GroupTheory.ArtinCAT0.Main,20,56370,53804,53890,533.1,12,202,batch 13 (shared by 12 configs),72.083,6.2,False,1,64,51,2026-10-10T23:07:53+00:00,,44.4
-ForestSpace,accepted,OAI.Analysis.ForestSpace.Main,20,56370,53802,53890,533.1,12,202,batch 13 (shared by 12 configs),101.754,6.3,False,1,53,52,2026-10-10T23:08:12+00:00,,44.4
-DeligneDrinfeld,accepted,OAI.Algebra.Drinfeld.Completion,21,56371,53806,53890,533.1,12,202,batch 13 (shared by 12 configs),487.507,6.5,False,1,565,53,2026-10-10T23:09:06+00:00,,44.4
-QACParity,accepted,OAI.InformationTheory.QuantumCircuit.Parity,21,56371,53803,53890,533.1,12,202,batch 13 (shared by 12 configs),382.777,6.3,False,1,82,54,2026-10-10T23:09:55+00:00,,44.4
-SquareRootDegree,accepted,OAI.Combinatorics.BooleanFunctions.Main,21,56371,53807,53890,533.1,12,202,batch 13 (shared by 12 configs),423.049,6.4,False,1,27,55,2026-10-10T23:10:54+00:00,,44.4
-GotsmanLinial,accepted,OAI.Combinatorics.GotsmanLinial.Main,22,27672,23702,53890,533.1,12,202,batch 13 (shared by 12 configs),143.007,3.3,False,1,129,56,2026-10-10T23:16:19+00:00,,44.4
-IndependentProducts,accepted,OAI.Analysis.ProductSpaces.Main,22,56372,53806,53890,533.1,12,202,batch 13 (shared by 12 configs),235.439,6.4,False,4,70,57,2026-10-10T23:17:15+00:00,,44.4
-NoiselessRegression,accepted,OAI.Probability.GaussianRegression.Main,22,56372,53802,53890,533.1,12,202,batch 13 (shared by 12 configs),221.188,6.4,False,1,98,58,2026-10-10T23:17:59+00:00,,44.4
-ParityLifts,accepted,OAI.Combinatorics.ParityLifts.Main,22,56372,53804,53894,693.2,12,222,batch 14 (shared by 12 configs),44.688,6.1,False,1,114,59,2026-10-10T23:21:59+00:00,,57.8
-RegularParity,accepted,OAI.InformationTheory.QuantumCircuit.Main,22,56372,53807,53894,693.2,12,222,batch 14 (shared by 12 configs),136.461,6.3,False,1,45,60,2026-10-10T23:21:59+00:00,,57.8
-TreeEdit,accepted,OAI.Combinatorics.TreeEdit.TorusLowerBound,22,56372,53802,53894,693.2,12,222,batch 14 (shared by 12 configs),108.419,6.3,False,1,117,61,2026-10-10T23:21:59+00:00,,57.8
-BackwardIntertwiners,accepted,OAI.Analysis.BackwardIntertwiners.AlgebraCorollary,23,56373,53805,53894,693.2,12,222,batch 14 (shared by 12 configs),164.718,6.4,False,1,95,62,2026-10-10T23:22:44+00:00,,57.8
-AsymptoticallyMinimalLittlewood,accepted,OAI.Analysis.Littlewood.Main,24,56374,53809,53894,693.2,12,222,batch 14 (shared by 12 configs),171.787,6.4,False,1,232,63,2026-10-10T23:23:48+00:00,,57.8
-FormulaHitting,accepted,OAI.Algebra.FormulaHitting.Hitting,24,22624,18153,53894,693.2,12,222,batch 14 (shared by 12 configs),39.888,2.5,False,1,100,64,2026-10-10T23:24:16+00:00,,57.8
-IndividualStrongInfiniteness,accepted,OAI.Analysis.CStarAlgebra.PureInfiniteness.Main,25,56375,53809,53894,693.2,12,222,batch 14 (shared by 12 configs),364.369,6.4,False,1,56,65,2026-10-10T23:24:57+00:00,,57.8
-InfiniteMatroid,accepted,OAI.Combinatorics.InfiniteMatroid.Main,25,56375,53804,53894,693.2,12,222,batch 14 (shared by 12 configs),48.496,6.1,False,1,51,66,2026-10-10T23:25:30+00:00,,57.8
-SubsphereCurrent,accepted,OAI.Probability.Subsphere.Main,25,56375,53809,53894,693.2,12,222,batch 14 (shared by 12 configs),470.453,6.4,False,1,24,67,2026-10-10T23:26:19+00:00,,57.8
-ChoicelessPolynomialTime,accepted,OAI.ModelTheory.Choiceless.Separation,26,56376,53810,53894,693.2,12,222,batch 14 (shared by 12 configs),301.527,6.3,False,1,28,68,2026-10-10T23:26:41+00:00,,57.8
-EntropyPhotonNumber,accepted,OAI.InformationTheory.PhotonNumber.Inequality,26,56376,53808,53894,693.2,12,222,batch 14 (shared by 12 configs),380.684,6.6,False,1,707,69,2026-10-10T23:31:02+00:00,,57.8
-SATSharpness,accepted,OAI.Probability.SATVariance.Sharpness,26,56376,53810,53894,693.2,12,222,batch 14 (shared by 12 configs),140.448,6.2,False,1,25,70,2026-10-10T23:31:44+00:00,,57.8
-SolenoidalSheetPrograms,accepted,OAI.MathematicalPhysics.SheetFlows.SheetProgram,26,56376,53810,53897,728.2,12,237,batch 15 (shared by 12 configs),162.126,6.4,False,1,65,71,2026-10-10T23:38:35+00:00,,60.7
-BoundedRecovery,accepted,OAI.Analysis.ModularRecovery.Main,27,56377,53809,53897,728.2,12,237,batch 15 (shared by 12 configs),216.336,6.5,False,1,48,72,2026-10-10T23:38:35+00:00,,60.7
-ThreeStateSupercritical,accepted,OAI.Probability.ThreeState.Main,27,56377,53807,53897,728.2,12,237,batch 15 (shared by 12 configs),67.241,6.2,False,2,1,73,2026-10-10T23:38:35+00:00,,60.7
-WitnessedChoice,accepted,OAI.Computability.WitnessedChoice.Main,27,56377,53811,53897,728.2,12,237,batch 15 (shared by 12 configs),184.101,6.3,False,1,43,74,2026-10-10T23:39:43+00:00,,60.7
-CompactBanach,accepted,OAI.Geometry.DoublingHilbert.CompactBanach,28,56378,53812,53897,728.2,12,237,batch 15 (shared by 12 configs),251.775,6.4,False,1,94,75,2026-10-10T23:41:18+00:00,,60.7
-CoordinateTrace,accepted,OAI.Probability.ThorpRouting.RegularTrace,28,56378,53810,53897,728.2,12,237,batch 15 (shared by 12 configs),649.849,6.5,False,1,93,76,2026-10-10T23:42:12+00:00,,60.7
-DaugavetModuli,accepted,OAI.Analysis.Daugavet.Main,28,56378,53811,53897,728.2,12,237,batch 15 (shared by 12 configs),401.048,6.3,False,3,42,77,2026-10-10T23:42:48+00:00,,60.7
-EuclideanRamsey,accepted,OAI.Combinatorics.EuclideanRamsey.Main,28,56378,53812,53897,728.2,12,237,batch 15 (shared by 12 configs),490.099,6.4,False,1,153,78,2026-10-10T23:45:32+00:00,,60.7
-LittlewoodFiniteFlatness,accepted,OAI.Analysis.Littlewood.FiniteFlatness,28,56378,53815,53897,728.2,12,237,batch 15 (shared by 12 configs),394.984,6.4,False,1,29,79,2026-10-10T23:49:31+00:00,,60.7
-SingleFold,accepted,OAI.NumberTheory.SingleFold.Main,28,56378,53812,53897,728.2,12,237,batch 15 (shared by 12 configs),321.305,6.5,False,1,28,80,2026-10-10T23:53:04+00:00,,60.7
-EuclideanRamseyQuadratic,accepted,OAI.Combinatorics.EuclideanRamsey.Quadratic,29,56379,53812,53897,728.2,12,237,batch 15 (shared by 12 configs),263.806,6.4,False,1,270,81,2026-10-10T23:53:44+00:00,,60.7
-EuclideanRamseyTransitive,accepted,OAI.Combinatorics.EuclideanRamsey.Transitive,29,56379,53813,53897,728.2,12,237,batch 15 (shared by 12 configs),187.392,6.4,False,1,160,82,2026-10-10T23:56:07+00:00,,60.7
-ProjectionVolume,accepted,OAI.Geometry.ProjectionVolume.ProductCounterexample,29,56379,53811,53896,1228.0,12,326,batch 16 (shared by 12 configs),142.044,6.3,False,1,62,83,2026-10-11T00:03:29+00:00,,102.3
-SteinitzBergstrom,accepted,OAI.Analysis.Steinitz.Main,29,56379,53813,53896,1228.0,12,326,batch 16 (shared by 12 configs),232.184,6.6,False,1,118,84,2026-10-11T00:03:29+00:00,,102.3
-TorsionFreeHyperbolic,accepted,OAI.GroupTheory.Hyperbolic.Main,29,56379,53813,53896,1228.0,12,326,batch 16 (shared by 12 configs),109.154,6.3,False,1,20,85,2026-10-11T00:03:29+00:00,,102.3
-DiskMaximal,accepted,OAI.Analysis.DiskMaximal.Main,30,56380,53809,53896,1228.0,12,326,batch 16 (shared by 12 configs),277.395,6.5,False,1,173,86,2026-10-11T00:05:19+00:00,,102.3
-EntangledGames,accepted,OAI.Probability.EntangledGames.Main,30,56380,53812,53896,1228.0,12,326,batch 16 (shared by 12 configs),169.126,6.4,False,1,46,87,2026-10-11T00:05:52+00:00,,102.3
-RuledCovering,accepted,OAI.Geometry.RuledCovering.Main,30,56380,53814,53896,1228.0,12,326,batch 16 (shared by 12 configs),471.467,6.4,False,1,21,88,2026-10-11T00:07:22+00:00,,102.3
-BarnetteHamiltonian,accepted,OAI.Combinatorics.Hamiltonian.Main,31,56381,53811,53896,1228.0,12,326,batch 16 (shared by 12 configs),348.74,6.3,False,1,86,89,2026-10-11T00:08:43+00:00,,102.3
-CliqueFreeLog,accepted,OAI.Combinatorics.CliqueFree.Main,31,56381,53815,53896,1228.0,12,326,batch 16 (shared by 12 configs),358.253,6.3,False,1,88,90,2026-10-11T00:10:00+00:00,,102.3
-EuclideanRamseySpherical,accepted,OAI.Combinatorics.EuclideanRamsey.Spherical,31,56381,53816,53896,1228.0,12,326,batch 16 (shared by 12 configs),193.685,6.2,False,1,43,91,2026-10-11T00:14:33+00:00,,102.3
-HotSpots,accepted,OAI.Analysis.HotSpots.Main,31,56381,53813,53896,1228.0,12,326,batch 16 (shared by 12 configs),416.485,6.9,False,1,89,92,2026-10-11T00:15:14+00:00,,102.3
-Tachikawa,accepted,OAI.RingTheory.Tachikawa.Counterexample,31,56381,53815,53896,1228.0,12,326,batch 16 (shared by 12 configs),431.85,6.5,False,1,301,93,2026-10-11T00:16:00+00:00,,102.3
-ThreeStateTreeClauses,accepted,OAI.Probability.ThreeStateClauses.Main,31,56381,53815,53896,1228.0,12,326,batch 16 (shared by 12 configs),125.916,6.2,False,2,41,94,2026-10-11T00:17:48+00:00,,102.3
-TraceReconstruction,accepted,OAI.Probability.TraceReconstruction,31,56381,53813,53897,749.6,12,301,batch 17 (shared by 12 configs),122.662,6.4,False,3,427,95,2026-10-11T00:23:16+00:00,,62.5
-CommutingDerivations,accepted,OAI.AlgebraicGeometry.CommutingDerivations.OrdinaryExtraMain,32,21322,15811,53897,749.6,12,301,batch 17 (shared by 12 configs),35.244,2.2,False,1,91,96,2026-10-11T00:23:16+00:00,,62.5
-DiamondDistortion,accepted,OAI.Analysis.DiamondDistortion.Descent,32,56382,53814,53897,749.6,12,301,batch 17 (shared by 12 configs),72.581,6.2,False,1,132,97,2026-10-11T00:23:16+00:00,,62.5
-DiscreteLipschitzFree,accepted,OAI.Analysis.LipschitzFree.Main,32,56382,53812,53897,749.6,12,301,batch 17 (shared by 12 configs),85.529,6.2,False,1,98,98,2026-10-11T00:23:51+00:00,,62.5
-Dixmier,accepted,OAI.Analysis.Unitarizability.UniverseTransport,32,25732,21746,53897,749.6,12,301,batch 17 (shared by 12 configs),74.465,3.1,False,1,75,99,2026-10-11T00:24:29+00:00,,62.5
-BoundedTreewidthL1,accepted,OAI.Combinatorics.TreewidthL1.Main,33,56383,53818,53897,749.6,12,301,batch 17 (shared by 12 configs),107.618,6.3,False,1,188,100,2026-10-11T00:25:18+00:00,,62.5
-InfiniteMatroidCorollaries,accepted,OAI.Combinatorics.InfiniteMatroid.Corollaries,33,56383,53815,53897,749.6,12,301,batch 17 (shared by 12 configs),50.935,6.1,False,2,59,101,2026-10-11T00:25:19+00:00,,62.5
-PettyProjectionVolume,accepted,OAI.Geometry.ProjectionBodies.Main,33,56383,53816,53897,749.6,12,301,batch 17 (shared by 12 configs),494.288,6.6,False,1,25,102,2026-10-11T00:25:44+00:00,,62.5
-RealL1Renorming,accepted,OAI.Analysis.LipschitzFree.Renorming,33,56383,53817,53897,749.6,12,301,batch 17 (shared by 12 configs),80.796,6.2,False,1,93,103,2026-10-11T00:26:11+00:00,,62.5
-TypeSystemNormalization,accepted,OAI.Computability.TypeSystem.Normalization,33,56383,53817,53897,749.6,12,301,batch 17 (shared by 12 configs),44.602,6.2,False,1,87,104,2026-10-11T00:27:06+00:00,,62.5
-C0Absorption,accepted,OAI.Analysis.C0Absorption.Main,34,56384,53818,53897,749.6,12,301,batch 17 (shared by 12 configs),308.538,6.3,False,1,42,105,2026-10-11T00:27:32+00:00,,62.5
-CoordinateSweeps,accepted,OAI.Probability.CoordinateSweeps.Main,34,56384,53820,53897,749.6,12,301,batch 17 (shared by 12 configs),617.629,6.6,False,2,464,106,2026-10-11T00:27:52+00:00,,62.5
-CriticalZ3,accepted,OAI.Probability.CriticalZ3.Main,34,56384,53813,54646,1556.3,12,356,batch 18 (shared by 12 configs),91.884,6.3,False,1,114,107,2026-10-11T00:53:41+00:00,,129.7
-CycleDecomposition,accepted,OAI.Combinatorics.CycleDecomposition.Main,34,56384,53819,54646,1556.3,12,356,batch 18 (shared by 12 configs),85.35,6.3,False,1,226,108,2026-10-11T00:53:41+00:00,,129.7
-KLInvariance,accepted,OAI.RepresentationTheory.KazhdanLusztig.Invariance,34,56384,53818,54646,1556.3,12,356,batch 18 (shared by 12 configs),177.795,6.5,False,1,572,109,2026-10-11T00:53:41+00:00,,129.7
-QuadricBundles,accepted,OAI.Geometry.QuadricBundles.Main,34,56384,53816,54646,1556.3,12,356,batch 18 (shared by 12 configs),371.837,6.6,False,1,35,110,2026-10-11T00:55:07+00:00,,129.7
-ThorpWeightedCompatibility,accepted,OAI.Probability.ThorpCompatibility.Main,34,56384,53817,54646,1556.3,12,356,batch 18 (shared by 12 configs),92.937,6.3,False,1,132,111,2026-10-11T00:55:14+00:00,,129.7
-AmplitudeDamping,accepted,OAI.InformationTheory.AmplitudeDamping.Main,35,56385,53818,54646,1556.3,12,356,batch 18 (shared by 12 configs),611.529,6.5,False,1,55,112,2026-10-11T00:56:40+00:00,,129.7
-CriticalSK,accepted,OAI.MathematicalPhysics.CriticalSK.Main,35,56385,53820,54646,1556.3,12,356,batch 18 (shared by 12 configs),575.477,6.5,False,3,34,113,2026-10-11T00:56:48+00:00,,129.7
-EuclideanRamseyCircle,accepted,OAI.Combinatorics.EuclideanRamsey.Circle,35,56385,53818,54646,1556.3,12,356,batch 18 (shared by 12 configs),637.078,6.4,False,1,40,114,2026-10-11T01:01:23+00:00,,129.7
-GaussianReplacement,accepted,OAI.Probability.GaussianReplacement.FiberEquality,35,56385,53817,54646,1556.3,12,356,batch 18 (shared by 12 configs),570.242,6.5,False,11,239,115,2026-10-11T01:06:25+00:00,,129.7
-MatchingEntropyBounds,accepted,OAI.Combinatorics.MatchingEntropy.Main,35,56385,53817,54646,1556.3,12,356,batch 18 (shared by 12 configs),429.228,6.4,False,1,16,116,2026-10-11T01:06:54+00:00,,129.7
-SATVariance,accepted,OAI.Probability.SATVariance.Main,35,56385,53819,54646,1556.3,12,356,batch 18 (shared by 12 configs),250.743,6.3,False,1,31,117,2026-10-11T01:12:02+00:00,,129.7
-SidorenkoCounterexample,accepted,OAI.Combinatorics.Sidorenko.RandomHost,35,56385,53819,54646,1556.3,12,356,batch 18 (shared by 12 configs),349.305,6.5,False,1,325,118,2026-10-11T01:14:04+00:00,,129.7
-ArnoldCounterexample,accepted,OAI.Geometry.Arnold.Main,36,56386,53808,53896,1236.0,12,410,batch 19 (shared by 12 configs),751.318,10.0,False,1,25,119,2026-10-11T01:19:57+00:00,,103.0
-CoboundaryExpanders,accepted,OAI.Combinatorics.Coboundary.Main,36,56386,53820,53896,1236.0,12,410,batch 19 (shared by 12 configs),183.438,6.5,False,1,118,120,2026-10-11T01:19:57+00:00,,103.0
-FiniteCircle,accepted,OAI.Combinatorics.FiniteCircle.Main,36,56386,53820,53896,1236.0,12,410,batch 19 (shared by 12 configs),114.371,6.3,False,1,141,121,2026-10-11T01:19:57+00:00,,103.0
-HarmonicGrowth,accepted,OAI.Geometry.HarmonicGrowth.Main,36,56386,53816,53896,1236.0,12,410,batch 19 (shared by 12 configs),1096.101,7.0,False,1,488,122,2026-10-11T01:21:52+00:00,,103.0
-TalagrandDiscreteConvexity,accepted,OAI.Combinatorics.DiscreteConvexity.Main,36,18666,15263,53896,1236.0,12,410,batch 19 (shared by 12 configs),29.281,2.1,False,1,69,123,2026-10-11T01:23:01+00:00,,103.0
-GeneralizedStarHeight,accepted,OAI.Computability.StarHeight.Main,37,56387,53819,53896,1236.0,12,410,batch 19 (shared by 12 configs),123.075,6.3,False,1,32,124,2026-10-11T01:23:31+00:00,,103.0
-KServer,accepted,OAI.Combinatorics.KServer.Main,37,56387,53818,53896,1236.0,12,410,batch 19 (shared by 12 configs),623.943,6.4,False,1,158,125,2026-10-11T01:25:37+00:00,,103.0
-SecondKahnKalai,accepted,OAI.Combinatorics.GraphThreshold.Main,37,27842,23871,53896,1236.0,12,410,batch 19 (shared by 12 configs),179.444,3.3,False,1,75,126,2026-10-11T01:32:33+00:00,,103.0
-ThreeTorus,accepted,OAI.Dynamics.ThreeTorus.Main,37,56387,53817,53896,1236.0,12,410,batch 19 (shared by 12 configs),604.901,6.6,False,1,52,127,2026-10-11T01:35:35+00:00,,103.0
-TriangleFace,accepted,OAI.Combinatorics.TriangleFace.Main,37,56387,53817,53896,1236.0,12,410,batch 19 (shared by 12 configs),135.304,6.1,False,1,73,128,2026-10-11T01:36:03+00:00,,103.0
-Brennan,accepted,OAI.Analysis.IntegralMeans.Main,38,56388,53823,53896,1236.0,12,410,batch 19 (shared by 12 configs),517.164,6.5,False,1,24,129,2026-10-11T01:38:21+00:00,,103.0
-LiebThirring,accepted,OAI.Analysis.LiebThirring.Main,38,56388,53822,53896,1236.0,12,410,batch 19 (shared by 12 configs),455.949,6.6,False,1,56,130,2026-10-11T01:40:12+00:00,,103.0
-Saxl,accepted,OAI.RepresentationTheory.Saxl.Main,38,56388,53821,55066,2133.9,12,443,batch 20 (shared by 12 configs),271.818,6.5,False,1,128,131,2026-10-11T02:00:06+00:00,,177.8
-DixmierAllDiscrete,accepted,OAI.Analysis.Unitarizability.AllDiscrete,39,56389,53821,55066,2133.9,12,443,batch 20 (shared by 12 configs),122.148,6.4,False,1,29,132,2026-10-11T02:00:06+00:00,,177.8
-IrrationalTriangleBilliard,accepted,OAI.Dynamics.TriangleBilliards.Main,39,56389,53823,55066,2133.9,12,443,batch 20 (shared by 12 configs),184.827,6.5,False,1,456,133,2026-10-11T02:00:06+00:00,,177.8
-LogspaceEquality,accepted,OAI.Computability.Logspace.Equality,39,56389,53822,55066,2133.9,12,443,batch 20 (shared by 12 configs),348.393,6.5,False,1,114,134,2026-10-11T02:02:09+00:00,,177.8
-NuclearUltrapower,accepted,OAI.Analysis.NuclearUltrapower.Main,39,56389,53817,55066,2133.9,12,443,batch 20 (shared by 12 configs),1816.786,19.6,False,1,24,135,2026-10-11T02:03:11+00:00,,177.8
-SignedFiniteBand,accepted,OAI.Analysis.SignedDisk.Main,39,56389,53824,55066,2133.9,12,443,batch 20 (shared by 12 configs),611.754,6.5,False,1,345,136,2026-10-11T02:04:39+00:00,,177.8
-EilenbergGanea,accepted,OAI.Topology.EilenbergGanea.Main,40,31695,53785,55066,2133.9,12,443,batch 20 (shared by 12 configs),1995.886,6.2,False,1,43,137,2026-10-11T02:08:01+00:00,,177.8
-PlanarUnitDistances,accepted,OAI.Geometry.UnitDistances.Main,40,56390,53823,55066,2133.9,12,443,batch 20 (shared by 12 configs),446.977,6.6,False,1,137,138,2026-10-11T02:14:52+00:00,,177.8
-WeightedSweepMoments,accepted,OAI.Probability.CubeShuffle.WeightedMoments,40,56390,53823,55066,2133.9,12,443,batch 20 (shared by 12 configs),183.445,6.5,False,1,68,139,2026-10-11T02:22:20+00:00,,177.8
-GaussianMoat,accepted,OAI.NumberTheory.GaussianMoat.Main,41,56391,53825,55066,2133.9,12,443,batch 20 (shared by 12 configs),180.136,6.6,False,1,107,140,2026-10-11T02:25:24+00:00,,177.8
-NavierStokesAlternating,accepted,OAI.MathematicalPhysics.AlternatingFlow.Development,41,56391,53823,55066,2133.9,12,443,batch 20 (shared by 12 configs),131.222,6.3,False,1,1,141,2026-10-11T02:28:25+00:00,,177.8
-ProjectionCounterexample,accepted,OAI.Geometry.ProjectionBody.Counterexample,41,27016,23031,55066,2133.9,12,443,batch 20 (shared by 12 configs),109.951,3.3,False,1,105,142,2026-10-11T02:30:37+00:00,,177.8
-SingleLatticeCovering,accepted,OAI.Geometry.LatticeCovering.Main,41,56391,53825,53903,1137.6,12,433,batch 21 (shared by 12 configs),227.498,6.6,False,1,42,143,2026-10-11T02:41:21+00:00,,94.8
-TwoWayDeterminization,accepted,OAI.Combinatorics.TwoWayAutomata.ExplicitFamily,41,56391,53825,53903,1137.6,12,433,batch 21 (shared by 12 configs),54.413,6.2,False,1,54,144,2026-10-11T02:41:21+00:00,,94.8
-DirectCrouzeix,accepted,OAI.Analysis.DirectCrouzeix.Main,42,56392,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),213.364,6.5,False,2,41,145,2026-10-11T02:41:21+00:00,,94.8
-ElasticityUniqueness,accepted,OAI.MathematicalPhysics.Elasticity.Uniqueness,42,56392,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),597.31,6.9,False,1,98,146,2026-10-11T02:42:16+00:00,,94.8
-SensitivitySeparation,accepted,OAI.Combinatorics.Sensitivity.Separation,42,56392,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),44.84,6.1,False,1,57,147,2026-10-11T02:44:55+00:00,,94.8
-CourtadeKumar,accepted,OAI.InformationTheory.BooleanNoise.Main,43,56393,53824,53903,1137.6,12,433,batch 21 (shared by 12 configs),341.089,6.4,False,1,67,148,2026-10-11T02:45:09+00:00,,94.8
-HoneycombBridgeFiniteness,accepted,OAI.Combinatorics.HoneycombCorridor.BridgeFiniteness,43,56393,53825,53903,1137.6,12,433,batch 21 (shared by 12 configs),211.408,6.2,False,1,103,149,2026-10-11T02:45:41+00:00,,94.8
-SeymourSecondNeighborhood,accepted,OAI.Combinatorics.SecondNeighborhood.Main,43,22038,16647,53903,1137.6,12,433,batch 21 (shared by 12 configs),122.773,2.3,False,1,22,150,2026-10-11T02:49:15+00:00,,94.8
-WeisfeilerLeman,accepted,OAI.Computability.WeisfeilerLeman.Main,43,56393,53828,53903,1137.6,12,433,batch 21 (shared by 12 configs),237.752,6.2,False,1,71,151,2026-10-11T02:50:52+00:00,,94.8
-SubpolynomialLp,accepted,OAI.Analysis.LpDimension.Main,44,56394,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),560.574,6.5,False,1,63,152,2026-10-11T02:51:19+00:00,,94.8
-IsingFiniteness,accepted,OAI.Probability.IsingPerceptron.VariationalFiniteness,45,56395,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),505.297,6.5,False,1,209,153,2026-10-11T02:52:15+00:00,,94.8
-BoundedTreePotentials,accepted,OAI.Analysis.TreePotential.Main,46,56396,53829,53903,1137.6,12,433,batch 21 (shared by 12 configs),253.068,6.3,False,1,29,154,2026-10-11T02:54:52+00:00,,94.8
-EditDistance,accepted,OAI.Combinatorics.EditDistance.Main,46,56396,53827,53906,1112.9,12,501,batch 22 (shared by 12 configs),68.738,6.2,False,1,22,155,2026-10-11T03:04:33+00:00,,92.7
-KahlerSplitting,accepted,OAI.Geometry.KahlerSplitting.Main,46,56396,53826,53906,1112.9,12,501,batch 22 (shared by 12 configs),216.102,6.5,False,1,43,156,2026-10-11T03:04:32+00:00,,92.7
-ProjectionMoments,accepted,OAI.Probability.ProjectionMoments.Main,46,56396,53830,53906,1112.9,12,501,batch 22 (shared by 12 configs),201.879,6.5,False,1,34,157,2026-10-11T03:04:33+00:00,,92.7
-SymmetricPolar,accepted,OAI.Geometry.PolarProducts.Main,46,56396,53829,53906,1112.9,12,501,batch 22 (shared by 12 configs),201.864,6.5,False,1,19,158,2026-10-11T03:05:42+00:00,,92.7
-BooneHigman,accepted,OAI.GroupTheory.BooneHigman.Main,47,56397,53831,53906,1112.9,12,501,batch 22 (shared by 12 configs),113.139,6.3,False,1,123,159,2026-10-11T03:07:55+00:00,,92.7
-BrennanSharp,accepted,OAI.Analysis.IntegralMeans.SharpEndpoints,47,56397,53831,53906,1112.9,12,501,batch 22 (shared by 12 configs),228.962,6.3,False,1,33,160,2026-10-11T03:08:09+00:00,,92.7
-GaussianPropeller,accepted,OAI.Probability.GaussianPropeller.Main,47,56397,53832,53906,1112.9,12,501,batch 22 (shared by 12 configs),660.081,6.5,False,1,114,161,2026-10-11T03:09:05+00:00,,92.7
-HalvingLines,accepted,OAI.Combinatorics.HalvingLines.Main,47,56397,53832,53906,1112.9,12,501,batch 22 (shared by 12 configs),600.154,6.5,False,1,38,162,2026-10-11T03:09:50+00:00,,92.7
-Kervaire,accepted,OAI.GroupTheory.Kervaire.Main,47,56397,53830,53906,1112.9,12,501,batch 22 (shared by 12 configs),718.51,6.6,False,1,100,163,2026-10-11T03:12:01+00:00,,92.7
-PinnedDistances,accepted,OAI.Geometry.PinnedDistances.Main,47,56397,53832,53906,1112.9,12,501,batch 22 (shared by 12 configs),375.612,6.5,False,1,37,164,2026-10-11T03:19:53+00:00,,92.7
-TalagrandExpectationThreshold,accepted,OAI.Combinatorics.ExpectationThreshold.Main,47,18677,15277,53906,1112.9,12,501,batch 22 (shared by 12 configs),67.682,2.1,False,1,43,165,2026-10-11T03:20:07+00:00,,92.7
-CompleteCrouzeix,accepted,OAI.Analysis.NumericalRange.Main,48,56398,53833,53906,1112.9,12,501,batch 22 (shared by 12 configs),433.256,6.6,False,1,70,166,2026-10-11T03:21:16+00:00,,92.7
-OneTapeSpace,accepted,OAI.Computability.SpaceSimulation.Main,49,56399,53831,54202,1211.0,12,531,batch 23 (shared by 12 configs),90.525,6.2,False,2,91,167,2026-10-11T03:29:35+00:00,,100.9
-UniversalFInfinity,accepted,OAI.GroupTheory.UniversalGroup.Main,50,56400,53833,54202,1211.0,12,531,batch 23 (shared by 12 configs),147.252,6.4,False,1,52,168,2026-10-11T03:29:35+00:00,,100.9
-ContinuousCircleWeight,accepted,OAI.Analysis.RotationWeights.Main,51,56401,53829,54202,1211.0,12,531,batch 23 (shared by 12 configs),207.295,6.5,False,1,293,169,2026-10-11T03:29:35+00:00,,100.9
-ExactFourier,accepted,OAI.Computability.FourierCircuit.Main,51,56401,53832,54202,1211.0,12,531,batch 23 (shared by 12 configs),194.508,6.6,False,1,340,170,2026-10-11T03:31:07+00:00,,100.9
-PermanentCubic,accepted,OAI.Algebra.Determinantal.Main,51,56401,53833,54202,1211.0,12,531,batch 23 (shared by 12 configs),476.496,6.6,False,1,393,171,2026-10-11T03:32:03+00:00,,100.9
-SeparableQuotientNegative,accepted,OAI.Analysis.SeparableQuotients.Main,51,56401,53833,54202,1211.0,12,531,batch 23 (shared by 12 configs),348.296,6.4,False,1,14,172,2026-10-11T03:33:03+00:00,,100.9
-SnakyCertificate,accepted,OAI.Combinatorics.SnakyCertificate.Main,51,56401,53835,54202,1211.0,12,531,batch 23 (shared by 12 configs),1093.044,8.7,False,1,62,173,2026-10-11T03:34:22+00:00,,100.9
-Superstring,accepted,OAI.Computability.Superstring.Main,51,56401,53835,54202,1211.0,12,531,batch 23 (shared by 12 configs),159.319,6.2,False,1,65,174,2026-10-11T03:38:54+00:00,,100.9
-ThorpFirstReciprocal,accepted,OAI.Probability.ThorpShuffle.FirstMain,51,56401,53833,54202,1211.0,12,531,batch 23 (shared by 12 configs),458.072,6.4,False,1,39,175,2026-10-11T03:40:02+00:00,,100.9
-UniformGamma,accepted,OAI.Analysis.TracialSplitting.Challenge,51,56401,53834,54202,1211.0,12,531,batch 23 (shared by 12 configs),543.876,6.5,False,1,82,176,2026-10-11T03:41:35+00:00,,100.9
-MetricEntropyDuality,accepted,OAI.Analysis.MetricEntropy.Main,52,22747,18477,54202,1211.0,12,531,batch 23 (shared by 12 configs),105.174,2.5,False,1,109,177,2026-10-11T03:47:42+00:00,,100.9
-ListHadwiger,accepted,OAI.Combinatorics.ListHadwiger.Main,53,56403,53838,54202,1211.0,12,531,batch 23 (shared by 12 configs),164.793,6.3,False,1,67,178,2026-10-11T03:49:29+00:00,,100.9
-MatchingPSD,accepted,OAI.Combinatorics.MatchingPSD.Main,53,56403,53835,54006,1169.7,12,527,batch 24 (shared by 12 configs),141.983,6.4,False,1,65,179,2026-10-11T03:54:01+00:00,,97.5
-RationalHitting,accepted,OAI.Computability.RationalHitting.Main,53,56403,53836,54006,1169.7,12,527,batch 24 (shared by 12 configs),187.619,6.6,False,1,49,180,2026-10-11T03:54:01+00:00,,97.5
-SmoothObstruction,accepted,OAI.Dynamics.SmoothObstruction.Main,53,56403,53832,54006,1169.7,12,527,batch 24 (shared by 12 configs),238.068,6.6,False,1,141,181,2026-10-11T03:54:01+00:00,,97.5
-ThreeMachine,accepted,OAI.Computability.Scheduling.Main,53,56403,53837,54006,1169.7,12,527,batch 24 (shared by 12 configs),67.733,6.2,False,1,90,182,2026-10-11T03:56:23+00:00,,97.5
-ComplexCancellation,accepted,OAI.Algebra.AffineCancellation.Main,55,56405,53839,54006,1169.7,12,527,batch 24 (shared by 12 configs),385.684,6.5,False,1,38,183,2026-10-11T03:57:09+00:00,,97.5
-UniformSparsestCut,accepted,OAI.Combinatorics.SparsestCut.Main,55,56405,53836,54006,1169.7,12,527,batch 24 (shared by 12 configs),399.466,6.5,False,1,60,184,2026-10-11T03:57:32+00:00,,97.5
-OccupiedOverlap,accepted,OAI.RepresentationTheory.RowColumn.Occupied,56,56406,53838,54006,1169.7,12,527,batch 24 (shared by 12 configs),744.029,6.6,False,2,277,185,2026-10-11T03:57:59+00:00,,97.5
-PrimeGaps,pending,OAI.NumberTheory.PrimeGaps.RatioCorollary,56,56406,,,,1,,this config,,,False,1,,186,,,
-SelfSimilar,pending,OAI.MeasureTheory.SelfSimilar.Main,57,56407,,,,1,,this config,,,False,1,,187,,,
-GrothendieckElementaryExpansion,pending,OAI.CategoryTheory.Globular.Main,58,56408,,,,1,,this config,,,False,1,,188,,,
-ShortEgyptianFractions,pending,OAI.NumberTheory.ShortEgyptian.Main,58,56408,,,,1,,this config,,,False,1,,189,,,
-NodalLength,pending,OAI.Analysis.NodalLength.Main,59,56409,,,,1,,this config,,,False,1,,190,,,
-BalancedThreeStack,pending,OAI.MathematicalPhysics.NavierStokes.BalancedTransport.MainResult,60,56410,,,,1,,this config,,,False,1,,191,,,
-ForcedNavierStokesComputation,pending,OAI.MathematicalPhysics.NavierStokes.BalancedTransport.MainResult,60,56410,,,,1,,this config,,,False,1,,192,,,
-LipschitzEquivalence,pending,OAI.Analysis.LipschitzEquivalence.Main,60,56410,,,,1,,this config,,,False,1,,193,,,
-StructuralCrouzeix,pending,OAI.Analysis.StructuralCrouzeix.Endpoint,60,56410,,,,1,,this config,,,False,1,,194,,,
-FKCRT,pending,OAI.Probability.FKMaps.Convergence,61,56411,,,,1,,this config,,,False,1,,195,,,
-MatrixRemoval,pending,OAI.Combinatorics.MatrixRemoval.Main,61,56411,,,,1,,this config,,,False,1,,196,,,
-VariableWL,pending,OAI.Combinatorics.VariableWL.Completeness,61,56411,,,,1,,this config,,,False,1,,197,,,
-CharacterCriterion,pending,OAI.Analysis.CharacterCriterion.Main,62,56412,,,,1,,this config,,,False,1,,198,,,
-PartialPermutation,pending,OAI.RepresentationTheory.PartialPermutation.Main,62,56412,,,,1,,this config,,,False,1,,199,,,
-FoulkesHowe,pending,OAI.RepresentationTheory.FoulkesHowe.Stabilization,63,56413,,,,1,,this config,,,False,1,,200,,,
-PeriodicGroup,pending,OAI.GroupTheory.PeriodicGroups.Main,63,56413,,,,1,,this config,,,False,1,,201,,,
-PlanarL1,pending,OAI.Combinatorics.PlanarL1.Embedding,63,56413,,,,1,,this config,,,False,1,,202,,,
-PowerFreeValues,pending,OAI.NumberTheory.PowerFree.Main,63,56413,,,,1,,this config,,,False,1,,203,,,
-SelfSimilarCorollaries,pending,OAI.MeasureTheory.SelfSimilar.DimensionCorollaries,64,56414,,,,1,,this config,,,False,2,,204,,,
-BallPackingNecessity,pending,OAI.Geometry.BallPacking.Necessity.Main,65,56415,,,,1,,this config,,,False,1,,205,,,
-SLELowerPositivity,pending,OAI.Probability.SLE.LowerPositivity,65,56415,,,,1,,this config,,,False,1,,206,,,
-MatchingAffineLift,pending,OAI.Combinatorics.MatchingPSD.AffineLift,66,56416,,,,1,,this config,,,False,1,,207,,,
-TingleySphereIsometry,pending,OAI.Analysis.SphereIsometry.Main,67,23672,,,,1,,this config,,,False,1,,208,,,
-WLIdentification,pending,OAI.Computability.WLIdentification.Main,67,56417,,,,1,,this config,,,False,1,,209,,,
-CirculantHadamard,pending,OAI.LinearAlgebra.CirculantHadamard.Main,68,56418,,,,1,,this config,,,False,1,,210,,,
-ThompsonNonamenability,pending,OAI.GroupTheory.Thompson.Main,68,26873,,,,1,,this config,,,False,1,,211,,,
-BassTrace,pending,OAI.RingTheory.BassTrace.Main,69,56419,,,,1,,this config,,,False,1,,212,,,
-DirectionalWalk,pending,OAI.Probability.DirectionalWalk.Main,69,56419,,,,1,,this config,,,False,1,,213,,,
-EuclideanFiveColor,pending,OAI.Geometry.PlaneColoring.Five,70,56420,,,,1,,this config,,,False,1,,214,,,
-SoftChannel204,pending,OAI.InformationTheory.SoftChannel.Main,70,56420,,,,1,,this config,,,False,1,,215,,,
-MassAction,pending,OAI.Analysis.MassAction.Main,71,56421,,,,1,,this config,,,False,1,,216,,,
-StrongThinTree,pending,OAI.Combinatorics.ThinTrees.Main,72,56422,,,,1,,this config,,,False,1,,217,,,
-BassTorsionFree,pending,OAI.RingTheory.BassTrace.TorsionFree,73,56423,,,,1,,this config,,,False,1,,218,,,
-EvenBarker,pending,OAI.LinearAlgebra.Barker.Main,73,56423,,,,1,,this config,,,False,1,,219,,,
-DyadicAvoidance,accepted,OAI.MeasureTheory.DyadicAvoidance.Main,75,56425,,,108.6,1,,this config,136.444,,False,1,,220,2026-10-10T01:04:05+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),108.6
-PartitionConsistency,accepted,OAI.SetTheory.PartitionConsistency.Main,75,56425,,,515.2,1,,this config,54.319,,False,1,,221,2026-10-10T01:08:10+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),515.2
-InterpolatedFactors,accepted,OAI.Analysis.InterpolatedFactors.Interpolation,77,56427,,,1220.4,1,,this config,286.774,,False,1,,222,2026-10-10T01:17:40+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),1220.4
-VertexAlgebraNet,accepted,OAI.RepresentationTheory.VertexAlgebra.MinimalComparator,77,56427,,,381.6,1,,this config,176.602,,False,1,,223,2026-10-10T01:42:47+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),381.6
-CayleyPercolation,accepted,OAI.Probability.UnimodularPercolation.CayleyMain,78,56428,,,354.7,1,,this config,170.339,,False,1,,224,2026-10-10T01:52:05+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),354.7
-SharpThreshold,pending,OAI.Combinatorics.SharpThreshold.Main,78,56428,,,,1,,this config,,,False,1,,225,,,
-CharacterVarietiesAllSeamsSupport,pending,OAI.AlgebraicGeometry.CharacterVarieties.Seams.ProducedSolution,79,27279,,,,1,,this config,,,False,1,,226,,,
-SquareDifference,pending,OAI.Combinatorics.SquareDifference.Main,81,56431,,,,1,,this config,,,False,1,,227,,,
-BinaryEditLower,pending,OAI.Combinatorics.BinaryEdit.BinaryLowerBound,84,56434,,,,1,,this config,,,False,1,,228,,,
-ThomasonModelStructures,pending,OAI.CategoryTheory.Thomason.RankedFaithfulness,85,56435,,,,1,,this config,,,False,2,,229,,,
-HyperbolicCones,pending,OAI.Analysis.HyperbolicCones.Main,86,56436,,,,1,,this config,,,False,1,,230,,,
-ReflexiveFixedPoints,pending,OAI.Analysis.Nonexpansive.Main,86,56436,,,,1,,this config,,,False,1,,231,,,
-MemoryPrecision,pending,OAI.Probability.MemoryPrecision.Main,88,56438,,,,1,,this config,,,False,1,,232,,,
-Brenier,pending,OAI.Analysis.Brenier.Stability,89,56439,,,,1,,this config,,,False,2,,233,,,
-RandomizedMeanPayoff,pending,OAI.Computability.RandomMean.Main,89,56439,,,,1,,this config,,,False,1,,234,,,
-UniformFourier,pending,OAI.Computability.FourierTransform.Main,89,56439,,,,1,,this config,,,False,2,,235,,,
-CrouzeixHilbert,pending,OAI.Analysis.Crouzeix.Main,90,56440,,,,1,,this config,,,False,1,,236,,,
-BernoulliNonflatInSeven,pending,OAI.Analysis.BernoulliCone.Main,91,56441,,,,1,,this config,,,False,1,,237,,,
-ThorpRemaining,pending,OAI.Probability.ThorpResults.FullDevelopment,92,56442,,,,1,,this config,,,False,1,,238,,,
-FactorGeneration,pending,OAI.Analysis.FactorGeneration.Main,93,56443,,,,1,,this config,,,False,1,,239,,,
-SnakyTwentyOne,pending,OAI.GameTheory.SnakyTwentyOne.Main,94,56444,,,,1,,this config,,,False,1,,240,,,
-StrictMeans,pending,OAI.Analysis.StrictMeans.Main,94,56444,,,,1,,this config,,,False,1,,241,,,
-HenonEmden,pending,OAI.Analysis.HenonEmden.Main,96,56446,,,,1,,this config,,,False,1,,242,,,
-CoulombCounterexample,pending,OAI.Analysis.CoulombTransport.Main,97,56447,,,,1,,this config,,,False,1,,243,,,
-HoneycombBridgeMassSupport,pending,OAI.Combinatorics.HoneycombChords.BridgeMass,98,56448,,,,1,,this config,,,False,1,,244,,,
-RelativeGeneration,pending,OAI.Analysis.RelativeGeneration.Main,102,56452,,,,1,,this config,,,False,1,,245,,,
-RadialTransition,pending,OAI.Probability.RadialTransition.Main,103,56453,,,,1,,this config,,,False,1,,246,,,
-RadialDensityInterval,pending,OAI.Probability.RadialTransition.DensityInterval,104,56454,,,,1,,this config,,,False,1,,247,,,
-TriangularHilbert,pending,OAI.Analysis.TriangularHilbert.Main,105,56455,,,,1,,this config,,,False,1,,248,,,
-LaughlinGap,pending,OAI.Analysis.LaughlinGap.Main,106,56456,,,,1,,this config,,,False,1,,249,,,
-StronglyRayleighDPP,pending,OAI.Probability.StrongRayleigh.Main,107,56457,,,,1,,this config,,,False,6,,250,,,
-StableCoordinateFour,pending,OAI.AlgebraicGeometry.StableCoordinate.Principal,109,56459,,,,1,,this config,,,False,1,,251,,,
-GaussianInformation,pending,OAI.Probability.GaussianInformation.Main,111,56461,,,,1,,this config,,,False,4,,252,,,
-BinaryMatching,pending,OAI.Computability.MatchingCount.BinarySolve,112,56462,,,,1,,this config,,,False,1,,253,,,
-FillingCoefficient,pending,OAI.Geometry.IntegralFillings.Main,112,56462,,,,1,,this config,,,False,1,,254,,,
-QuantitativeVanDerWaerden,pending,OAI.Combinatorics.ProgressionColoring.Main,115,56465,,,,1,,this config,,,False,1,,255,,,
-ClassicalON,pending,OAI.Probability.ClassicalON.Main,117,56467,,,,1,,this config,,,False,1,,256,,,
-Nagata,pending,OAI.AlgebraicGeometry.PlaneCurves.Nagata,117,27927,,,,1,,this config,,,False,3,,257,,,
-PinchedKahler,pending,OAI.Geometry.Kahler.Main,119,56469,,,,1,,this config,,,False,3,,258,,,
-KaplanskyDirectFiniteness,pending,OAI.RingTheory.DirectFiniteness.Main,121,56471,,,,1,,this config,,,False,1,,259,,,
-PeriodicTilingThree,pending,OAI.Geometry.PeriodicTiling.Main,122,56472,,,,1,,this config,,,False,1,,260,,,
-KaplanskyQuasitrace,pending,OAI.Analysis.Kaplansky.Main,123,29948,,,,1,,this config,,,False,1,,261,,,
-TorsionFreeZeroDivisors,pending,OAI.Algebra.GroupRing.Main,123,56473,,,,1,,this config,,,False,1,,262,,,
-Cotype,pending,OAI.Analysis.Cotype.Main,125,56475,,,,1,,this config,,,False,1,,263,,,
-MatroidProphet,pending,OAI.Probability.MatroidProphet.Main,125,56475,,,,1,,this config,,,False,1,,264,,,
-KaplanskyFinitelyPresented,pending,OAI.RingTheory.DirectFiniteness.FinitelyPresented,126,56476,,,,1,,this config,,,False,1,,265,,,
-Heisenberg,pending,OAI.MathematicalPhysics.Heisenberg.Main,128,56478,,,,1,,this config,,,False,1,,266,,,
-DimensionTenPair,pending,OAI.Analysis.Quantum.DimensionTen.Main,129,56479,,,,1,,this config,,,False,1,,267,,,
-CriticalStripMass,pending,OAI.Combinatorics.StripMass.Main,130,56480,,,,1,,this config,,,False,1,,268,,,
-SKFullSupport,pending,OAI.Probability.SKSupport.Main,135,56485,,,,1,,this config,,,False,1,,269,,,
-PosteriorReplicas,pending,OAI.Probability.PosteriorReplicas.Main,136,56486,,,,1,,this config,,,False,1,,270,,,
-SingletonLoopMatching,pending,OAI.Computability.LoopMatching.Endpoint,136,56486,,,,1,,this config,,,False,1,,271,,,
-OddKaplansky,pending,OAI.Algebra.OddKaplansky.Main,138,56488,,,,1,,this config,,,False,1,,272,,,
-SphericalField,pending,OAI.Probability.SphericalField.Main,142,56492,,,,1,,this config,,,False,1,,273,,,
-CoveringDensity,pending,OAI.Geometry.CoveringDensity.Main,143,56493,,,,1,,this config,,,False,1,,274,,,
-QuinticLienard,pending,OAI.Analysis.LienardCycles.Main,146,56496,,,,1,,this config,,,False,1,,275,,,
-DimensionTenChannel,pending,OAI.Analysis.Quantum.DimensionTen.Channel,148,56498,,,,1,,this config,,,False,1,,276,,,
-NavierStokesVelocity,pending,OAI.MathematicalPhysics.NavierStokes.VelocityDetection.Main,152,56502,,,,1,,this config,,,False,1,,277,,,
-FiniteEntropySeparation,pending,OAI.Analysis.FreeEntropy.Main,153,56503,,,,1,,this config,,,False,1,,278,,,
-GroupRingDeterminant,pending,OAI.Analysis.GroupDeterminants.Main,155,56505,,,,1,,this config,,,False,1,,279,,,
-FourierLLogL,pending,OAI.Analysis.FourierLLogL.PaperMain,156,56506,,,,1,,this config,,,False,1,,280,,,
-ContinuumTransition,pending,OAI.Probability.ContinuumTransition.Main,161,56511,,,,1,,this config,,,False,1,,281,,,
-CubicTorus,pending,OAI.Geometry.CubicTorus.Main,162,56512,,,,1,,this config,,,False,1,,282,,,
-DepthFive,pending,OAI.Algebra.DepthFive.Bounds,164,56514,,,,1,,this config,,,False,1,,283,,,
-SwitchChain,pending,OAI.Probability.SwitchChain.Main,165,56515,,,,1,,this config,,,False,3,,284,,,
-BallPacking,pending,OAI.Geometry.BallPacking.Main,169,56519,,,,1,,this config,,,False,1,,285,,,
-ThorpRouting,pending,OAI.Probability.ThorpRouting.Main,170,56520,,,,1,,this config,,,False,1,,286,,,
-SignedSweepMoment,pending,OAI.Probability.SignedSweeps.Main,174,56524,,,,1,,this config,,,False,1,,287,,,
-DepthThree,pending,OAI.Computability.DepthThree.Main,175,56525,,,,1,,this config,,,False,1,,288,,,
-KaplanskyStableFiniteness,pending,OAI.Analysis.Kaplansky.StableFiniteness,181,30051,,,,1,,this config,,,False,1,,289,,,
-BinarySweep,pending,OAI.Probability.BinarySweep.Main,192,56542,,,,1,,this config,,,False,1,,290,,,
-HeilbronnTriangle,pending,OAI.Geometry.HeilbronnTriangle.Main,195,56545,,,,1,,this config,,,False,2,,291,,,
-PlanarFirstPassage,pending,OAI.Probability.FirstPassage.BoundaryCurve,195,28270,,,,1,,this config,,,False,1,,292,,,
-C1EntropyCounterexample,pending,OAI.Dynamics.EntropyCounterexample.Counterexample,201,56551,,,,1,,this config,,,False,1,,293,,,
-GammaPassage,pending,OAI.Probability.GammaPassage.Differentiability,203,27863,,,,1,,this config,,,False,1,,294,,,
-StandardMapEntropy,pending,OAI.Dynamics.StandardMap.EntropyEndpoint,205,56555,,,,1,,this config,,,False,1,,295,,,
-MarkovType,pending,OAI.Analysis.MarkovType.Main,207,26032,,,,1,,this config,,,False,1,,296,,,
-VlasovMaxwell,pending,OAI.Analysis.VlasovMaxwell.Main,207,56557,,,,1,,this config,,,False,1,,297,,,
-SnakyConditional,pending,OAI.GameTheory.SnakyConditional.Main,209,56559,,,,1,,this config,,,False,1,,298,,,
-WeakMTWGlobalSupport,pending,OAI.Geometry.WeakMTW.Main,210,56560,,,,1,,this config,,,False,1,,299,,,
-StandardMapLyapunov,pending,OAI.Dynamics.StandardMap.EntropyLyapunov,211,56561,,,,1,,this config,,,False,1,,300,,,
-SKValue,pending,OAI.Probability.SKValue.Main,212,56562,,,,1,,this config,,,False,1,,301,,,
-AtomicGaussian,pending,OAI.Analysis.Triangular.Main,215,56565,,,,1,,this config,,,False,1,,302,,,
-TriangularGaussian,pending,OAI.Analysis.Triangular.GaussianMinorants,216,56566,,,,1,,this config,,,False,1,,303,,,
-RyserCovering,pending,OAI.Combinatorics.Ryser.Construction.Main,217,24247,,,,1,,this config,,,False,1,,304,,,
-RyserOddExtensions,pending,OAI.Combinatorics.Ryser.OddExtensions,219,24249,,,,1,,this config,,,False,1,,305,,,
-DirectedFeedback,pending,OAI.Computability.DirectedFeedback.Main,224,56574,,,,1,,this config,,,False,1,,306,,,
-FreeUniformSpanningForest,pending,OAI.Probability.SpanningForest.Factor,224,56574,,,,1,,this config,,,False,1,,307,,,
-TriangularEnergy,pending,OAI.Analysis.Triangular.Energy.Universal,227,56577,,,,1,,this config,,,False,1,,308,,,
-MahlerConjecture,pending,OAI.Analysis.Mahler.MainTheorem,229,30479,,,,1,,this config,,,False,1,,309,,,
-SymmetricMahlerEquality,pending,OAI.Analysis.Mahler.Classification,237,30582,,,,1,,this config,,,False,1,,310,,,
-SimpleOvergroups,pending,OAI.GroupTheory.SimpleOvergroups.Main,238,56588,,,,1,,this config,,,False,1,,311,,,
-MatroidSecretary,pending,OAI.Probability.MatroidSecretary.Main,243,56593,,,,1,,this config,,,False,3,,312,,,
-SKRatio,pending,OAI.Probability.SKRatio.Main,260,56610,,,,1,,this config,,,False,1,,313,,,
-BorsukNine,pending,OAI.Geometry.Borsuk.Main,269,56619,,,,1,,this config,,,False,1,,314,,,
-FiniteFactor,pending,OAI.Analysis.FiniteFactor.Main,271,56621,,,,1,,this config,,,False,1,,315,,,
-StandardMapComponents,pending,OAI.Dynamics.StandardMap.ComponentsMain,274,56624,,,,1,,this config,,,False,1,,316,,,
-HyperinvariantSubspaces,pending,OAI.Analysis.Hyperinvariant.Main,277,56627,,,,1,,this config,,,False,1,,317,,,
-DuttaDomain,pending,OAI.RingTheory.Multiplicity.Main,278,56628,,,,1,,this config,,,False,1,,318,,,
-BinPackingGap,pending,OAI.Computability.BinPacking.Main,284,56634,,,,1,,this config,,,False,1,,319,,,
-TriangleRemoval,pending,OAI.Combinatorics.TriangleRemoval.Main,287,56637,,,,1,,this config,,,False,1,,320,,,
-HadwigerCounterexample,pending,OAI.Combinatorics.HadwigerCounterexample.Main,288,56638,,,,1,,this config,,,False,2,,321,,,
-EgyptianFractions,pending,OAI.NumberTheory.EgyptianFractions.Main,290,56640,,,,1,,this config,,,False,9,,322,,,
-ProductBrown,pending,OAI.Analysis.BrownMeasure.Main,292,56642,,,,1,,this config,,,False,1,,323,,,
-LaughlinFock,pending,OAI.Analysis.LaughlinFock.Main,293,56643,,,,1,,this config,,,False,1,,324,,,
-CannonGeometricAction,accepted,OAI.Geometry.Cannon.Main,299,56649,,,464.4,1,,this config,218.148,,False,1,,325,2026-10-10T02:44:59+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),464.4
-CompleteCrossing,accepted,OAI.Combinatorics.CompleteCrossing.Main,300,27735,,,169.1,1,,this config,63.558,,False,1,,326,2026-10-10T02:56:21+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),169.1
-GeneralMahler,pending,OAI.Geometry.Convex.GeneralMahler.Theorem,302,56652,,,,1,,this config,,,False,1,,327,,,
-SiegelZeros,pending,OAI.NumberTheory.SiegelZeros.Main,306,56668,,,,1,,this config,,,False,2,,328,,,
-AffineBernstein,pending,OAI.Analysis.AffineBernstein.Main,322,56672,,,,1,,this config,,,False,1,,329,,,
-LogConcaveQuery,pending,OAI.Probability.LogConcave.Main,326,56676,,,,1,,this config,,,False,1,,330,,,
-SharpCAT0Filling,pending,OAI.Geometry.CAT0Fillings.Main,330,56680,,,,1,,this config,,,False,1,,331,,,
-SymmetricDomains,pending,OAI.Analysis.SymmetricDomains.Main,335,56685,,,,1,,this config,,,False,1,,332,,,
-CKSBondiPenrose,pending,OAI.Geometry.Relativity.CKS.ComparatorMain,336,56686,,,,1,,this config,,,False,2,,333,,,
-BipartiteCrossing,pending,OAI.Combinatorics.Crossing.Main,339,23304,,,,1,,this config,,,False,1,,334,,,
-CoarseAssembly,pending,OAI.Topology.CoarseAssembly,347,56697,,,,1,,this config,,,False,1,,335,,,
-VertexCover,pending,OAI.Computability.VertexCover.Main,351,56701,,,,1,,this config,,,False,2,,336,,,
-MatrixFields,pending,OAI.LinearAlgebra.MatrixFields.Main,354,56704,,,,1,,this config,,,False,1,,337,,,
-KadisonRingrose,pending,OAI.Analysis.BoundedHochschild.MainResult,372,56722,,,,1,,this config,,,,1,,338,,,
-OptimalMaxCut,pending,OAI.Computability.MaxCut.Main,372,56722,,,,1,,this config,,,False,1,,339,,,
-MinUncut,pending,OAI.Computability.MinUncut.Main,375,56725,,,,1,,this config,,,False,1,,340,,,
-EinsteinFour,pending,OAI.Geometry.EinsteinFour.Classification,402,56768,,,,1,,this config,,,False,3,,341,,,
-DilutedSpin,pending,OAI.Probability.DilutedSpin.Main,405,56755,,,,1,,this config,,,False,1,,342,,,
-SharpLogRamsey,pending,OAI.Combinatorics.SharpRamsey.Main,408,56758,,,,1,,this config,,,False,1,,343,,,
-UniformKServer,pending,OAI.Combinatorics.UniformKServer.Main,410,56760,,,,1,,this config,,,False,1,,344,,,
-PerceptronFreeEnergy,pending,OAI.Probability.Perceptron.Main,411,56761,,,,1,,this config,,,False,1,,345,,,
-MatchingFPRAS,pending,OAI.Combinatorics.MatchingCount.Main,415,56765,,,,1,,this config,,,False,1,,346,,,
-HyperbolicObstruction,pending,OAI.Geometry.HyperbolicGroups.Main,417,56767,,,,1,,this config,,,False,1,,347,,,
-MaximalSeshadriConstants,pending,OAI.AlgebraicGeometry.Seshadri.Main,421,56771,,,,1,,this config,,,False,1,,348,,,
-CoulombRadii,pending,OAI.Analysis.CoulombRadii.Main,428,56778,,,,1,,this config,,,False,1,,349,,,
-SmoothYau,pending,OAI.Geometry.SmoothYau.Main,436,56786,,,,1,,this config,,,False,2,,350,,,
-CycleCliqueRamsey,pending,OAI.Combinatorics.Ramsey.CycleClique.Main,443,56793,,,,1,,this config,,,False,1,,351,,,
-IsometricImmersion,pending,OAI.Geometry.IsometricImmersion.Main,446,27696,,,,1,,this config,,,False,1,,352,,,
-IndependentSets,pending,OAI.Combinatorics.IndependentSets.Main,454,56804,,,,1,,this config,,,False,1,,353,,,
-HardSphere,pending,OAI.Analysis.HardSphere.Main,466,56816,,,,1,,this config,,,False,1,,354,,,
-UniqueGamesTheorem,pending,OAI.Computability.UniqueGames.Main,478,56828,,,,1,,this config,,,False,1,,355,,,
-RamseyFive,pending,OAI.Combinatorics.RamseyFive.Main,482,56832,,,,1,,this config,,,False,1,,356,,,
-MatrixMultiplication,pending,OAI.LinearAlgebra.MatrixMultiplication.Main,504,56859,,,,1,,this config,,,False,3,,357,,,
-KMedianRecovery,pending,OAI.Combinatorics.KMedianRecovery.Main,506,56856,,,,1,,this config,,,False,1,,358,,,
-DirectionalBallisticity,pending,OAI.Probability.Ballisticity.Main,513,56863,,,,1,,this config,,,False,1,,359,,,
-BoltzmannNonuniqueness,pending,OAI.MathematicalPhysics.Boltzmann.Main,525,31720,,,,1,,this config,,,False,1,,360,,,
-WeakHessian,pending,OAI.Geometry.WeakHessian.Main,542,56892,,,,1,,this config,,,False,1,,361,,,
-ExactQuantumFactoring,pending,OAI.Computability.QuantumFactoring.Main,546,56896,,,,1,,this config,,,False,1,,362,,,
-LittleFinitistic,pending,OAI.Algebra.Finitistic.Main,546,25641,,,,1,,this config,,,False,1,,363,,,
-ElementaryPositivity,pending,OAI.Combinatorics.Chromatic.Main,549,56899,,,,1,,this config,,,False,0,,364,,,
-SimpleAmenable,pending,OAI.GroupTheory.SimpleAmenable.Main,550,56900,,,,1,,this config,,,False,1,,365,,,
-SKHighTemperature,pending,OAI.Probability.SKGap.Main,556,56906,,,,1,,this config,,,False,1,,366,,,
-PlanarPacking,pending,OAI.Analysis.PlanarPacking.Main,563,31133,,,,1,,this config,,,False,1,,367,,,
-MetricKMedian,pending,OAI.Combinatorics.KMedian.Main,569,56919,,,,1,,this config,,,False,1,,368,,,
-UniversalTensorSquares,pending,OAI.RepresentationTheory.UniversalSquare.Main,573,56923,,,,1,,this config,,,,1,,369,,,
-SKBarriers,pending,OAI.Probability.SKBarriers.Main,574,56924,,,,1,,this config,,,False,1,,370,,,
-TamingCompatibility,pending,OAI.Geometry.TamingCompatibility.Main,582,56932,,,,1,,this config,,,False,1,,371,,,
-VelocityHemisphere,pending,OAI.Probability.Ballisticity.VelocityHemisphere,585,56935,,,,1,,this config,,,False,1,,372,,,
-KMedianRefinedRecovery,pending,OAI.Combinatorics.KMedianRecovery.Refined.Recovery,586,56936,,,,1,,this config,,,False,1,,373,,,
-FinitisticAsymmetry,pending,OAI.Algebra.FinitisticAsymmetry.Main,588,56938,,,,1,,this config,,,False,1,,374,,,
-SATComputability,pending,OAI.Probability.SATComputability.Main,592,56942,,,,1,,this config,,,False,1,,375,,,
-CriticalSKMixing,pending,OAI.MathematicalPhysics.CriticalMixing.Main,593,56943,,,,1,,this config,,,False,1,,376,,,
-Conductivity,pending,OAI.Analysis.Conductivity.Main,595,56945,,,,1,,this config,,,False,1,,377,,,
-CoulombIonization,pending,OAI.Analysis.CoulombIonization.Main,607,56957,,,,1,,this config,,,False,1,,378,,,
-CriticalPercolation,pending,OAI.Probability.CriticalPercolation.Main,627,56977,,,,1,,this config,,,False,1,,379,,,
-OrdinaryElliott,pending,OAI.NumberTheory.OrdinaryCorrelations.Elliott.Main,628,56978,,,,1,,this config,,,False,1,,380,,,
-CylinderCovering,pending,OAI.Geometry.CylinderCovering.Main,641,56991,,,,1,,this config,,,False,1,,381,,,
-BiholderTransport,pending,OAI.Analysis.BiholderTransport.Main,645,56995,,,,1,,this config,,,False,1,,382,,,
-UniformCommutator,pending,OAI.Analysis.Commutator.Main,656,57006,,,,1,,this config,,,False,1,,383,,,
-HarmonicArtin,pending,OAI.Topology.ArtinGroups.Main,660,57010,,,,1,,this config,,,False,1,,384,,,
-BalancedRyser,pending,OAI.Combinatorics.BalancedRyser.Main,698,57048,,,,1,,this config,,,False,1,,385,,,
-PlanarFalconer,pending,OAI.MeasureTheory.Falconer.Main,719,57069,,,,1,,this config,,,False,1,,386,,,
-AuslanderReiten,pending,OAI.Algebra.AuslanderReiten.All,732,57082,,,,1,,this config,,,False,1,,387,,,
-IrrationalRotation,pending,OAI.Analysis.IrrationalRotation.Main,735,57085,,,,1,,this config,,,False,2,,388,,,
-AlgorithmicThinTrees,pending,OAI.Combinatorics.ThinTrees.AlgorithmicMain,736,57086,,,,1,,this config,,,False,1,,389,,,
-KMedianThreshold,pending,OAI.Combinatorics.KMedian.Threshold,765,57115,,,,1,,this config,,,False,1,,390,,,
-ArtinParabolicIntersections,pending,OAI.Topology.ArtinGroups.ParabolicIntersections.Main,782,57132,,,,1,,this config,,,True,4,,391,,,
-TotientAsymptotic,pending,OAI.NumberTheory.TotientAsymptotic.UnconditionalMain,809,57172,,,,1,,this config,,,False,4,,392,,,
-TotientCompanionZero,pending,OAI.NumberTheory.TotientAsymptotic.Main,811,57174,,,,1,,this config,,,False,1,,393,,,
-KadisonSimilarity,pending,OAI.Analysis.KadisonSimilarity.UnconditionalSimilarity,816,57166,,,,1,,this config,,,False,3,,394,,,
-Jacobsthal,pending,OAI.NumberTheory.Jacobsthal.Main,819,57200,,,,1,,this config,,,False,1,,395,,,
-JacobsthalImproved,pending,OAI.NumberTheory.Jacobsthal.Main,819,57200,,,,1,,this config,,,False,1,,396,,,
-RieszQuantitative,pending,OAI.Analysis.RieszRectifiability.Main,824,57179,,,,1,,this config,,,False,1,,397,,,
-PerfectCompleteness,pending,OAI.Computability.PerfectCompleteness.Main,863,57213,,,,1,,this config,,,False,1,,398,,,
-PiExponent,pending,OAI.NumberTheory.PiExponent.Main,869,57219,,,,1,,this config,,,False,1,,399,,,
-DukePrimeDegree,pending,OAI.NumberTheory.DukePrimeDegree.MainUnconditional,877,57227,,,,1,,this config,,,False,2,,400,,,
-FreeIsing,pending,OAI.Probability.FreeIsing.Main,891,57241,,,,1,,this config,,,False,1,,401,,,
-PartitionPrinciple,pending,OAI.SetTheory.PartitionPrinciple.Main,943,57293,,,,1,,this config,,,False,1,,402,,,
-BenjaminiSchramm,pending,OAI.Probability.BenjaminiSchramm.Main,970,57320,,,,1,,this config,,,False,3,,403,,,
-DegreeRigidity,pending,OAI.Computability.DegreeRigidity.Main,974,57324,,,,1,,this config,,,False,1,,404,,,
-Catalan,pending,OAI.NumberTheory.Catalan.Main,988,29458,,,,1,,this config,,,False,1,,405,,,
-ExactInfiniteness,pending,OAI.Analysis.WeakInfiniteness.Main,1012,57362,,,,1,,this config,,,False,2,,406,,,
-EditApproximation,pending,OAI.Combinatorics.EditApproximation.Specification.RawBandMain,1024,57374,,,,1,,this config,,,False,1,,407,,,
-YauCounterexample,pending,OAI.Geometry.NodalSets.Main,1068,57418,,,,1,,this config,,,False,1,,408,,,
-Laughlin,pending,OAI.Analysis.Laughlin.Main,1258,57608,,,,1,,this config,,,False,1,,409,,,
-LaughlinPlanar,pending,OAI.Analysis.Laughlin.UniformGap,1279,57629,,,,1,,this config,,,False,1,,410,,,
-ContingencyTables,pending,OAI.Combinatorics.ContingencyTables.UnconditionalMain,1297,57647,,,,1,,this config,,,False,3,,411,,,
-OrdinaryTwoPointCorrelations,pending,OAI.NumberTheory.TwoPointCorrelations.FinalMain,1539,57910,,,,1,,this config,,,False,3,,412,,,
-JointDickman,pending,OAI.NumberTheory.JointDickman.PaperMain,1792,58226,,,,1,,this config,,,False,3,,413,,,
-SurfaceImmersion,pending,OAI.Geometry.SurfaceImmersion.Main,1883,58393,,,,1,,this config,,,False,1,,414,,,
-LipschitzHilbert,pending,OAI.Analysis.LipschitzHilbert.Main,1910,32850,,,,1,,this config,,,False,2,,415,,,
-ContinuumCoulombHardness,pending,OAI.MathematicalPhysics.ContinuumCoulomb.Reduction.Hardness,2086,58451,,,,1,,this config,,,False,2,,416,,,
-InvariantIsing,accepted,OAI.Probability.InvariantIsing.Unconditional,2123,58473,55908,55954,2141.5,12,2147,batch 11 (shared by 12 configs),580.351,7.3,False,11,242,14,2026-10-10T22:12:16+00:00,,178.5
-FalconerAllDimensions,accepted,OAI.MeasureTheory.Falconer.Campaign123PlanarFurstenbergProof,2384,58734,56167,56212,1966.2,1,2384,batch 10 (shared by 1 configs),658.091,7.4,False,1,55,13,2026-10-10T21:33:33+00:00,,1966.2
-DefocusingNLS,accepted,OAI.MathematicalPhysics.DefocusingNLS.MainTheorems,2415,58770,56205,56248,2085.9,1,2420,batch 9 (shared by 1 configs),1173.5,7.6,False,3,54,12,2026-10-10T20:57:55+00:00,,2085.9
-StrongKadisonKastler,accepted,OAI.Analysis.KadisonKastler.StrongStability,2652,59002,56434,56455,4342.8,1,2564,batch 8 (shared by 1 configs),5350.818,8.1,False,1,532,11,2026-10-10T19:28:24+00:00,,4342.8
-PolycyclicRecognition,accepted,OAI.GroupTheory.PolycyclicRecognition.Recognition,2679,59399,56824,56882,2957.4,1,2753,batch 7 (shared by 1 configs),1803.557,8.5,False,3,100,10,2026-10-10T18:13:34+00:00,,2957.4
-KoebeCircleDomains,accepted,OAI.Analysis.CircleDomains.Main,2790,59268,56707,56758,4383.0,1,2644,batch 6 (shared by 1 configs),782.73,7.4,False,2,27,9,2026-10-10T17:21:52+00:00,,4383.0
-DirichletSevenEighths,accepted,OAI.NumberTheory.DirichletL.Nonvanishing,2924,35258,53785,5930,6.7,1,0,batch 5 (shared by 1 configs),3839.462,6.6,False,1,33,8,2026-10-10T16:06:29+00:00,,6.7
-QuasiRiemannHypothesis,accepted,OAI.NumberTheory.DirichletL.Nonvanishing,2924,35258,53785,31311,10.0,1,1,batch 4 (shared by 1 configs),554.936,6.6,False,1,33,7,2026-10-10T15:57:12+00:00,,10.0
-HeckeSevenEighths,accepted,OAI.NumberTheory.DirichletL.Hecke.Nonvanishing,2925,35259,53784,31287,3284.4,1,2924,batch 3 (shared by 1 configs),563.693,6.6,False,1,47,6,2026-10-10T15:47:45+00:00,,3284.4
-OstmannComplete,accepted,OAI.NumberTheory.Ostmann.Complete,3207,59627,57168,57226,2124.7,1,3195,batch 2-parallel (shared by 1 configs),306.56,7.6,False,2,26,5,2026-10-10T14:19:50+00:00,,2124.7
-MUBSix,accepted,OAI.Analysis.MutuallyUnbiased.Main,3381,59731,57168,57220,14134.6,1,3381,batch 1 (shared by 1 configs),16981.172,26.1,False,1,33,4,2026-10-10T10:07:36+00:00,,14134.6
-PattersonFirstMoment,accepted,OAI.NumberTheory.CubicMoment.Theta.CubicThetaMains,3594,59965,,,4130.8,1,,this config,487.99,,False,3,,3,2026-10-10T00:19:46+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),4130.8
-OstmannPrimes,accepted,OAI.NumberTheory.Ostmann.Main,4358,60739,58175,58212,3913.1,1,4344,batch 0 (shared by 1 configs),2044.543,8.8,False,1,1,2,2026-10-10T06:09:38+00:00,,3913.1
-ErdosReciprocal,accepted,OAI.Combinatorics.Progressions.Main,4774,61124,58559,5965,9.6,1,0,this config,2472.214,14.3,False,1,98,1,2026-10-10T03:48:38+00:00,,9.6
+config,status,solution_module,in_repo_closure,predicted_vmas,measured_check_peak_vmas,measured_build_peak_vmas,build_wall_s,batch_configs,modules_compiled_in_this_build,build_scope,check_wall_s,check_paused_s,check_active_s,build_paused_s,build_active_s,check_peak_rss_gib,nanoda,theorems,solution_lines,order_position,started,detail,build_share_s
+CommonBasesFPRAS,accepted,OAI.Combinatorics.MatroidCounting.CommonBases,1,56351,,,146.9,1,,this config,78.695,0.0,78.7,0.0,146.9,,False,1,,15,2026-10-10T00:13:17+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),146.9
+HoneycombFreeEnergy,accepted,OAI.Probability.Honeycomb.FreeEnergy,1,56351,,,11.6,1,,this config,39.612,0.0,39.6,0.0,11.6,,False,1,,16,2026-10-10T00:17:03+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),11.6
+LogBrunnMinkowski,accepted,OAI.Geometry.LogVolume.BrunnMinkowski,1,56351,,,480.5,1,,this config,630.355,0.0,630.4,0.0,480.5,,False,1,,17,2026-10-10T00:17:54+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),480.5
+PlanarAndersonSpectrum,accepted,OAI.MathematicalPhysics.PlanarAnderson.Spectrum,1,56351,,,82.3,1,,this config,227.558,0.0,227.6,0.0,82.3,,False,1,,18,2026-10-10T00:36:25+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),82.3
+FiniteCongruenceGraph,accepted,OAI.Algebra.Universal.GraphCriterion,2,14487,,,8.5,1,,this config,30.687,0.0,30.7,0.0,8.5,,False,1,,19,2026-10-10T00:41:35+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),8.5
+TruffetCounterexample,accepted,OAI.Optimization.Tropical.TruffetCounterexample,2,56352,,,80.5,1,,this config,82.982,0.0,83.0,0.0,80.5,,False,1,,20,2026-10-10T00:42:14+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),80.5
+SpinAngle,accepted,OAI.RepresentationTheory.SpinAngle.TypeAngle,3,56353,,,366.4,1,,this config,439.435,0.0,439.4,0.0,366.4,,False,1,,21,2026-10-10T00:44:58+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),366.4
+TraceIdealTransportSupport,accepted,OAI.Analysis.TraceCone.IdealTransport,3,26893,53783,22969,15.4,1,3,this config,147.361,0.0,147.4,0.0,15.4,6.5,True,17,425,22,2026-10-10T03:42:45+00:00,,15.4
+BogomolovPopInjectivity,accepted,OAI.Algebra.BogomolovPop.Injectivity,5,56355,53789,5925,6.9,1,0,this config,110.22,0.0,110.2,0.0,6.9,6.5,False,1,322,23,2026-10-10T03:45:28+00:00,,6.9
+FourRowPermanent,accepted,OAI.Combinatorics.Permanent.Main,5,56355,53786,55954,2141.5,12,2147,batch 11 (shared by 12 configs),55.059,0.0,55.1,0.0,2141.5,6.1,False,1,116,24,2026-10-10T22:12:16+00:00,,178.5
+HadamardCubeFiber,accepted,OAI.LinearAlgebra.Hadamard.Main,6,56356,53790,55954,2141.5,12,2147,batch 11 (shared by 12 configs),53.751,0.0,53.8,0.0,2141.5,6.1,False,1,117,25,2026-10-10T22:12:16+00:00,,178.5
+BalancedBoxRouting,accepted,OAI.Analysis.BoxTransport.Routing,7,56357,53791,55954,2141.5,12,2147,batch 11 (shared by 12 configs),124.71,0.0,124.7,0.0,2141.5,6.2,False,1,188,26,2026-10-10T22:13:10+00:00,,178.5
+HilbertCrouzeix,accepted,OAI.Analysis.HilbertCrouzeix.Main,7,56357,53791,55954,2141.5,12,2147,batch 11 (shared by 12 configs),151.214,0.0,151.2,0.0,2141.5,6.3,False,4,2,27,2026-10-10T22:13:12+00:00,,178.5
+PlaneColoring,accepted,OAI.Geometry.PlaneColoring.Main,9,56359,53794,55954,2141.5,12,2147,batch 11 (shared by 12 configs),54.19,0.0,54.2,0.0,2141.5,6.1,False,1,1,28,2026-10-10T22:15:16+00:00,,178.5
+TriangularCovering,accepted,OAI.Geometry.TriangularCovering.Main,9,56359,53793,55954,2141.5,12,2147,batch 11 (shared by 12 configs),272.051,0.0,272.1,0.0,2141.5,6.3,False,1,68,29,2026-10-10T22:15:44+00:00,,178.5
+MidpointLenses,accepted,OAI.Analysis.SegmentLenses.Main,11,56361,53795,55954,2141.5,12,2147,batch 11 (shared by 12 configs),229.277,0.0,229.3,0.0,2141.5,6.2,False,1,20,30,2026-10-10T22:16:11+00:00,,178.5
+SurfaceConeCandidateSupport,accepted,OAI.AlgebraicGeometry.SurfaceCones.CandidateRing,11,56361,53794,55954,2141.5,12,2147,batch 11 (shared by 12 configs),281.712,0.0,281.7,0.0,2141.5,6.4,False,1,29,31,2026-10-10T22:20:01+00:00,,178.5
+DoublingHilbert,accepted,OAI.Geometry.DoublingHilbert.Main,12,56362,53793,55954,2141.5,12,2147,batch 11 (shared by 12 configs),238.518,0.0,238.5,0.0,2141.5,6.3,False,1,69,32,2026-10-10T22:20:17+00:00,,178.5
+RecursivePotentials,accepted,OAI.Analysis.RecursivePotentials.Challenge,12,56362,53794,55954,2141.5,12,2147,batch 11 (shared by 12 configs),176.423,0.0,176.4,0.0,2141.5,6.3,False,1,267,33,2026-10-10T22:21:57+00:00,,178.5
+CartierChartCompactnessSupport,accepted,OAI.AlgebraicGeometry.CartierSections.ChartCompactness,13,28118,24145,55954,2141.5,12,2147,batch 11 (shared by 12 configs),123.253,0.0,123.3,0.0,2141.5,3.4,False,1,61,34,2026-10-10T22:24:17+00:00,,178.5
+Rokhlin,accepted,OAI.Dynamics.MultipleMixing.Main,13,56363,53798,53878,2114.4,12,134,batch 12 (shared by 12 configs),405.497,0.0,405.5,0.0,2114.4,6.9,False,1,328,35,2026-10-10T22:51:55+00:00,,176.2
+LogKodairaFiberNegative,accepted,OAI.AlgebraicGeometry.LogKodaira.FiberNegative,14,56364,53796,53878,2114.4,12,134,batch 12 (shared by 12 configs),264.113,0.0,264.1,0.0,2114.4,6.4,False,1,80,36,2026-10-10T22:51:55+00:00,,176.2
+AbhyankarSathaye,accepted,OAI.AlgebraicGeometry.AbhyankarSathaye.Counterexample,15,21025,15494,53878,2114.4,12,134,batch 12 (shared by 12 configs),29.681,0.0,29.7,0.0,2114.4,2.1,False,1,45,37,2026-10-10T22:51:55+00:00,,176.2
+BufferedIsing,accepted,OAI.Probability.Ising.Main,15,56365,53797,53878,2114.4,12,134,batch 12 (shared by 12 configs),76.305,0.0,76.3,0.0,2114.4,6.2,False,1,93,38,2026-10-10T22:52:25+00:00,,176.2
+CHObstruction,accepted,OAI.ModelTheory.Categoricity.Main,15,56365,53799,53878,2114.4,12,134,batch 12 (shared by 12 configs),50.854,0.0,50.9,0.0,2114.4,6.1,False,1,270,39,2026-10-10T22:53:42+00:00,,176.2
+FixedClauseThreshold,accepted,OAI.Probability.RandomSAT.Main,15,56365,53799,53878,2114.4,12,134,batch 12 (shared by 12 configs),56.586,0.0,56.6,0.0,2114.4,6.1,False,1,134,40,2026-10-10T22:54:33+00:00,,176.2
+GaussianFiniteEntropy,accepted,OAI.Probability.Localization.Main,15,56365,53798,53878,2114.4,12,134,batch 12 (shared by 12 configs),227.827,0.0,227.8,0.0,2114.4,6.2,False,1,28,41,2026-10-10T22:55:31+00:00,,176.2
+SplitTangentIntegrability,accepted,OAI.Geometry.SplitTangent.RationalVariation,15,56365,53792,53878,2114.4,12,134,batch 12 (shared by 12 configs),470.746,0.0,470.7,0.0,2114.4,6.5,False,1,197,42,2026-10-10T22:56:19+00:00,,176.2
+EuclideanRamseyNine,accepted,OAI.Combinatorics.EuclideanRamsey.NineStatement,16,56366,53797,53878,2114.4,12,134,batch 12 (shared by 12 configs),161.909,0.0,161.9,0.0,2114.4,6.2,False,1,36,43,2026-10-10T22:58:42+00:00,,176.2
+Naimark,accepted,OAI.Analysis.Naimark.Tracial,16,56366,53799,53878,2114.4,12,134,batch 12 (shared by 12 configs),399.718,0.0,399.7,0.0,2114.4,6.5,False,1,284,44,2026-10-10T22:59:20+00:00,,176.2
+OneWayLiveness,accepted,OAI.Combinatorics.Automata.Main,16,56366,53798,53878,2114.4,12,134,batch 12 (shared by 12 configs),76.318,0.0,76.3,0.0,2114.4,6.1,False,1,75,45,2026-10-10T23:01:25+00:00,,176.2
+SmoothInitialForm,accepted,OAI.Algebra.Determinantal.InitialForm,17,56367,53803,53878,2114.4,12,134,batch 12 (shared by 12 configs),186.38,0.0,186.4,0.0,2114.4,6.4,False,1,159,46,2026-10-10T23:02:42+00:00,,176.2
+GrahamSpherical,accepted,OAI.Combinatorics.SphericalRamsey.Main,18,25038,21053,53890,533.1,12,202,batch 13 (shared by 12 configs),75.79,0.0,75.8,0.0,533.1,3.0,False,1,33,47,2026-10-10T23:06:02+00:00,,44.4
+MatchingEntropy,accepted,OAI.Combinatorics.PerfectMatching.Main,18,56368,53800,53890,533.1,12,202,batch 13 (shared by 12 configs),109.657,0.0,109.7,0.0,533.1,6.3,False,1,213,48,2026-10-10T23:06:02+00:00,,44.4
+ConjugatePoints,accepted,OAI.Geometry.ConjugatePoints.ThreeManifold,19,56369,53803,53890,533.1,12,202,batch 13 (shared by 12 configs),288.289,0.0,288.3,0.0,533.1,6.6,False,1,271,49,2026-10-10T23:06:02+00:00,,44.4
+TwoWayComplementation,accepted,OAI.Combinatorics.TwoWayAutomata.Main,19,56369,53804,53890,533.1,12,202,batch 13 (shared by 12 configs),52.455,0.0,52.5,0.0,533.1,6.1,False,1,139,50,2026-10-10T23:07:19+00:00,,44.4
+ArtinCAT0,accepted,OAI.GroupTheory.ArtinCAT0.Main,20,56370,53804,53890,533.1,12,202,batch 13 (shared by 12 configs),72.083,0.0,72.1,0.0,533.1,6.2,False,1,64,51,2026-10-10T23:07:53+00:00,,44.4
+ForestSpace,accepted,OAI.Analysis.ForestSpace.Main,20,56370,53802,53890,533.1,12,202,batch 13 (shared by 12 configs),101.754,0.0,101.8,0.0,533.1,6.3,False,1,53,52,2026-10-10T23:08:12+00:00,,44.4
+DeligneDrinfeld,accepted,OAI.Algebra.Drinfeld.Completion,21,56371,53806,53890,533.1,12,202,batch 13 (shared by 12 configs),487.507,0.0,487.5,0.0,533.1,6.5,False,1,565,53,2026-10-10T23:09:06+00:00,,44.4
+QACParity,accepted,OAI.InformationTheory.QuantumCircuit.Parity,21,56371,53803,53890,533.1,12,202,batch 13 (shared by 12 configs),382.777,0.0,382.8,0.0,533.1,6.3,False,1,82,54,2026-10-10T23:09:55+00:00,,44.4
+SquareRootDegree,accepted,OAI.Combinatorics.BooleanFunctions.Main,21,56371,53807,53890,533.1,12,202,batch 13 (shared by 12 configs),423.049,0.0,423.0,0.0,533.1,6.4,False,1,27,55,2026-10-10T23:10:54+00:00,,44.4
+GotsmanLinial,accepted,OAI.Combinatorics.GotsmanLinial.Main,22,27672,23702,53890,533.1,12,202,batch 13 (shared by 12 configs),143.007,0.0,143.0,0.0,533.1,3.3,False,1,129,56,2026-10-10T23:16:19+00:00,,44.4
+IndependentProducts,accepted,OAI.Analysis.ProductSpaces.Main,22,56372,53806,53890,533.1,12,202,batch 13 (shared by 12 configs),235.439,0.0,235.4,0.0,533.1,6.4,False,4,70,57,2026-10-10T23:17:15+00:00,,44.4
+NoiselessRegression,accepted,OAI.Probability.GaussianRegression.Main,22,56372,53802,53890,533.1,12,202,batch 13 (shared by 12 configs),221.188,0.0,221.2,0.0,533.1,6.4,False,1,98,58,2026-10-10T23:17:59+00:00,,44.4
+ParityLifts,accepted,OAI.Combinatorics.ParityLifts.Main,22,56372,53804,53894,693.2,12,222,batch 14 (shared by 12 configs),44.688,0.0,44.7,0.0,693.2,6.1,False,1,114,59,2026-10-10T23:21:59+00:00,,57.8
+RegularParity,accepted,OAI.InformationTheory.QuantumCircuit.Main,22,56372,53807,53894,693.2,12,222,batch 14 (shared by 12 configs),136.461,0.0,136.5,0.0,693.2,6.3,False,1,45,60,2026-10-10T23:21:59+00:00,,57.8
+TreeEdit,accepted,OAI.Combinatorics.TreeEdit.TorusLowerBound,22,56372,53802,53894,693.2,12,222,batch 14 (shared by 12 configs),108.419,0.0,108.4,0.0,693.2,6.3,False,1,117,61,2026-10-10T23:21:59+00:00,,57.8
+BackwardIntertwiners,accepted,OAI.Analysis.BackwardIntertwiners.AlgebraCorollary,23,56373,53805,53894,693.2,12,222,batch 14 (shared by 12 configs),164.718,0.0,164.7,0.0,693.2,6.4,False,1,95,62,2026-10-10T23:22:44+00:00,,57.8
+AsymptoticallyMinimalLittlewood,accepted,OAI.Analysis.Littlewood.Main,24,56374,53809,53894,693.2,12,222,batch 14 (shared by 12 configs),171.787,0.0,171.8,0.0,693.2,6.4,False,1,232,63,2026-10-10T23:23:48+00:00,,57.8
+FormulaHitting,accepted,OAI.Algebra.FormulaHitting.Hitting,24,22624,18153,53894,693.2,12,222,batch 14 (shared by 12 configs),39.888,0.0,39.9,0.0,693.2,2.5,False,1,100,64,2026-10-10T23:24:16+00:00,,57.8
+IndividualStrongInfiniteness,accepted,OAI.Analysis.CStarAlgebra.PureInfiniteness.Main,25,56375,53809,53894,693.2,12,222,batch 14 (shared by 12 configs),364.369,0.0,364.4,0.0,693.2,6.4,False,1,56,65,2026-10-10T23:24:57+00:00,,57.8
+InfiniteMatroid,accepted,OAI.Combinatorics.InfiniteMatroid.Main,25,56375,53804,53894,693.2,12,222,batch 14 (shared by 12 configs),48.496,0.0,48.5,0.0,693.2,6.1,False,1,51,66,2026-10-10T23:25:30+00:00,,57.8
+SubsphereCurrent,accepted,OAI.Probability.Subsphere.Main,25,56375,53809,53894,693.2,12,222,batch 14 (shared by 12 configs),470.453,0.0,470.5,0.0,693.2,6.4,False,1,24,67,2026-10-10T23:26:19+00:00,,57.8
+ChoicelessPolynomialTime,accepted,OAI.ModelTheory.Choiceless.Separation,26,56376,53810,53894,693.2,12,222,batch 14 (shared by 12 configs),301.527,0.0,301.5,0.0,693.2,6.3,False,1,28,68,2026-10-10T23:26:41+00:00,,57.8
+EntropyPhotonNumber,accepted,OAI.InformationTheory.PhotonNumber.Inequality,26,56376,53808,53894,693.2,12,222,batch 14 (shared by 12 configs),380.684,0.0,380.7,0.0,693.2,6.6,False,1,707,69,2026-10-10T23:31:02+00:00,,57.8
+SATSharpness,accepted,OAI.Probability.SATVariance.Sharpness,26,56376,53810,53894,693.2,12,222,batch 14 (shared by 12 configs),140.448,0.0,140.4,0.0,693.2,6.2,False,1,25,70,2026-10-10T23:31:44+00:00,,57.8
+SolenoidalSheetPrograms,accepted,OAI.MathematicalPhysics.SheetFlows.SheetProgram,26,56376,53810,53897,728.2,12,237,batch 15 (shared by 12 configs),162.126,0.0,162.1,0.0,728.2,6.4,False,1,65,71,2026-10-10T23:38:35+00:00,,60.7
+BoundedRecovery,accepted,OAI.Analysis.ModularRecovery.Main,27,56377,53809,53897,728.2,12,237,batch 15 (shared by 12 configs),216.336,0.0,216.3,0.0,728.2,6.5,False,1,48,72,2026-10-10T23:38:35+00:00,,60.7
+ThreeStateSupercritical,accepted,OAI.Probability.ThreeState.Main,27,56377,53807,53897,728.2,12,237,batch 15 (shared by 12 configs),67.241,0.0,67.2,0.0,728.2,6.2,False,2,1,73,2026-10-10T23:38:35+00:00,,60.7
+WitnessedChoice,accepted,OAI.Computability.WitnessedChoice.Main,27,56377,53811,53897,728.2,12,237,batch 15 (shared by 12 configs),184.101,0.0,184.1,0.0,728.2,6.3,False,1,43,74,2026-10-10T23:39:43+00:00,,60.7
+CompactBanach,accepted,OAI.Geometry.DoublingHilbert.CompactBanach,28,56378,53812,53897,728.2,12,237,batch 15 (shared by 12 configs),251.775,0.0,251.8,0.0,728.2,6.4,False,1,94,75,2026-10-10T23:41:18+00:00,,60.7
+CoordinateTrace,accepted,OAI.Probability.ThorpRouting.RegularTrace,28,56378,53810,53897,728.2,12,237,batch 15 (shared by 12 configs),649.849,0.0,649.8,0.0,728.2,6.5,False,1,93,76,2026-10-10T23:42:12+00:00,,60.7
+DaugavetModuli,accepted,OAI.Analysis.Daugavet.Main,28,56378,53811,53897,728.2,12,237,batch 15 (shared by 12 configs),401.048,0.0,401.0,0.0,728.2,6.3,False,3,42,77,2026-10-10T23:42:48+00:00,,60.7
+EuclideanRamsey,accepted,OAI.Combinatorics.EuclideanRamsey.Main,28,56378,53812,53897,728.2,12,237,batch 15 (shared by 12 configs),490.099,0.0,490.1,0.0,728.2,6.4,False,1,153,78,2026-10-10T23:45:32+00:00,,60.7
+LittlewoodFiniteFlatness,accepted,OAI.Analysis.Littlewood.FiniteFlatness,28,56378,53815,53897,728.2,12,237,batch 15 (shared by 12 configs),394.984,0.0,395.0,0.0,728.2,6.4,False,1,29,79,2026-10-10T23:49:31+00:00,,60.7
+SingleFold,accepted,OAI.NumberTheory.SingleFold.Main,28,56378,53812,53897,728.2,12,237,batch 15 (shared by 12 configs),321.305,0.0,321.3,0.0,728.2,6.5,False,1,28,80,2026-10-10T23:53:04+00:00,,60.7
+EuclideanRamseyQuadratic,accepted,OAI.Combinatorics.EuclideanRamsey.Quadratic,29,56379,53812,53897,728.2,12,237,batch 15 (shared by 12 configs),263.806,0.0,263.8,0.0,728.2,6.4,False,1,270,81,2026-10-10T23:53:44+00:00,,60.7
+EuclideanRamseyTransitive,accepted,OAI.Combinatorics.EuclideanRamsey.Transitive,29,56379,53813,53897,728.2,12,237,batch 15 (shared by 12 configs),187.392,0.0,187.4,0.0,728.2,6.4,False,1,160,82,2026-10-10T23:56:07+00:00,,60.7
+ProjectionVolume,accepted,OAI.Geometry.ProjectionVolume.ProductCounterexample,29,56379,53811,53896,1228.0,12,326,batch 16 (shared by 12 configs),142.044,0.0,142.0,0.0,1228.0,6.3,False,1,62,83,2026-10-11T00:03:29+00:00,,102.3
+SteinitzBergstrom,accepted,OAI.Analysis.Steinitz.Main,29,56379,53813,53896,1228.0,12,326,batch 16 (shared by 12 configs),232.184,0.0,232.2,0.0,1228.0,6.6,False,1,118,84,2026-10-11T00:03:29+00:00,,102.3
+TorsionFreeHyperbolic,accepted,OAI.GroupTheory.Hyperbolic.Main,29,56379,53813,53896,1228.0,12,326,batch 16 (shared by 12 configs),109.154,0.0,109.2,0.0,1228.0,6.3,False,1,20,85,2026-10-11T00:03:29+00:00,,102.3
+DiskMaximal,accepted,OAI.Analysis.DiskMaximal.Main,30,56380,53809,53896,1228.0,12,326,batch 16 (shared by 12 configs),277.395,0.0,277.4,0.0,1228.0,6.5,False,1,173,86,2026-10-11T00:05:19+00:00,,102.3
+EntangledGames,accepted,OAI.Probability.EntangledGames.Main,30,56380,53812,53896,1228.0,12,326,batch 16 (shared by 12 configs),169.126,0.0,169.1,0.0,1228.0,6.4,False,1,46,87,2026-10-11T00:05:52+00:00,,102.3
+RuledCovering,accepted,OAI.Geometry.RuledCovering.Main,30,56380,53814,53896,1228.0,12,326,batch 16 (shared by 12 configs),471.467,0.0,471.5,0.0,1228.0,6.4,False,1,21,88,2026-10-11T00:07:22+00:00,,102.3
+BarnetteHamiltonian,accepted,OAI.Combinatorics.Hamiltonian.Main,31,56381,53811,53896,1228.0,12,326,batch 16 (shared by 12 configs),348.74,0.0,348.7,0.0,1228.0,6.3,False,1,86,89,2026-10-11T00:08:43+00:00,,102.3
+CliqueFreeLog,accepted,OAI.Combinatorics.CliqueFree.Main,31,56381,53815,53896,1228.0,12,326,batch 16 (shared by 12 configs),358.253,0.0,358.3,0.0,1228.0,6.3,False,1,88,90,2026-10-11T00:10:00+00:00,,102.3
+EuclideanRamseySpherical,accepted,OAI.Combinatorics.EuclideanRamsey.Spherical,31,56381,53816,53896,1228.0,12,326,batch 16 (shared by 12 configs),193.685,0.0,193.7,0.0,1228.0,6.2,False,1,43,91,2026-10-11T00:14:33+00:00,,102.3
+HotSpots,accepted,OAI.Analysis.HotSpots.Main,31,56381,53813,53896,1228.0,12,326,batch 16 (shared by 12 configs),416.485,0.0,416.5,0.0,1228.0,6.9,False,1,89,92,2026-10-11T00:15:14+00:00,,102.3
+Tachikawa,accepted,OAI.RingTheory.Tachikawa.Counterexample,31,56381,53815,53896,1228.0,12,326,batch 16 (shared by 12 configs),431.85,0.0,431.9,0.0,1228.0,6.5,False,1,301,93,2026-10-11T00:16:00+00:00,,102.3
+ThreeStateTreeClauses,accepted,OAI.Probability.ThreeStateClauses.Main,31,56381,53815,53896,1228.0,12,326,batch 16 (shared by 12 configs),125.916,0.0,125.9,0.0,1228.0,6.2,False,2,41,94,2026-10-11T00:17:48+00:00,,102.3
+TraceReconstruction,accepted,OAI.Probability.TraceReconstruction,31,56381,53813,53897,749.6,12,301,batch 17 (shared by 12 configs),122.662,0.0,122.7,0.0,749.6,6.4,False,3,427,95,2026-10-11T00:23:16+00:00,,62.5
+CommutingDerivations,accepted,OAI.AlgebraicGeometry.CommutingDerivations.OrdinaryExtraMain,32,21322,15811,53897,749.6,12,301,batch 17 (shared by 12 configs),35.244,0.0,35.2,0.0,749.6,2.2,False,1,91,96,2026-10-11T00:23:16+00:00,,62.5
+DiamondDistortion,accepted,OAI.Analysis.DiamondDistortion.Descent,32,56382,53814,53897,749.6,12,301,batch 17 (shared by 12 configs),72.581,0.0,72.6,0.0,749.6,6.2,False,1,132,97,2026-10-11T00:23:16+00:00,,62.5
+DiscreteLipschitzFree,accepted,OAI.Analysis.LipschitzFree.Main,32,56382,53812,53897,749.6,12,301,batch 17 (shared by 12 configs),85.529,0.0,85.5,0.0,749.6,6.2,False,1,98,98,2026-10-11T00:23:51+00:00,,62.5
+Dixmier,accepted,OAI.Analysis.Unitarizability.UniverseTransport,32,25732,21746,53897,749.6,12,301,batch 17 (shared by 12 configs),74.465,0.0,74.5,0.0,749.6,3.1,False,1,75,99,2026-10-11T00:24:29+00:00,,62.5
+BoundedTreewidthL1,accepted,OAI.Combinatorics.TreewidthL1.Main,33,56383,53818,53897,749.6,12,301,batch 17 (shared by 12 configs),107.618,0.0,107.6,0.0,749.6,6.3,False,1,188,100,2026-10-11T00:25:18+00:00,,62.5
+InfiniteMatroidCorollaries,accepted,OAI.Combinatorics.InfiniteMatroid.Corollaries,33,56383,53815,53897,749.6,12,301,batch 17 (shared by 12 configs),50.935,0.0,50.9,0.0,749.6,6.1,False,2,59,101,2026-10-11T00:25:19+00:00,,62.5
+PettyProjectionVolume,accepted,OAI.Geometry.ProjectionBodies.Main,33,56383,53816,53897,749.6,12,301,batch 17 (shared by 12 configs),494.288,0.0,494.3,0.0,749.6,6.6,False,1,25,102,2026-10-11T00:25:44+00:00,,62.5
+RealL1Renorming,accepted,OAI.Analysis.LipschitzFree.Renorming,33,56383,53817,53897,749.6,12,301,batch 17 (shared by 12 configs),80.796,0.0,80.8,0.0,749.6,6.2,False,1,93,103,2026-10-11T00:26:11+00:00,,62.5
+TypeSystemNormalization,accepted,OAI.Computability.TypeSystem.Normalization,33,56383,53817,53897,749.6,12,301,batch 17 (shared by 12 configs),44.602,0.0,44.6,0.0,749.6,6.2,False,1,87,104,2026-10-11T00:27:06+00:00,,62.5
+C0Absorption,accepted,OAI.Analysis.C0Absorption.Main,34,56384,53818,53897,749.6,12,301,batch 17 (shared by 12 configs),308.538,0.0,308.5,0.0,749.6,6.3,False,1,42,105,2026-10-11T00:27:32+00:00,,62.5
+CoordinateSweeps,accepted,OAI.Probability.CoordinateSweeps.Main,34,56384,53820,53897,749.6,12,301,batch 17 (shared by 12 configs),617.629,0.0,617.6,0.0,749.6,6.6,False,2,464,106,2026-10-11T00:27:52+00:00,,62.5
+CriticalZ3,accepted,OAI.Probability.CriticalZ3.Main,34,56384,53813,54646,1556.3,12,356,batch 18 (shared by 12 configs),91.884,0.0,91.9,0.0,1556.3,6.3,False,1,114,107,2026-10-11T00:53:41+00:00,,129.7
+CycleDecomposition,accepted,OAI.Combinatorics.CycleDecomposition.Main,34,56384,53819,54646,1556.3,12,356,batch 18 (shared by 12 configs),85.35,0.0,85.3,0.0,1556.3,6.3,False,1,226,108,2026-10-11T00:53:41+00:00,,129.7
+KLInvariance,accepted,OAI.RepresentationTheory.KazhdanLusztig.Invariance,34,56384,53818,54646,1556.3,12,356,batch 18 (shared by 12 configs),177.795,0.0,177.8,0.0,1556.3,6.5,False,1,572,109,2026-10-11T00:53:41+00:00,,129.7
+QuadricBundles,accepted,OAI.Geometry.QuadricBundles.Main,34,56384,53816,54646,1556.3,12,356,batch 18 (shared by 12 configs),371.837,0.0,371.8,0.0,1556.3,6.6,False,1,35,110,2026-10-11T00:55:07+00:00,,129.7
+ThorpWeightedCompatibility,accepted,OAI.Probability.ThorpCompatibility.Main,34,56384,53817,54646,1556.3,12,356,batch 18 (shared by 12 configs),92.937,0.0,92.9,0.0,1556.3,6.3,False,1,132,111,2026-10-11T00:55:14+00:00,,129.7
+AmplitudeDamping,accepted,OAI.InformationTheory.AmplitudeDamping.Main,35,56385,53818,54646,1556.3,12,356,batch 18 (shared by 12 configs),611.529,0.0,611.5,0.0,1556.3,6.5,False,1,55,112,2026-10-11T00:56:40+00:00,,129.7
+CriticalSK,accepted,OAI.MathematicalPhysics.CriticalSK.Main,35,56385,53820,54646,1556.3,12,356,batch 18 (shared by 12 configs),575.477,0.0,575.5,0.0,1556.3,6.5,False,3,34,113,2026-10-11T00:56:48+00:00,,129.7
+EuclideanRamseyCircle,accepted,OAI.Combinatorics.EuclideanRamsey.Circle,35,56385,53818,54646,1556.3,12,356,batch 18 (shared by 12 configs),637.078,0.0,637.1,0.0,1556.3,6.4,False,1,40,114,2026-10-11T01:01:23+00:00,,129.7
+GaussianReplacement,accepted,OAI.Probability.GaussianReplacement.FiberEquality,35,56385,53817,54646,1556.3,12,356,batch 18 (shared by 12 configs),570.242,0.0,570.2,0.0,1556.3,6.5,False,11,239,115,2026-10-11T01:06:25+00:00,,129.7
+MatchingEntropyBounds,accepted,OAI.Combinatorics.MatchingEntropy.Main,35,56385,53817,54646,1556.3,12,356,batch 18 (shared by 12 configs),429.228,0.0,429.2,0.0,1556.3,6.4,False,1,16,116,2026-10-11T01:06:54+00:00,,129.7
+SATVariance,accepted,OAI.Probability.SATVariance.Main,35,56385,53819,54646,1556.3,12,356,batch 18 (shared by 12 configs),250.743,0.0,250.7,0.0,1556.3,6.3,False,1,31,117,2026-10-11T01:12:02+00:00,,129.7
+SidorenkoCounterexample,accepted,OAI.Combinatorics.Sidorenko.RandomHost,35,56385,53819,54646,1556.3,12,356,batch 18 (shared by 12 configs),349.305,0.0,349.3,0.0,1556.3,6.5,False,1,325,118,2026-10-11T01:14:04+00:00,,129.7
+ArnoldCounterexample,accepted,OAI.Geometry.Arnold.Main,36,56386,53808,53896,1236.0,12,410,batch 19 (shared by 12 configs),751.318,0.0,751.3,0.0,1236.0,10.0,False,1,25,119,2026-10-11T01:19:57+00:00,,103.0
+CoboundaryExpanders,accepted,OAI.Combinatorics.Coboundary.Main,36,56386,53820,53896,1236.0,12,410,batch 19 (shared by 12 configs),183.438,0.0,183.4,0.0,1236.0,6.5,False,1,118,120,2026-10-11T01:19:57+00:00,,103.0
+FiniteCircle,accepted,OAI.Combinatorics.FiniteCircle.Main,36,56386,53820,53896,1236.0,12,410,batch 19 (shared by 12 configs),114.371,0.0,114.4,0.0,1236.0,6.3,False,1,141,121,2026-10-11T01:19:57+00:00,,103.0
+HarmonicGrowth,accepted,OAI.Geometry.HarmonicGrowth.Main,36,56386,53816,53896,1236.0,12,410,batch 19 (shared by 12 configs),1096.101,0.0,1096.1,0.0,1236.0,7.0,False,1,488,122,2026-10-11T01:21:52+00:00,,103.0
+TalagrandDiscreteConvexity,accepted,OAI.Combinatorics.DiscreteConvexity.Main,36,18666,15263,53896,1236.0,12,410,batch 19 (shared by 12 configs),29.281,0.0,29.3,0.0,1236.0,2.1,False,1,69,123,2026-10-11T01:23:01+00:00,,103.0
+GeneralizedStarHeight,accepted,OAI.Computability.StarHeight.Main,37,56387,53819,53896,1236.0,12,410,batch 19 (shared by 12 configs),123.075,0.0,123.1,0.0,1236.0,6.3,False,1,32,124,2026-10-11T01:23:31+00:00,,103.0
+KServer,accepted,OAI.Combinatorics.KServer.Main,37,56387,53818,53896,1236.0,12,410,batch 19 (shared by 12 configs),623.943,0.0,623.9,0.0,1236.0,6.4,False,1,158,125,2026-10-11T01:25:37+00:00,,103.0
+SecondKahnKalai,accepted,OAI.Combinatorics.GraphThreshold.Main,37,27842,23871,53896,1236.0,12,410,batch 19 (shared by 12 configs),179.444,0.0,179.4,0.0,1236.0,3.3,False,1,75,126,2026-10-11T01:32:33+00:00,,103.0
+ThreeTorus,accepted,OAI.Dynamics.ThreeTorus.Main,37,56387,53817,53896,1236.0,12,410,batch 19 (shared by 12 configs),604.901,0.0,604.9,0.0,1236.0,6.6,False,1,52,127,2026-10-11T01:35:35+00:00,,103.0
+TriangleFace,accepted,OAI.Combinatorics.TriangleFace.Main,37,56387,53817,53896,1236.0,12,410,batch 19 (shared by 12 configs),135.304,0.0,135.3,0.0,1236.0,6.1,False,1,73,128,2026-10-11T01:36:03+00:00,,103.0
+Brennan,accepted,OAI.Analysis.IntegralMeans.Main,38,56388,53823,53896,1236.0,12,410,batch 19 (shared by 12 configs),517.164,0.0,517.2,0.0,1236.0,6.5,False,1,24,129,2026-10-11T01:38:21+00:00,,103.0
+LiebThirring,accepted,OAI.Analysis.LiebThirring.Main,38,56388,53822,53896,1236.0,12,410,batch 19 (shared by 12 configs),455.949,0.0,455.9,0.0,1236.0,6.6,False,1,56,130,2026-10-11T01:40:12+00:00,,103.0
+Saxl,accepted,OAI.RepresentationTheory.Saxl.Main,38,56388,53821,55066,2133.9,12,443,batch 20 (shared by 12 configs),271.818,0.0,271.8,0.0,2133.9,6.5,False,1,128,131,2026-10-11T02:00:06+00:00,,177.8
+DixmierAllDiscrete,accepted,OAI.Analysis.Unitarizability.AllDiscrete,39,56389,53821,55066,2133.9,12,443,batch 20 (shared by 12 configs),122.148,0.0,122.1,0.0,2133.9,6.4,False,1,29,132,2026-10-11T02:00:06+00:00,,177.8
+IrrationalTriangleBilliard,accepted,OAI.Dynamics.TriangleBilliards.Main,39,56389,53823,55066,2133.9,12,443,batch 20 (shared by 12 configs),184.827,0.0,184.8,0.0,2133.9,6.5,False,1,456,133,2026-10-11T02:00:06+00:00,,177.8
+LogspaceEquality,accepted,OAI.Computability.Logspace.Equality,39,56389,53822,55066,2133.9,12,443,batch 20 (shared by 12 configs),348.393,0.0,348.4,0.0,2133.9,6.5,False,1,114,134,2026-10-11T02:02:09+00:00,,177.8
+NuclearUltrapower,accepted,OAI.Analysis.NuclearUltrapower.Main,39,56389,53817,55066,2133.9,12,443,batch 20 (shared by 12 configs),1816.786,0.0,1816.8,0.0,2133.9,19.6,False,1,24,135,2026-10-11T02:03:11+00:00,,177.8
+SignedFiniteBand,accepted,OAI.Analysis.SignedDisk.Main,39,56389,53824,55066,2133.9,12,443,batch 20 (shared by 12 configs),611.754,0.0,611.8,0.0,2133.9,6.5,False,1,345,136,2026-10-11T02:04:39+00:00,,177.8
+EilenbergGanea,accepted,OAI.Topology.EilenbergGanea.Main,40,31695,53785,55066,2133.9,12,443,batch 20 (shared by 12 configs),1995.886,0.0,1995.9,0.0,2133.9,6.2,False,1,43,137,2026-10-11T02:08:01+00:00,,177.8
+PlanarUnitDistances,accepted,OAI.Geometry.UnitDistances.Main,40,56390,53823,55066,2133.9,12,443,batch 20 (shared by 12 configs),446.977,0.0,447.0,0.0,2133.9,6.6,False,1,137,138,2026-10-11T02:14:52+00:00,,177.8
+WeightedSweepMoments,accepted,OAI.Probability.CubeShuffle.WeightedMoments,40,56390,53823,55066,2133.9,12,443,batch 20 (shared by 12 configs),183.445,0.0,183.4,0.0,2133.9,6.5,False,1,68,139,2026-10-11T02:22:20+00:00,,177.8
+GaussianMoat,accepted,OAI.NumberTheory.GaussianMoat.Main,41,56391,53825,55066,2133.9,12,443,batch 20 (shared by 12 configs),180.136,0.0,180.1,0.0,2133.9,6.6,False,1,107,140,2026-10-11T02:25:24+00:00,,177.8
+NavierStokesAlternating,accepted,OAI.MathematicalPhysics.AlternatingFlow.Development,41,56391,53823,55066,2133.9,12,443,batch 20 (shared by 12 configs),131.222,0.0,131.2,0.0,2133.9,6.3,False,1,1,141,2026-10-11T02:28:25+00:00,,177.8
+ProjectionCounterexample,accepted,OAI.Geometry.ProjectionBody.Counterexample,41,27016,23031,55066,2133.9,12,443,batch 20 (shared by 12 configs),109.951,0.0,110.0,0.0,2133.9,3.3,False,1,105,142,2026-10-11T02:30:37+00:00,,177.8
+SingleLatticeCovering,accepted,OAI.Geometry.LatticeCovering.Main,41,56391,53825,53903,1137.6,12,433,batch 21 (shared by 12 configs),227.498,0.0,227.5,0.0,1137.6,6.6,False,1,42,143,2026-10-11T02:41:21+00:00,,94.8
+TwoWayDeterminization,accepted,OAI.Combinatorics.TwoWayAutomata.ExplicitFamily,41,56391,53825,53903,1137.6,12,433,batch 21 (shared by 12 configs),54.413,0.0,54.4,0.0,1137.6,6.2,False,1,54,144,2026-10-11T02:41:21+00:00,,94.8
+DirectCrouzeix,accepted,OAI.Analysis.DirectCrouzeix.Main,42,56392,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),213.364,0.0,213.4,0.0,1137.6,6.5,False,2,41,145,2026-10-11T02:41:21+00:00,,94.8
+ElasticityUniqueness,accepted,OAI.MathematicalPhysics.Elasticity.Uniqueness,42,56392,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),597.31,0.0,597.3,0.0,1137.6,6.9,False,1,98,146,2026-10-11T02:42:16+00:00,,94.8
+SensitivitySeparation,accepted,OAI.Combinatorics.Sensitivity.Separation,42,56392,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),44.84,0.0,44.8,0.0,1137.6,6.1,False,1,57,147,2026-10-11T02:44:55+00:00,,94.8
+CourtadeKumar,accepted,OAI.InformationTheory.BooleanNoise.Main,43,56393,53824,53903,1137.6,12,433,batch 21 (shared by 12 configs),341.089,0.0,341.1,0.0,1137.6,6.4,False,1,67,148,2026-10-11T02:45:09+00:00,,94.8
+HoneycombBridgeFiniteness,accepted,OAI.Combinatorics.HoneycombCorridor.BridgeFiniteness,43,56393,53825,53903,1137.6,12,433,batch 21 (shared by 12 configs),211.408,0.0,211.4,0.0,1137.6,6.2,False,1,103,149,2026-10-11T02:45:41+00:00,,94.8
+SeymourSecondNeighborhood,accepted,OAI.Combinatorics.SecondNeighborhood.Main,43,22038,16647,53903,1137.6,12,433,batch 21 (shared by 12 configs),122.773,0.0,122.8,0.0,1137.6,2.3,False,1,22,150,2026-10-11T02:49:15+00:00,,94.8
+WeisfeilerLeman,accepted,OAI.Computability.WeisfeilerLeman.Main,43,56393,53828,53903,1137.6,12,433,batch 21 (shared by 12 configs),237.752,0.0,237.8,0.0,1137.6,6.2,False,1,71,151,2026-10-11T02:50:52+00:00,,94.8
+SubpolynomialLp,accepted,OAI.Analysis.LpDimension.Main,44,56394,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),560.574,0.0,560.6,0.0,1137.6,6.5,False,1,63,152,2026-10-11T02:51:19+00:00,,94.8
+IsingFiniteness,accepted,OAI.Probability.IsingPerceptron.VariationalFiniteness,45,56395,53826,53903,1137.6,12,433,batch 21 (shared by 12 configs),505.297,0.0,505.3,0.0,1137.6,6.5,False,1,209,153,2026-10-11T02:52:15+00:00,,94.8
+BoundedTreePotentials,accepted,OAI.Analysis.TreePotential.Main,46,56396,53829,53903,1137.6,12,433,batch 21 (shared by 12 configs),253.068,0.0,253.1,0.0,1137.6,6.3,False,1,29,154,2026-10-11T02:54:52+00:00,,94.8
+EditDistance,accepted,OAI.Combinatorics.EditDistance.Main,46,56396,53827,53906,1112.9,12,501,batch 22 (shared by 12 configs),68.738,0.0,68.7,0.0,1112.9,6.2,False,1,22,155,2026-10-11T03:04:33+00:00,,92.7
+KahlerSplitting,accepted,OAI.Geometry.KahlerSplitting.Main,46,56396,53826,53906,1112.9,12,501,batch 22 (shared by 12 configs),216.102,0.0,216.1,0.0,1112.9,6.5,False,1,43,156,2026-10-11T03:04:32+00:00,,92.7
+ProjectionMoments,accepted,OAI.Probability.ProjectionMoments.Main,46,56396,53830,53906,1112.9,12,501,batch 22 (shared by 12 configs),201.879,0.0,201.9,0.0,1112.9,6.5,False,1,34,157,2026-10-11T03:04:33+00:00,,92.7
+SymmetricPolar,accepted,OAI.Geometry.PolarProducts.Main,46,56396,53829,53906,1112.9,12,501,batch 22 (shared by 12 configs),201.864,0.0,201.9,0.0,1112.9,6.5,False,1,19,158,2026-10-11T03:05:42+00:00,,92.7
+BooneHigman,accepted,OAI.GroupTheory.BooneHigman.Main,47,56397,53831,53906,1112.9,12,501,batch 22 (shared by 12 configs),113.139,0.0,113.1,0.0,1112.9,6.3,False,1,123,159,2026-10-11T03:07:55+00:00,,92.7
+BrennanSharp,accepted,OAI.Analysis.IntegralMeans.SharpEndpoints,47,56397,53831,53906,1112.9,12,501,batch 22 (shared by 12 configs),228.962,0.0,229.0,0.0,1112.9,6.3,False,1,33,160,2026-10-11T03:08:09+00:00,,92.7
+GaussianPropeller,accepted,OAI.Probability.GaussianPropeller.Main,47,56397,53832,53906,1112.9,12,501,batch 22 (shared by 12 configs),660.081,0.0,660.1,0.0,1112.9,6.5,False,1,114,161,2026-10-11T03:09:05+00:00,,92.7
+HalvingLines,accepted,OAI.Combinatorics.HalvingLines.Main,47,56397,53832,53906,1112.9,12,501,batch 22 (shared by 12 configs),600.154,0.0,600.2,0.0,1112.9,6.5,False,1,38,162,2026-10-11T03:09:50+00:00,,92.7
+Kervaire,accepted,OAI.GroupTheory.Kervaire.Main,47,56397,53830,53906,1112.9,12,501,batch 22 (shared by 12 configs),718.51,0.0,718.5,0.0,1112.9,6.6,False,1,100,163,2026-10-11T03:12:01+00:00,,92.7
+PinnedDistances,accepted,OAI.Geometry.PinnedDistances.Main,47,56397,53832,53906,1112.9,12,501,batch 22 (shared by 12 configs),375.612,0.0,375.6,0.0,1112.9,6.5,False,1,37,164,2026-10-11T03:19:53+00:00,,92.7
+TalagrandExpectationThreshold,accepted,OAI.Combinatorics.ExpectationThreshold.Main,47,18677,15277,53906,1112.9,12,501,batch 22 (shared by 12 configs),67.682,0.0,67.7,0.0,1112.9,2.1,False,1,43,165,2026-10-11T03:20:07+00:00,,92.7
+CompleteCrouzeix,accepted,OAI.Analysis.NumericalRange.Main,48,56398,53833,53906,1112.9,12,501,batch 22 (shared by 12 configs),433.256,0.0,433.3,0.0,1112.9,6.6,False,1,70,166,2026-10-11T03:21:16+00:00,,92.7
+OneTapeSpace,accepted,OAI.Computability.SpaceSimulation.Main,49,56399,53831,54202,1211.0,12,531,batch 23 (shared by 12 configs),90.525,0.0,90.5,0.0,1211.0,6.2,False,2,91,167,2026-10-11T03:29:35+00:00,,100.9
+UniversalFInfinity,accepted,OAI.GroupTheory.UniversalGroup.Main,50,56400,53833,54202,1211.0,12,531,batch 23 (shared by 12 configs),147.252,0.0,147.3,0.0,1211.0,6.4,False,1,52,168,2026-10-11T03:29:35+00:00,,100.9
+ContinuousCircleWeight,accepted,OAI.Analysis.RotationWeights.Main,51,56401,53829,54202,1211.0,12,531,batch 23 (shared by 12 configs),207.295,0.0,207.3,0.0,1211.0,6.5,False,1,293,169,2026-10-11T03:29:35+00:00,,100.9
+ExactFourier,accepted,OAI.Computability.FourierCircuit.Main,51,56401,53832,54202,1211.0,12,531,batch 23 (shared by 12 configs),194.508,0.0,194.5,0.0,1211.0,6.6,False,1,340,170,2026-10-11T03:31:07+00:00,,100.9
+PermanentCubic,accepted,OAI.Algebra.Determinantal.Main,51,56401,53833,54202,1211.0,12,531,batch 23 (shared by 12 configs),476.496,0.0,476.5,0.0,1211.0,6.6,False,1,393,171,2026-10-11T03:32:03+00:00,,100.9
+SeparableQuotientNegative,accepted,OAI.Analysis.SeparableQuotients.Main,51,56401,53833,54202,1211.0,12,531,batch 23 (shared by 12 configs),348.296,0.0,348.3,0.0,1211.0,6.4,False,1,14,172,2026-10-11T03:33:03+00:00,,100.9
+SnakyCertificate,accepted,OAI.Combinatorics.SnakyCertificate.Main,51,56401,53835,54202,1211.0,12,531,batch 23 (shared by 12 configs),1093.044,0.0,1093.0,0.0,1211.0,8.7,False,1,62,173,2026-10-11T03:34:22+00:00,,100.9
+Superstring,accepted,OAI.Computability.Superstring.Main,51,56401,53835,54202,1211.0,12,531,batch 23 (shared by 12 configs),159.319,0.0,159.3,0.0,1211.0,6.2,False,1,65,174,2026-10-11T03:38:54+00:00,,100.9
+ThorpFirstReciprocal,accepted,OAI.Probability.ThorpShuffle.FirstMain,51,56401,53833,54202,1211.0,12,531,batch 23 (shared by 12 configs),458.072,0.0,458.1,0.0,1211.0,6.4,False,1,39,175,2026-10-11T03:40:02+00:00,,100.9
+UniformGamma,accepted,OAI.Analysis.TracialSplitting.Challenge,51,56401,53834,54202,1211.0,12,531,batch 23 (shared by 12 configs),543.876,0.0,543.9,0.0,1211.0,6.5,False,1,82,176,2026-10-11T03:41:35+00:00,,100.9
+MetricEntropyDuality,accepted,OAI.Analysis.MetricEntropy.Main,52,22747,18477,54202,1211.0,12,531,batch 23 (shared by 12 configs),105.174,0.0,105.2,0.0,1211.0,2.5,False,1,109,177,2026-10-11T03:47:42+00:00,,100.9
+ListHadwiger,accepted,OAI.Combinatorics.ListHadwiger.Main,53,56403,53838,54202,1211.0,12,531,batch 23 (shared by 12 configs),164.793,0.0,164.8,0.0,1211.0,6.3,False,1,67,178,2026-10-11T03:49:29+00:00,,100.9
+MatchingPSD,accepted,OAI.Combinatorics.MatchingPSD.Main,53,56403,53835,54006,1169.7,12,527,batch 24 (shared by 12 configs),141.983,0.0,142.0,0.0,1169.7,6.4,False,1,65,179,2026-10-11T03:54:01+00:00,,97.5
+RationalHitting,accepted,OAI.Computability.RationalHitting.Main,53,56403,53836,54006,1169.7,12,527,batch 24 (shared by 12 configs),187.619,0.0,187.6,0.0,1169.7,6.6,False,1,49,180,2026-10-11T03:54:01+00:00,,97.5
+SmoothObstruction,accepted,OAI.Dynamics.SmoothObstruction.Main,53,56403,53832,54006,1169.7,12,527,batch 24 (shared by 12 configs),238.068,0.0,238.1,0.0,1169.7,6.6,False,1,141,181,2026-10-11T03:54:01+00:00,,97.5
+ThreeMachine,accepted,OAI.Computability.Scheduling.Main,53,56403,53837,54006,1169.7,12,527,batch 24 (shared by 12 configs),67.733,0.0,67.7,0.0,1169.7,6.2,False,1,90,182,2026-10-11T03:56:23+00:00,,97.5
+ComplexCancellation,accepted,OAI.Algebra.AffineCancellation.Main,55,56405,53839,54006,1169.7,12,527,batch 24 (shared by 12 configs),385.684,0.0,385.7,0.0,1169.7,6.5,False,1,38,183,2026-10-11T03:57:09+00:00,,97.5
+UniformSparsestCut,accepted,OAI.Combinatorics.SparsestCut.Main,55,56405,53836,54006,1169.7,12,527,batch 24 (shared by 12 configs),399.466,0.0,399.5,0.0,1169.7,6.5,False,1,60,184,2026-10-11T03:57:32+00:00,,97.5
+OccupiedOverlap,accepted,OAI.RepresentationTheory.RowColumn.Occupied,56,56406,53838,54006,1169.7,12,527,batch 24 (shared by 12 configs),744.029,0.0,744.0,0.0,1169.7,6.6,False,2,277,185,2026-10-11T03:57:59+00:00,,97.5
+PrimeGaps,accepted,OAI.NumberTheory.PrimeGaps.RatioCorollary,56,56406,53841,54006,1169.7,12,527,batch 24 (shared by 12 configs),648.353,0.0,648.4,0.0,1169.7,6.6,False,1,39,186,2026-10-11T04:03:38+00:00,,97.5
+SelfSimilar,accepted,OAI.MeasureTheory.SelfSimilar.Main,57,56407,53843,54006,1169.7,12,527,batch 24 (shared by 12 configs),508.644,0.0,508.6,0.0,1169.7,6.4,False,1,69,187,2026-10-11T04:04:14+00:00,,97.5
+GrothendieckElementaryExpansion,accepted,OAI.CategoryTheory.Globular.Main,58,56408,53840,54006,1169.7,12,527,batch 24 (shared by 12 configs),134.166,0.0,134.2,0.0,1169.7,6.2,False,1,1,188,2026-10-11T04:10:26+00:00,,97.5
+ShortEgyptianFractions,accepted,OAI.NumberTheory.ShortEgyptian.Main,58,56408,53843,54006,1169.7,12,527,batch 24 (shared by 12 configs),204.753,0.0,204.8,0.0,1169.7,6.3,False,1,56,189,2026-10-11T04:12:41+00:00,,97.5
+NodalLength,accepted,OAI.Analysis.NodalLength.Main,59,56409,53838,54006,1169.7,12,527,batch 24 (shared by 12 configs),367.879,0.0,367.9,0.0,1169.7,6.6,False,1,395,190,2026-10-11T04:12:45+00:00,,97.5
+BalancedThreeStack,accepted,OAI.MathematicalPhysics.NavierStokes.BalancedTransport.MainResult,60,56410,53844,53925,1495.3,12,628,batch 25 (shared by 12 configs),132.837,0.0,132.8,0.0,1495.3,6.4,False,1,88,191,2026-10-11T04:23:55+00:00,,124.6
+ForcedNavierStokesComputation,accepted,OAI.MathematicalPhysics.NavierStokes.BalancedTransport.MainResult,60,56410,53844,53925,1495.3,12,628,batch 25 (shared by 12 configs),132.074,0.0,132.1,0.0,1495.3,6.4,False,1,88,192,2026-10-11T04:23:55+00:00,,124.6
+LipschitzEquivalence,accepted,OAI.Analysis.LipschitzEquivalence.Main,60,56410,53845,53925,1495.3,12,628,batch 25 (shared by 12 configs),169.736,0.0,169.7,0.0,1495.3,6.4,False,1,15,193,2026-10-11T04:23:55+00:00,,124.6
+StructuralCrouzeix,accepted,OAI.Analysis.StructuralCrouzeix.Endpoint,60,56410,53845,53925,1495.3,12,628,batch 25 (shared by 12 configs),532.516,0.0,532.5,0.0,1495.3,6.6,False,1,12,194,2026-10-11T04:26:08+00:00,,124.6
+FKCRT,accepted,OAI.Probability.FKMaps.Convergence,61,56411,53843,53925,1495.3,12,628,batch 25 (shared by 12 configs),424.818,0.0,424.8,0.0,1495.3,6.6,False,1,81,195,2026-10-11T04:26:09+00:00,,124.6
+MatrixRemoval,accepted,OAI.Combinatorics.MatrixRemoval.Main,61,56411,53845,53925,1495.3,12,628,batch 25 (shared by 12 configs),65.274,0.0,65.3,0.0,1495.3,6.1,False,1,40,196,2026-10-11T04:26:46+00:00,,124.6
+VariableWL,accepted,OAI.Combinatorics.VariableWL.Completeness,61,56411,53845,53925,1495.3,12,628,batch 25 (shared by 12 configs),54.329,0.0,54.3,0.0,1495.3,6.2,False,1,320,197,2026-10-11T04:27:52+00:00,,124.6
+CharacterCriterion,accepted,OAI.Analysis.CharacterCriterion.Main,62,56412,53847,53925,1495.3,12,628,batch 25 (shared by 12 configs),1035.737,0.0,1035.7,0.0,1495.3,6.6,False,1,62,198,2026-10-11T04:28:47+00:00,,124.6
+PartialPermutation,accepted,OAI.RepresentationTheory.PartialPermutation.Main,62,56412,53847,53925,1495.3,12,628,batch 25 (shared by 12 configs),514.361,0.0,514.4,0.0,1495.3,6.4,False,1,56,199,2026-10-11T04:33:16+00:00,,124.6
+FoulkesHowe,accepted,OAI.RepresentationTheory.FoulkesHowe.Stabilization,63,56413,53849,53925,1495.3,12,628,batch 25 (shared by 12 configs),406.858,0.0,406.9,0.0,1495.3,6.4,False,1,51,200,2026-10-11T04:35:02+00:00,,124.6
+PeriodicGroup,accepted,OAI.GroupTheory.PeriodicGroups.Main,63,56413,53847,53925,1495.3,12,628,batch 25 (shared by 12 configs),403.161,0.0,403.2,0.0,1495.3,6.5,False,1,23,201,2026-10-11T04:41:51+00:00,,124.6
+PlanarL1,accepted,OAI.Combinatorics.PlanarL1.Embedding,63,56413,53846,53925,1495.3,12,628,batch 25 (shared by 12 configs),360.058,0.0,360.1,0.0,1495.3,6.5,False,1,124,202,2026-10-11T04:41:53+00:00,,124.6
+PowerFreeValues,accepted,OAI.NumberTheory.PowerFree.Main,63,56413,53847,53924,1815.9,12,683,batch 26 (shared by 12 configs),234.872,0.0,234.9,0.0,1815.9,6.7,False,1,153,203,2026-10-11T04:59:17+00:00,,151.3
+SelfSimilarCorollaries,accepted,OAI.MeasureTheory.SelfSimilar.DimensionCorollaries,64,56414,53848,53924,1815.9,12,683,batch 26 (shared by 12 configs),149.583,0.0,149.6,0.0,1815.9,6.4,False,2,2,204,2026-10-11T04:59:17+00:00,,151.3
+BallPackingNecessity,accepted,OAI.Geometry.BallPacking.Necessity.Main,65,56415,53847,53924,1815.9,12,683,batch 26 (shared by 12 configs),272.75,0.0,272.8,0.0,1815.9,6.6,False,1,1,205,2026-10-11T04:59:17+00:00,,151.3
+SLELowerPositivity,accepted,OAI.Probability.SLE.LowerPositivity,65,56415,53849,53924,1815.9,12,683,batch 26 (shared by 12 configs),538.044,0.0,538.0,0.0,1815.9,6.9,False,1,72,206,2026-10-11T05:01:47+00:00,,151.3
+MatchingAffineLift,accepted,OAI.Combinatorics.MatchingPSD.AffineLift,66,56416,53851,53924,1815.9,12,683,batch 26 (shared by 12 configs),298.89,0.0,298.9,0.0,1815.9,6.4,False,1,26,207,2026-10-11T05:03:12+00:00,,151.3
+TingleySphereIsometry,accepted,OAI.Analysis.SphereIsometry.Main,67,23672,19636,53924,1815.9,12,683,batch 26 (shared by 12 configs),92.236,0.0,92.2,0.0,1815.9,2.7,False,1,4,208,2026-10-11T05:03:50+00:00,,151.3
+WLIdentification,accepted,OAI.Computability.WLIdentification.Main,67,56417,53848,53924,1815.9,12,683,batch 26 (shared by 12 configs),185.441,0.0,185.4,0.0,1815.9,6.2,False,1,12,209,2026-10-11T05:05:25+00:00,,151.3
+CirculantHadamard,accepted,OAI.LinearAlgebra.CirculantHadamard.Main,68,56418,53850,53924,1815.9,12,683,batch 26 (shared by 12 configs),381.386,0.0,381.4,0.0,1815.9,6.4,False,1,38,210,2026-10-11T05:08:14+00:00,,151.3
+ThompsonNonamenability,accepted,OAI.GroupTheory.Thompson.Main,68,26873,22888,53924,1815.9,12,683,batch 26 (shared by 12 configs),233.158,0.0,233.2,0.0,1815.9,3.2,False,1,82,211,2026-10-11T05:08:33+00:00,,151.3
+BassTrace,accepted,OAI.RingTheory.BassTrace.Main,69,56419,53853,53924,1815.9,12,683,batch 26 (shared by 12 configs),272.357,0.0,272.4,0.0,1815.9,6.5,False,1,34,212,2026-10-11T05:10:47+00:00,,151.3
+DirectionalWalk,accepted,OAI.Probability.DirectionalWalk.Main,69,56419,53851,53924,1815.9,12,683,batch 26 (shared by 12 configs),235.404,0.0,235.4,0.0,1815.9,6.4,False,1,145,213,2026-10-11T05:12:27+00:00,,151.3
+EuclideanFiveColor,accepted,OAI.Geometry.PlaneColoring.Five,70,56420,53852,53924,1815.9,12,683,batch 26 (shared by 12 configs),327.969,0.0,328.0,0.0,1815.9,6.7,False,1,131,214,2026-10-11T05:14:36+00:00,,151.3
+SoftChannel204,accepted,OAI.InformationTheory.SoftChannel.Main,70,56420,53854,53967,1077.2,12,630,batch 27 (shared by 12 configs),142.091,0.0,142.1,0.0,1077.2,6.4,False,1,121,215,2026-10-11T05:22:20+00:00,,89.8
+MassAction,accepted,OAI.Analysis.MassAction.Main,71,56421,53854,53967,1077.2,12,630,batch 27 (shared by 12 configs),101.312,0.0,101.3,0.0,1077.2,6.3,False,1,90,216,2026-10-11T05:22:20+00:00,,89.8
+StrongThinTree,accepted,OAI.Combinatorics.ThinTrees.Main,72,56422,53852,53967,1077.2,12,630,batch 27 (shared by 12 configs),181.376,0.0,181.4,0.0,1077.2,6.5,False,1,70,217,2026-10-11T05:22:20+00:00,,89.8
+BassTorsionFree,accepted,OAI.RingTheory.BassTrace.TorsionFree,73,56423,53856,53967,1077.2,12,630,batch 27 (shared by 12 configs),341.646,0.0,341.6,0.0,1077.2,6.6,False,1,67,218,2026-10-11T05:24:02+00:00,,89.8
+EvenBarker,accepted,OAI.LinearAlgebra.Barker.Main,73,56423,53857,53967,1077.2,12,630,batch 27 (shared by 12 configs),154.767,0.0,154.8,0.0,1077.2,6.4,False,1,77,219,2026-10-11T05:24:43+00:00,,89.8
+DyadicAvoidance,accepted,OAI.MeasureTheory.DyadicAvoidance.Main,75,56425,,,108.6,1,,this config,136.444,0.0,136.4,0.0,108.6,,False,1,,220,2026-10-10T01:04:05+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),108.6
+PartitionConsistency,accepted,OAI.SetTheory.PartitionConsistency.Main,75,56425,,,515.2,1,,this config,54.319,0.0,54.3,0.0,515.2,,False,1,,221,2026-10-10T01:08:10+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),515.2
+InterpolatedFactors,accepted,OAI.Analysis.InterpolatedFactors.Interpolation,77,56427,,,1220.4,1,,this config,286.774,0.0,286.8,0.0,1220.4,,False,1,,222,2026-10-10T01:17:40+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),1220.4
+VertexAlgebraNet,accepted,OAI.RepresentationTheory.VertexAlgebra.MinimalComparator,77,56427,,,381.6,1,,this config,176.602,0.0,176.6,0.0,381.6,,False,1,,223,2026-10-10T01:42:47+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),381.6
+CayleyPercolation,accepted,OAI.Probability.UnimodularPercolation.CayleyMain,78,56428,,,354.7,1,,this config,170.339,0.0,170.3,0.0,354.7,,False,1,,224,2026-10-10T01:52:05+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),354.7
+SharpThreshold,accepted,OAI.Combinatorics.SharpThreshold.Main,78,56428,53861,53967,1077.2,12,630,batch 27 (shared by 12 configs),75.874,0.0,75.9,0.0,1077.2,6.2,False,1,36,225,2026-10-11T05:25:22+00:00,,89.8
+CharacterVarietiesAllSeamsSupport,accepted,OAI.AlgebraicGeometry.CharacterVarieties.Seams.ProducedSolution,79,27279,23308,53967,1077.2,12,630,batch 27 (shared by 12 configs),63.42,0.0,63.4,0.0,1077.2,3.3,False,1,158,226,2026-10-11T05:26:38+00:00,,89.8
+SquareDifference,accepted,OAI.Combinatorics.SquareDifference.Main,81,56431,53863,53967,1077.2,12,630,batch 27 (shared by 12 configs),662.489,0.0,662.5,0.0,1077.2,6.5,False,1,97,227,2026-10-11T05:27:18+00:00,,89.8
+BinaryEditLower,accepted,OAI.Combinatorics.BinaryEdit.BinaryLowerBound,84,56434,53866,53967,1077.2,12,630,batch 27 (shared by 12 configs),371.685,0.0,371.7,0.0,1077.2,6.2,False,1,26,228,2026-10-11T05:27:45+00:00,,89.8
+ThomasonModelStructures,accepted,OAI.CategoryTheory.Thomason.RankedFaithfulness,85,56435,53870,53967,1077.2,12,630,batch 27 (shared by 12 configs),498.342,0.0,498.3,0.0,1077.2,6.4,False,2,690,229,2026-10-11T05:29:46+00:00,,89.8
+HyperbolicCones,accepted,OAI.Analysis.HyperbolicCones.Main,86,56436,53868,53967,1077.2,12,630,batch 27 (shared by 12 configs),703.846,0.0,703.8,0.0,1077.2,6.5,False,1,40,230,2026-10-11T05:33:59+00:00,,89.8
+ReflexiveFixedPoints,accepted,OAI.Analysis.Nonexpansive.Main,86,56436,53871,53967,1077.2,12,630,batch 27 (shared by 12 configs),323.87,0.0,323.9,0.0,1077.2,6.2,False,1,77,231,2026-10-11T05:38:08+00:00,,89.8
+MemoryPrecision,accepted,OAI.Probability.MemoryPrecision.Main,88,56438,53872,53961,2264.5,12,810,batch 28 (shared by 12 configs),176.112,0.0,176.1,0.0,2264.5,6.5,False,1,98,232,2026-10-11T06:05:23+00:00,,188.7
+Brenier,accepted,OAI.Analysis.Brenier.Stability,89,56439,53871,53961,2264.5,12,810,batch 28 (shared by 12 configs),187.394,0.0,187.4,0.0,2264.5,6.5,False,2,67,233,2026-10-11T06:05:23+00:00,,188.7
+RandomizedMeanPayoff,accepted,OAI.Computability.RandomMean.Main,89,56439,53873,53961,2264.5,12,810,batch 28 (shared by 12 configs),86.806,0.0,86.8,0.0,2264.5,6.3,False,1,69,234,2026-10-11T06:05:23+00:00,,188.7
+UniformFourier,accepted,OAI.Computability.FourierTransform.Main,89,56439,53874,53961,2264.5,12,810,batch 28 (shared by 12 configs),70.191,0.0,70.2,0.0,2264.5,6.2,False,2,151,235,2026-10-11T06:06:51+00:00,,188.7
+CrouzeixHilbert,accepted,OAI.Analysis.Crouzeix.Main,90,56440,53874,53961,2264.5,12,810,batch 28 (shared by 12 configs),940.488,0.0,940.5,0.0,2264.5,6.6,False,1,89,236,2026-10-11T06:08:02+00:00,,188.7
+BernoulliNonflatInSeven,accepted,OAI.Analysis.BernoulliCone.Main,91,56441,53875,53961,2264.5,12,810,batch 28 (shared by 12 configs),683.216,0.0,683.2,0.0,2264.5,6.6,False,1,18,237,2026-10-11T06:08:20+00:00,,188.7
+ThorpRemaining,accepted,OAI.Probability.ThorpResults.FullDevelopment,92,56442,53875,53961,2264.5,12,810,batch 28 (shared by 12 configs),870.908,0.0,870.9,0.0,2264.5,6.6,False,1,1,238,2026-10-11T06:08:31+00:00,,188.7
+FactorGeneration,accepted,OAI.Analysis.FactorGeneration.Main,93,56443,53876,53961,2264.5,12,810,batch 28 (shared by 12 configs),2603.331,0.0,2603.3,0.0,2264.5,6.5,False,1,47,239,2026-10-11T06:19:49+00:00,,188.7
+SnakyTwentyOne,accepted,OAI.GameTheory.SnakyTwentyOne.Main,94,56444,53879,53961,2264.5,12,810,batch 28 (shared by 12 configs),2256.182,0.0,2256.2,0.0,2264.5,13.4,False,1,49,240,2026-10-11T06:23:07+00:00,,188.7
+StrictMeans,accepted,OAI.Analysis.StrictMeans.Main,94,56444,53879,53961,2264.5,12,810,batch 28 (shared by 12 configs),919.884,0.0,919.9,0.0,2264.5,6.4,False,1,18,241,2026-10-11T06:23:48+00:00,,188.7
+HenonEmden,accepted,OAI.Analysis.HenonEmden.Main,96,56446,53881,53961,2264.5,12,810,batch 28 (shared by 12 configs),699.732,0.0,699.7,0.0,2264.5,6.4,False,1,45,242,2026-10-11T06:39:11+00:00,,188.7
+CoulombCounterexample,accepted,OAI.Analysis.CoulombTransport.Main,97,56447,53880,53961,2264.5,12,810,batch 28 (shared by 12 configs),273.779,0.0,273.8,0.0,2264.5,6.3,False,1,2,243,2026-10-11T06:50:55+00:00,,188.7
+HoneycombBridgeMassSupport,accepted,OAI.Combinatorics.HoneycombChords.BridgeMass,98,56448,53878,54279,2839.3,12,958,batch 29 (shared by 12 configs),789.326,0.0,789.3,0.0,2839.3,7.8,False,1,147,244,2026-10-11T07:03:22+00:00,,236.6
+RelativeGeneration,accepted,OAI.Analysis.RelativeGeneration.Main,102,56452,53884,54279,2839.3,12,958,batch 29 (shared by 12 configs),2227.668,0.0,2227.7,0.0,2839.3,6.5,False,1,117,245,2026-10-11T07:03:22+00:00,,236.6
+RadialTransition,accepted,OAI.Probability.RadialTransition.Main,103,56453,53888,54279,2839.3,12,958,batch 29 (shared by 12 configs),171.239,0.0,171.2,0.0,2839.3,6.4,False,1,104,246,2026-10-11T07:03:22+00:00,,236.6
+RadialDensityInterval,accepted,OAI.Probability.RadialTransition.DensityInterval,104,56454,53888,54279,2839.3,12,958,batch 29 (shared by 12 configs),224.155,0.0,224.2,0.0,2839.3,6.4,False,1,109,247,2026-10-11T07:06:14+00:00,,236.6
+TriangularHilbert,accepted,OAI.Analysis.TriangularHilbert.Main,105,56455,53889,54279,2839.3,12,958,batch 29 (shared by 12 configs),832.338,0.0,832.3,0.0,2839.3,6.4,False,1,47,248,2026-10-11T07:10:02+00:00,,236.6
+LaughlinGap,accepted,OAI.Analysis.LaughlinGap.Main,106,56456,53890,54279,2839.3,12,958,batch 29 (shared by 12 configs),3171.98,0.0,3172.0,0.0,2839.3,6.6,False,1,67,249,2026-10-11T07:16:34+00:00,,236.6
+StronglyRayleighDPP,accepted,OAI.Probability.StrongRayleigh.Main,107,56457,53890,54279,2839.3,12,958,batch 29 (shared by 12 configs),447.963,0.0,448.0,0.0,2839.3,6.4,False,6,90,250,2026-10-11T07:23:57+00:00,,236.6
+StableCoordinateFour,accepted,OAI.AlgebraicGeometry.StableCoordinate.Principal,109,56459,53891,54279,2839.3,12,958,batch 29 (shared by 12 configs),121.027,0.0,121.0,0.0,2839.3,6.2,False,1,80,251,2026-10-11T07:31:26+00:00,,236.6
+GaussianInformation,accepted,OAI.Probability.GaussianInformation.Main,111,56461,53895,54279,2839.3,12,958,batch 29 (shared by 12 configs),260.553,0.0,260.6,0.0,2839.3,6.4,False,4,3,252,2026-10-11T07:33:28+00:00,,236.6
+BinaryMatching,accepted,OAI.Computability.MatchingCount.BinarySolve,112,56462,53897,54279,2839.3,12,958,batch 29 (shared by 12 configs),128.473,0.0,128.5,0.0,2839.3,6.3,False,1,153,253,2026-10-11T07:37:49+00:00,,236.6
+FillingCoefficient,accepted,OAI.Geometry.IntegralFillings.Main,112,56462,53896,54279,2839.3,12,958,batch 29 (shared by 12 configs),186.875,0.0,186.9,0.0,2839.3,6.4,False,1,85,254,2026-10-11T07:39:58+00:00,,236.6
+QuantitativeVanDerWaerden,accepted,OAI.Combinatorics.ProgressionColoring.Main,115,56465,53899,54279,2839.3,12,958,batch 29 (shared by 12 configs),92.471,0.0,92.5,0.0,2839.3,6.2,False,1,49,255,2026-10-11T07:40:31+00:00,,236.6
+ClassicalON,accepted,OAI.Probability.ClassicalON.Main,117,56467,53901,54127,2116.7,12,1062,batch 30 (shared by 12 configs),171.984,0.0,172.0,0.0,2116.7,6.4,False,1,48,256,2026-10-11T08:09:35+00:00,,176.4
+Nagata,accepted,OAI.AlgebraicGeometry.PlaneCurves.Nagata,117,27927,27959,54127,2116.7,12,1062,batch 30 (shared by 12 configs),142.004,0.0,142.0,0.0,2116.7,3.9,False,3,169,257,2026-10-11T08:09:35+00:00,,176.4
+PinchedKahler,accepted,OAI.Geometry.Kahler.Main,119,56469,53902,54127,2116.7,12,1062,batch 30 (shared by 12 configs),228.706,0.0,228.7,0.0,2116.7,6.6,False,3,44,258,2026-10-11T08:09:35+00:00,,176.4
+KaplanskyDirectFiniteness,accepted,OAI.RingTheory.DirectFiniteness.Main,121,56471,53903,54127,2116.7,12,1062,batch 30 (shared by 12 configs),286.906,0.0,286.9,0.0,2116.7,6.5,False,1,13,259,2026-10-11T08:11:57+00:00,,176.4
+PeriodicTilingThree,accepted,OAI.Geometry.PeriodicTiling.Main,122,56472,53906,54127,2116.7,12,1062,batch 30 (shared by 12 configs),105.096,0.0,105.1,0.0,2116.7,6.3,False,1,1,260,2026-10-11T08:12:27+00:00,,176.4
+KaplanskyQuasitrace,accepted,OAI.Analysis.Kaplansky.Main,123,29948,25960,54127,2116.7,12,1062,batch 30 (shared by 12 configs),789.54,0.0,789.5,0.0,2116.7,4.0,False,1,25,261,2026-10-11T08:13:24+00:00,,176.4
+TorsionFreeZeroDivisors,accepted,OAI.Algebra.GroupRing.Main,123,56473,53904,54127,2116.7,12,1062,batch 30 (shared by 12 configs),520.222,0.0,520.2,0.0,2116.7,6.5,False,1,24,262,2026-10-11T08:14:13+00:00,,176.4
+Cotype,accepted,OAI.Analysis.Cotype.Main,125,56475,53909,54127,2116.7,12,1062,batch 30 (shared by 12 configs),648.452,0.0,648.5,0.0,2116.7,6.4,False,1,34,263,2026-10-11T08:16:47+00:00,,176.4
+MatroidProphet,accepted,OAI.Probability.MatroidProphet.Main,125,56475,53907,54127,2116.7,12,1062,batch 30 (shared by 12 configs),365.413,0.0,365.4,0.0,2116.7,6.2,False,1,65,264,2026-10-11T08:22:55+00:00,,176.4
+KaplanskyFinitelyPresented,accepted,OAI.RingTheory.DirectFiniteness.FinitelyPresented,126,56476,53910,54127,2116.7,12,1062,batch 30 (shared by 12 configs),781.181,0.0,781.2,0.0,2116.7,6.5,False,1,44,265,2026-10-11T08:26:36+00:00,,176.4
+Heisenberg,accepted,OAI.MathematicalPhysics.Heisenberg.Main,128,56478,53911,54127,2116.7,12,1062,batch 30 (shared by 12 configs),887.772,0.0,887.8,0.0,2116.7,6.5,False,1,75,266,2026-10-11T08:27:38+00:00,,176.4
+DimensionTenPair,accepted,OAI.Analysis.Quantum.DimensionTen.Main,129,56479,53914,54127,2116.7,12,1062,batch 30 (shared by 12 configs),1284.829,0.0,1284.8,0.0,2116.7,8.6,False,1,104,267,2026-10-11T08:29:04+00:00,,176.4
+CriticalStripMass,accepted,OAI.Combinatorics.StripMass.Main,130,56480,53915,54005,2177.6,12,1173,batch 31 (shared by 12 configs),343.336,0.0,343.3,0.0,2177.6,7.0,False,1,1,268,2026-10-11T08:51:24+00:00,,181.5
+SKFullSupport,accepted,OAI.Probability.SKSupport.Main,135,56485,53917,54005,2177.6,12,1173,batch 31 (shared by 12 configs),221.979,0.0,222.0,0.0,2177.6,6.5,False,1,66,269,2026-10-11T08:51:24+00:00,,181.5
+PosteriorReplicas,accepted,OAI.Probability.PosteriorReplicas.Main,136,56486,53917,54005,2177.6,12,1173,batch 31 (shared by 12 configs),202.705,0.0,202.7,0.0,2177.6,6.5,False,1,28,270,2026-10-11T08:51:24+00:00,,181.5
+SingletonLoopMatching,accepted,OAI.Computability.LoopMatching.Endpoint,136,56486,53921,54005,2177.6,12,1173,batch 31 (shared by 12 configs),110.661,0.0,110.7,0.0,2177.6,6.3,False,1,25,271,2026-10-11T08:54:48+00:00,,181.5
+OddKaplansky,accepted,OAI.Algebra.OddKaplansky.Main,138,56488,53922,54005,2177.6,12,1173,batch 31 (shared by 12 configs),113.848,0.0,113.8,0.0,2177.6,6.3,False,1,110,272,2026-10-11T08:55:07+00:00,,181.5
+SphericalField,accepted,OAI.Probability.SphericalField.Main,142,56492,53927,54005,2177.6,12,1173,batch 31 (shared by 12 configs),528.314,0.0,528.3,0.0,2177.6,6.4,False,1,50,273,2026-10-11T08:56:39+00:00,,181.5
+CoveringDensity,accepted,OAI.Geometry.CoveringDensity.Main,143,56493,53928,54005,2177.6,12,1173,batch 31 (shared by 12 configs),942.497,0.0,942.5,0.0,2177.6,6.6,False,1,113,274,2026-10-11T08:57:02+00:00,,181.5
+QuinticLienard,accepted,OAI.Analysis.LienardCycles.Main,146,56496,53931,54005,2177.6,12,1173,batch 31 (shared by 12 configs),701.985,0.0,702.0,0.0,2177.6,6.4,False,1,26,275,2026-10-11T08:57:08+00:00,,181.5
+DimensionTenChannel,accepted,OAI.Analysis.Quantum.DimensionTen.Channel,148,56498,53932,54005,2177.6,12,1173,batch 31 (shared by 12 configs),2335.35,0.0,2335.3,0.0,2177.6,8.6,False,1,151,276,2026-10-11T09:05:30+00:00,,181.5
+NavierStokesVelocity,accepted,OAI.MathematicalPhysics.NavierStokes.VelocityDetection.Main,152,56502,53937,54005,2177.6,12,1173,batch 31 (shared by 12 configs),695.014,0.0,695.0,0.0,2177.6,6.4,False,1,7,277,2026-10-11T09:08:53+00:00,,181.5
+FiniteEntropySeparation,accepted,OAI.Analysis.FreeEntropy.Main,153,56503,53936,54005,2177.6,12,1173,batch 31 (shared by 12 configs),774.761,0.0,774.8,0.0,2177.6,6.5,False,1,38,278,2026-10-11T09:12:47+00:00,,181.5
+GroupRingDeterminant,accepted,OAI.Analysis.GroupDeterminants.Main,155,56505,53936,54005,2177.6,12,1173,batch 31 (shared by 12 configs),1045.348,0.0,1045.3,0.0,2177.6,6.6,False,1,17,279,2026-10-11T09:20:32+00:00,,181.5
+FourierLLogL,accepted,OAI.Analysis.FourierLLogL.PaperMain,156,56506,53941,54049,3630.6,12,1726,batch 32 (shared by 12 configs),157.847,0.0,157.8,0.0,3630.6,6.5,False,1,21,280,2026-10-11T09:57:57+00:00,,302.6
+ContinuumTransition,accepted,OAI.Probability.ContinuumTransition.Main,161,56511,53945,54049,3630.6,12,1726,batch 32 (shared by 12 configs),161.904,0.0,161.9,0.0,3630.6,6.4,False,1,65,281,2026-10-11T09:57:57+00:00,,302.6
+CubicTorus,accepted,OAI.Geometry.CubicTorus.Main,162,56512,53947,54049,3630.6,12,1726,batch 32 (shared by 12 configs),334.707,0.0,334.7,0.0,3630.6,7.1,False,1,1119,282,2026-10-11T09:57:57+00:00,,302.6
+DepthFive,accepted,OAI.Algebra.DepthFive.Bounds,164,56514,53944,54049,3630.6,12,1726,batch 32 (shared by 12 configs),129.338,0.0,129.3,0.0,3630.6,6.4,False,1,50,283,2026-10-11T10:00:36+00:00,,302.6
+SwitchChain,accepted,OAI.Probability.SwitchChain.Main,165,56515,53949,54049,3630.6,12,1726,batch 32 (shared by 12 configs),83.48,0.0,83.5,0.0,3630.6,6.3,False,3,45,284,2026-10-11T10:00:40+00:00,,302.6
+BallPacking,accepted,OAI.Geometry.BallPacking.Main,169,56519,53955,54049,3630.6,12,1726,batch 32 (shared by 12 configs),478.002,0.0,478.0,0.0,3630.6,7.1,False,1,29,285,2026-10-11T10:02:04+00:00,,302.6
+ThorpRouting,accepted,OAI.Probability.ThorpRouting.Main,170,56520,53953,54049,3630.6,12,1726,batch 32 (shared by 12 configs),230.231,0.0,230.2,0.0,3630.6,6.8,False,1,33,286,2026-10-11T10:02:46+00:00,,302.6
+SignedSweepMoment,accepted,OAI.Probability.SignedSweeps.Main,174,56524,53957,54049,3630.6,12,1726,batch 32 (shared by 12 configs),183.093,0.0,183.1,0.0,3630.6,6.5,False,1,1,287,2026-10-11T10:03:32+00:00,,302.6
+DepthThree,accepted,OAI.Computability.DepthThree.Main,175,56525,53959,54049,3630.6,12,1726,batch 32 (shared by 12 configs),92.17,0.0,92.2,0.0,3630.6,6.3,False,1,20,288,2026-10-11T10:06:36+00:00,,302.6
+KaplanskyStableFiniteness,accepted,OAI.Analysis.Kaplansky.StableFiniteness,181,30051,53786,54049,3630.6,12,1726,batch 32 (shared by 12 configs),276.451,0.0,276.5,0.0,3630.6,6.3,False,1,26,289,2026-10-11T10:06:37+00:00,,302.6
+BinarySweep,accepted,OAI.Probability.BinarySweep.Main,192,56542,53971,54049,3630.6,12,1726,batch 32 (shared by 12 configs),203.412,0.0,203.4,0.0,3630.6,6.6,False,1,17,290,2026-10-11T10:08:09+00:00,,302.6
+HeilbronnTriangle,accepted,OAI.Geometry.HeilbronnTriangle.Main,195,56545,53979,54049,3630.6,12,1726,batch 32 (shared by 12 configs),162.682,0.0,162.7,0.0,3630.6,6.5,False,2,43,291,2026-10-11T10:10:02+00:00,,302.6
+PlanarFirstPassage,accepted,OAI.Probability.FirstPassage.BoundaryCurve,195,28270,24284,54361,3771.1,12,2048,batch 33 (shared by 12 configs),121.14,0.0,121.1,0.0,3771.1,3.5,False,1,81,292,2026-10-11T11:19:17+00:00,,314.3
+C1EntropyCounterexample,accepted,OAI.Dynamics.EntropyCounterexample.Counterexample,201,56551,53984,54361,3771.1,12,2048,batch 33 (shared by 12 configs),182.14,0.0,182.1,0.0,3771.1,6.5,False,1,18,293,2026-10-11T11:19:17+00:00,,314.3
+GammaPassage,accepted,OAI.Probability.GammaPassage.Differentiability,203,27863,23877,54361,3771.1,12,2048,batch 33 (shared by 12 configs),110.268,0.0,110.3,0.0,3771.1,3.5,False,1,31,294,2026-10-11T11:19:17+00:00,,314.3
+StandardMapEntropy,accepted,OAI.Dynamics.StandardMap.EntropyEndpoint,205,56555,53987,54361,3771.1,12,2048,batch 33 (shared by 12 configs),165.033,0.0,165.0,0.0,3771.1,6.5,False,1,69,295,2026-10-11T11:21:08+00:00,,314.3
+MarkovType,accepted,OAI.Analysis.MarkovType.Main,207,26032,53786,54361,3771.1,12,2048,batch 33 (shared by 12 configs),90.537,0.0,90.5,0.0,3771.1,6.1,False,1,43,296,2026-10-11T11:21:19+00:00,,314.3
+VlasovMaxwell,accepted,OAI.Analysis.VlasovMaxwell.Main,207,56557,53992,54361,3771.1,12,2048,batch 33 (shared by 12 configs),269.131,0.0,269.1,0.0,3771.1,7.0,False,1,54,297,2026-10-11T11:22:20+00:00,,314.3
+SnakyConditional,accepted,OAI.GameTheory.SnakyConditional.Main,209,56559,53994,54361,3771.1,12,2048,batch 33 (shared by 12 configs),792.646,0.0,792.6,0.0,3771.1,6.2,False,1,17,298,2026-10-11T11:22:50+00:00,,314.3
+WeakMTWGlobalSupport,accepted,OAI.Geometry.WeakMTW.Main,210,56560,53994,54361,3771.1,12,2048,batch 33 (shared by 12 configs),207.141,0.0,207.1,0.0,3771.1,6.5,False,1,9,299,2026-10-11T11:23:53+00:00,,314.3
+StandardMapLyapunov,accepted,OAI.Dynamics.StandardMap.EntropyLyapunov,211,56561,53995,54361,3771.1,12,2048,batch 33 (shared by 12 configs),165.344,0.0,165.3,0.0,3771.1,6.5,False,1,56,300,2026-10-11T11:26:49+00:00,,314.3
+SKValue,accepted,OAI.Probability.SKValue.Main,212,56562,53996,54361,3771.1,12,2048,batch 33 (shared by 12 configs),215.762,0.0,215.8,0.0,3771.1,6.6,False,1,28,301,2026-10-11T11:27:21+00:00,,314.3
+AtomicGaussian,accepted,OAI.Analysis.Triangular.Main,215,56565,54000,54361,3771.1,12,2048,batch 33 (shared by 12 configs),5336.159,0.0,5336.2,0.0,3771.1,6.6,False,1,102,302,2026-10-11T11:29:35+00:00,,314.3
+TriangularGaussian,accepted,OAI.Analysis.Triangular.GaussianMinorants,216,56566,54000,54361,3771.1,12,2048,batch 33 (shared by 12 configs),5377.95,0.0,5377.9,0.0,3771.1,6.6,False,1,89,303,2026-10-11T11:30:57+00:00,,314.3
+RyserCovering,accepted,OAI.Combinatorics.Ryser.Construction.Main,217,24247,53785,54090,2832.0,10,1489,batch 34 (shared by 10 configs),58.89,0.0,58.9,0.0,2832.0,6.0,False,1,57,304,2026-10-11T13:51:34+00:00,,283.2
+RyserOddExtensions,accepted,OAI.Combinatorics.Ryser.OddExtensions,219,24249,53782,54090,2832.0,10,1489,batch 34 (shared by 10 configs),59.302,0.0,59.3,0.0,2832.0,6.0,False,1,153,305,2026-10-11T13:51:34+00:00,,283.2
+DirectedFeedback,accepted,OAI.Computability.DirectedFeedback.Main,224,56574,54009,54090,2832.0,10,1489,batch 34 (shared by 10 configs),267.168,0.0,267.2,0.0,2832.0,7.2,False,1,1151,306,2026-10-11T13:51:34+00:00,,283.2
+FreeUniformSpanningForest,accepted,OAI.Probability.SpanningForest.Factor,224,56574,54012,54090,2832.0,10,1489,batch 34 (shared by 10 configs),168.371,0.0,168.4,0.0,2832.0,6.4,False,1,28,307,2026-10-11T13:52:34+00:00,,283.2
+TriangularEnergy,accepted,OAI.Analysis.Triangular.Energy.Universal,227,56577,54012,54090,2832.0,10,1489,batch 34 (shared by 10 configs),5712.964,0.0,5713.0,0.0,2832.0,6.7,False,1,26,308,2026-10-11T13:52:34+00:00,,283.2
+MahlerConjecture,accepted,OAI.Analysis.Mahler.MainTheorem,229,30479,53783,54090,2832.0,10,1489,batch 34 (shared by 10 configs),189.643,0.0,189.6,0.0,2832.0,6.1,False,1,28,309,2026-10-11T13:55:23+00:00,,283.2
+SymmetricMahlerEquality,accepted,OAI.Analysis.Mahler.Classification,237,30582,53781,54090,2832.0,10,1489,batch 34 (shared by 10 configs),198.816,0.0,198.8,0.0,2832.0,6.1,False,1,546,310,2026-10-11T13:56:02+00:00,,283.2
+SimpleOvergroups,accepted,OAI.GroupTheory.SimpleOvergroups.Main,238,56588,54020,54090,2832.0,10,1489,batch 34 (shared by 10 configs),227.703,0.0,227.7,0.0,2832.0,6.7,False,1,59,311,2026-10-11T13:58:33+00:00,,283.2
+MatroidSecretary,accepted,OAI.Probability.MatroidSecretary.Main,243,56593,54023,54090,2832.0,10,1489,batch 34 (shared by 10 configs),83.723,0.0,83.7,0.0,2832.0,6.2,False,3,16,312,2026-10-11T13:59:22+00:00,,283.2
+SKRatio,accepted,OAI.Probability.SKRatio.Main,260,56610,54044,54090,2832.0,10,1489,batch 34 (shared by 10 configs),4153.521,0.0,4153.5,0.0,2832.0,6.6,False,1,40,313,2026-10-11T14:00:46+00:00,,283.2
+BorsukNine,accepted,OAI.Geometry.Borsuk.Main,269,56619,54055,54131,7734.3,8,1745,batch 35 (shared by 8 configs),257.018,0.0,257.0,4882.0,2852.3,6.5,False,1,131,314,2026-10-11T17:40:53+00:00,,356.5
+FiniteFactor,accepted,OAI.Analysis.FiniteFactor.Main,271,56621,54050,54131,7734.3,8,1745,batch 35 (shared by 8 configs),180.125,0.0,180.1,4882.0,2852.3,6.4,False,1,23,315,2026-10-11T17:40:53+00:00,,356.5
+StandardMapComponents,accepted,OAI.Dynamics.StandardMap.ComponentsMain,274,56624,54053,54131,7734.3,8,1745,batch 35 (shared by 8 configs),256.705,0.0,256.7,4882.0,2852.3,6.6,False,1,67,316,2026-10-11T17:40:53+00:00,,356.5
+HyperinvariantSubspaces,accepted,OAI.Analysis.Hyperinvariant.Main,277,56627,54059,54131,7734.3,8,1745,batch 35 (shared by 8 configs),190.913,0.0,190.9,4882.0,2852.3,6.4,False,1,27,317,2026-10-11T17:43:54+00:00,,356.5
+DuttaDomain,pending,OAI.RingTheory.Multiplicity.Main,278,56628,,,,1,,this config,,,,,,,False,1,,318,,,
+BinPackingGap,accepted,OAI.Computability.BinPacking.Main,284,56634,54068,54131,7734.3,8,1745,batch 35 (shared by 8 configs),145.362,0.0,145.4,4882.0,2852.3,6.7,False,1,34,319,2026-10-11T17:45:11+00:00,,356.5
+TriangleRemoval,accepted,OAI.Combinatorics.TriangleRemoval.Main,287,56637,54071,54131,7734.3,8,1745,batch 35 (shared by 8 configs),415.493,0.0,415.5,4882.0,2852.3,6.4,False,1,93,320,2026-10-11T17:47:06+00:00,,356.5
+HadwigerCounterexample,accepted,OAI.Combinatorics.HadwigerCounterexample.Main,288,56638,54072,54131,7734.3,8,1745,batch 35 (shared by 8 configs),376.384,0.0,376.4,4882.0,2852.3,6.3,False,2,128,321,2026-10-11T17:47:37+00:00,,356.5
+EgyptianFractions,pending,OAI.NumberTheory.EgyptianFractions.Main,290,56640,,,,1,,this config,,,,,,,False,9,,322,,,
+ProductBrown,pending,OAI.Analysis.BrownMeasure.Main,292,56642,,,,1,,this config,,,,,,,False,1,,323,,,
+LaughlinFock,pending,OAI.Analysis.LaughlinFock.Main,293,56643,,,,1,,this config,,,,,,,False,1,,324,,,
+CannonGeometricAction,accepted,OAI.Geometry.Cannon.Main,299,56649,,,464.4,1,,this config,218.148,0.0,218.1,0.0,464.4,,False,1,,325,2026-10-10T02:44:59+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),464.4
+CompleteCrossing,accepted,OAI.Combinatorics.CompleteCrossing.Main,300,27735,,,169.1,1,,this config,63.558,0.0,63.6,0.0,169.1,,False,1,,326,2026-10-10T02:56:21+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),169.1
+GeneralMahler,pending,OAI.Geometry.Convex.GeneralMahler.Theorem,302,56652,,,,1,,this config,,,,,,,False,1,,327,,,
+SiegelZeros,pending,OAI.NumberTheory.SiegelZeros.Main,306,56668,,,,1,,this config,,,,,,,False,2,,328,,,
+AffineBernstein,pending,OAI.Analysis.AffineBernstein.Main,322,56672,,,,1,,this config,,,,,,,False,1,,329,,,
+LogConcaveQuery,pending,OAI.Probability.LogConcave.Main,326,56676,,,,1,,this config,,,,,,,False,1,,330,,,
+SharpCAT0Filling,pending,OAI.Geometry.CAT0Fillings.Main,330,56680,,,,1,,this config,,,,,,,False,1,,331,,,
+SymmetricDomains,pending,OAI.Analysis.SymmetricDomains.Main,335,56685,,,,1,,this config,,,,,,,False,1,,332,,,
+CKSBondiPenrose,pending,OAI.Geometry.Relativity.CKS.ComparatorMain,336,56686,,,,1,,this config,,,,,,,False,2,,333,,,
+BipartiteCrossing,pending,OAI.Combinatorics.Crossing.Main,339,23304,,,,1,,this config,,,,,,,False,1,,334,,,
+CoarseAssembly,pending,OAI.Topology.CoarseAssembly,347,56697,,,,1,,this config,,,,,,,False,1,,335,,,
+VertexCover,pending,OAI.Computability.VertexCover.Main,351,56701,,,,1,,this config,,,,,,,False,2,,336,,,
+MatrixFields,pending,OAI.LinearAlgebra.MatrixFields.Main,354,56704,,,,1,,this config,,,,,,,False,1,,337,,,
+KadisonRingrose,pending,OAI.Analysis.BoundedHochschild.MainResult,372,56722,,,,1,,this config,,,,,,,,1,,338,,,
+OptimalMaxCut,pending,OAI.Computability.MaxCut.Main,372,56722,,,,1,,this config,,,,,,,False,1,,339,,,
+MinUncut,pending,OAI.Computability.MinUncut.Main,375,56725,,,,1,,this config,,,,,,,False,1,,340,,,
+EinsteinFour,pending,OAI.Geometry.EinsteinFour.Classification,402,56768,,,,1,,this config,,,,,,,False,3,,341,,,
+DilutedSpin,pending,OAI.Probability.DilutedSpin.Main,405,56755,,,,1,,this config,,,,,,,False,1,,342,,,
+SharpLogRamsey,pending,OAI.Combinatorics.SharpRamsey.Main,408,56758,,,,1,,this config,,,,,,,False,1,,343,,,
+UniformKServer,pending,OAI.Combinatorics.UniformKServer.Main,410,56760,,,,1,,this config,,,,,,,False,1,,344,,,
+PerceptronFreeEnergy,pending,OAI.Probability.Perceptron.Main,411,56761,,,,1,,this config,,,,,,,False,1,,345,,,
+MatchingFPRAS,pending,OAI.Combinatorics.MatchingCount.Main,415,56765,,,,1,,this config,,,,,,,False,1,,346,,,
+HyperbolicObstruction,pending,OAI.Geometry.HyperbolicGroups.Main,417,56767,,,,1,,this config,,,,,,,False,1,,347,,,
+MaximalSeshadriConstants,pending,OAI.AlgebraicGeometry.Seshadri.Main,421,56771,,,,1,,this config,,,,,,,False,1,,348,,,
+CoulombRadii,pending,OAI.Analysis.CoulombRadii.Main,428,56778,,,,1,,this config,,,,,,,False,1,,349,,,
+SmoothYau,pending,OAI.Geometry.SmoothYau.Main,436,56786,,,,1,,this config,,,,,,,False,2,,350,,,
+CycleCliqueRamsey,pending,OAI.Combinatorics.Ramsey.CycleClique.Main,443,56793,,,,1,,this config,,,,,,,False,1,,351,,,
+IsometricImmersion,pending,OAI.Geometry.IsometricImmersion.Main,446,27696,,,,1,,this config,,,,,,,False,1,,352,,,
+IndependentSets,pending,OAI.Combinatorics.IndependentSets.Main,454,56804,,,,1,,this config,,,,,,,False,1,,353,,,
+HardSphere,pending,OAI.Analysis.HardSphere.Main,466,56816,,,,1,,this config,,,,,,,False,1,,354,,,
+UniqueGamesTheorem,pending,OAI.Computability.UniqueGames.Main,478,56828,,,,1,,this config,,,,,,,False,1,,355,,,
+RamseyFive,pending,OAI.Combinatorics.RamseyFive.Main,482,56832,,,,1,,this config,,,,,,,False,1,,356,,,
+MatrixMultiplication,pending,OAI.LinearAlgebra.MatrixMultiplication.Main,504,56859,,,,1,,this config,,,,,,,False,3,,357,,,
+KMedianRecovery,pending,OAI.Combinatorics.KMedianRecovery.Main,506,56856,,,,1,,this config,,,,,,,False,1,,358,,,
+DirectionalBallisticity,pending,OAI.Probability.Ballisticity.Main,513,56863,,,,1,,this config,,,,,,,False,1,,359,,,
+BoltzmannNonuniqueness,pending,OAI.MathematicalPhysics.Boltzmann.Main,525,31720,,,,1,,this config,,,,,,,False,1,,360,,,
+WeakHessian,pending,OAI.Geometry.WeakHessian.Main,542,56892,,,,1,,this config,,,,,,,False,1,,361,,,
+ExactQuantumFactoring,pending,OAI.Computability.QuantumFactoring.Main,546,56896,,,,1,,this config,,,,,,,False,1,,362,,,
+LittleFinitistic,pending,OAI.Algebra.Finitistic.Main,546,25641,,,,1,,this config,,,,,,,False,1,,363,,,
+ElementaryPositivity,pending,OAI.Combinatorics.Chromatic.Main,549,56899,,,,1,,this config,,,,,,,False,0,,364,,,
+SimpleAmenable,pending,OAI.GroupTheory.SimpleAmenable.Main,550,56900,,,,1,,this config,,,,,,,False,1,,365,,,
+SKHighTemperature,pending,OAI.Probability.SKGap.Main,556,56906,,,,1,,this config,,,,,,,False,1,,366,,,
+PlanarPacking,pending,OAI.Analysis.PlanarPacking.Main,563,31133,,,,1,,this config,,,,,,,False,1,,367,,,
+MetricKMedian,pending,OAI.Combinatorics.KMedian.Main,569,56919,,,,1,,this config,,,,,,,False,1,,368,,,
+UniversalTensorSquares,pending,OAI.RepresentationTheory.UniversalSquare.Main,573,56923,,,,1,,this config,,,,,,,,1,,369,,,
+SKBarriers,pending,OAI.Probability.SKBarriers.Main,574,56924,,,,1,,this config,,,,,,,False,1,,370,,,
+TamingCompatibility,pending,OAI.Geometry.TamingCompatibility.Main,582,56932,,,,1,,this config,,,,,,,False,1,,371,,,
+VelocityHemisphere,pending,OAI.Probability.Ballisticity.VelocityHemisphere,585,56935,,,,1,,this config,,,,,,,False,1,,372,,,
+KMedianRefinedRecovery,pending,OAI.Combinatorics.KMedianRecovery.Refined.Recovery,586,56936,,,,1,,this config,,,,,,,False,1,,373,,,
+FinitisticAsymmetry,pending,OAI.Algebra.FinitisticAsymmetry.Main,588,56938,,,,1,,this config,,,,,,,False,1,,374,,,
+SATComputability,pending,OAI.Probability.SATComputability.Main,592,56942,,,,1,,this config,,,,,,,False,1,,375,,,
+CriticalSKMixing,pending,OAI.MathematicalPhysics.CriticalMixing.Main,593,56943,,,,1,,this config,,,,,,,False,1,,376,,,
+Conductivity,pending,OAI.Analysis.Conductivity.Main,595,56945,,,,1,,this config,,,,,,,False,1,,377,,,
+CoulombIonization,pending,OAI.Analysis.CoulombIonization.Main,607,56957,,,,1,,this config,,,,,,,False,1,,378,,,
+CriticalPercolation,pending,OAI.Probability.CriticalPercolation.Main,627,56977,,,,1,,this config,,,,,,,False,1,,379,,,
+OrdinaryElliott,pending,OAI.NumberTheory.OrdinaryCorrelations.Elliott.Main,628,56978,,,,1,,this config,,,,,,,False,1,,380,,,
+CylinderCovering,pending,OAI.Geometry.CylinderCovering.Main,641,56991,,,,1,,this config,,,,,,,False,1,,381,,,
+BiholderTransport,pending,OAI.Analysis.BiholderTransport.Main,645,56995,,,,1,,this config,,,,,,,False,1,,382,,,
+UniformCommutator,pending,OAI.Analysis.Commutator.Main,656,57006,,,,1,,this config,,,,,,,False,1,,383,,,
+HarmonicArtin,pending,OAI.Topology.ArtinGroups.Main,660,57010,,,,1,,this config,,,,,,,False,1,,384,,,
+BalancedRyser,pending,OAI.Combinatorics.BalancedRyser.Main,698,57048,,,,1,,this config,,,,,,,False,1,,385,,,
+PlanarFalconer,pending,OAI.MeasureTheory.Falconer.Main,719,57069,,,,1,,this config,,,,,,,False,1,,386,,,
+AuslanderReiten,pending,OAI.Algebra.AuslanderReiten.All,732,57082,,,,1,,this config,,,,,,,False,1,,387,,,
+IrrationalRotation,pending,OAI.Analysis.IrrationalRotation.Main,735,57085,,,,1,,this config,,,,,,,False,2,,388,,,
+AlgorithmicThinTrees,pending,OAI.Combinatorics.ThinTrees.AlgorithmicMain,736,57086,,,,1,,this config,,,,,,,False,1,,389,,,
+KMedianThreshold,pending,OAI.Combinatorics.KMedian.Threshold,765,57115,,,,1,,this config,,,,,,,False,1,,390,,,
+ArtinParabolicIntersections,pending,OAI.Topology.ArtinGroups.ParabolicIntersections.Main,782,57132,,,,1,,this config,,,,,,,True,4,,391,,,
+TotientAsymptotic,pending,OAI.NumberTheory.TotientAsymptotic.UnconditionalMain,809,57172,,,,1,,this config,,,,,,,False,4,,392,,,
+TotientCompanionZero,pending,OAI.NumberTheory.TotientAsymptotic.Main,811,57174,,,,1,,this config,,,,,,,False,1,,393,,,
+KadisonSimilarity,pending,OAI.Analysis.KadisonSimilarity.UnconditionalSimilarity,816,57166,,,,1,,this config,,,,,,,False,3,,394,,,
+Jacobsthal,pending,OAI.NumberTheory.Jacobsthal.Main,819,57200,,,,1,,this config,,,,,,,False,1,,395,,,
+JacobsthalImproved,pending,OAI.NumberTheory.Jacobsthal.Main,819,57200,,,,1,,this config,,,,,,,False,1,,396,,,
+RieszQuantitative,pending,OAI.Analysis.RieszRectifiability.Main,824,57179,,,,1,,this config,,,,,,,False,1,,397,,,
+PerfectCompleteness,pending,OAI.Computability.PerfectCompleteness.Main,863,57213,,,,1,,this config,,,,,,,False,1,,398,,,
+PiExponent,pending,OAI.NumberTheory.PiExponent.Main,869,57219,,,,1,,this config,,,,,,,False,1,,399,,,
+DukePrimeDegree,pending,OAI.NumberTheory.DukePrimeDegree.MainUnconditional,877,57227,,,,1,,this config,,,,,,,False,2,,400,,,
+FreeIsing,pending,OAI.Probability.FreeIsing.Main,891,57241,,,,1,,this config,,,,,,,False,1,,401,,,
+PartitionPrinciple,pending,OAI.SetTheory.PartitionPrinciple.Main,943,57293,,,,1,,this config,,,,,,,False,1,,402,,,
+BenjaminiSchramm,pending,OAI.Probability.BenjaminiSchramm.Main,970,57320,,,,1,,this config,,,,,,,False,3,,403,,,
+DegreeRigidity,pending,OAI.Computability.DegreeRigidity.Main,974,57324,,,,1,,this config,,,,,,,False,1,,404,,,
+Catalan,pending,OAI.NumberTheory.Catalan.Main,988,29458,,,,1,,this config,,,,,,,False,1,,405,,,
+ExactInfiniteness,pending,OAI.Analysis.WeakInfiniteness.Main,1012,57362,,,,1,,this config,,,,,,,False,2,,406,,,
+EditApproximation,pending,OAI.Combinatorics.EditApproximation.Specification.RawBandMain,1024,57374,,,,1,,this config,,,,,,,False,1,,407,,,
+YauCounterexample,pending,OAI.Geometry.NodalSets.Main,1068,57418,,,,1,,this config,,,,,,,False,1,,408,,,
+Laughlin,pending,OAI.Analysis.Laughlin.Main,1258,57608,,,,1,,this config,,,,,,,False,1,,409,,,
+LaughlinPlanar,pending,OAI.Analysis.Laughlin.UniformGap,1279,57629,,,,1,,this config,,,,,,,False,1,,410,,,
+ContingencyTables,pending,OAI.Combinatorics.ContingencyTables.UnconditionalMain,1297,57647,,,,1,,this config,,,,,,,False,3,,411,,,
+OrdinaryTwoPointCorrelations,pending,OAI.NumberTheory.TwoPointCorrelations.FinalMain,1539,57910,,,,1,,this config,,,,,,,False,3,,412,,,
+JointDickman,pending,OAI.NumberTheory.JointDickman.PaperMain,1792,58226,,,,1,,this config,,,,,,,False,3,,413,,,
+SurfaceImmersion,pending,OAI.Geometry.SurfaceImmersion.Main,1883,58393,,,,1,,this config,,,,,,,False,1,,414,,,
+LipschitzHilbert,pending,OAI.Analysis.LipschitzHilbert.Main,1910,32850,,,,1,,this config,,,,,,,False,2,,415,,,
+ContinuumCoulombHardness,pending,OAI.MathematicalPhysics.ContinuumCoulomb.Reduction.Hardness,2086,58451,,,,1,,this config,,,,,,,False,2,,416,,,
+InvariantIsing,accepted,OAI.Probability.InvariantIsing.Unconditional,2123,58473,55908,55954,2141.5,12,2147,batch 11 (shared by 12 configs),580.351,0.0,580.4,0.0,2141.5,7.3,False,11,242,14,2026-10-10T22:12:16+00:00,,178.5
+FalconerAllDimensions,accepted,OAI.MeasureTheory.Falconer.Campaign123PlanarFurstenbergProof,2384,58734,56167,56212,1966.2,1,2384,batch 10 (shared by 1 configs),658.091,0.0,658.1,0.0,1966.2,7.4,False,1,55,13,2026-10-10T21:33:33+00:00,,1966.2
+DefocusingNLS,accepted,OAI.MathematicalPhysics.DefocusingNLS.MainTheorems,2415,58770,56205,56248,2085.9,1,2420,batch 9 (shared by 1 configs),1173.5,0.0,1173.5,0.0,2085.9,7.6,False,3,54,12,2026-10-10T20:57:55+00:00,,2085.9
+StrongKadisonKastler,accepted,OAI.Analysis.KadisonKastler.StrongStability,2652,59002,56434,56455,4342.8,1,2564,batch 8 (shared by 1 configs),5350.818,2437.0,2913.8,0.0,4342.8,8.1,False,1,532,11,2026-10-10T19:28:24+00:00,,4342.8
+PolycyclicRecognition,accepted,OAI.GroupTheory.PolycyclicRecognition.Recognition,2679,59399,56824,56882,2957.4,1,2753,batch 7 (shared by 1 configs),1803.557,0.0,1803.6,0.0,2957.4,8.5,False,3,100,10,2026-10-10T18:13:34+00:00,,2957.4
+KoebeCircleDomains,accepted,OAI.Analysis.CircleDomains.Main,2790,59268,56707,56758,4383.0,1,2644,batch 6 (shared by 1 configs),782.73,0.0,782.7,2179.0,2204.0,7.4,False,2,27,9,2026-10-10T17:21:52+00:00,,2204.0
+DirichletSevenEighths,accepted,OAI.NumberTheory.DirichletL.Nonvanishing,2924,35258,53785,5930,6.7,1,0,batch 5 (shared by 1 configs),3839.462,2179.0,1660.5,0.0,6.7,6.6,False,1,33,8,2026-10-10T16:06:29+00:00,,6.7
+QuasiRiemannHypothesis,accepted,OAI.NumberTheory.DirichletL.Nonvanishing,2924,35258,53785,31311,10.0,1,1,batch 4 (shared by 1 configs),554.936,0.0,554.9,0.0,10.0,6.6,False,1,33,7,2026-10-10T15:57:12+00:00,,10.0
+HeckeSevenEighths,accepted,OAI.NumberTheory.DirichletL.Hecke.Nonvanishing,2925,35259,53784,31287,3284.4,1,2924,batch 3 (shared by 1 configs),563.693,0.0,563.7,0.0,3284.4,6.6,False,1,47,6,2026-10-10T15:47:45+00:00,,3284.4
+OstmannComplete,accepted,OAI.NumberTheory.Ostmann.Complete,3207,59627,57168,57226,2124.7,1,3195,batch 2-parallel (shared by 1 configs),306.56,0.0,306.6,0.0,2124.7,7.6,False,2,26,5,2026-10-10T14:19:50+00:00,,2124.7
+MUBSix,accepted,OAI.Analysis.MutuallyUnbiased.Main,3381,59731,57168,57220,14134.6,1,3381,batch 1 (shared by 1 configs),16981.172,0.0,16981.2,0.0,14134.6,26.1,False,1,33,4,2026-10-10T10:07:36+00:00,,14134.6
+PattersonFirstMoment,accepted,OAI.NumberTheory.CubicMoment.Theta.CubicThetaMains,3594,59965,,,4130.8,1,,this config,487.99,0.0,488.0,0.0,4130.8,,False,3,,3,2026-10-10T00:19:46+00:00,check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper),4130.8
+OstmannPrimes,accepted,OAI.NumberTheory.Ostmann.Main,4358,60739,58175,58212,3913.1,1,4344,batch 0 (shared by 1 configs),2044.543,0.0,2044.5,0.0,3913.1,8.8,False,1,1,2,2026-10-10T06:09:38+00:00,,3913.1
+ErdosReciprocal,accepted,OAI.Combinatorics.Progressions.Main,4774,61124,58559,5965,9.6,1,0,this config,2472.214,0.0,2472.2,0.0,9.6,14.3,False,1,98,1,2026-10-10T03:48:38+00:00,,9.6

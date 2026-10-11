@@ -10,7 +10,9 @@ build_wall_s is the time of the build STEP: near zero when the config's modules 
 Writes /home/srv/s/math/openai-math/results/cmp-all/configs.csv and prints a summary.
 Usage: export_results.py
 """
-import json, csv, os, glob
+import json, csv, os, glob, sys, datetime as dt
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import pauses as pz
 base = '/home/srv/s/math/openai-math'; R = base + '/results/cmp-all'; root = base + '/src/lean'
 size = {n: (sz, s) for sz, n, s in json.load(open(base + '/results/config-solution-size.json'))}
 pred = {}
@@ -24,10 +26,22 @@ if os.path.exists(R + '/batches.jsonl'):
 rec = {}
 for l in open(R + '/all.jsonl'):
     d = json.loads(l); rec[d['config']] = d            # last record per config wins
+PAUSES = pz.load_pauses(); BATCH = pz.batch_build_intervals()
 rows = []
 for n, (cl, sol) in size.items():
     cfg = json.load(open(f'{root}/ComparatorChallenges/{n}.json')); d = rec.get(n, {}); p = pred.get(sol, {})
     b = batches.get(str(d.get('batch', '')).split('-')[0], {}) if d.get('build_skipped') else {}
+    # active (unpaused) times: subtract the overlap with logged pauses
+    chk_paused = chk_active = bld_paused = bld_active = None
+    if d.get('started') and d.get('cmp_s') is not None:
+        t0 = dt.datetime.fromisoformat(d['started']);
+        if not d.get('build_skipped') and d.get('build_s') is not None: t0 += dt.timedelta(seconds=d['build_s'])
+        chk_paused = pz.overlap_s(t0, t0 + dt.timedelta(seconds=d['cmp_s']), PAUSES); chk_active = d['cmp_s'] - chk_paused
+    bw = d.get('build_s') if d.get('build_s') is not None else b.get('build_wall_s')
+    if d.get('build_skipped') and str(d.get('batch', '')).split('-')[0] in BATCH:
+        bs, be = BATCH[str(d['batch']).split('-')[0]]; bld_paused = pz.overlap_s(bs, be, PAUSES); bld_active = (bw or 0) - bld_paused
+    elif d.get('started') and d.get('build_s') is not None and not d.get('build_skipped'):
+        t0 = dt.datetime.fromisoformat(d['started']); bld_paused = pz.overlap_s(t0, t0 + dt.timedelta(seconds=d['build_s']), PAUSES); bld_active = d['build_s'] - bld_paused
     bad = isinstance(d.get('peak_vmas'), (int, float)) and d['peak_vmas'] < 1000      # early records: monitor saw only the sandbox wrapper
     if bad: d = dict(d, peak_vmas=None, peak_rss_gib=None)
     rows.append(dict(
@@ -38,11 +52,11 @@ for n, (cl, sol) in size.items():
         batch_configs=(len(b.get('configs', [])) if d.get('build_skipped') else 1),
         modules_compiled_in_this_build=(d.get('modules_built_this_run') if not d.get('build_skipped') else b.get('modules_built')),
         build_scope='this config' if not d.get('build_skipped') else f"batch {d.get('batch')} (shared by {len(b.get('configs', []))} configs)" if b else ('seeded from pilot' if 'seeded_from' in d else ''),
-        check_wall_s=d.get('cmp_s'), check_peak_rss_gib=d.get('peak_rss_gib'), nanoda=cfg.get('enable_nanoda'),
+        check_wall_s=d.get('cmp_s'), check_paused_s=None if chk_paused is None else round(chk_paused, 1), check_active_s=None if chk_active is None else round(chk_active, 1), build_paused_s=None if bld_paused is None else round(bld_paused, 1), build_active_s=None if bld_active is None else round(bld_active, 1), check_peak_rss_gib=d.get('peak_rss_gib'), nanoda=cfg.get('enable_nanoda'),
         theorems=len(cfg.get('theorem_names', [])), solution_lines=d.get('solution_lines'), order_position=pos.get(n),
         started=d.get('started'), detail=d.get('detail', '') or ('check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper)' if bad else '')))
 for r in rows:
-    bw, n = r['build_wall_s'], r['batch_configs']
+    bw, n = (r['build_active_s'] if r['build_active_s'] not in (None, '') else r['build_wall_s']), r['batch_configs']
     r['build_share_s'] = round(float(bw) / n, 1) if bw not in (None, '') and n else ''
 cols = list(rows[0]); out = R + '/configs.csv'
 with open(out, 'w', newline='') as f:

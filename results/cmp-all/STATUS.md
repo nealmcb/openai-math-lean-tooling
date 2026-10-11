@@ -1,9 +1,9 @@
-# Comparator overnight status (2026-10-10T22:01:07-06:00)
+# Comparator overnight status (2026-10-11T12:15:19-06:00)
 
-configs recorded 189/416; outcomes {'accepted': 189}
-free disk 50 GiB; ALERT file: False; STOP file: False
-modules built: 46769/107978 = 43.3% of the Comparator solution closure; configs accepted 189/416 = 45.4%
+configs recorded 322/416; outcomes {'accepted': 322}
+free disk 103 GiB; ALERT file: False; STOP file: False
+modules built: 60661/107978 = 56.2% of the Comparator solution closure; configs accepted 322/416 = 77.4%
 accepted with timings 18: median build 169s, median check 170s, total build 2.4h, total check 1.6h
-last driver line: ["2026-10-10T21:58:54-06:00 pipeline: batch 25: 12 configs ['BalancedThreeStack', 'ForcedNavierStokesComputation', 'LipschitzEquivalence', 'StructuralCrouzeix']... modules~688 free=50G restored=144"]
+last driver line: ['TriangleRemoval accepted None 415.493']
 
 ## Not accepted (needs a human look)

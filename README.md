@@ -94,7 +94,7 @@ efficiency cores, 16 threads, thermally limited), 60 GiB RAM, 39 GiB swap, 2 TB 
 | Path | Contents |
 |---|---|
 | `tools/vmamon.py` | Runs a command and records per-process mapping counts, memory, CPU and an explicit failure classification |
-| `tools/predict_vmas.py`, `closure_sizes.py`, `importclosure.py`, `external_reach.py` | Import-graph analysis and mapping prediction for every module |
+| `tools/predict_vmas.py`, `closure_sizes.py`, `import_memory_probe.py`, `importclosure.py`, `external_reach.py` | Import-graph analysis and mapping prediction for every module |
 | `tools/pipeline.py`, `run_comparator_batch.py` | Batched builds plus parallel Comparator checks, resumable, with per-batch archiving of generated C |
 | `tools/pause.sh`, `resume.sh`, `idle_guard.py` | Instant pause and resume of a run; resume when the GNOME screen blanks |
 | `tools/parallelism_profile.py`, `export_results.py`, `export_module_times.py`, `overnight_status.py`, `mdwrap.py` | Build-parallelism profile, per-config CSV, status summary |
