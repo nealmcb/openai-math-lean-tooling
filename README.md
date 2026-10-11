@@ -28,17 +28,28 @@ Lean files and 26.1 million lines—eleven times the size of
 community-built library covering much of modern undergraduate mathematics and substantial areas of
 graduate-level and research mathematics. Mathlib took hundreds of contributors nearly a decade to
 build. **For something called Lean, this is a lot to digest.** At 1,000 lines an hour, merely
-reading OAI once would take 13 person-years of full-time work, never mind understanding it.
+reading all of OAI once would take 13 person-years of full-time work, never mind understanding it.
 Machine-checkable proofs are valuable, but as
 [Terence Tao](https://mathstodon.xyz/@tao/117395267721642920) and
 [David Bessis](https://davidbessis.substack.com/p/the-fall-of-the-theorem-economy)
 emphasize, mathematical progress also requires exposition, community building, and understanding—not
 just more theorems.
 
-The practical consequence is what this project measures. Independently rebuilding and checking all
-of it takes, on a thermally limited laptop, an estimated three days of compute, 150 to 200 GB of
-disk with careful archiving (about 700 GB without), up to 26 GiB of memory for a single check, and a
-memory mapping budget that the Linux default of 65,530 only just covers for the deepest modules.
+These full-library costs matter mainly for independent reproduction, for maintainers, and for anyone
+trying to assess the collection as a whole. Rebuilding and checking all of it takes, on a thermally
+limited laptop, an estimated three days of compute, 150 to 200 GB of disk with careful archiving
+(about 700 GB without), up to 26 GiB of memory for a single check, and a memory mapping budget that
+the Linux default of 65,530 only just covers for the deepest modules.
+
+The scale problem should not be overstated for routine work. A mathematician using one result needs
+only the transitive import closure of the modules involved, a small fraction of the library, and
+neither rebuilds nor reads the other 26 million lines. Across the 416 Comparator configurations the
+median closure is 77 modules (about 0.07% of the whole), 90% have at most 735 modules, and the
+largest is 4,774. Small configurations (under 100 modules) took a median of about 2.5 minutes to
+check here; a headline result with a closure of about 2,900 modules took under an hour to build and
+about 9 minutes to check. Even a one-module configuration pays the memory-mapping cost of Mathlib
+(about 54k of the 65,530 default in the checker), so that cost comes from Mathlib, not from the size
+of `OAI`.
 
 ## Findings so far
 
@@ -86,9 +97,9 @@ efficiency cores, 16 threads, thermally limited), 60 GiB RAM, 39 GiB swap, 2 TB 
 | `tools/predict_vmas.py`, `closure_sizes.py`, `importclosure.py`, `external_reach.py` | Import-graph analysis and mapping prediction for every module |
 | `tools/pipeline.py`, `run_comparator_batch.py` | Batched builds plus parallel Comparator checks, resumable, with per-batch archiving of generated C |
 | `tools/pause.sh`, `resume.sh`, `idle_guard.py` | Instant pause and resume of a run; resume when the GNOME screen blanks |
-| `tools/parallelism_profile.py`, `export_results.py`, `overnight_status.py` | Build-parallelism profile, per-config CSV, status summary |
+| `tools/parallelism_profile.py`, `export_results.py`, `export_module_times.py`, `overnight_status.py`, `mdwrap.py` | Build-parallelism profile, per-config CSV, status summary |
 | `controls/` | Negative controls for Comparator (sorry, extra axiom, `native_decide`, mismatched statement) |
-| `results/` | Per-run summaries, `results/cmp-all/configs.csv` (one row per config), prediction and closure data |
+| `results/` | Per-run summaries; `results/cmp-all/configs.csv` (one row per config; read the build-time caveats in REPORT.md section 3c); `results/module-times.csv.gz` (one row per module with its compile time); prediction and closure data |
 | `REPORT.md`, `MANIFEST.txt` | Findings, exact versions |
 
 ## Reproducing

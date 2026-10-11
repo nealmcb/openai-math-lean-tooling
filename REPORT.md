@@ -1,4 +1,4 @@
-# Report: can the default Linux mapping limit verify OpenAI/math Lean?
+# Report: can the default Linux memory mapping limit verify OpenAI/math Lean?
 
 Status as of 2026-10-10 15:10 MDT (local workstation only, no cloud spend; the Comparator run is
 still in progress). Repo pinned at openai/math commit fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb, Lean
@@ -177,6 +177,41 @@ written by `tools/export_results.py`).
 - **Build parallelism** (computed by `tools/parallelism_profile.py`): for the whole remaining build
   the average number of runnable modules is about 81, more than the 16 threads; for any single
   configuration it is 1 to 5, so configurations are built in batches to keep the cores busy.
+- **Reading the build times.** `build_wall_s` in `configs.csv` is the time of the build step, not
+  the cost of the configuration. It is near zero (7 to 10 s) when the configuration's modules were
+  already compiled for an earlier configuration or batch, and for configurations built in a batch it
+  repeats the whole batch's time on every row, so it is not additive: among the 191 configurations
+  accepted at the time of this check the median batch held 12 configurations, the rows sum to 70.5
+  hours, but the batch times divided among their configurations (the `build_share_s` column) sum to
+  18.0 hours. The columns `batch_configs` and `modules_compiled_in_this_build` show which case
+  applies. Real compile cost is better read from the per-module data below. Check times
+  (`check_wall_s`) are per configuration and not shared.
+- **Per-module data.** `results/module-times.csv.gz` has one row for each of the about 48,200
+  modules with a recorded compile in the raw Lake logs (which are too bulky to keep in git): area,
+  first compile time in seconds, number of compiles (3 modules were compiled more than once), source
+  size, in-repo closure size and predicted mapping count. The times are wall-clock under load, so
+  they are upper bounds on isolated compile time; they sum to about 260 module-hours, which divided
+  by the 16 concurrent threads is a lower bound of roughly 16 hours of wall time. Modules that were
+  only replayed from cache have no row. Per-module mapping counts were not recorded; only
+  per-process peaks were, and the predicted counts are in `results/predicted-vmas.jsonl`.
+- **How much module compile times vary** (about 48,200 modules, `results/module-times.csv.gz`;
+  wall-clock under load, so upper bounds). A lot, with a heavy tail: the median is 12 s, the 90th
+  percentile 29 s, the 99th 181 s, the 99.9th 680 s and the maximum 1,652 s. A third of the modules
+  take under 10 s and 90% under 30 s, yet the slowest 1% (481 modules) account for 17% of all
+  compile time and the slowest 10% for 45%. Source size explains only part of it: on a log-log fit
+  the slope is 0.45 and r-squared 0.39, and even at similar size the 10th to 90th percentile spread
+  is 2 to 3 times (median 10 s at 1 to 2 KB of source, 17 s at 8 to 16 KB, 36 s at 32 to 64 KB, 162
+  s at 128 to 256 KB). The two slowest real modules are single enormous files:
+  `OAI.Analysis.NuclearUltrapower.SOSResidual` (993 KB of source, 1,652 s) and
+  `OAI.Topology.EilenbergGanea.SeedContraction` (427 KB, 1,600 s). By area, `OAI.Analysis` is 41% of
+  all recorded compile time (107 of 261 module-hours) from 23% of the modules, averaging 35 s a
+  module against 11 s for the 14,141 `OAI.NumberTheory` modules (44 hours). Sixteen small
+  `OAI.Analysis` modules show about 1,390 s each only because they were mid-compile during a
+  23-minute manual pause (flagged in the file as `likely_pause_artifact`); they would otherwise head
+  the slowest list, and shorter pauses left smaller traces that cannot be separated from real
+  durations. The practical reading is that total build time is dominated by a small fraction of
+  heavy modules, and that the critical path, not the average, decides how long a particular result
+  takes.
 - **Timing caveats:** the machine is a Framework 13 laptop with a Core i5-1340P (4 performance cores
   with hyper-threading plus 8 efficiency cores, 16 threads), running at its 100 C thermal limit
   during builds (load 20 to 30). Other work ran at the same time and the run was paused by hand at
@@ -286,28 +321,32 @@ two orders smaller.
 The size of the library is the main driver of every cost measured here, so it is worth stating
 plainly.
 
-- **Size:** `OAI` is 122,458 Lean files and 26.06 million lines (1.57 GB of source). Mathlib is
-  9,112 files and 2.42 million lines. In lines `OAI` is about 10.8 times Mathlib, in files about
-  13.4 times. The repository states that its manuscripts and proof artifacts were produced by an
-  internal OpenAI model.
+- **Size:** `OAI` is 122,458 AI-generated Lean files and 26.06 million lines (1.57 GB of source).
+  Mathlib is 9,112 files and 2.42 million lines. `OAI` is about 11 times the size of Mathlib.
 - **Reading cost:** at 1,000 lines an hour and 2,000 working hours a year, reading the 26 million
-  lines once would take about 13 person-years, before any attempt to understand them. This is an
-  assumption-based illustration, not a measurement.
+  lines once would take about 13 person-years, before any attempt to understand them.
 - **Review:** Mathlib's contents entered through pull requests with review and maintainer approval
   over nearly a decade (772 contributors on its statistics page). No comparable review process is
   described for `OAI`; the repository's README says its results are at different stages of
   verification and that some of the unformalized ones could have issues.
-- **Checking cost** (measured here, section 1a): about three days of compute on a thermally limited
-  laptop, 150 to 200 GB of disk with archiving of generated C (about 700 GB without), up to 26 GiB
-  of memory for a single Comparator check, and a mapping budget that the Linux default covers only
-  for modules below about 13,100 imported module-system modules.
-- **Observation (the author's, not a measured result):** output at this volume shifts a cost onto
-  everyone who wants to check it independently, whether or not the volume is justified. This project
-  does not judge that. A passing Lean check says nothing about it, and nothing here addresses the
-  paper-level questions of section 5, levels 3 and 4.
+- **Cost of checking everything** (measured here, section 1a): about three days of compute on a
+  thermally limited laptop, 150 to 200 GB of disk with archiving of generated C (about 700 GB
+  without), up to 26 GiB of memory for a single Comparator check, and a mapping budget that the
+  Linux default covers only for modules below about 13,100 imported module-system modules.
+- **Routine use is far cheaper than the whole.** A user of one result needs only the transitive
+  import closure of the modules involved, not the library. Across the 416 configurations the in-repo
+  closure of the solution module has a median of 77 modules (0.07% of the 107,978-module union), a
+  75th percentile of 300, a 90th percentile of 735 and a maximum of 4,774. Of the 40 configurations
+  accepted when this was written, the 25 under 100 modules took a median of 147 s to check; the 14
+  with 1,000 or more modules took a median of 978 s (maximum 16,981 s). Building a closure is slower
+  than checking it (the headline `HeckeSevenEighths`, 2,925 modules, built in about 55 minutes and
+  checked in 9 minutes under load). The full-library costs matter mainly for independent
+  reproduction, for maintainers, and for anyone assessing the collection as a whole. Even a
+  one-module configuration pays the mapping cost of Mathlib (about 54k in the checker), so the
+  mapping budget is a Mathlib effect, not a library-size effect.
 
-Two recent essays frame the same worry about volume versus understanding in mathematics, and both
-were read for this report:
+Two recent essays note the same general worry about formalization versus understanding in
+mathematics.
 
 - Terence Tao, thread of four posts, 2026-10-06 (https://mathstodon.xyz/@tao/117395267721642920): in
   traditional mathematics a breakthrough proof is digested through talks, workshops, collaborations
@@ -323,9 +362,6 @@ were read for this report:
   understanding that spreads through a community; he quotes Thurston ("The product of mathematics is
   clarity and understanding. Not theorems, by themselves.") and says that even correct
   unintelligible proofs are not accretive to the mathematical corpus.
-
-Neither author discusses this library or Lean formalization specifically; the connection is this
-project's.
 
 ## 8. Not done yet
 

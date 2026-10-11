@@ -5,6 +5,8 @@ Purpose: a single reviewable table of per-config observations: closure size, pre
 wall time, memory, outcome, nanoda use. Sources: results/cmp-all/all.jsonl (check records; for batched builds the build time
 is the batch's, from batches.jsonl, shared by the configs in that batch), results/config-solution-size.json,
 results/predicted-vmas.jsonl, ComparatorChallenges/*.json. Configs not yet attempted appear with status 'pending'.
+build_wall_s is the time of the build STEP: near zero when the config's modules were already compiled for an earlier config or batch, and shared by every config in a batch
+(see build_scope and modules_compiled_in_this_build); it is not additive across configs.
 Writes /home/srv/s/math/openai-math/results/cmp-all/configs.csv and prints a summary.
 Usage: export_results.py
 """
@@ -33,10 +35,15 @@ for n, (cl, sol) in size.items():
         predicted_vmas=p.get('predicted_vmas'), measured_check_peak_vmas=d.get('peak_vmas'),
         measured_build_peak_vmas=d.get('build_peak_vmas') or b.get('peak_vmas'),
         build_wall_s=d.get('build_s') if d.get('build_s') is not None else b.get('build_wall_s'),
+        batch_configs=(len(b.get('configs', [])) if d.get('build_skipped') else 1),
+        modules_compiled_in_this_build=(d.get('modules_built_this_run') if not d.get('build_skipped') else b.get('modules_built')),
         build_scope='this config' if not d.get('build_skipped') else f"batch {d.get('batch')} (shared by {len(b.get('configs', []))} configs)" if b else ('seeded from pilot' if 'seeded_from' in d else ''),
         check_wall_s=d.get('cmp_s'), check_peak_rss_gib=d.get('peak_rss_gib'), nanoda=cfg.get('enable_nanoda'),
         theorems=len(cfg.get('theorem_names', [])), solution_lines=d.get('solution_lines'), order_position=pos.get(n),
         started=d.get('started'), detail=d.get('detail', '') or ('check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper)' if bad else '')))
+for r in rows:
+    bw, n = r['build_wall_s'], r['batch_configs']
+    r['build_share_s'] = round(float(bw) / n, 1) if bw not in (None, '') and n else ''
 cols = list(rows[0]); out = R + '/configs.csv'
 with open(out, 'w', newline='') as f:
     w = csv.DictWriter(f, cols); w.writeheader(); w.writerows(rows)
