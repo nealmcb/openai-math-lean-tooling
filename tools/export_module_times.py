@@ -30,6 +30,12 @@ for fn in ('oai-closure-sizes.jsonl', 'solution-closure-sizes.jsonl'):
 pred = {}
 for l in open(base + '/results/predicted-vmas.jsonl'):
     d = json.loads(l); pred[d['module']] = d['predicted_vmas']
+old = {}
+oldp = base + '/results/module-times.csv.gz'
+if os.path.exists(oldp):                       # keep rows whose raw logs no longer exist (batch ids restart, so old logs get overwritten)
+    for r in csv.DictReader(gzip.open(oldp, 'rt')): old[r['module']] = (float(r['first_build_s']), int(r['n_builds']))
+for m, (t, c) in old.items():
+    if m not in first: first[m] = t; count[m] = c
 n = 0
 with gzip.open(base + '/results/module-times.csv.gz', 'wt', newline='') as f:
     w = csv.writer(f); w.writerow(['module', 'area', 'likely_pause_artifact', 'first_build_s', 'n_builds', 'source_bytes', 'in_repo_closure', 'predicted_vmas'])

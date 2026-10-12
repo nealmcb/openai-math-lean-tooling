@@ -26,11 +26,26 @@ if os.path.exists(R + '/batches.jsonl'):
 rec = {}
 for l in open(R + '/all.jsonl'):
     d = json.loads(l); rec[d['config']] = d            # last record per config wins
-PAUSES = pz.load_pauses(); BATCH = pz.batch_build_intervals()
+PAUSES = pz.load_pauses(); BUILDS = pz.batch_builds()
+BROWS = [json.loads(l) for l in open(R + '/batches.jsonl')] if os.path.exists(R + '/batches.jsonl') else []
+if len(BROWS) == len(BUILDS):                   # same order: the i-th jsonl row is the i-th build-end line
+    for bd, br in zip(BUILDS, BROWS): bd['row'] = br
+
+
+def find_batch(d):
+    """The batch build a skip-build check record belongs to: same id, latest build that ended before the check started.
+    (Ids restart at 0 each time the pipeline restarts, so the id alone is ambiguous; '2-parallel' means batch 2.)"""
+    if not d.get('build_skipped') or not d.get('batch') or not d.get('started'): return None
+    k = str(d['batch']); k = k[:-len('-parallel')] if k.endswith('-parallel') else k
+    t = dt.datetime.fromisoformat(d['started']); best = None
+    for bd in BUILDS:
+        if bd['id'] == k and bd['end'] <= t + dt.timedelta(seconds=2): best = bd
+    return best
+
 rows = []
 for n, (cl, sol) in size.items():
     cfg = json.load(open(f'{root}/ComparatorChallenges/{n}.json')); d = rec.get(n, {}); p = pred.get(sol, {})
-    b = batches.get(str(d.get('batch', '')).split('-')[0], {}) if d.get('build_skipped') else {}
+    bd = find_batch(d); b = (bd or {}).get('row', {})
     # active (unpaused) times: subtract the overlap with logged pauses
     chk_paused = chk_active = bld_paused = bld_active = None
     if d.get('started') and d.get('cmp_s') is not None:
@@ -38,8 +53,8 @@ for n, (cl, sol) in size.items():
         if not d.get('build_skipped') and d.get('build_s') is not None: t0 += dt.timedelta(seconds=d['build_s'])
         chk_paused = pz.overlap_s(t0, t0 + dt.timedelta(seconds=d['cmp_s']), PAUSES); chk_active = d['cmp_s'] - chk_paused
     bw = d.get('build_s') if d.get('build_s') is not None else b.get('build_wall_s')
-    if d.get('build_skipped') and str(d.get('batch', '')).split('-')[0] in BATCH:
-        bs, be = BATCH[str(d['batch']).split('-')[0]]; bld_paused = pz.overlap_s(bs, be, PAUSES); bld_active = (bw or 0) - bld_paused
+    if bd:
+        bs, be = bd['start'], bd['end']; bld_paused = pz.overlap_s(bs, be, PAUSES); bld_active = (bw or 0) - bld_paused
     elif d.get('started') and d.get('build_s') is not None and not d.get('build_skipped'):
         t0 = dt.datetime.fromisoformat(d['started']); bld_paused = pz.overlap_s(t0, t0 + dt.timedelta(seconds=d['build_s']), PAUSES); bld_active = d['build_s'] - bld_paused
     bad = isinstance(d.get('peak_vmas'), (int, float)) and d['peak_vmas'] < 1000      # early records: monitor saw only the sandbox wrapper

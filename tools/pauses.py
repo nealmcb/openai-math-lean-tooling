@@ -28,6 +28,17 @@ def overlap_s(a, b, pauses):
     return sum(max(0.0, (min(b, e) - max(a, s)).total_seconds()) for s, e in pauses)
 
 
+def batch_builds(path=LOG):
+    """Ordered list of {id, start, end, wall} for every 'batch X: build exit=... Ns' line in driver.log (ids can repeat across restarts)."""
+    out = []
+    for l in open(path):
+        m = re.match(r'(\S+) pipeline: batch (\S+?): build exit=\S+ ([\d.]+)s', l)
+        if m:
+            end = dt.datetime.fromisoformat(m.group(1)); w = float(m.group(3))
+            out.append(dict(id=m.group(2), start=end - dt.timedelta(seconds=w), end=end, wall=w))
+    return out
+
+
 def batch_build_intervals(path=LOG):
     """batch id -> (start, end) of its build step, from 'batch N: build exit=0 123.4s' lines (timestamp = end)."""
     out = {}

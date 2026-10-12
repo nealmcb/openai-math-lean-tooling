@@ -221,7 +221,9 @@ def finish(prev, keep=()):
     archive(f'batch{prev[2]}-{int(time.time())}', [f for f in prev[1] if f not in set(keep)])
 
 
-for bid, names in enumerate(batches):
+RUN = time.strftime('%m%d%H%M')      # batch ids are unique across restarts: <run start>-<index>
+for bi, names in enumerate(batches):
+    bid = f'{RUN}-{bi}'
     if False: log('STOP file found; finishing current checks and exiting'); break
     mods = closure([m for n in names for m in (cfg(n)['solution_module'], cfg(n)['challenge_module'])])
     files = ir_files(mods); est = len(mods) * 0.0065

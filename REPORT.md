@@ -214,7 +214,7 @@ written by `tools/export_results.py`).
   18.0 hours. The columns `batch_configs` and `modules_compiled_in_this_build` show which case
   applies. Real compile cost is better read from the per-module data below. Check times
   (`check_wall_s`) are per configuration and not shared.
-- **Per-module data.** `results/module-times.csv.gz` has one row for each of the 60,767 modules with
+- **Per-module data.** `results/module-times.csv.gz` has one row for each of the 69,182 modules with
   a recorded compile at the last export (the statistics below are from an earlier export of about
   48,200) with a recorded compile in the raw Lake logs (which are too bulky to keep in git): area,
   first compile time in seconds, number of compiles (3 modules were compiled more than once), source
