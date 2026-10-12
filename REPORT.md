@@ -247,6 +247,47 @@ written by `tools/export_results.py`).
   during builds (load 20 to 30). Other work ran at the same time and the run was paused by hand at
   times, so times are indicative, not benchmarks. Mapping counts are unaffected.
 
+## 3d. What makes a check expensive
+
+Across the 366 configurations accepted so far (`tools/cost_outliers.py`, rows in
+`results/cost-outliers.csv`), the active Comparator check time has a median of 238 s, a 90th
+percentile of 930 s, a 99th percentile of 5,495 s and a maximum of 16,981 s (`MUBSix`), 71 times the
+median. Peak check memory has a median of 6.4 GiB, a 90th percentile of 7.0 GiB and a maximum of
+26.1 GiB.
+
+- **Size does not predict cost.** Check time against the summed compile time of the configuration's
+  closure has a rank correlation of 0.49; a log-log fit has slope 0.44 and a residual spread of 0.36
+  decades (a factor of about 2.3 either way). Seven configurations had under 90% of their closure
+  timed and are left out of this fit. Check memory is unrelated to the solution file's source size
+  (rank correlation 0.03).
+- **The outliers are specific proofs.** Checks 5 to 10 times slower than the trend predicts include
+  `GeneralMahler`, `LaughlinFock`, `MUBSix`, `TriangularEnergy`, `MatrixFields`,
+  `TriangularGaussian` and `AtomicGaussian`. The largest memory users are `MUBSix` (26.1 GiB),
+  `NuclearUltrapower` (19.6 GiB), `CoarseAssembly` (19.5 GiB) and `ErdosReciprocal` (14.3 GiB).
+- **Export size is not yet established as the explanation.** Only 23 of the 366 checks recorded the
+  bytes `lean4export` streams (the earlier ones lost it to a monitor bug). Among those, check time
+  per exported MB ranges from 0.25 to 24 s and its rank correlation with export size is 0.34, too
+  little data to conclude anything. Re-running only the export step for the earlier configurations
+  would settle it.
+
+What the expensive modules contain, from reading samples of them:
+
+- `MUBSix`: the solution file `OAI/Analysis/MutuallyUnbiased/Main.lean` is 1.3 KB and states one
+  theorem, but imports 3,382 modules (summed compile time about 217,000 s). A sample generated
+  module, `MixedSemantics/Canonical296.lean` (125 KB, 128 theorems, 248 uses of `decide +kernel`),
+  proves equalities between "mixed moments" of explicit small integer matrices by permuting rows and
+  columns. The permutation identities are closed by kernel evaluation and the rest by `rfl`.
+- `CycleCliqueRamsey`: `Construction/CertificatesK15Part001.lean` is 5.6 MB with 10,797 uses of
+  `decide +kernel`, and consists of explicit layout data (chains, cliques) for a fixed graph size.
+- `PlanarPacking`: `Certificate/LowBlock15_10.lean` is 247 KB with 1,188 uses of `decide +kernel`
+  and integer interval enclosures that certify numerical bounds.
+
+These look like machine-generated finite certificates checked by kernel computation, a different
+style from structural proofs, with none of the sampled files using `native_decide`. If so, the cost
+of a check would follow how much kernel evaluation reaches the exported terms rather than how long
+the sources are. That is a hypothesis from three samples and the export-size data above.
+`GeneralMahler` and `LaughlinFock`, the largest outliers by ratio, have not been read.
+
 ## 4. What is in the library, and what OAI.lean is
 
 - 122,458 `.lean` files under `OAI/` (26.06 M lines, 1.57 GB) plus 416 files in

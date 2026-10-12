@@ -97,7 +97,7 @@ efficiency cores, 16 threads, thermally limited), 60 GiB RAM, 39 GiB swap, 2 TB 
 | `tools/predict_vmas.py`, `closure_sizes.py`, `import_memory_probe.py`, `importclosure.py`, `external_reach.py` | Import-graph analysis and mapping prediction for every module |
 | `tools/pipeline.py`, `run_comparator_batch.py` | Batched builds plus parallel Comparator checks, resumable, with per-batch archiving of generated C |
 | `tools/pause.sh`, `resume.sh`, `idle_guard.py` | Instant pause and resume of a run; resume when the GNOME screen blanks |
-| `tools/parallelism_profile.py`, `export_results.py`, `export_module_times.py`, `overnight_status.py`, `mdwrap.py` | Build-parallelism profile, per-config CSV, status summary |
+| `tools/parallelism_profile.py`, `export_results.py`, `export_module_times.py`, `check_time_factors.py`, `cost_outliers.py`, `overnight_status.py`, `mdwrap.py` | Build-parallelism profile, per-config CSV, check-cost factors and outliers, status summary |
 | `controls/` | Negative controls for Comparator (sorry, extra axiom, `native_decide`, mismatched statement) |
 | `results/` | Per-run summaries; `results/cmp-all/configs.csv` (one row per config; read the build-time caveats in REPORT.md section 3c); `results/module-times.csv.gz` (one row per module with its compile time); prediction and closure data |
 | `REPORT.md`, `MANIFEST.txt` | Findings, exact versions |

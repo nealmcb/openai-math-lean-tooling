@@ -4,7 +4,7 @@
 Purpose: Comparator check time varies from seconds to hours and is not predicted by closure size. This joins, per accepted
 configuration, the active (unpaused) check time with candidate explanatory features: import-closure size and source bytes,
 the solution module's own size, the summed and maximum compile time of the closure's modules (a proxy for proof/elaboration
-weight, from results/module-times.csv.gz), the number of theorem names being checked, whether the second kernel (nanoda) is
+weight, from results/module-times.csv.gz; closure_timed_modules counts how many of the closure's modules have a recorded time, so partial sums can be recognised), the number of theorem names being checked, whether the second kernel (nanoda) is
 enabled, and the memory the check used. It prints the slowest checks and Spearman rank correlations, and writes
 results/check-time-factors.csv. Rank correlation shows association only, not cause.
 Usage: check_time_factors.py
@@ -34,7 +34,7 @@ for r in csv.DictReader(open(base + '/results/cmp-all/configs.csv')):
     cl = closure([cfg['solution_module'], cfg['challenge_module']])
     ct = [mt[m] for m in cl if m in mt]
     rows.append(dict(config=r['config'], check_active_s=float(r['check_active_s']), closure_modules=len(cl), closure_src_kb=sum(size(m) for m in cl) / 1024,
-                     solution_src_kb=size(cfg['solution_module']) / 1024, closure_compile_s=sum(ct), max_module_compile_s=max(ct or [0]),
+                     solution_src_kb=size(cfg['solution_module']) / 1024, closure_compile_s=sum(ct), closure_timed_modules=len(ct), max_module_compile_s=max(ct or [0]),
                      theorem_names=len(cfg['theorem_names']), nanoda=int(bool(cfg.get('enable_nanoda'))),
                      check_rss_gib=float(r['check_peak_rss_gib']) if r['check_peak_rss_gib'] else None))
 def rank(v):
