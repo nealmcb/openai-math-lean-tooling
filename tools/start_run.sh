@@ -1,7 +1,7 @@
 #!/bin/bash
 # start_run.sh: (re)start the overnight run after a reboot or a stop: recover orphaned check records, then open a detached tmux session
 # 'overnight' with windows pipeline, status and idleguard. Does nothing to any other tmux session. The pipeline resumes from
-# results/cmp-all/all.jsonl and runs with the memory protections (valve, 10 compile slots, 20 GiB start gate, 2 check workers).
+# results/cmp-all/all.jsonl and runs with the memory protections (valve, 6 compile slots, 20 GiB start gate, 2 check workers).
 # Needs ext/ (tools and ext/sysroot-throttled) in place; see MANIFEST.txt.
 B=/home/srv/s/math/openai-math; cd $B
 tmux has-session -t overnight 2>/dev/null && { echo "tmux session 'overnight' already exists"; exit 1; }

@@ -18,12 +18,12 @@ ap = argparse.ArgumentParser(); ap.add_argument('--workers', type=int, default=2
 ap.add_argument('--cap-modules', type=int, default=2500); ap.add_argument('--max-configs', type=int, default=12)
 ap.add_argument('--min-gib', type=int, default=25); ap.add_argument('--order', default=base + '/results/config-order.json')
 ap.add_argument('--results', default=base + '/results/cmp-all')
-ap.add_argument('--lean-slots', type=int, default=10, help='max concurrent Lean compiles (via the throttled toolchain in ext/sysroot-throttled)')
+ap.add_argument('--lean-slots', type=int, default=6, help='max concurrent Lean compiles (via the throttled toolchain in ext/sysroot-throttled)')
 ap.add_argument('--build-cpus', default='6-15', help='CPU list the build may use (taskset); limits how many compiles run at once')
 ap.add_argument('--start-avail-gib', type=float, default=20, help='wait for this much available memory before starting a batch build')
 ap.add_argument('--psi-pause', type=float, default=25, help='freeze the build when memory pressure (some avg10, %%) exceeds this')
 ap.add_argument('--psi-resume', type=float, default=8); ap.add_argument('--min-avail-gib', type=float, default=3)
-ap.add_argument('--resume-avail-gib', type=float, default=6); a = ap.parse_args()
+ap.add_argument('--resume-avail-gib', type=float, default=4.5); a = ap.parse_args()
 R = a.results
 imp = re.compile(rb"^\s*(?:public\s+|meta\s+)*import\s+(?:public\s+|meta\s+)*(\S+)", re.M)
 def log(m):
