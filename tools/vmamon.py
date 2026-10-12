@@ -145,11 +145,12 @@ def main():
         for s in stats:
             old = seen.get(s["pid"])
             if old is None:
-                seen[s["pid"]] = dict(s, first_ts=ts, max_vmas=s["vmas"], max_rss=s["rss"])
+                seen[s["pid"]] = dict(s, first_ts=ts, max_vmas=s["vmas"], max_rss=s["rss"], max_rchar=s["rchar"], max_wchar=s["wchar"])
             else:
                 nv = max(old["max_vmas"], s["vmas"]); nr = max(old["max_rss"], s["rss"])
                 grew = nv > old["max_vmas"]
-                old.update(s, first_ts=old["first_ts"], max_vmas=nv, max_rss=nr, last_ts=ts)
+                mrc = max(old.get("max_rchar", 0), s["rchar"]); mwc = max(old.get("max_wchar", 0), s["wchar"])   # counters only grow; an exiting process reads as 0
+                old.update(s, first_ts=old["first_ts"], max_vmas=nv, max_rss=nr, last_ts=ts, max_rchar=mrc, max_wchar=mwc)
                 if grew:
                     samples.write(json.dumps(dict(t=round(ts - t0, 3), pid=s["pid"], vmas=nv)) + "\n")
             seen[s["pid"]]["last_ts"] = ts
@@ -174,10 +175,14 @@ def main():
         classification=classify(rc, tail, vmstat_oom() - oom0, vmas_peak, limit),
         top_processes=[dict(pid=s["pid"], comm=s["comm"], cmd=s["cmd"], max_vmas=s["max_vmas"],
                             max_rss=s["max_rss"], cpu_s=round(s["cpu_ticks"] / clk, 2),
-                            minflt=s["minflt"], majflt=s["majflt"], rchar=s["rchar"], wchar=s["wchar"])
+                            minflt=s["minflt"], majflt=s["majflt"], rchar=s.get("max_rchar", s["rchar"]), wchar=s.get("max_wchar", s["wchar"]))
                        for s in top],
         note="sampled peaks are lower bounds; verify thresholds with boundary runs",
     )
+    # export size: bytes written to stdout by each lean4export process (Comparator streams the export from it); sampled, so a lower bound
+    exp = sorted((v.get("max_wchar", 0) for v in seen.values() if v["comm"] == "lean4export"), reverse=True)
+    summary["export_bytes_total"] = sum(exp); summary["export_bytes_largest"] = exp[0] if exp else 0
+    summary["export_processes"] = len(exp)
     # CPU time of all waited children (reliable, not sampled)
     ch = os.times()
     summary["children_cpu_user_s"] = round(ch.children_user, 2)

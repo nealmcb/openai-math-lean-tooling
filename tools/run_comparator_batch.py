@@ -111,7 +111,8 @@ for name in names:
         m = re.findall(r"uncaught exception: (.*)", text)
         tool_missing = re.findall(r"Failed to find binary: exec: \"(\w+)\"", text)
         tp = (s.get("top_processes") or [{}])[0]
-        rec.update(system_end=snap(), cmp_top_process=tp.get("comm"), cmp_cpu_s=s.get("children_cpu_user_s"))
+        rec.update(system_end=snap(), cmp_top_process=tp.get("comm"), cmp_cpu_s=s.get("children_cpu_user_s"),
+                   export_bytes_total=s.get("export_bytes_total"), export_bytes_largest=s.get("export_bytes_largest"))
         rec.update(cmp_s=s.get("wall_s"), peak_vmas=s.get("peak_per_process_vmas_sampled"),
                    peak_rss_gib=round(max([t["max_rss"] for t in s.get("top_processes", [])] or [0]) / 2**30, 1),
                    vmamon_class=s.get("classification"),

@@ -52,6 +52,7 @@ for n, (cl, sol) in size.items():
         batch_configs=(len(b.get('configs', [])) if d.get('build_skipped') else 1),
         modules_compiled_in_this_build=(d.get('modules_built_this_run') if not d.get('build_skipped') else b.get('modules_built')),
         build_scope='this config' if not d.get('build_skipped') else f"batch {d.get('batch')} (shared by {len(b.get('configs', []))} configs)" if b else ('seeded from pilot' if 'seeded_from' in d else ''),
+        export_mb_total=(round(d['export_bytes_total'] / 1e6, 1) if d.get('export_bytes_total') else None), export_mb_largest=(round(d['export_bytes_largest'] / 1e6, 1) if d.get('export_bytes_largest') else None),
         check_wall_s=d.get('cmp_s'), check_paused_s=None if chk_paused is None else round(chk_paused, 1), check_active_s=None if chk_active is None else round(chk_active, 1), build_paused_s=None if bld_paused is None else round(bld_paused, 1), build_active_s=None if bld_active is None else round(bld_active, 1), check_peak_rss_gib=d.get('peak_rss_gib'), nanoda=cfg.get('enable_nanoda'),
         theorems=len(cfg.get('theorem_names', [])), solution_lines=d.get('solution_lines'), order_position=pos.get(n),
         started=d.get('started'), detail=d.get('detail', '') or ('check memory/VMA monitor invalid for this early record (saw only the sandbox wrapper)' if bad else '')))
