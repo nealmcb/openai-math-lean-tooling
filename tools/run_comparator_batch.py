@@ -9,7 +9,9 @@ STOP file exists. Outcome is parsed from Comparator's own output, never inferred
 
 Usage: run_comparator_batch.py LEAN_ROOT OUT.jsonl CONFIG_NAME [CONFIG_NAME...]
   (CONFIG_NAME = ComparatorChallenges/<name>.json basename without .json)
-Env: needs landrun and lean4export on PATH (see ../MANIFEST.txt), COMPARATOR_BIN optional.
+Env: needs landrun and lean4export on PATH (see ../MANIFEST.txt), COMPARATOR_BIN optional. Each check runs in a systemd unit named
+cmp-<config> (so it can be stopped on its own, and a second check of the same config is skipped); CHECK_MEMMAX (e.g. 30G) caps its memory.
+A check stopped by tools/check_scheduler.py is recorded as outcome "preempted" and is to be re-run.
 """
 import sys, os, json, time, subprocess, re, tempfile, datetime
 
@@ -65,6 +67,8 @@ for name in names:
         continue
     if os.path.exists(stopfile):
         print("STOP file present; exiting"); break
+    if subprocess.run(["systemctl", "--user", "is-active", "--quiet", f"cmp-{name}"]).returncode == 0:
+        print(name, "is already being checked (unit cmp-%s); skipping" % name, flush=True); continue
     cfg = json.load(open(os.path.join(root, f"ComparatorChallenges/{name}.json")))
     logdir = os.path.join(os.path.dirname(os.path.abspath(out)), "logs"); os.makedirs(logdir, exist_ok=True)
     rec = dict(config=name, solution=cfg["solution_module"], challenge=cfg["challenge_module"],
@@ -97,7 +101,8 @@ for name in names:
         mon = os.path.join(logdir, f"{name}.mon")
         env_path = os.environ["PATH"]
         # vmamon runs INSIDE the sandboxed service so it sees the comparator process tree.
-        cmd = ["systemd-run", "--user", "--wait", "--pipe", "--collect", "--property=RestrictAddressFamilies=~AF_UNIX",
+        cmd = ["systemd-run", "--user", "--wait", "--pipe", "--collect", f"--unit=cmp-{name}", "--property=RestrictAddressFamilies=~AF_UNIX",
+               *(["--property=MemoryMax=" + os.environ["CHECK_MEMMAX"]] if os.environ.get("CHECK_MEMMAX") else []),
                "-E", f"PATH={env_path}", "-E", f"HOME={os.environ['HOME']}", f"--working-directory={root}",
                "python3", "-I", os.path.join(here, "vmamon.py"), "--out", mon, "--interval", "0.1", "--label", name, "--",
                "lake", "env", comparator, f"ComparatorChallenges/{name}.json"]
@@ -118,6 +123,9 @@ for name in names:
                    vmamon_class=s.get("classification"),
                    outcome="accepted" if ok else ("tool_missing:" + tool_missing[0] if tool_missing else "rejected_or_error"),
                    detail=(m[-1][:300] if m and not ok else ""))
+        pre = os.path.join(os.path.dirname(os.path.abspath(out)), "preempted", name)     # set by tools/check_scheduler.py before it stops the unit
+        if os.path.exists(pre):
+            os.remove(pre); rec.update(outcome="preempted", detail="stopped by check_scheduler under memory pressure; to be re-run")
     else:
         rec.update(outcome="build_failed", detail=tail(os.path.join(logdir, f"{name}.build.log"), 400))
     with open(out, "a") as f:

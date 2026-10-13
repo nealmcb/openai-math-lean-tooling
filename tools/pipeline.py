@@ -3,8 +3,9 @@
 
 Purpose: the one-config-at-a-time driver (overnight.sh) left most of the 16 cores idle: Lake builds are wide only
 early, and Comparator checks are single-threaded. This builds a BATCH of configs' modules in one `lake build` (all cores,
-shared dependencies compiled once) while up to W checks of the previous batch run in parallel, then archives (compress,
-verify, remove) just that batch's generated C files. Concurrency of builds + checks in one Lake workspace was tested
+shared dependencies compiled once) while up to W checks run in parallel. A batch's checks are submitted as soon as its build
+ends and the next build starts at once, so one slow check never holds up the builds behind it; a batch's generated C files are
+archived (compress, verify, remove) when all of its checks have finished (at most --max-pending batches are in that state). Concurrency of builds + checks in one Lake workspace was tested
 (scratch/conc: 3 checks + a build + a big check, no interference).
 
 Resumable via results/cmp-all/all.jsonl (accepted configs skipped). Pause/resume instantly with tools/pause.sh and tools/resume.sh (SIGSTOP/SIGCONT; no STOP file). Writes results/cmp-all/ALERT and exits if disk cannot be kept above MIN_GIB.
@@ -16,7 +17,7 @@ base = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 root = base + '/src/lean'; R = base + '/results/cmp-all'; bld = root + '/.lake/build'
 ap = argparse.ArgumentParser(); ap.add_argument('--workers', type=int, default=2)
 ap.add_argument('--cap-modules', type=int, default=2500); ap.add_argument('--max-configs', type=int, default=12)
-ap.add_argument('--min-gib', type=int, default=25); ap.add_argument('--order', default=base + '/results/config-order.json')
+ap.add_argument('--min-gib', type=int, default=25); ap.add_argument('--max-pending', type=int, default=2, help='most batches whose checks may still be running before the next build waits'); ap.add_argument('--order', default=base + '/results/config-order.json')
 ap.add_argument('--results', default=base + '/results/cmp-all')
 ap.add_argument('--lean-slots', type=int, default=6, help='max concurrent Lean compiles (via the throttled toolchain in ext/sysroot-throttled)')
 ap.add_argument('--build-cpus', default='6-15', help='CPU list the build may use (taskset); limits how many compiles run at once')
@@ -37,7 +38,8 @@ def notify(msg):
     open(R + '/ALERT', 'a').write(f"{datetime.datetime.now().astimezone().isoformat(timespec='seconds')} {msg}\n")
     log('ALERT ' + msg)
     print('\a', end='', flush=True)
-    for cmd in (['tmux', 'display-message', '-d', '0', 'ALERT: ' + msg], ['notify-send', 'Comparator pipeline', msg]):
+    stamped = time.strftime('%H:%M:%S') + ' ' + msg          # desktop notifications can sit queued for hours: show when it was raised
+    for cmd in (['tmux', 'display-message', '-d', '0', 'ALERT: ' + stamped], ['notify-send', 'Comparator pipeline ' + time.strftime('%H:%M:%S'), msg]):
         try: subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=5)
         except Exception: pass
 
@@ -212,35 +214,44 @@ if _acc:
     _mods = closure([m for n in _acc for m in (cfg(n)['solution_module'], cfg(n)['challenge_module'])])
     archive(f'startup-{int(time.time())}', ir_files(_mods))
 batches = make_batches(); log(f"{len(batches)} batches, workers={a.workers}, cap={a.cap_modules}")
-pool = cf.ThreadPoolExecutor(a.workers); prev = None     # prev = (futures, files, bid)
+pool = cf.ThreadPoolExecutor(a.workers)
 
 
-def finish(prev, keep=()):
-    if not prev: return
-    for f in prev[0]: f.result()
-    archive(f'batch{prev[2]}-{int(time.time())}', [f for f in prev[1] if f not in set(keep)])
+pending = []          # [(futures, files, bid)] for batches whose checks were submitted but whose generated C is not yet archived
+
+
+def reap(keep=(), block_oldest=False):
+    """Archive every pending batch whose checks have all finished. A file still needed by another pending batch, or listed in keep
+    (the batch about to build), stays on disk. With block_oldest, first wait for the oldest pending batch's checks to finish."""
+    if block_oldest and pending:
+        for f in pending[0][0]: f.result()
+    for entry in list(pending):
+        if not all(f.done() for f in entry[0]): continue
+        for f in entry[0]: f.result()
+        others = set(keep).union(*[set(e[1]) for e in pending if e is not entry])
+        archive(f'batch{entry[2]}-{int(time.time())}', [f for f in entry[1] if f not in others])
+        pending.remove(entry)
 
 
 RUN = time.strftime('%m%d%H%M')      # batch ids are unique across restarts: <run start>-<index>
 for bi, names in enumerate(batches):
     bid = f'{RUN}-{bi}'
-    if False: log('STOP file found; finishing current checks and exiting'); break
     mods = closure([m for n in names for m in (cfg(n)['solution_module'], cfg(n)['challenge_module'])])
     files = ir_files(mods); est = len(mods) * 0.0065
-    if prev and free_gib() < est + 15: finish(prev); prev = None          # not enough room to overlap
-    if free_gib() < a.min_gib + est:
-        finish(prev); prev = None
-        waited = 0
-        while free_gib() < a.min_gib + est:               # wait (do not exit) until space appears; user or Claude can free some
-            if False: break
-            if waited % 1800 == 0: notify(f'disk {free_gib():.0f}G free, batch {bid} needs ~{est+a.min_gib:.0f}G; waiting (free space or touch STOP)')
-            time.sleep(60); waited += 60
-        if os.path.exists(R + '/ALERT') and free_gib() >= a.min_gib + est:
-            os.rename(R + '/ALERT', R + f'/ALERT.resolved.{int(time.time())}'); log('disk recovered; ALERT cleared')
-        if False: log('STOP while waiting for disk'); break
-    log(f"batch {bid}: {len(names)} configs {names[:4]}... modules~{len(mods)} free={free_gib():.0f}G restored={restore(files)}")
+    reap(keep=files)                                                     # free what finished checks no longer need
+    if len(pending) >= a.max_pending: log(f'{len(pending)} batches still being checked; waiting for the oldest before building batch {bid}'); reap(keep=files, block_oldest=True)
+    waited = 0
+    while free_gib() < a.min_gib + est:                                  # wait (do not exit) until space appears: finished checks free their batch, or the user frees some
+        reap(keep=files)
+        if free_gib() >= a.min_gib + est: break
+        if waited % 1800 == 0: notify(f'disk {free_gib():.0f}G free, batch {bid} needs ~{est+a.min_gib:.0f}G; waiting for checks to finish or free space')
+        time.sleep(60); waited += 60
+    if waited and os.path.exists(R + '/ALERT') and free_gib() >= a.min_gib + est:
+        os.rename(R + '/ALERT', R + f'/ALERT.resolved.{int(time.time())}'); log('disk recovered; ALERT cleared')
+    log(f"batch {bid}: {len(names)} configs {names[:4]}... modules~{len(mods)} free={free_gib():.0f}G restored={restore(files)} checks_pending={len(pending)}")
     rec = build(bid, names)
     log(f"batch {bid}: build exit={rec.get('exit')} {rec.get('build_wall_s')}s built={rec.get('modules_built')} peak_vmas={rec.get('peak_vmas')}")
-    finish(prev, keep=files)                                             # previous batch's checks done -> archive its C (except shared files)
-    prev = ([pool.submit(check, n, bid) for n in names], files, bid)
-finish(prev); log('pipeline finished or stopped')
+    pending.append(([pool.submit(check, n, bid) for n in names], files, bid))   # checks start now; the next build does not wait for them
+    reap(keep=files)
+while pending: reap(block_oldest=True)
+log('pipeline finished or stopped')
