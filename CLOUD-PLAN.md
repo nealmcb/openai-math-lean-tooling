@@ -11,7 +11,7 @@ will probably finish them itself, but three things argue for a second machine.
 
 1. **Disk on the laptop.** Free space is 36 GB. The remaining work adds about 51,600 modules; at the
    measured 0.8 MB of `.olean` output plus 0.25 MB of archived C per module, and about 13 GB of
-   uncompressed C for the batch in progress, the run needs roughly 50 to 65 GB more at its peak.
+   uncompressed generated build files for the batch in progress, the run needs roughly 50 to 65 GB more at its peak.
    Without freeing space or moving the build directory to another disk, the pipeline will start
    waiting for space (it stops below about 25 GB plus the next batch's estimate) before the work is
    done.
@@ -26,7 +26,7 @@ What the laptop could do, and what limits it:
 
 | Experiment | On the laptop |
 |---|---|
-| Root `OAI.lean` mapping measurement | Possible once the Comparator run completes. 84,543 of the root module's 91,762 imported modules will then be built; the other 7,219 need about 6 GB of `.olean` output (and about 42 GB of transient C, archivable). The measurement itself is `lake env lean OAI.lean` at a raised mapping limit and needs no C files. Memory is not the constraint (see below): the private heap is predicted at about 4 GiB, and the rest is evictable mapped file pages. Disk is: all the root's `.olean` files must be present, about 70 to 90 GB in total. |
+| Root `OAI.lean` mapping measurement | The Comparator run is complete. 85,301 of the root module's 91,762 imported modules are built; the other 6,461 (including `OAI` itself, 58 MB of source) need about 5 GB of `.olean` output and about 40 GB of transient `.setup.json` and C files, which archive to about 4%. The measurement itself is `lake env lean OAI.lean` at a raised mapping limit and needs only the `.olean` files. Memory is not the constraint (see below): the private heap is predicted at about 4 GiB, and the rest is evictable mapped file pages. Disk is: all the root's `.olean` files must be present, about 70 to 90 GB in total. |
 | `MMAP=OFF` comparison | Possible on a subset. It needs a Lean built from source (cmake) as a second toolchain, a separate build tree (artifacts must not be mixed between toolchains), and repeated builds of a fixed set of modules. Capacity is tight at 36 GB free, and timings on a throttled laptop would be noisy. |
 | `GLIBC_TUNABLES` comparison | Possible on the same subset; it is an environment variable. The cost is time and trial-to-trial noise, not disk. |
 
@@ -43,7 +43,7 @@ laptop cannot hold these experiments.
 - **Memory.** About 1 to 2 GiB of real memory per concurrent Lean process on average, with some
   modules up to 10 GiB, so 192 concurrent processes need roughly 220 to 330 GiB. Checks use about
   6.5 GiB typically and up to 26 GiB. Choose 384 GiB for 192 vCPUs, or 192 GiB for 96.
-- **Disk.** Do not bother compressing generated C here: about 630 GB of C plus 80 to 105 GB of
+- **Disk.** Do not bother compressing the generated build files here: about 630 GB of `.setup.json` and C files plus 80 to 105 GB of
   `.olean` output plus 25 GB of packages, so provision 1.5 to 2 TB of SSD or NVMe. Peak writes
   average well under 100 MB/s.
 - **Kernel.** Landlock is needed by the sandbox (Linux 5.13 or later; Ubuntu 22.04 or 24.04 images

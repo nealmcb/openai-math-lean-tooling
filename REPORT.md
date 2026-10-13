@@ -20,7 +20,7 @@ v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Raw data is under res
   for everything except the root" is a prediction (calibrated against 13 measurements, section 3a),
   not a result.
 - Comparator has accepted 27 of the 416 configurations and rejected none, including the three
-  L-function headline results (section 3c). Four deliberately wrong solutions (a `sorry`, an extra
+  L-function configurations (section 3c). Four deliberately wrong solutions (a `sorry`, an extra
   axiom, `native_decide`, a mismatched statement) were all rejected. What an acceptance does and
   does not establish is in section 5. Nothing in this report validates the manuscripts' mathematics.
 
@@ -34,8 +34,8 @@ extrapolated from this run's measured pace. Treat each as plus or minus 50%.
 | Wall-clock time, everything | about 3 days in total, about 1.5 to 2 days of it still to go | 38,442 of 107,978 modules built after about 22 hours of active running; checks add on top |
 | Compiling (108k modules) | about 60 hours in total, about 40 remaining | measured 1,750 to 1,900 modules per hour with all 16 threads busy |
 | Comparator checks (416) | about 12 to 20 hours of wall time with 3 in parallel, mostly overlapping the builds | 27 done: median 287 s, mean 1,410 s; small ones about 2 to 3 minutes, large ones 10 to 40 minutes; one outlier (`MUBSix`) took 4.7 hours, and a few more like it would add hours |
-| Disk, working set | about 150 to 200 GB | `.olean` and related outputs 0.75 to 1 MB per module (80 to 105 GB), about 25 GB of compressed C archives, about 10 GB of dependency checkouts and tools, plus up to about 35 GB of uncompressed C for the batch in progress |
-| Disk, if the generated C is kept | about 700 GB | 5.8 MB of C per module over 108k modules; it compresses to about 4% |
+| Disk, working set | about 150 to 200 GB | `.olean` and related outputs 0.75 to 1 MB per module (80 to 105 GB), about 25 GB of compressed archives of the generated build files, about 10 GB of dependency checkouts and tools, plus up to about 35 GB of uncompressed generated build files for the batch in progress |
+| Disk, if the generated build files are kept | about 700 GB | 5.8 MB per module over 108k modules, 99.5% of it `.setup.json` import lists (the `.c` files are about 30 KB per module); it compresses to about 4% |
 | Memory, build | about 20 to 30 GiB of real memory at full speed | lowest available memory seen during three big builds: 17 to 25 GiB of 60 (from about 45 idle); up to 17 processes at once; one Lean process reached 10.5 GiB |
 | Memory, checks | typically 6.5 GiB; up to 26.1 GiB | 12 monitored checks; `MUBSix` 26.1 GiB, `ErdosReciprocal` 14.3 GiB |
 | Memory, recommended | 64 GiB | tested only on 60 GiB with 39 GiB of swap; the run used up to 18 GiB of swap, so about 32 GiB would likely mean much slower or failed runs when a large check and a build overlap (not tested) |
@@ -170,10 +170,10 @@ modules.
 All 27 accepted, none rejected. Table: `results/cmp-all/configs.csv` (one row per configuration,
 written by `tools/export_results.py`).
 
-- **Which:** the three L-function headline configurations (`QuasiRiemannHypothesis`, which is the
-  Comparator README's example command, `DirichletSevenEighths`, `HeckeSevenEighths`), the deepest
-  module (`ErdosReciprocal`), `OstmannPrimes`, `OstmannComplete`, `MUBSix`, `PattersonFirstMoment`
-  (the largest family outside `OAI.lean`), `KoebeCircleDomains`, `PolycyclicRecognition`,
+- **Which:** the three L-function configurations (`QuasiRiemannHypothesis`, which is the Comparator
+  README's example command, `DirichletSevenEighths`, `HeckeSevenEighths`), the deepest module
+  (`ErdosReciprocal`), `OstmannPrimes`, `OstmannComplete`, `MUBSix`, `PattersonFirstMoment` (the
+  largest family outside `OAI.lean`), `KoebeCircleDomains`, `PolycyclicRecognition`,
   `StrongKadisonKastler`, and 16 small ones. The run goes largest first, then smallest to largest.
 - **Check time** (active time, excluding pauses, for the snapshot of 27 configurations): median 287
   s. The slowest are `MUBSix` 16,981 s (4.7 h, 26.1 GiB), `StrongKadisonKastler` 2,914 s,
@@ -249,26 +249,37 @@ written by `tools/export_results.py`).
 
 ## 3d. What makes a check expensive
 
-Across the 366 configurations accepted so far (`tools/cost_outliers.py`, rows in
-`results/cost-outliers.csv`), the active Comparator check time has a median of 238 s, a 90th
-percentile of 930 s, a 99th percentile of 5,495 s and a maximum of 16,981 s (`MUBSix`), 71 times the
-median. Peak check memory has a median of 6.4 GiB, a 90th percentile of 7.0 GiB and a maximum of
-26.1 GiB.
+Across the 372 configurations accepted so far (`tools/cost_outliers.py`, rows in
+`results/cost-outliers.csv`), the active Comparator check time (pauses and freezes removed) has a
+median of 246 s, a 90th percentile of 1,005 s, a 99th percentile of 5,730 s and a maximum of 39,131
+s (10.9 h, `PlanarPacking`), 159 times the median. Peak check memory has a median of 6.4 GiB, a 90th
+percentile of 7.0 GiB and a maximum of 26.1 GiB.
 
 - **Size does not predict cost.** Check time against the summed compile time of the configuration's
-  closure has a rank correlation of 0.49; a log-log fit has slope 0.44 and a residual spread of 0.36
-  decades (a factor of about 2.3 either way). Seven configurations had under 90% of their closure
+  closure has a rank correlation of 0.50; a log-log fit has slope 0.46 and a residual spread of 0.37
+  decades (a factor of about 2.3 either way). Eight configurations had under 90% of their closure
   timed and are left out of this fit. Check memory is unrelated to the solution file's source size
   (rank correlation 0.03).
-- **The outliers are specific proofs.** Checks 5 to 10 times slower than the trend predicts include
-  `GeneralMahler`, `LaughlinFock`, `MUBSix`, `TriangularEnergy`, `MatrixFields`,
-  `TriangularGaussian` and `AtomicGaussian`. The largest memory users are `MUBSix` (26.1 GiB),
-  `NuclearUltrapower` (19.6 GiB), `CoarseAssembly` (19.5 GiB) and `ErdosReciprocal` (14.3 GiB).
-- **Export size is not yet established as the explanation.** Only 23 of the 366 checks recorded the
-  bytes `lean4export` streams (the earlier ones lost it to a monitor bug). Among those, check time
-  per exported MB ranges from 0.25 to 24 s and its rank correlation with export size is 0.34, too
-  little data to conclude anything. Re-running only the export step for the earlier configurations
-  would settle it.
+- **The outliers are specific proofs.** Checks 6 to 18 times slower than the trend predicts include
+  `PlanarPacking` (18 times), `GeneralMahler`, `LaughlinFock`, `TriangularEnergy`, `MUBSix`,
+  `MatrixFields`, `TriangularGaussian` and `AtomicGaussian`. The largest memory users are `MUBSix`
+  (26.1 GiB), `NuclearUltrapower` (19.6 GiB), `CoarseAssembly` (19.5 GiB), `ErdosReciprocal` (14.3
+  GiB) and `PlanarPacking` (13.1 GiB).
+- **Export size points the same way but is not established.** Only 29 of the 372 checks recorded the
+  bytes `lean4export` streams (the earlier ones lost it to a monitor bug). Among those, the rank
+  correlation of check time with export size is 0.43, against 0.27 with closure compile time on the
+  same configurations, and check time per exported MB ranges from 0.25 to 24 s. The slowest check,
+  `PlanarPacking`, also has the largest export, 4.03 GB (3.85 GB in the largest piece), against at
+  most 1.5 GB for the other 28. It is not the whole story: `CycleCliqueRamsey` took 4,617 s with a
+  186 MB export, consistent with a small term whose checking forces a large kernel computation. That
+  is suggestive, but 29 configurations dominated by one extreme point are not enough to conclude.
+  Re-running only the export step for the earlier configurations would settle it.
+- **Source properties explain about half of the variation.** A fit of log check time on the
+  closure's source size, count of `decide +kernel` and count of certificate modules
+  (`tools/predict_check_cost.py`) reaches R^2 0.49 with a residual spread of about a factor of 2.1.
+  It underestimates the slowest few checks by factors of 2 to 3.4 (`PlanarPacking` was predicted at
+  16,500 s before its check finished and measured 39,131 s; `LaughlinFock` was predicted at 2,170 s
+  and measured 7,329 s).
 
 What the expensive modules contain, from reading samples of them:
 
@@ -280,13 +291,70 @@ What the expensive modules contain, from reading samples of them:
 - `CycleCliqueRamsey`: `Construction/CertificatesK15Part001.lean` is 5.6 MB with 10,797 uses of
   `decide +kernel`, and consists of explicit layout data (chains, cliques) for a fixed graph size.
 - `PlanarPacking`: `Certificate/LowBlock15_10.lean` is 247 KB with 1,188 uses of `decide +kernel`
-  and integer interval enclosures that certify numerical bounds.
+  and integer interval enclosures that certify numerical bounds. The configuration's closure has 446
+  modules with "Certificate" in their names and 255,199 uses of `decide +kernel`. Its check took
+  39,131 s of active time (47,310 s wall) and peaked at 13.1 GiB, although it used about 5.8 GiB for
+  most of the run, so its memory grew late.
 
-These look like machine-generated finite certificates checked by kernel computation, a different
-style from structural proofs, with none of the sampled files using `native_decide`. If so, the cost
-of a check would follow how much kernel evaluation reaches the exported terms rather than how long
-the sources are. That is a hypothesis from three samples and the export-size data above.
-`GeneralMahler` and `LaughlinFock`, the largest outliers by ratio, have not been read.
+In Lean the proof term is itself a certificate that the kernel re-checks without repeating the
+search, so checking is usually far cheaper than building (the median check is about 4 minutes), but
+it is not bounded: proofs that make the kernel evaluate large computations (`decide +kernel`) can
+cost hours. The expensive modules above look like machine-generated finite certificates checked by
+kernel computation, a different style from structural proofs, with none of the sampled files using
+`native_decide`. If so, the cost of a check would follow how much kernel evaluation reaches the
+exported terms rather than how long the sources are. That is a hypothesis from three samples and the
+export-size data above. `GeneralMahler` and `LaughlinFock`, the largest remaining outliers by ratio,
+have not been read.
+
+## 3e. The root import (`import OAI`): what it needs
+
+`OAI.lean` imports 91,762 modules. A process that imports it maps one file per ordinary module and
+five per module-system module (Mathlib and Lean core), which predicts about 149,000 mappings against
+the default limit of 65,530 (section 3a). Measuring it needs only some of the build outputs:
+
+- **The `.olean` files of every imported module, uncompressed on disk.** They are memory-mapped,
+  about 0.66 MB each (72.4 GB for the 109,152 built modules, plus Mathlib's own in its package
+  directory). Memory is not the constraint: the private heap is predicted at about 4 GiB and the
+  rest is evictable file pages.
+- **Nothing else.** The `.ilean` files (the editor's index), the `.trace` and `.hash` files (Lake's
+  bookkeeping) and everything in `.lake/build/ir` are not read by an `import`. The `ir` directory
+  holds three files per module: `.c` (about six times the source size, 30 KB on average), `.c.hash`,
+  and `.setup.json`, the input Lake passes to the compiler. A `.setup.json` lists the `.olean` and
+  IR paths of every transitive import, about 730 bytes per import, so it is about 6 MB for a module
+  with 9,000 imports. They are 99.5% of the bytes in `ir` (60.4 of 60.7 GB for 9,618 modules; the C
+  was 0.3 GB) and are transient: needed while the module compiles, not afterwards.
+- **A built `OAI` module.** `lake build OAI` compiles the root module itself, which performs the
+  import, so at the default limit the build is expected to end with the mapping failure
+  (`failed to read file ... .olean`, as seen in earlier tests) after all its dependencies are built.
+
+State at the end of the Comparator run: 85,301 of the 91,762 modules are built. The 6,461 that are
+not (including `OAI`) belong to no configuration's import closure: 58 MB of source in 177 families,
+mostly Analysis (1,634), Geometry (1,325), Probability (919) and Combinatorics (712), and only 5
+with "Certificate" in the name. From the compile times of built modules in the same areas
+(`tools/root_build_status.py --estimate`) they need about 31 module-hours, which at the 10.8-fold
+parallelism of the Comparator run (567 module-hours in 52.5 hours of build time) is about 3 hours,
+and about 40 GB of transient `.setup.json` and C files (about 1.6 GB archived).
+
+First trial, before the missing modules are built (`tools/root_import_trial.py`): one process
+importing Mathlib and all 85,301 built modules reachable from `OAI.lean`, at the default limit of
+65,530. It fails after 16.7 s with
+`failed to read file '.../OAI/Probability/SKBarriers/Locking/NarrowClockAlgebra.olean'` (the file
+exists and is readable), with the sampled per-process mapping count at 65,532, which
+`tools/vmamon.py` classifies as the mapping limit. Mathlib's 10,744 modules account for about 53,800
+mappings, so by the model of section 2 the limit is reached after roughly 11,800 OAI modules, about
+14% of the 85,301 (the position of the failure was not measured).
+
+Second trial, same state, with the limit raised to 262,144 and the real `OAI.lean` (its 914 imports
+in the repository's order): it stops after 7.8 s with
+`object file '.../OAI/AlgebraicGeometry/CharacterVarieties.olean' of module OAI.AlgebraicGeometry.CharacterVarieties does not exist`,
+with the sampled mapping count at 55,858 (Mathlib's 53,800 plus about 2,000 OAI modules). The
+mapping limit is therefore out of the way, and what stops the import is the first unbuilt module in
+the import order, long before the 65,530 mappings of the first trial could be reached.
+(`tools/root_import_trial.py --root` under `tools/with_maxmap.sh`.)
+
+Procedure: build the missing modules under the memory valve, archive the build files, run the import
+at the default limit under `tools/vmamon.py` to record the error and how soon it comes, then at a
+limit raised with `tools/with_maxmap.sh` to record peak mappings, memory and time. Results go here.
 
 ## 4. What is in the library, and what OAI.lean is
 
@@ -332,8 +400,8 @@ These are different claims, and a pass at one does not imply the others.
    claimed result stays unproved.
 
 Level 1 is weaker than level 2. Level 2 can be restricted to the configs that check a manuscript's
-main claim ("headline") as opposed to a supporting lemma. Level 3 is outside what machines check,
-and level 4 is outside what this project addresses.
+main claim as opposed to a supporting lemma. Level 3 is outside what machines check, and level 4 is
+outside what this project addresses.
 
 **Scope of a Comparator run.** The challenge files import little; each config names a separate
 `solution_module` (for example `OAI.GroupTheory.ArtinCAT0.Main`) that the challenge file does not
@@ -349,27 +417,27 @@ and 82 GB during the Comparator run.
 
 | Item | Per module | If 108k modules |
 |---|---|---|
-| generated C (`.lake/build/ir`) | about 5.4 MB | about 580 GB |
-| `.olean` plus `.ilean` and hashes (`.lake/build/lib/lean`) | about 1 MB | about 105 GB |
+| generated build files (`.lake/build/ir`: `.setup.json`, `.c`, hashes) | about 5.4 MB | about 580 GB |
+| `.olean`, `.ilean`, hashes and traces (`.lake/build/lib/lean`) | about 0.72 MB | about 79 GB (measured: 72.4 GB of `.olean`, 6.0 GB of `.ilean`, 0.7 GB of traces for 109,152 modules) |
 
-- The C files are an output Lake tracks: moving one away made Lake rebuild that module (3.6 s) when
-  asked again, without rebuilding its dependents. Deleting C files as each batch finishes saves disk
-  but means a later plain `lake build` will recompile those modules; checks that read the `.olean`
-  files directly are unaffected.
-- Compression: C files compress to 4.3% with gzip and 2.8% with xz (300-file sample), so about 580
-  GB of C would be about 25 GB, but only on a compressing filesystem (this one is plain ext4) or as
-  an archive at rest. `.olean` files compress to 33% (gzip) and 24% (xz), `.ilean` to 12%; but
-  `.olean` files are memory-mapped at run time, so they must be stored uncompressed while in use. At
-  rest an olean archive of 105 GB would be about 30 GB.
+- The generated files in `ir` are outputs Lake tracks: moving one away made Lake rebuild that module
+  (3.6 s) when asked again, without rebuilding its dependents. Deleting C files as each batch
+  finishes saves disk but means a later plain `lake build` will recompile those modules; checks that
+  read the `.olean` files directly are unaffected.
+- Compression: the generated build files compress to 4.3% with zstd (one archive: 58,038 MB to 2,478
+  MB for 9,617 modules), so about 580 GB would be about 25 GB, but only on a compressing filesystem
+  (this one is plain ext4) or as an archive at rest. `.olean` files compress to 33% (gzip) and 24%
+  (xz), `.ilean` to 12%; but `.olean` files are memory-mapped at run time, so they must be stored
+  uncompressed while in use. At rest an olean archive of 105 GB would be about 30 GB.
 - Measured pace: the built count went from 24,430 to 38,442 modules in 7.4 hours (about 1,900 per
   hour, including pauses). At that pace the remaining 69.5k modules need roughly 37 hours; the
   deepest chains were built first, so the rest may go faster, but the heaviest checks are
   unpredictable.
-- What worked: each batch's generated C is compressed (verified), removed after its checks, and
-  restored for later builds, so disk never ran out. The `.olean` files (about 105 GB for the full
-  closure) must stay uncompressed; the root `OAI.lean` additionally needs them all present at once.
-  The cloud alternative (16 vCPU, 600+ GB, about a day) has not been used; candidate providers are
-  DigitalOcean, AWS, Google Cloud and Hetzner.
+- What worked: each batch's generated build files are compressed (verified), removed after its
+  checks, and restored for later builds, so disk never ran out. The `.olean` files (about 105 GB for
+  the full closure) must stay uncompressed; the root `OAI.lean` additionally needs them all present
+  at once. The cloud alternative (16 vCPU, 600+ GB, about a day) has not been used; candidate
+  providers are DigitalOcean, AWS, Google Cloud and Hetzner.
 
 ## 7. Other Lean libraries, for context
 
@@ -401,20 +469,20 @@ plainly.
   described for `OAI`; the repository's README says its results are at different stages of
   verification and that some of the unformalized ones could have issues.
 - **Cost of checking everything** (measured here, section 1a): about three days of compute on a
-  thermally limited laptop, 150 to 200 GB of disk with archiving of generated C (about 700 GB
-  without), up to 26 GiB of memory for a single Comparator check, and a mapping budget that the
-  Linux default covers only for modules below about 13,100 imported module-system modules.
+  thermally limited laptop, 150 to 200 GB of disk with archiving of the generated build files (about
+  700 GB without), up to 26 GiB of memory for a single Comparator check, and a mapping budget that
+  the Linux default covers only for modules below about 13,100 imported module-system modules.
 - **Routine use is far cheaper than the whole.** A user of one result needs only the transitive
   import closure of the modules involved, not the library. Across the 416 configurations the in-repo
   closure of the solution module has a median of 77 modules (0.07% of the 107,978-module union), a
   75th percentile of 300, a 90th percentile of 735 and a maximum of 4,774. Of the 40 configurations
   accepted when this was written, the 25 under 100 modules took a median of 147 s to check; the 14
   with 1,000 or more modules took a median of 978 s (maximum 16,981 s). Building a closure is slower
-  than checking it (the headline `HeckeSevenEighths`, 2,925 modules, built in about 55 minutes and
-  checked in 9 minutes under load). The full-library costs matter mainly for independent
-  reproduction, for maintainers, and for anyone assessing the collection as a whole. Even a
-  one-module configuration pays the mapping cost of Mathlib (about 54k in the checker), so the
-  mapping budget is a Mathlib effect, not a library-size effect.
+  than checking it (`HeckeSevenEighths`, 2,925 modules, built in about 55 minutes and checked in 9
+  minutes under load). The full-library costs matter mainly for independent reproduction, for
+  maintainers, and for anyone assessing the collection as a whole. Even a one-module configuration
+  pays the mapping cost of Mathlib (about 54k in the checker), so the mapping budget is a Mathlib
+  effect, not a library-size effect.
 
 Two recent essays note the same general worry about formalization versus understanding in
 mathematics.
@@ -436,8 +504,9 @@ mathematics.
 
 ## 8. Not done yet
 
-- The remaining 389 Comparator configurations (and the second nanoda-enabled one).
-- The root `OAI.lean` measurement and the full library build.
+- The root `OAI.lean` import measurement (section 3e): building its 6,461 missing modules, then the
+  import at the default and at a raised limit.
+- Nanoda on a sample of configurations beyond the two that enable it.
 - The `MMAP=OFF` toolchain build, the `GLIBC_TUNABLES` comparison, repeated trials for variance.
 - A cloud run (none was needed so far).
 - Proposed upstream README patch (draft once the root measurement exists): state that building the
