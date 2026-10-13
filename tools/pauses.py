@@ -5,7 +5,9 @@ Purpose: wall-clock times of checks and builds include the time the whole run wa
 screen-blank resume pairs). The raw records are left as measured; this computes how much of any interval was paused
 so reports can use active time. A pause freezes every process of the run, so any check or build in flight during a pause
 loses exactly the overlap. Intervals come from the lines "<iso time> PAUSED n processes" and "<iso time> RESUMED"
-in results/cmp-all/driver.log. Importable (load_pauses, overlap_s, batch_build_intervals); run as a script to list them.
+in results/cmp-all/driver.log. Checks started by tools/check_scheduler.py (record field batch == "scheduler") are not frozen by pause.sh;
+they lose only the intervals from the lines "<iso time> FROZEN ..." / "<iso time> THAWED ..." (systemctl freeze of the scheduler's units),
+which load_freezes returns. Importable (load_pauses, load_freezes, overlap_s, batch_build_intervals); run as a script to list them.
 """
 import re, datetime as dt
 LOG = '/home/srv/s/math/openai-math/results/cmp-all/driver.log'
@@ -20,6 +22,19 @@ def load_pauses(path=LOG):
         if m.group(2) == 'PAUSED' and start is None: start = t
         elif m.group(2) == 'RESUMED' and start is not None: out.append((start, t)); start = None
     if start is not None: out.append((start, dt.datetime.now(start.tzinfo)))     # still paused
+    return out
+
+
+def load_freezes(path=LOG):
+    """Intervals during which the scheduler's own check units were frozen (FROZEN ... THAWED lines)."""
+    out, start = [], None
+    for l in open(path):
+        m = re.match(r'(\S+) (FROZEN|THAWED)', l)
+        if not m: continue
+        t = dt.datetime.fromisoformat(m.group(1))
+        if m.group(2) == 'FROZEN' and start is None: start = t
+        elif m.group(2) == 'THAWED' and start is not None: out.append((start, t)); start = None
+    if start is not None: out.append((start, dt.datetime.now(start.tzinfo)))
     return out
 
 

@@ -26,7 +26,7 @@ if os.path.exists(R + '/batches.jsonl'):
 rec = {}
 for l in open(R + '/all.jsonl'):
     d = json.loads(l); rec[d['config']] = d            # last record per config wins
-PAUSES = pz.load_pauses(); BUILDS = pz.batch_builds()
+PAUSES = pz.load_pauses(); FREEZES = pz.load_freezes(); BUILDS = pz.batch_builds()
 BROWS = [json.loads(l) for l in open(R + '/batches.jsonl')] if os.path.exists(R + '/batches.jsonl') else []
 if len(BROWS) == len(BUILDS):                   # same order: the i-th jsonl row is the i-th build-end line
     for bd, br in zip(BUILDS, BROWS): bd['row'] = br
@@ -51,7 +51,7 @@ for n, (cl, sol) in size.items():
     if d.get('started') and d.get('cmp_s') is not None:
         t0 = dt.datetime.fromisoformat(d['started']);
         if not d.get('build_skipped') and d.get('build_s') is not None: t0 += dt.timedelta(seconds=d['build_s'])
-        chk_paused = pz.overlap_s(t0, t0 + dt.timedelta(seconds=d['cmp_s']), PAUSES); chk_active = d['cmp_s'] - chk_paused
+        chk_paused = pz.overlap_s(t0, t0 + dt.timedelta(seconds=d['cmp_s']), FREEZES if d.get('batch') == 'scheduler' else PAUSES); chk_active = d['cmp_s'] - chk_paused   # scheduler checks were not paused by pause.sh
     bw = d.get('build_s') if d.get('build_s') is not None else b.get('build_wall_s')
     if bd:
         bs, be = bd['start'], bd['end']; bld_paused = pz.overlap_s(bs, be, PAUSES); bld_active = (bw or 0) - bld_paused
