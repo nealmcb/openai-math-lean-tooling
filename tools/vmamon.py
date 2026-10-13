@@ -12,7 +12,7 @@ Threshold claims must be verified by boundary tests (run at limit N and N-1),
 not by sampled peaks alone. See ../REPORT.md.
 
 Usage: vmamon.py --out DIR [--interval 0.05] -- cmd args...
-Writes DIR/summary.json and DIR/samples.jsonl (one line per sample with changed
+Writes DIR/summary.json (including export_timeline and export_done_s for lean4export processes) and DIR/samples.jsonl (one line per sample with changed
 per-process maxima only, to keep logs small) and DIR/stdout.log (merged output).
 """
 import argparse, json, os, re, subprocess, sys, time, signal, datetime
@@ -183,6 +183,12 @@ def main():
     exp = sorted((v.get("max_wchar", 0) for v in seen.values() if v["comm"] == "lean4export"), reverse=True)
     summary["export_bytes_total"] = sum(exp); summary["export_bytes_largest"] = exp[0] if exp else 0
     summary["export_processes"] = len(exp)
+    # when each lean4export process ran, in seconds after the start of the monitored command: its sampled start and end bound the export
+    # phase (the kernel check of the solution follows the last export), and its bytes are the export size known at that point
+    tl = sorted((v for v in seen.values() if v["comm"] == "lean4export"), key=lambda v: v["first_ts"])
+    summary["export_timeline"] = [dict(pid=v["pid"], start_s=round(v["first_ts"] - t0, 1), end_s=round(v.get("last_ts", v["first_ts"]) - t0, 1),
+                                       bytes=v.get("max_wchar", 0), max_rss_bytes=v["max_rss"]) for v in tl]
+    summary["export_done_s"] = max((e["end_s"] for e in summary["export_timeline"]), default=None)
     # CPU time of all waited children (reliable, not sampled)
     ch = os.times()
     summary["children_cpu_user_s"] = round(ch.children_user, 2)
