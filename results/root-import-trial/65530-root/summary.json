@@ -1,0 +1,150 @@
+{
+ "label": "root-import-65530",
+ "cmd": [
+  "lake",
+  "env",
+  "lean",
+  "/home/srv/s/math/openai-math/src/lean/OAI.lean"
+ ],
+ "started": "2026-10-14T07:19:23+00:00",
+ "wall_s": 13.341,
+ "exit_code": 1,
+ "vm_max_map_count": 65530,
+ "samples": 139,
+ "interval_s": 0.05,
+ "peak_per_process_vmas_sampled": 65532,
+ "peak_concurrent_processes": 2,
+ "peak_sum_vmas_sampled": 71434,
+ "peak_sum_rss_bytes": 3745140736,
+ "min_mem_available_kb": 40322560,
+ "oom_kills_during": 0,
+ "classification": "vma_limit_likely (ENOMEM with sampled VMA peak near limit)",
+ "top_processes": [
+  {
+   "pid": 1920232,
+   "comm": "lean",
+   "cmd": "",
+   "max_vmas": 65532,
+   "max_rss": 2894159872,
+   "cpu_s": 5.79,
+   "minflt": 105326,
+   "majflt": 6845,
+   "rchar": 76383434,
+   "wchar": 2
+  },
+  {
+   "pid": 1920044,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5902,
+   "max_rss": 850980864,
+   "cpu_s": 0.65,
+   "minflt": 36701,
+   "majflt": 1,
+   "rchar": 191452774,
+   "wchar": 4834871
+  },
+  {
+   "pid": 1920134,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 84,
+   "max_rss": 8028160,
+   "cpu_s": 0.14,
+   "minflt": 1018,
+   "majflt": 0,
+   "rchar": 32255589,
+   "wchar": 1
+  },
+  {
+   "pid": 1920050,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 83,
+   "max_rss": 7778304,
+   "cpu_s": 0.19,
+   "minflt": 1277,
+   "majflt": 0,
+   "rchar": 50005325,
+   "wchar": 1
+  },
+  {
+   "pid": 1920169,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 67,
+   "max_rss": 19546112,
+   "cpu_s": 0.26,
+   "minflt": 6063,
+   "majflt": 0,
+   "rchar": 39410576,
+   "wchar": 2174977
+  },
+  {
+   "pid": 1920163,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 55,
+   "max_rss": 31473664,
+   "cpu_s": 0.14,
+   "minflt": 5832,
+   "majflt": 0,
+   "rchar": 12324287,
+   "wchar": 1
+  },
+  {
+   "pid": 1920180,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 42,
+   "max_rss": 8761344,
+   "cpu_s": 0.03,
+   "minflt": 1044,
+   "majflt": 0,
+   "rchar": 993582,
+   "wchar": 1
+  },
+  {
+   "pid": 1920122,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 40,
+   "max_rss": 5898240,
+   "cpu_s": 0.0,
+   "minflt": 285,
+   "majflt": 0,
+   "rchar": 1680084,
+   "wchar": 1
+  },
+  {
+   "pid": 1920186,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 40,
+   "max_rss": 7340032,
+   "cpu_s": 0.01,
+   "minflt": 542,
+   "majflt": 0,
+   "rchar": 406229,
+   "wchar": 61441
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [
+  {
+   "comm": "lean",
+   "pid": 1920232,
+   "start_s": 2.5,
+   "end_s": 13.2,
+   "cpu_s": 5.8,
+   "max_rss_bytes": 2894159872
+  }
+ ],
+ "children_cpu_user_s": 3.83,
+ "children_cpu_sys_s": 4.48
+}

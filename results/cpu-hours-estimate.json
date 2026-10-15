@@ -1,0 +1,28 @@
+{
+ "compile_cpu_h_all_modules": 327.3,
+ "skip_kernel_cpu_saving": 0.152,
+ "compile_cpu_h_skipkernel": 277.7,
+ "lean_comparator_checks_h": 80.1,
+ "nanoda_sweep": {
+  "configs": 381,
+  "export_h": 2.8,
+  "nanoda_cpu_h": 8.9,
+  "lean_replay_cpu_h_same_configs": 11.6
+ },
+ "nanoda_long": {
+  "configs": 15,
+  "export_h": 1.2,
+  "nanoda_cpu_h": 22.1
+ },
+ "nanoda_planarpacking_h": 11.2,
+ "nanoda_uncovered": {
+  "pieces": 76,
+  "export_h": 1.3,
+  "nanoda_cpu_h": 40.5
+ },
+ "nanoda_checks_416_h": 46.2,
+ "nanoda_uncovered_h": 41.8,
+ "total_lean_h": 407.5,
+ "total_nanoda_h_416_only": 323.9,
+ "total_nanoda_h_with_uncovered": 365.7
+}
