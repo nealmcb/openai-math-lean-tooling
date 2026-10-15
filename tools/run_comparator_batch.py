@@ -10,7 +10,7 @@ STOP file exists. Outcome is parsed from Comparator's own output, never inferred
 Usage: run_comparator_batch.py LEAN_ROOT OUT.jsonl CONFIG_NAME [CONFIG_NAME...]
   (CONFIG_NAME = ComparatorChallenges/<name>.json basename without .json)
 Env: needs landrun and lean4export on PATH (see ../MANIFEST.txt), COMPARATOR_BIN optional. Each check runs in a systemd unit named
-cmp-<config> (so it can be stopped on its own, and a second check of the same config is skipped); CHECK_MEMMAX (e.g. 30G) caps its memory.
+cmp-<config> (so it can be stopped on its own, and a second check of the same config is skipped); CHECK_MEMMAX (e.g. 30G) caps its memory; CHECK_CPUS (e.g. 24-31) pins it to those CPUs with taskset.
 A check stopped by tools/check_scheduler.py is recorded as outcome "preempted" and is to be re-run.
 """
 import sys, os, json, time, subprocess, re, tempfile, datetime
@@ -104,6 +104,7 @@ for name in names:
         cmd = ["systemd-run", "--user", "--wait", "--pipe", "--collect", f"--unit=cmp-{name}", "--property=RestrictAddressFamilies=~AF_UNIX",
                *(["--property=MemoryMax=" + os.environ["CHECK_MEMMAX"]] if os.environ.get("CHECK_MEMMAX") else []),
                "-E", f"PATH={env_path}", "-E", f"HOME={os.environ['HOME']}", f"--working-directory={root}",
+               *(["taskset", "-c", os.environ["CHECK_CPUS"]] if os.environ.get("CHECK_CPUS") else []),
                "python3", "-I", os.path.join(here, "vmamon.py"), "--out", mon, "--interval", "0.1", "--label", name, "--",
                "lake", "env", comparator, f"ComparatorChallenges/{name}.json"]
         subprocess.run(cmd, cwd=root, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)

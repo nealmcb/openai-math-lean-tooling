@@ -189,6 +189,11 @@ def main():
     summary["export_timeline"] = [dict(pid=v["pid"], start_s=round(v["first_ts"] - t0, 1), end_s=round(v.get("last_ts", v["first_ts"]) - t0, 1),
                                        bytes=v.get("max_wchar", 0), max_rss_bytes=v["max_rss"]) for v in tl]
     summary["export_done_s"] = max((e["end_s"] for e in summary["export_timeline"]), default=None)
+    # the kernel phases of a Comparator check: the nanoda checker (comm nanoda_bin) and Lean's own kernel (comm lean) run one after the other
+    # on the solution; sampled start and end seconds after the start of the monitored command, with their CPU time and peak memory
+    summary["kernel_timeline"] = [dict(comm=v["comm"], pid=v["pid"], start_s=round(v["first_ts"] - t0, 1), end_s=round(v.get("last_ts", v["first_ts"]) - t0, 1),
+                                       cpu_s=round(v["cpu_ticks"] / clk, 1), max_rss_bytes=v["max_rss"])
+                                  for v in sorted(seen.values(), key=lambda v: v["first_ts"]) if v["comm"] in ("nanoda_bin", "lean") and v["cpu_ticks"] / clk >= 1]
     # CPU time of all waited children (reliable, not sampled)
     ch = os.times()
     summary["children_cpu_user_s"] = round(ch.children_user, 2)
