@@ -1,0 +1,60 @@
+diff --git a/Main.lean b/Main.lean
+index 8560511..9310d63 100644
+--- a/Main.lean
++++ b/Main.lean
+@@ -21,6 +21,7 @@ structure Context where
+   whichLandrun : String
+   whichLean4Export : String
+   externalKernels : (Std.TreeMap String (Array String))
++  skipBuiltinKernel : Bool
+ 
+ abbrev M := ReaderT Context IO
+ 
+@@ -33,6 +34,9 @@ structure LandrunArgs where
+   writablePaths : Array System.FilePath
+   executablePaths : Array System.FilePath
+ 
++@[inline]
++def getSkipBuiltinKernel : M Bool := do return (← read).skipBuiltinKernel
++
+ @[inline]
+ def getExternalKernels : M (Std.TreeMap String (Array String)) := do return (← read).externalKernels
+ 
+@@ -297,7 +301,11 @@ def verifyMatch (challengeExport : String) (solutionExport : String) :
+   let mut result := none
+   for (kernelName, kernelCommand) in ← getExternalKernels do
+     result := result <|> (← runExternalKernel kernelName kernelCommand solutionExport)
+-  result := result <|> (← runBuiltinKernel solution)
++  if ← getSkipBuiltinKernel then
++    -- local change (performance study, not upstream): the solution is checked by the external kernels only
++    IO.println "Lean default kernel replay skipped by configuration (skip_builtin_kernel)"
++  else
++    result := result <|> (← runBuiltinKernel solution)
+   if let some error := result then
+     throw <| IO.userError error
+ 
+@@ -325,6 +333,7 @@ structure Config where
+   permitted_axioms : Array String
+   enable_nanoda? : Option Bool
+   external_kernels? : Option (Std.TreeMap String (Array String))
++  skip_builtin_kernel? : Option Bool
+   deriving Lean.FromJson, Lean.ToJson, Repr
+ 
+ def M.run (x : M α) (cfg : Config) : IO α := do
+@@ -350,6 +359,8 @@ def M.run (x : M α) (cfg : Config) : IO α := do
+   else if let some nanodaOverride := nanodaOverride? then
+     externalKernels := externalKernels.modify "nanoda" fun cmd => cmd.set! 0 nanodaOverride
+ 
++  if cfg.skip_builtin_kernel?.getD false && externalKernels.isEmpty then
++    throw <| .userError "skip_builtin_kernel needs an external kernel (enable_nanoda or external_kernels); otherwise nothing would check the solution"
+   ReaderT.run x {
+     projectDir := cwd
+     challengeModule := cfg.challenge_module.toName,
+@@ -362,6 +373,7 @@ def M.run (x : M α) (cfg : Config) : IO α := do
+     whichLean4Export := whichLean4Export,
+     whichLandrun := whichLandrun,
+     externalKernels := externalKernels
++    skipBuiltinKernel := cfg.skip_builtin_kernel?.getD false
+   }
+ 
+ end Comparator

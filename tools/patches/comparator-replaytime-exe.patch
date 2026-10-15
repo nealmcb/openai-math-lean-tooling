@@ -1,0 +1,15 @@
+diff --git a/lakefile.toml b/lakefile.toml
+index 8b55152..6fcf86e 100644
+--- a/lakefile.toml
++++ b/lakefile.toml
+@@ -9,6 +9,10 @@ name = "Comparator"
+ name = "comparator"
+ root = "Main"
+ 
++[[lean_exe]]
++name = "replaytime"
++root = "ReplayTime"
++
+ [[require]]
+ scope = "leanprover"
+ name = "lean4export"

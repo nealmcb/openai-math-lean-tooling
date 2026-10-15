@@ -1,0 +1,68 @@
+diff --git a/src/lib.rs b/src/lib.rs
+index f7ca1d9..4d77332 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -20,4 +20,7 @@ mod tests;
+ pub mod unique_hasher;
+ pub mod util;
+ 
+-pub(crate) const STACK_SIZE: usize = 16_777_216;
++// local change (not upstream): checker-thread stack size in MiB from NANODA_STACK_MB (default 1024; upstream is the constant 16 MiB). The stack is virtual memory.
++pub(crate) fn stack_size() -> usize {
++    std::env::var("NANODA_STACK_MB").ok().and_then(|v| v.parse::<usize>().ok()).unwrap_or(1024) * 1024 * 1024
++}
+diff --git a/src/tc.rs b/src/tc.rs
+index 27eaaac..1d0dea6 100644
+--- a/src/tc.rs
++++ b/src/tc.rs
+@@ -151,17 +151,35 @@ impl<'p> ExportFile<'p> {
+         use std::sync::atomic::{AtomicUsize, Ordering::Relaxed};
+         use std::thread;
+         let task_num = AtomicUsize::new(0);
++        // local change (performance study, not upstream): with NANODA_DECL_TIMES=FILE, write the time spent on each declaration to FILE
++        let timing = std::env::var("NANODA_DECL_TIMES").ok();
++        let scope_t0 = std::time::Instant::now();
++        let log = timing.as_ref().map(|path| std::sync::Mutex::new(std::fs::File::create(path).unwrap()));
++        let task_num_r = &task_num; let log_r = &log;
+         thread::scope(|sco| {
+             let mut handles = Vec::new();
+             for i in 0..num_threads {
+                 handles.push(
+                     thread::Builder::new()
+                         .name(format!("thread_{}", i))
+-                        .stack_size(crate::STACK_SIZE)
+-                        .spawn_scoped(sco, || loop {
+-                            let idx = task_num.fetch_add(1, Relaxed);
++                        .stack_size(crate::stack_size())
++                        .spawn_scoped(sco, move || loop {
++                            let idx = task_num_r.fetch_add(1, Relaxed);
+                             if let Some((_, declar)) = self.declars.get_index(idx) {
++                                let t0 = std::time::Instant::now();
++                                let name = if let Some(l) = log_r {
++                                    use std::io::Write;
++                                    let name = self.with_ctx(|ctx| format!("{:?}", ctx.debug_print(declar.info().name)));
++                                    let mut f = l.lock().unwrap();
++                                    writeln!(f, "B\t{}\t{}\t{}\t{}", idx, i, scope_t0.elapsed().as_micros(), name).unwrap(); f.flush().unwrap();
++                                    name
++                                } else { String::new() };
+                                 self.check_declar(declar);
++                                if let Some(l) = log_r {
++                                    use std::io::Write;
++                                    let mut f = l.lock().unwrap();
++                                    writeln!(f, "E\t{}\t{}\t{}\t{}", idx, i, t0.elapsed().as_micros(), name).unwrap(); f.flush().unwrap();
++                                }
+                             } else {
+                                 break
+                             }
+@@ -173,6 +191,11 @@ impl<'p> ExportFile<'p> {
+                 t.join().expect("A thread in `check_all_declars` panicked while being joined");
+             }
+         });
++        if let Some(l) = &log {
++            use std::io::Write;
++            let mut f = l.lock().unwrap();
++            writeln!(f, "S\t{}", scope_t0.elapsed().as_micros()).unwrap(); f.flush().unwrap();
++        }
+     }
+ 
+     /// Check all of the declarations in this export file on the specified number
