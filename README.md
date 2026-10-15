@@ -16,6 +16,8 @@ recorded run of the code in this repository, with results under `results/`.
    library, and what drives the number?
 3. Which of the repository's Comparator configurations check out, how long does each take, and what
    does a pass actually establish?
+4. What would a different Lean kernel (here nanoda, in Rust) do for the same checks: how much faster
+   or slower, how does it use extra cores and memory, and where does it fail?
 
 The project is a reproducibility and resource-measurement exercise. It does not try to validate the
 manuscripts' mathematics.
@@ -41,11 +43,11 @@ modules it needs) plus the check. Measured here for the accepted configurations:
 |---|---|---|---|---|---|
 | up to 100 modules | 230 | 39 | 0.3 h (4 h) | 4 min / 10 min / 43 min | 6.4 GiB (20 GiB) |
 | 101 to 500 | 112 | 212 | 1.1 h (52 h) | 4 min / 39 min / 2.0 h | 6.5 GiB (20 GiB) |
-| 501 to 2,000 | 16 | 550 | 2.5 h (39 h) | 5 min / 24 min / 10.9 h | 6.8 GiB (13 GiB) |
-| over 2,000 | 14 | 2925 | 8.2 h (60 h) | 16 min / 46 min / 4.7 h | 7.6 GiB (26 GiB) |
-| all 372 accepted | 372 | 64 | | 4 min / 17 min / 10.9 h | 6.4 GiB (26 GiB) |
+| 501 to 2,000 | 59 | 720 | 3.1 h (39 h) | 6 min / 26 min / 10.9 h | 6.9 GiB (13 GiB) |
+| over 2,000 | 15 | 2925 | 8.2 h (60 h) | 15 min / 46 min / 4.7 h | 7.6 GiB (26 GiB) |
+| all 416 accepted | 416 | 78 | | 4 min / 17 min / 10.9 h | 6.5 GiB (26 GiB) |
 
-(`tools/cost_table.py` regenerates this table; it is a snapshot while the run continues.)
+(`tools/cost_table.py` regenerates this table. Check times are on the laptop with Lean's kernel.)
 
 - **Building scales with size, checking mostly does not.** The compile time of the closure grows
   with the number of modules, while the typical check takes about 4 minutes in every size class. A
@@ -78,10 +80,12 @@ emphasize, mathematical progress also requires exposition, community building, a
 just more theorems.
 
 These full-library costs matter mainly for independent reproduction, for maintainers, and for anyone
-trying to assess the collection as a whole. Rebuilding and checking all of it takes, on a thermally
-limited laptop, an estimated three days of compute, 150 to 200 GB of disk with careful archiving
-(about 700 GB without), up to 26 GiB of memory for a single check, and a memory mapping budget that
-the Linux default of 65,530 only just covers for the deepest modules.
+trying to assess the collection as a whole. Rebuilding and checking all of it took, on a thermally
+limited laptop, 3.8 days of wall time (about 570 module-hours of compiling and 80 hours of checks),
+150 to 200 GB of disk with careful archiving (about 700 GB without), up to 26 GiB of memory for a
+single check, and a memory mapping budget that the Linux default of 65,530 only just covers for the
+deepest modules. On one 32-vCPU cloud machine the same compiling, for every module of the library,
+took 13.8 hours (section 3g of the report).
 
 The scale problem should not be overstated for routine work. A mathematician using one result needs
 only the transitive import closure of the modules involved, a small fraction of the library, and
@@ -103,13 +107,23 @@ Ubuntu 22.04.5 with the default limit of 65530.
   (Mathlib, Lean core). Peak mappings per process are about `40 + 5*M + O`, where M counts
   module-system modules and O ordinary modules in the import closure.
 - Mathlib and Lean core already cost about 56k of the 65,530. The deepest non-root OAI modules are
-  predicted at about 61k and were measured at 57 to 58.6k; no module other than the aggregate
-  `OAI.lean` (predicted about 149k, not yet measured) is predicted to exceed the default.
+  predicted at about 61k and were measured at 57 to 58.6k. The only module that exceeds the default
+  is the aggregate `OAI.lean`, which needs 148,940 mappings (measured: it fails at 148,000 and
+  succeeds at 150,000).
 - At Mathlib's recent growth rate, the headroom under the Debian and Ubuntu default is roughly 0.6
   to 1.5 years (a straight-line extrapolation, section 3b of the report).
-- Comparator has accepted every configuration run so far (372 of 416 when this was written; the live
-  table is `results/cmp-all/configs.csv`), and rejects the negative controls in `controls/`. The
-  slowest check took 4.7 hours.
+- Comparator accepted all 416 configurations (`results/cmp-all/configs.csv`) and rejects the
+  negative controls in `controls/`. The slowest check took 10.9 hours of active time
+  (`PlanarPacking`); 329 of 416 took under 10 minutes.
+- The second kernel, nanoda, accepts 401 of the 416 configurations and takes a median of 0.21 of Lean's replay time on a paired sweep of 390 (about 5 times faster on 4 threads). It scales
+  almost linearly with threads on large exports (`PlanarPacking`, 3.85 GB export, 672 s on 64 threads against 10.9 hours with Lean's kernel); the 18 configurations whose Lean-based check took
+  over 2,000 s run 3.5 times faster end to end, 15 of them passing. It fails on 15 configurations (a stack overflow, or a memory blow-up past its 31-bit index limit) that Lean's kernel handles in
+  seconds to minutes; two backtraces show the same non-terminating reduction, reported as
+  [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55). Details and a minimal reproduction: section 3f of the report and `results/nanoda-repro/`.
+- The Comparator solutions import 88% of the library's modules. The other 14,481 modules, which Lean's kernel checked only inside the build, were checked with nanoda: 76 of 77 batches pass
+  (about 437,000 named declarations), one fails on a single declaration of the same kind (section 3h of the report).
+- Skipping Lean's kernel check while compiling (`-D debug.skipKernelTC=true`) saves about 15% of the
+  library's compile CPU time and 27% of its wall time (a sample of 26 modules).
 
 An accepted configuration shows that the Lean solution proves the stated challenge statement using
 only the permitted axioms. It does not show that the challenge statement matches the paper, or that
@@ -127,10 +141,11 @@ as plus or minus 50%.
 
 | Resource | Estimate |
 |---|---|
-| Wall-clock time, build every module and run Comparator on all 416 configurations | about 3 days in total (about 60 hours compiling, plus about 12 to 20 hours of checks that mostly overlap the builds) |
-| Disk | about 150 to 200 GB working set with the pipeline's archiving of generated build files; about 700 GB if they are kept |
+| Wall-clock time, build every module and run Comparator on all 416 configurations | laptop (16 threads): 3.8 days; one 32-vCPU cloud machine: 13.8 hours of building, then the checks (the longest, `PlanarPacking`, 9 to 11 hours with Lean's kernel, 11 minutes with nanoda on 64 threads) |
+| Disk | about 150 to 200 GB working set with the pipeline's archiving of generated build files; about 700 GB if they are kept (497 GB of it transient `.setup.json` files); a finished library build kept for later use is 116 GB |
+| CPU time | about 410 CPU-hours with Lean's kernel (compiling 330, Comparator checks 80); about 325 with nanoda replacing Lean's kernel for the 416 configurations, about 365 if it also covers the modules no solution imports (section 1a of the report; laptop-equivalent, plus or minus 30%) |
 | Memory | builds about 20 to 30 GiB at full speed; checks typically 6.5 GiB, up to 26 GiB; 64 GiB recommended |
-| `vm.max_map_count` | the default 65,530 for everything except the root `OAI.lean`, which needs roughly 150,000 or more |
+| `vm.max_map_count` | the default 65,530 for everything except the root `OAI.lean`, which needs at least 150,000 |
 
 Hardware used: Framework Laptop 13, Core i5-1340P (4 performance cores with hyper-threading plus 8
 efficiency cores, 16 threads, thermally limited), 60 GiB RAM, 39 GiB swap, 2 TB NVMe, Ubuntu
@@ -143,6 +158,10 @@ efficiency cores, 16 threads, thermally limited), 60 GiB RAM, 39 GiB swap, 2 TB 
 | `tools/vmamon.py` | Runs a command and records per-process mapping counts, memory, CPU and an explicit failure classification |
 | `tools/predict_vmas.py`, `closure_sizes.py`, `import_memory_probe.py`, `importclosure.py`, `external_reach.py` | Import-graph analysis and mapping prediction for every module |
 | `tools/pipeline.py`, `run_comparator_batch.py` | Batched builds plus parallel Comparator checks, resumable, with per-batch archiving of generated build files |
+| `tools/root_build.py`, `root_import_trial.py` | Build the modules only `OAI.lean` needs, in chunks, and import the whole library at a chosen mapping limit |
+| `tools/cloud_bootstrap.sh`, `cloud_run.py`, `priority_build.py`, `cloud_finish_build.py`, `cloud_status.sh`, `cloud_schedule_model.py`, `make_throttled_sysroot.sh` | Cloud run: install, priority-ordered parallel builds without compiling a module twice, status, and the schedule model |
+| `tools/nanoda_pilot.py`, `nanoda_scaling.py`, `nanoda_stack_test.py`, `nanoda_thread_model.py`, `nanoda_cost_proxy.py`, `kernel_pair_sweep.py`, `kernel_replay_time.lean`, `skip_kernel_test.py`, `skip_kernel_sample.py`, `export_vs_check.py`, `profile_from_builds.py`, `tools/patches/` | Second-kernel study: nanoda against Lean's kernel, thread scaling, per-declaration times, the skip-kernel build option, and the local patches (a Comparator option to skip Lean's replay; nanoda with a configurable stack and per-declaration times) |
+| `tools/cloud_long_nanoda.sh`, `cloud_long_launch.sh`, `uncovered_check.py`, `list_module_decls.lean`, `solution_coverage.py`, `isolate_decl.py`, `cpu_hours_estimate.py` | The long configurations and the modules no solution imports checked with nanoda on a cloud machine; which modules the solutions reach; one declaration exported and checked alone; the CPU-hours estimate |
 | `tools/pause.sh`, `resume.sh`, `idle_guard.py` | Instant pause and resume of a run; resume when the GNOME screen blanks |
 | `tools/parallelism_profile.py`, `export_results.py`, `export_module_times.py`, `check_time_factors.py`, `cost_outliers.py`, `cost_table.py`, `overnight_status.py`, `mdwrap.py` | Build-parallelism profile, per-config CSV, check-cost factors and outliers, status summary |
 | `controls/` | Negative controls for Comparator (sorry, extra axiom, `native_decide`, mismatched statement) |
@@ -180,11 +199,16 @@ unless the pipeline's archiving is used.
 
 ## Status and limits
 
-Comparator has accepted all 416 configurations. The root-module import (`import OAI`, 6,461 modules
-still to build, see section 3e of the report), the `-DMMAP=OFF` comparison and repeated trials are
-not done. Sampled mapping peaks are lower bounds. Timings come from a single machine (a 13th-gen
-Core i5 laptop that is thermally limited) while other work was running, and some include periods
-when the run was paused.
+Comparator has accepted all 416 configurations, the whole library (every `OAI` module, including
+the root `import OAI`) has been built and the root import measured (section 3e of the report), and
+the second-kernel study (nanoda) covers the paired sweep, the long configurations and the modules no
+solution imports (sections 3f and 3h; 15 configurations and one further declaration fail in nanoda,
+with the cause still open, see [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55)). Not done: the
+`-DMMAP=OFF` comparison, repeated trials for variance, and per-declaration Lean-kernel times to
+compare with nanoda's. Sampled mapping peaks are lower bounds. The laptop timings come from one
+thermally limited machine while other work was running, and some include periods when the run was
+paused (the tables use active time); the cloud timings come from one instance type, and the CPU-hour
+totals are rough estimates.
 
 ## License
 
