@@ -1,0 +1,15 @@
+{"config": "SnakyTwentyOne", "threads": 4, "exit": 0, "wall_s": 193.7, "cpu_s": 533.4, "cores_used": 2.75, "rss_gib": 5.58, "speedup": 1.0}
+{"config": "SnakyTwentyOne", "threads": 8, "exit": 0, "wall_s": 137.6, "cpu_s": 533.8, "cores_used": 3.88, "rss_gib": 5.71, "speedup": 1.41}
+{"config": "SnakyTwentyOne", "threads": 16, "exit": 0, "wall_s": 112.5, "cpu_s": 547.2, "cores_used": 4.87, "rss_gib": 6.02, "speedup": 1.72}
+{"config": "SnakyTwentyOne", "threads": 32, "exit": 0, "wall_s": 100.2, "cpu_s": 582.4, "cores_used": 5.81, "rss_gib": 6.55, "speedup": 1.93}
+{"config": "SnakyTwentyOne", "threads": 64, "exit": 0, "wall_s": 95.5, "cpu_s": 695.7, "cores_used": 7.29, "rss_gib": 7.59, "speedup": 2.03}
+{"config": "CycleCliqueRamsey", "threads": 4, "exit": 0, "wall_s": 681.5, "cpu_s": 2716.9, "cores_used": 3.99, "rss_gib": 0.97, "speedup": 1.0}
+{"config": "CycleCliqueRamsey", "threads": 8, "exit": 0, "wall_s": 345.8, "cpu_s": 2744.6, "cores_used": 7.94, "rss_gib": 1.25, "speedup": 1.97}
+{"config": "CycleCliqueRamsey", "threads": 16, "exit": 0, "wall_s": 183.8, "cpu_s": 2892.8, "cores_used": 15.74, "rss_gib": 1.93, "speedup": 3.71}
+{"config": "CycleCliqueRamsey", "threads": 32, "exit": 0, "wall_s": 101.6, "cpu_s": 3151.7, "cores_used": 31.01, "rss_gib": 3.44, "speedup": 6.7}
+{"config": "CycleCliqueRamsey", "threads": 64, "exit": 0, "wall_s": 64.9, "cpu_s": 3898.3, "cores_used": 60.07, "rss_gib": 6.44, "speedup": 10.5}
+{"config": "MatrixFields", "threads": 4, "exit": 0, "wall_s": 431.0, "cpu_s": 1695.2, "cores_used": 3.93, "rss_gib": 2.09, "speedup": 1.0}
+{"config": "MatrixFields", "threads": 8, "exit": 0, "wall_s": 223.3, "cpu_s": 1717.8, "cores_used": 7.69, "rss_gib": 2.17, "speedup": 1.93}
+{"config": "MatrixFields", "threads": 16, "exit": 0, "wall_s": 122.4, "cpu_s": 1812.2, "cores_used": 14.8, "rss_gib": 3.09, "speedup": 3.52}
+{"config": "MatrixFields", "threads": 32, "exit": 0, "wall_s": 68.6, "cpu_s": 1902.8, "cores_used": 27.72, "rss_gib": 5.11, "speedup": 6.28}
+{"config": "MatrixFields", "threads": 64, "exit": 0, "wall_s": 43.7, "cpu_s": 2177.2, "cores_used": 49.83, "rss_gib": 9.46, "speedup": 9.86}

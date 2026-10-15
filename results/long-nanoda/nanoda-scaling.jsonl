@@ -1,0 +1,36 @@
+{"config": "AtomicGaussian", "export_s": 145.6, "export_mb": 515}
+{"config": "TriangularGaussian", "export_s": 145.6, "export_mb": 516}
+{"config": "CoarseAssembly", "export_s": 147.5, "export_mb": 573}
+{"config": "SKRatio", "export_s": 149.9, "export_mb": 639}
+{"config": "GeneralMahler", "export_s": 151.1, "export_mb": 644}
+{"config": "TriangularEnergy", "export_s": 151.4, "export_mb": 652}
+{"config": "LaughlinFock", "export_s": 159.6, "export_mb": 569}
+{"config": "UniversalTensorSquares", "export_s": 160.1, "export_mb": 756}
+{"config": "Laughlin", "export_s": 414.0, "export_mb": 434}
+{"config": "CoarseAssembly", "threads": 8, "exit": 0, "wall_s": 544.7, "cpu_s": 1437.3, "cores_used": 2.64, "rss_gib": 9.35, "speedup": 1.0}
+{"config": "LaughlinPlanar", "export_s": 394.7, "export_mb": 381}
+{"config": "Laughlin", "threads": 8, "exit": -9, "wall_s": 797.4, "cpu_s": 2915.2, "cores_used": 3.66, "rss_gib": 151.46, "speedup": 1.0}
+{"config": "LaughlinGap", "export_s": 185.4, "export_mb": 610}
+{"config": "GeneralMahler", "threads": 8, "exit": 0, "wall_s": 1287.1, "cpu_s": 4905.6, "cores_used": 3.81, "rss_gib": 5.89, "speedup": 1.0}
+{"config": "MUBSix", "export_s": 1520.4, "export_mb": 8065}
+{"config": "LaughlinFock", "threads": 8, "exit": -6, "wall_s": 1457.3, "cpu_s": 5463.0, "cores_used": 3.75, "rss_gib": 127.23, "speedup": 1.0}
+{"config": "StrongKadisonKastler", "export_s": 206.7, "export_mb": 1300}
+{"config": "FactorGeneration", "export_s": 67.7, "export_mb": 494}
+{"config": "FactorGeneration", "threads": 8, "exit": 0, "wall_s": 132.6, "cpu_s": 412.9, "cores_used": 3.11, "rss_gib": 0.98, "speedup": 1.0}
+{"config": "SKRatio", "threads": 8, "exit": 0, "wall_s": 1729.0, "cpu_s": 6595.1, "cores_used": 3.81, "rss_gib": 4.88, "speedup": 1.0}
+{"config": "DuttaDomain", "export_s": 105.6, "export_mb": 755}
+{"config": "StrongKadisonKastler", "threads": 8, "exit": 0, "wall_s": 371.4, "cpu_s": 1254.0, "cores_used": 3.38, "rss_gib": 2.21, "speedup": 1.0}
+{"config": "DuttaDomain", "threads": 8, "exit": 0, "wall_s": 79.0, "cpu_s": 238.1, "cores_used": 3.01, "rss_gib": 1.11, "speedup": 1.0}
+{"config": "RelativeGeneration", "export_s": 66.8, "export_mb": 491}
+{"config": "RelativeGeneration", "threads": 8, "exit": 0, "wall_s": 99.2, "cpu_s": 390.5, "cores_used": 3.94, "rss_gib": 0.97, "speedup": 1.0}
+{"config": "OstmannPrimes", "export_s": 233.1, "export_mb": 1772}
+{"config": "LaughlinGap", "threads": 8, "exit": 0, "wall_s": 913.1, "cpu_s": 3763.0, "cores_used": 4.12, "rss_gib": 7.54, "speedup": 1.0}
+{"config": "OstmannPrimes", "threads": 8, "exit": 0, "wall_s": 118.2, "cpu_s": 376.1, "cores_used": 3.18, "rss_gib": 2.17, "speedup": 1.0}
+{"config": "TriangularGaussian", "threads": 8, "exit": 0, "wall_s": 2338.6, "cpu_s": 9716.2, "cores_used": 4.15, "rss_gib": 16.8, "speedup": 1.0}
+{"config": "AtomicGaussian", "threads": 8, "exit": 0, "wall_s": 2348.5, "cpu_s": 9736.2, "cores_used": 4.15, "rss_gib": 15.62, "speedup": 1.0}
+{"config": "TriangularEnergy", "threads": 8, "exit": 0, "wall_s": 2396.0, "cpu_s": 10015.9, "cores_used": 4.18, "rss_gib": 16.44, "speedup": 1.0}
+{"config": "ErdosReciprocal", "export_s": 762.9, "export_mb": 4504}
+{"config": "UniversalTensorSquares", "threads": 8, "exit": 0, "wall_s": 2924.8, "cpu_s": 13226.5, "cores_used": 4.52, "rss_gib": 20.77, "speedup": 1.0}
+{"config": "ErdosReciprocal", "threads": 8, "exit": 0, "wall_s": 737.7, "cpu_s": 4940.8, "cores_used": 6.7, "rss_gib": 10.5, "speedup": 1.0}
+{"config": "MUBSix", "threads": 8, "exit": 0, "wall_s": 2175.9, "cpu_s": 12708.6, "cores_used": 5.84, "rss_gib": 8.86, "speedup": 1.0}
+{"config": "LaughlinPlanar", "threads": 8, "exit": -9, "wall_s": 14400.0, "cpu_s": 0.0, "cores_used": 0.0, "rss_gib": 0.01, "speedup": 1.0}

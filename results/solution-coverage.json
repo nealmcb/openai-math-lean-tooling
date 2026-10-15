@@ -1,0 +1,88 @@
+{
+ "modules": 122458,
+ "solutions": 413,
+ "covered": 107977,
+ "uncovered": 14481,
+ "uncovered_by_area": {
+  "OAI.Geometry": [
+   4223,
+   14057
+  ],
+  "OAI.Analysis": [
+   2307,
+   26566
+  ],
+  "OAI.Probability": [
+   2281,
+   12971
+  ],
+  "OAI.MathematicalPhysics": [
+   1544,
+   6736
+  ],
+  "OAI.Combinatorics": [
+   1341,
+   16614
+  ],
+  "OAI.NumberTheory": [
+   691,
+   23530
+  ],
+  "OAI.GroupTheory": [
+   458,
+   4192
+  ],
+  "OAI.MeasureTheory": [
+   410,
+   2950
+  ],
+  "OAI.RepresentationTheory": [
+   253,
+   1108
+  ],
+  "OAI.Algebra": [
+   228,
+   2081
+  ],
+  "OAI.InformationTheory": [
+   181,
+   339
+  ],
+  "OAI.AlgebraicGeometry": [
+   175,
+   975
+  ],
+  "OAI.CategoryTheory": [
+   169,
+   312
+  ],
+  "OAI.Dynamics": [
+   107,
+   664
+  ],
+  "OAI.Computability": [
+   58,
+   5213
+  ],
+  "OAI.RingTheory": [
+   28,
+   536
+  ],
+  "OAI.LinearAlgebra": [
+   13,
+   954
+  ],
+  "OAI.Topology": [
+   12,
+   1249
+  ],
+  "OAI": [
+   1,
+   1
+  ],
+  "OAI.ModelTheory": [
+   1,
+   42
+  ]
+ }
+}

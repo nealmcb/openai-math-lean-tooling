@@ -1,0 +1,1 @@
+{"use_stdin": false, "export_file_path": "x/UniqueGamesTheorem.export", "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"], "unpermitted_axiom_hard_error": true, "num_threads": 64, "nat_extension": true, "string_extension": true}

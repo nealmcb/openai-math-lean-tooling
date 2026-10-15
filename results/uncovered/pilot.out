@@ -1,0 +1,7 @@
+12:53:16 300 modules in 6 batches, 6 at a time, nanoda 8 threads
+13:01:47 pilot-0of1-b0p0: 4017 decls, export 1443 MB in 90.5 s, nanoda rc 0 62.5 s
+13:02:46 pilot-0of1-b4p0: 611 decls, export 2010 MB in 117.1 s, nanoda rc 0 113.7 s
+13:03:03 pilot-0of1-b2p0: 998 decls, export 2242 MB in 124.7 s, nanoda rc 0 127.8 s
+13:05:28 pilot-0of1-b3p0: 799 decls, export 1980 MB in 110.4 s, nanoda rc 0 275.9 s
+13:06:36 pilot-0of1-b5p0: 632 decls, export 1979 MB in 113.3 s, nanoda rc 0 296.0 s
+13:06:36 done

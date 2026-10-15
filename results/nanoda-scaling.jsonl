@@ -1,0 +1,5 @@
+{"config": "ThreeStateSupercritical", "threads": 1, "exit": 0, "wall_s": 7.7, "cpu_s": 7.7, "cores_used": 1.0, "rss_gib": 0.15, "speedup": 1.0}
+{"config": "ThreeStateSupercritical", "threads": 2, "exit": 0, "wall_s": 4.3, "cpu_s": 7.5, "cores_used": 1.74, "rss_gib": 0.16, "speedup": 1.79}
+{"config": "ThreeStateSupercritical", "threads": 4, "exit": 0, "wall_s": 2.8, "cpu_s": 7.6, "cores_used": 2.77, "rss_gib": 0.17, "speedup": 2.81}
+{"config": "ThreeStateSupercritical", "threads": 8, "exit": 0, "wall_s": 2.2, "cpu_s": 9.7, "cores_used": 4.4, "rss_gib": 0.18, "speedup": 3.5}
+{"config": "ThreeStateSupercritical", "threads": 16, "exit": 0, "wall_s": 1.9, "cpu_s": 13.0, "cores_used": 6.89, "rss_gib": 0.21, "speedup": 4.11}

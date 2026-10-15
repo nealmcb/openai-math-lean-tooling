@@ -1,0 +1,10 @@
+
+thread 'thread_35' (3047) panicked at src/util.rs:55:9:
+index 2147483648 exceeds 31-bit capacity
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'thread_27' (3039) panicked at src/util.rs:55:9:
+index 2147483648 exceeds 31-bit capacity
+
+thread 'main' (3008) panicked at src/tc.rs:191:26:
+A thread in `check_all_declars` panicked while being joined: Any { .. }

@@ -1,0 +1,14 @@
+set pagination off
+handle SIGSEGV stop nopass
+run
+bt 40
+python
+import gdb
+f = gdb.newest_frame(); names = {}; n = 0
+while f is not None and n < 2000000:
+    nm = f.name() or '?'
+    names[nm] = names.get(nm, 0) + 1; f = f.older(); n += 1
+print("frames walked:", n)
+for k, v in sorted(names.items(), key=lambda kv: -kv[1])[:14]: print(v, k)
+end
+quit

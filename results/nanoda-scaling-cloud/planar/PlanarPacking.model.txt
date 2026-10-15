@@ -1,0 +1,11 @@
+847817 declarations, sum of declaration times 39558.9 s, parallel phase measured 618.4 s, setup 53.6 s
+longest declaration 15.8 s (0.0% of the sum): OAI.SharpPlanar.CachedData.density1_r5_15_eq._proof_1_1
+    1 threads: predicted wall  39612.6 s   speed-up over 4:  0.25   bound max(longest, sum/N)+setup  39612.6 s
+    2 threads: predicted wall  19833.1 s   speed-up over 4:  0.50   bound max(longest, sum/N)+setup  19833.1 s
+    4 threads: predicted wall   9943.4 s   speed-up over 4:  1.00   bound max(longest, sum/N)+setup   9943.3 s
+    8 threads: predicted wall   4998.5 s   speed-up over 4:  1.99   bound max(longest, sum/N)+setup   4998.5 s
+   16 threads: predicted wall   2526.1 s   speed-up over 4:  3.94   bound max(longest, sum/N)+setup   2526.0 s
+   32 threads: predicted wall   1289.9 s   speed-up over 4:  7.71   bound max(longest, sum/N)+setup   1289.8 s
+   64 threads: predicted wall    671.8 s   speed-up over 4: 14.80   bound max(longest, sum/N)+setup    671.7 s
+  128 threads: predicted wall    362.8 s   speed-up over 4: 27.41   bound max(longest, sum/N)+setup    362.7 s
+suggested threads: 128

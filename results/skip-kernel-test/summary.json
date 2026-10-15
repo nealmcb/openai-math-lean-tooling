@@ -1,0 +1,46 @@
+{
+ "compile_normal": {
+  "exit": 0,
+  "wall_s": 1.4,
+  "cpu_s": 1.7,
+  "err": ""
+ },
+ "nanoda_normal": {
+  "exit": 0,
+  "wall_s": 0.16,
+  "export_bytes": 11374447,
+  "last": ""
+ },
+ "compile_skip": {
+  "exit": 0,
+  "wall_s": 1.2,
+  "cpu_s": 1.7,
+  "err": ""
+ },
+ "nanoda_skip": {
+  "exit": 0,
+  "wall_s": 0.17,
+  "export_bytes": 11374433,
+  "last": ""
+ },
+ "exports_identical": true,
+ "bogus_compile_normal": {
+  "exit": 1,
+  "msg": [
+   "SkipTest/Bad_normal.lean:3:0: error: (kernel) declaration type mismatch, 'SkipTest.bogus' has type",
+   "  True"
+  ]
+ },
+ "bogus_compile_skip": {
+  "exit": 0,
+  "msg": []
+ },
+ "bogus_nanoda": {
+  "exit": 101,
+  "last": [
+   "",
+   "thread 'main' (2162005) panicked at src/tc.rs:173:26:",
+   "A thread in `check_all_declars` panicked while being joined: Any { .. }"
+  ]
+ }
+}
