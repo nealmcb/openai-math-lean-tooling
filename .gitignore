@@ -13,3 +13,8 @@ results/cmp-all/restore.lst
 results/cmp-all/archive.lst
 results/cmp-all/PAUSED_PIDS
 results/cmp-all/*.out
+# per-declaration time logs of the nanoda runs and the unpacked repro export (regenerable; summaries are kept)
+results/long-nanoda/times/
+results/uncovered/times/
+results/kernel-pair-sweep-times/
+results/nanoda-repro/sizeFactor_positive.export
