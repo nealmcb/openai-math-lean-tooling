@@ -6,7 +6,7 @@ before ordering. Speed factors come from the pilot on one instance type.
 
 ## Why a second machine
 
-The laptop (REPORT.md section 1a) has already built every module the Comparator configurations
+The laptop (REPORT.md section 1b) has already built every module the Comparator configurations
 need and accepted all 416 configurations, so the cloud is not needed for the main result. It adds
 three things the laptop cannot give:
 

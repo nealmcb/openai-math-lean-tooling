@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """export_vs_check: how well do the size and contents of a solution's export predict the Comparator check time?
 
-Purpose: REPORT.md section 3d asks what makes a check expensive. tools/export_probe.py measures, for every configuration whose closure
+Purpose: REPORT.md section 3c asks what makes a check expensive. tools/export_probe.py measures, for every configuration whose closure
 is built, the bytes of the solution export and counts of its record kinds (results/export-probe.csv); results/cmp-all/configs.csv has
 the active check time of each accepted configuration. This prints rank (Spearman) correlations of check time with the export size and
 with each count (expression nodes, theorem records, natural-number literals, and the number of distinct applications of

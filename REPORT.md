@@ -1,8 +1,10 @@
-# Report: verifying OpenAI/math in Lean: what it costs, how a second kernel compares, and what the memory-mapping limit has to do with it
+# Report: verifying OpenAI/math in Lean: what it costs, how Nanoda compares, and what the memory-mapping limit has to do with it
 
 Status as of 2026-10-15 (a local workstation plus about $85 of cloud spend; the Comparator run, the root build, the full cloud build, the paired kernel
 sweep and the nanoda checks are complete; the cause of the nanoda failures is open, see nanoda_lib issue 55). Repo pinned at openai/math commit fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb, Lean
-v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Raw data is under results/. The study began with one question, whether the default Linux limit
+v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Raw data is under results/.
+
+The study began with one question, whether the default Linux limit
 on memory mappings (`vm.max_map_count`) is enough to build the library, and grew into the larger picture below. All numbers are from one thermally limited
 laptop and one cloud instance type, under uneven load, and are rough.
 
@@ -21,27 +23,74 @@ Four findings, most interesting first.
    [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55) (section 3f). The Comparator solutions import only 88% of the library's modules; the other
    14,481 were checked with nanoda in 77 batches, 76 of which pass (about 437,000 named declarations), and one fails on a single declaration of the same kind (section 3h).
 3. **The cost, in CPU time and in wall time.** Rough CPU cost of the whole job: about 410 CPU-hours with Lean's kernel (compiling 330, Comparator checks 80), about
-   325 with nanoda replacing Lean's kernel on the 416 configurations, and about 365 if nanoda also covers the modules no solution imports (section 1a). The whole library
+   325 with nanoda replacing Lean's kernel on the 416 configurations, and about 365 if nanoda also covers the modules no solution imports (section 1b). The whole library
    (all 122,458 `OAI` modules, the root included) built on one 32-vCPU cloud machine in 13.8 hours, about 4.7 times the laptop's throughput (section 3g).
 4. **The memory-mapping limit (the original question).** On Ubuntu 22.04.5 (hardware-enablement kernel 6.8, `vm.max_map_count` = 65530) every build and Comparator check
    succeeded at the default limit: all 107,978 modules in the Comparator solution closure, and all the other modules of `OAI.lean`'s closure. The highest sampled
    single-process count in any non-root build was 58,559 (89% of the limit). The one module that fails at 65530 is the root `OAI.lean`: with every other module built it
    fails at the default limit with `failed to read file ...olean` after 13 s, fails at 148,000 and succeeds at 150,000 and above. Its peak is about 148,940 mappings in one
-   process (143k to 149k predicted, section 3a; measured, section 3e).
+   process (143k to 149k predicted, section 3a; measured, section 3d).
 
 **Reading guide.**
 
 | If you want | Read |
 |---|---|
-| what a single check costs, and the totals | 1a (resources, CPU-hours), 3c (Comparator results), 3d (what makes a check expensive) |
+| what a single check costs, and the totals | 1b (resources, CPU-hours), 3b (Comparator results), 3c (what makes a check expensive) |
 | the second kernel | 3f (speed, scaling, failures, skipping Lean's kernel), 3h (the modules no solution imports) |
 | the cloud runs | 3g |
-| the mapping limit and the root import | 2, 3, 3a, 3b (growth of Mathlib), 3e |
+| the mapping limit and the root import | 2, 3, 3a, 3d (root import), 3e (growth of Mathlib) |
 | what a pass means | 5 |
-| scale and context | 4, 6, 7, 7a |
+| scale and context | 1a, 4, 6, 7 |
 | what is left | 8 |
 
-## 1a. Resources the full run took
+## 1a. Scale, digestibility and review
+
+The size of the library is the main driver of every cost measured here.
+
+- **Size:** `OAI` is 122,458 AI-generated Lean files and 26.06 million lines (1.57 GB of source).
+  Mathlib is 9,112 files and 2.42 million lines. `OAI` is about 11 times the size of Mathlib.
+- **Reading cost:** at 1,000 lines an hour and 2,000 working hours a year, reading the 26 million
+  lines once would take about 13 person-years, before any attempt to understand them.
+- **Review:** Mathlib's contents entered through pull requests with review and maintainer approval
+  over nearly a decade (772 contributors on its statistics page). No comparable review process is
+  described for `OAI`; the repository's README says its results are at different stages of
+  verification and that some of the unformalized ones could have issues.
+- **Cost of checking everything** (measured here, section 1b): 3.8 days of wall time on a
+  thermally limited laptop (13.8 hours of building on one 32-vCPU cloud machine), 150 to 200 GB of disk with archiving of the generated build files (about
+  700 GB without), up to 26 GiB of memory for a single Comparator check, and a mapping budget that
+  the Linux default covers only for modules below about 13,100 imported module-system modules.
+- **Routine use is far cheaper than the whole.** A user of one result needs only the transitive
+  import closure of the modules involved, not the library. Across the 416 configurations the in-repo
+  closure of the solution module has a median of 77 modules (0.07% of the 107,978-module union), a
+  75th percentile of 300, a 90th percentile of 735 and a maximum of 4,774. Of the 416 configurations,
+  the 230 with closures under 100 modules took a median of 4 minutes to check (90th percentile 10
+  minutes); the 74 with 501 or more modules took a median of 6 to 15 minutes by size class, with
+  maxima of 10.9 hours and 4.7 hours. Building a closure is slower
+  than checking it (`HeckeSevenEighths`, 2,925 modules, built in about 55 minutes and checked in 9
+  minutes under load). The full-library costs matter mainly for independent reproduction, for
+  maintainers, and for anyone assessing the collection as a whole. Even a one-module configuration
+  pays the mapping cost of Mathlib (about 54k in the checker), so the mapping budget is a Mathlib
+  effect, not a library-size effect.
+
+Two recent essays note the same general worry about formalization versus understanding in
+mathematics.
+
+- Terence Tao, thread of four posts, 2026-10-06 (https://mathstodon.xyz/@tao/117395267721642920): in
+  traditional mathematics a breakthrough proof is digested through talks, workshops, collaborations
+  and eventually textbooks. But when open problems are instead solved autonomously by AI prompters who
+  do not engage with the field, that normal activity is skipped, and proposed solutions to interesting
+  problems are "harvested at large scale in an unsustainable fashion". He argues the community should value
+  progress more holistically, "for instance by elevating the role of exposition, but also that of
+  community building and opening up new directions of study", and believes AI can help with those
+  too.
+- David Bessis, "The fall of the theorem economy"
+  (https://davidbessis.substack.com/p/the-fall-of-the-theorem-economy): argues that AI could produce
+  correct theorems and formal proofs while mathematics loses what makes it valuable, which is
+  understanding that spreads through a community; he quotes Thurston ("The product of mathematics is
+  clarity and understanding. Not theorems, by themselves.") and says that even correct
+  unintelligible proofs are not accretive to the mathematical corpus.
+
+## 1b. Resources the full run took
 
 Measured on the laptop (Comparator run and root build) and on one cloud machine (section 3g). The laptop numbers include other work running
 at the same time and periods when the run was paused by hand; the check and compile figures are active times.
@@ -56,7 +105,7 @@ at the same time and periods when the run was paused by hand; the check and comp
 | Memory, build | 20 to 30 GiB of real memory at full speed on the laptop; one Lean process up to 10.5 GiB | lowest available memory seen during three big builds: 17 to 25 GiB of 60 |
 | Memory, checks | median 6.5 GiB, 90th percentile 7.2, maximum 26.1 GiB (`MUBSix`) | 401 checks with a valid monitor |
 | Memory, recommended | 64 GiB | tested on 60 GiB with 39 GiB of swap; the run used up to 18 GiB of swap |
-| Mapping limit | the default 65,530 for everything except the root `OAI.lean`, which needs at least 150,000 | sections 3a and 3e |
+| Mapping limit | the default 65,530 for everything except the root `OAI.lean`, which needs at least 150,000 | sections 3a and 3d |
 
 **CPU-hours for the whole job (rough estimate, `tools/cpu_hours_estimate.py`, `results/cpu-hours-estimate.json`).** Both pipelines build every module once; they differ in
 who checks the declarations. These are laptop-equivalent CPU hours (the compile figure is scaled from a 26-module sample measured on a quiet machine to all 122,458
@@ -112,11 +161,11 @@ proves the true peak never passed the limit.
 | same | 148000 / 150000 / 262144 | fails / ok / ok | 148,002 / 148,935 / 148,939 | 54 s / 64 s / 201 s |
 
 Every Comparator configuration (416) built and checked at 65530; per-configuration numbers
-are in section 3c and `results/cmp-all/configs.csv`.
+are in section 3b and `results/cmp-all/configs.csv`.
 
 Reproducibility: mapping counts depend on the imported file set and the Lean and Mathlib versions,
 not on other processes. Wall times depend on machine load (load average 6-30 on 16 threads while
-other work ran; the machine is a thermally limited laptop, see 3c) and each run was done once, so
+other work ran; the machine is a thermally limited laptop, see 3b) and each run was done once, so
 there is no variance estimate.
 
 
@@ -140,7 +189,7 @@ which 11,472 use the module system.
   and the biggest families are not the deepest ones.
 - The root `OAI.lean` is predicted at 148,915 (about 142,700 after the 0.958 calibration): 11,379
   module-system externals x 5 plus 91,762 in-repo modules. It is the only module that needs more
-  than the Ubuntu default. Measured with every module built: 148,940 mappings (fails at 148,000, succeeds at 150,000; section 3e).
+  than the Ubuntu default. Measured with every module built: 148,940 mappings (fails at 148,000, succeeds at 150,000; section 3d).
 
 - **Memory of the root import, measured at five sizes** (`tools/import_memory_probe.py`,
   `results/import-memory-probe.json`). Importing Mathlib plus a random sample of built OAI modules
@@ -158,50 +207,7 @@ which 11,472 use the module system.
   (simp sets, instances) could grow faster than linearly; the measured growth shows no sign of that
   up to 9,271 modules.
 
-## 3b. Mathlib growth and when common Linux defaults will fail
-
-Most of the mapping budget is Mathlib and Lean core, not the project code. Measured and derived
-(Lean v4.34.1, Mathlib d13f23b723b):
-
-- `import Mathlib` alone: 10,744 modules, 53,800 mappings, 82% of the Ubuntu/Debian default 65,530.
-  The OAI modules that import a large part of Mathlib carry a fixed external cost of about 56.3k
-  (11,262 module-system modules x 5, predicted; measured big modules 57-58.6k).
-- Headroom left for a module that sits at the predicted worst case
-  (`OAI.Combinatorics.Progressions.Main`, predicted 61,124, measured 58.6k): 4,406 mappings by the
-  model, which is 881 more module-system modules. For bare `import Mathlib`, the default allows
-  about 13,100 module-system modules, i.e. about 2,350 more than today.
-- Growth of Mathlib (count of `Mathlib/**/*.lean` files at the last commit before each date, from
-  the git history of the pinned checkout):
-
-| Date | Files | Lean toolchain at that commit |
-|---|---|---|
-| 2024-01-01 | 3,782 | v4.5.0-rc1 |
-| 2025-01-01 | 5,500 | v4.15.0-rc1 |
-| 2025-07-01 | 6,558 | v4.22.0-rc2 |
-| 2026-01-01 | 7,430 | v4.27.0-rc1 |
-| 2026-07-01 | 8,226 | v4.32.0-rc1 |
-| 2026-09-24 | 8,529 | v4.34.x |
-
-That is about +1,700 files in 2024, +1,900 in 2025 and about +1,500 per year over the last nine
-months. Almost all new Mathlib files become part of `import Mathlib` and of most deep project
-modules.
-- Extrapolation at about 1,500 new module-system modules per year (a straight-line assumption, not a
-  forecast):
-  - A bare `import Mathlib` crosses 65,530 in roughly 1.5 years (about 2,350 modules).
-  - The deepest OAI modules, if they follow a newer Mathlib, cross it in roughly 0.6 years (881
-    modules), since they already use 93% of the limit.
-  - The root `OAI.lean` already exceeds it by more than a factor of two.
-- What this does not depend on: the repository pins Mathlib, so nothing changes until the pin is
-  moved. What it does depend on: (1) the per-module cost of 5 mappings is a property of Lean's
-  module system and of this Lean version; before module-system builds the cost per module was lower,
-  so older stacks had more headroom and a future Lean could reduce or increase it; (2) distribution
-  defaults: Debian and Ubuntu keep 65,530, while Arch (1,048,576) and Fedora and Pop!_OS
-  (2,147,483,642, the gaming value) are reported to be far higher (not independently verified).
-- Mitigations: raise `vm.max_map_count` (cheap, `sysctl`), or Lean could map fewer files per module
-  (merging `.server`/`.private`/`.ir`/`.sig`) or avoid mapping with `MMAP=OFF` at a memory cost (not
-  yet measured here).
-
-## 3c. Comparator results (all 416 configurations)
+## 3b. Comparator results (all 416 configurations)
 
 All 416 accepted, none rejected. Table: `results/cmp-all/configs.csv` (one row per configuration, written by `tools/export_results.py`);
 `tools/cost_table.py` and `tools/cost_outliers.py` summarise it.
@@ -238,7 +244,7 @@ All 416 accepted, none rejected. Table: `results/cmp-all/configs.csv` (one row p
   16 threads), running at its 100 C thermal limit during builds (load 20 to 30). Other work ran at the same time and the run was paused by hand at
   times, so times are indicative, not benchmarks. Mapping counts are unaffected.
 
-## 3d. What makes a check expensive
+## 3c. What makes a check expensive
 
 Across all 416 configurations (`tools/cost_outliers.py`, rows in `results/cost-outliers.csv`), the active Comparator check time has a
 median of 266 s, a 90th percentile of 1,036 s, a 99th percentile of 5,764 s and a maximum of 39,131 s (10.9 h, `PlanarPacking`), 147 times the median.
@@ -249,7 +255,7 @@ Peak check memory has a median of 6.5 GiB, a 90th percentile of 7.2 GiB and a ma
   2.3 either way). Check memory is unrelated to the solution file's source size (rank correlation -0.01).
 - **The outliers are specific proofs.** Checks 6 to 18 times slower than the trend predicts: `PlanarPacking` (18 times), `GeneralMahler` (9.8),
   `LaughlinFock` (8.3), `TriangularEnergy` and `MUBSix` (6.4), `MatrixFields` (6.2), `TriangularGaussian` (6.1), `AtomicGaussian` (6.0). The largest
-  memory users are listed in section 3c.
+  memory users are listed in section 3b.
 - **Export size is the best simple predictor.** `tools/export_probe.py` measured the size of every configuration's solution export (227 GB in
   all; median 0.5 GB, largest 8.1 GB) without running a check. The rank correlation of check time with export bytes over all 416 is 0.67 (with
   expression nodes 0.67, theorem records 0.69, natural-number literals 0.34, and with the number of `of_decide_eq_true` applications, the proof term
@@ -289,7 +295,7 @@ exported terms rather than how long the sources are. That is a hypothesis from t
 export-size data above. `GeneralMahler` and `LaughlinFock`, the largest remaining outliers by ratio,
 have not been read.
 
-## 3e. The root import (`import OAI`): what it needs
+## 3d. The root import (`import OAI`): what it needs
 
 `OAI.lean` imports 91,762 modules. A process that imports it maps one file per ordinary module and
 five per module-system module (Mathlib and Lean core), which predicts about 149,000 mappings against
@@ -366,6 +372,49 @@ Third trial, everything built: the real `OAI.lean` run as `lean OAI.lean` under 
   the 60 GiB machine was 37.0 GiB. The importing process needs a big page cache, not a big heap.
 - **Time:** 64 to 73 s with the files in the page cache, 201 s with a cold cache (25 to 28 s of user
   time, the rest system time for the mappings).
+
+## 3e. Mathlib growth and when common Linux defaults will fail
+
+Most of the mapping budget is Mathlib and Lean core, not the project code. Measured and derived
+(Lean v4.34.1, Mathlib d13f23b723b):
+
+- `import Mathlib` alone: 10,744 modules, 53,800 mappings, 82% of the Ubuntu/Debian default 65,530.
+  The OAI modules that import a large part of Mathlib carry a fixed external cost of about 56.3k
+  (11,262 module-system modules x 5, predicted; measured big modules 57-58.6k).
+- Headroom left for a module that sits at the predicted worst case
+  (`OAI.Combinatorics.Progressions.Main`, predicted 61,124, measured 58.6k): 4,406 mappings by the
+  model, which is 881 more module-system modules. For bare `import Mathlib`, the default allows
+  about 13,100 module-system modules, i.e. about 2,350 more than today.
+- Growth of Mathlib (count of `Mathlib/**/*.lean` files at the last commit before each date, from
+  the git history of the pinned checkout):
+
+  | Date | Files | Lean toolchain at that commit |
+  |---|---|---|
+  | 2024-01-01 | 3,782 | v4.5.0-rc1 |
+  | 2025-01-01 | 5,500 | v4.15.0-rc1 |
+  | 2025-07-01 | 6,558 | v4.22.0-rc2 |
+  | 2026-01-01 | 7,430 | v4.27.0-rc1 |
+  | 2026-07-01 | 8,226 | v4.32.0-rc1 |
+  | 2026-09-24 | 8,529 | v4.34.x |
+
+  That is about +1,700 files in 2024, +1,900 in 2025 and about +1,500 per year over the last nine
+  months. Almost all new Mathlib files become part of `import Mathlib` and of most deep project
+  modules.
+- Extrapolation at about 1,500 new module-system modules per year (a straight-line assumption, not a
+  forecast):
+  - A bare `import Mathlib` crosses 65,530 in roughly 1.5 years (about 2,350 modules).
+  - The deepest OAI modules, if they follow a newer Mathlib, cross it in roughly 0.6 years (881
+    modules), since they already use 93% of the limit.
+  - The root `OAI.lean` already exceeds it by more than a factor of two.
+- What this does not depend on: the repository pins Mathlib, so nothing changes until the pin is
+  moved. What it does depend on: (1) the per-module cost of 5 mappings is a property of Lean's
+  module system and of this Lean version; before module-system builds the cost per module was lower,
+  so older stacks had more headroom and a future Lean could reduce or increase it; (2) distribution
+  defaults: Debian and Ubuntu keep 65,530, while Arch (1,048,576) and Fedora and Pop!_OS
+  (2,147,483,642, the gaming value) are reported to be far higher (not independently verified).
+- Mitigations: raise `vm.max_map_count` (cheap, `sysctl`), or Lean could map fewer files per module
+  (merging `.server`/`.private`/`.ir`/`.sig`) or avoid mapping with `MMAP=OFF` at a memory cost (not
+  yet measured here).
 
 ## 3f. The second kernel (nanoda) and the cost of Lean's own
 
@@ -630,54 +679,6 @@ three months), ClassFieldTheory (1,713 files, 21 commits), and a family of `lana
 repositories created in July 2026. All four are confirmed to include AI contributions. Human-led
 project libraries (PrimeNumberTheoremAnd, 83 authors; carleson, 39; sphere-eversion, 21) are one to
 two orders smaller.
-
-## 7a. Scale, digestibility and review
-
-The size of the library is the main driver of every cost measured here, so it is worth stating
-plainly.
-
-- **Size:** `OAI` is 122,458 AI-generated Lean files and 26.06 million lines (1.57 GB of source).
-  Mathlib is 9,112 files and 2.42 million lines. `OAI` is about 11 times the size of Mathlib.
-- **Reading cost:** at 1,000 lines an hour and 2,000 working hours a year, reading the 26 million
-  lines once would take about 13 person-years, before any attempt to understand them.
-- **Review:** Mathlib's contents entered through pull requests with review and maintainer approval
-  over nearly a decade (772 contributors on its statistics page). No comparable review process is
-  described for `OAI`; the repository's README says its results are at different stages of
-  verification and that some of the unformalized ones could have issues.
-- **Cost of checking everything** (measured here, section 1a): 3.8 days of wall time on a
-  thermally limited laptop (13.8 hours of building on one 32-vCPU cloud machine), 150 to 200 GB of disk with archiving of the generated build files (about
-  700 GB without), up to 26 GiB of memory for a single Comparator check, and a mapping budget that
-  the Linux default covers only for modules below about 13,100 imported module-system modules.
-- **Routine use is far cheaper than the whole.** A user of one result needs only the transitive
-  import closure of the modules involved, not the library. Across the 416 configurations the in-repo
-  closure of the solution module has a median of 77 modules (0.07% of the 107,978-module union), a
-  75th percentile of 300, a 90th percentile of 735 and a maximum of 4,774. Of the 416 configurations,
-  the 230 with closures under 100 modules took a median of 4 minutes to check (90th percentile 10
-  minutes); the 74 with 501 or more modules took a median of 6 to 15 minutes by size class, with
-  maxima of 10.9 hours and 4.7 hours. Building a closure is slower
-  than checking it (`HeckeSevenEighths`, 2,925 modules, built in about 55 minutes and checked in 9
-  minutes under load). The full-library costs matter mainly for independent reproduction, for
-  maintainers, and for anyone assessing the collection as a whole. Even a one-module configuration
-  pays the mapping cost of Mathlib (about 54k in the checker), so the mapping budget is a Mathlib
-  effect, not a library-size effect.
-
-Two recent essays note the same general worry about formalization versus understanding in
-mathematics.
-
-- Terence Tao, thread of four posts, 2026-10-06 (https://mathstodon.xyz/@tao/117395267721642920): in
-  traditional mathematics a breakthrough proof is digested through talks, workshops, collaborations
-  and eventually textbooks; when open problems are instead solved autonomously by AI prompters who
-  do not engage with the field, that follow-on activity does not happen, and solutions are
-  "harvested at large scale in an unsustainable fashion". He argues the community should value
-  progress more holistically, "for instance by elevating the role of exposition, but also that of
-  community building and opening up new directions of study", and believes AI can help with those
-  too.
-- David Bessis, "The fall of the theorem economy"
-  (https://davidbessis.substack.com/p/the-fall-of-the-theorem-economy): argues that AI could produce
-  correct theorems and formal proofs while mathematics loses what makes it valuable, which is
-  understanding that spreads through a community; he quotes Thurston ("The product of mathematics is
-  clarity and understanding. Not theorems, by themselves.") and says that even correct
-  unintelligible proofs are not accretive to the mathematical corpus.
 
 ## 8. Not done yet
 

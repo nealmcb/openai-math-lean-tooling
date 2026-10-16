@@ -41,7 +41,7 @@ Lean files and 26.1 million lines—eleven times the size of
 [Mathlib](https://github.com/leanprover-community/mathlib4), the remarkably extensive,
 community-built library covering much of modern undergraduate mathematics and substantial areas of
 graduate-level and research mathematics. Mathlib took hundreds of contributors nearly a decade to
-build. **For something called Lean, this is a lot to digest.** At 1,000 lines an hour, merely
+build. **For something based on Lean, OAI is a lot to digest.** At 1,000 lines an hour, merely
 reading all of OAI once would take 13 person-years of full-time work, never mind understanding it.
 Machine-checkable proofs are valuable, but as
 [Terence Tao](https://mathstodon.xyz/@tao/117395267721642920) and
@@ -55,7 +55,7 @@ limited laptop, 3.8 days of wall time (about 570 module-hours of compiling and 8
 150 to 200 GB of disk with careful archiving (about 700 GB without), up to 26 GiB of memory for a
 single check, and a memory mapping budget that the Linux default of 65,530 only just covers for the
 deepest modules. On one 32-vCPU cloud machine the same compiling, for every module of the library,
-took 13.8 hours (section 3g of the report).
+took 13.8 hours and $85 (section 3g of the report).
 
 The scale problem should not be overstated for routine work. A mathematician using one result needs
 only the transitive import closure of the modules involved, a small fraction of the library, and
@@ -71,6 +71,9 @@ of `OAI`.
 
 Most real mathematicians won't need or care about most of this. Checking a single proof or even
 a bunch of related results doesn't take very long.
+
+But if you're like me and are just curious about what it's like to play with 26 million lines of
+math proof code, dive in and keep reading.
 
 ## What does it mean to check a result?
 
@@ -124,7 +127,7 @@ is for the union of all the closures, with modules shared by several configurati
 - **Mapping limit:** every single-configuration build and check stayed under the Linux default
   `vm.max_map_count` of 65,530 (highest measured 58,559), but if you want to verify them all at
   once for some reason, you'd need nearly 150,000. See the findings below.
-- **Why costs vary so much** is discussed in section 3d of [REPORT.md](REPORT.md): the expensive
+- **Why costs vary so much** is discussed in section 3c of [REPORT.md](REPORT.md): the expensive
   checks appear to be large generated certificates checked by kernel computation, not long
   structural proofs. That is a hypothesis from a few samples.
 
@@ -165,7 +168,7 @@ Ubuntu 22.04.5 with the default limit of 65530.
   is the aggregate `OAI.lean`, which needs 148,940 mappings (measured: it fails at 148,000 and
   succeeds at 150,000).
 - At Mathlib's recent growth rate, the headroom under the Debian and Ubuntu default is roughly 0.6
-  to 1.5 years (a straight-line extrapolation, section 3b of the report).
+  to 1.5 years (a straight-line extrapolation, section 3e of the report).
 
 An accepted configuration shows that the Lean solution proves the stated challenge statement using
 only the permitted axioms. It does not show that the challenge statement matches the paper, or that
@@ -178,7 +181,7 @@ The estimates below are for the full run on the hardware used.
 
 ### Resource estimates (rough)
 
-Full detail and the basis for each figure are in section 1a of [REPORT.md](REPORT.md). Treat these
+Full detail and the basis for each figure are in section 1b of [REPORT.md](REPORT.md). Treat these
 as plus or minus 50%.
 
 | Resource | Estimate |
@@ -203,7 +206,7 @@ as plus or minus 50%.
 | `tools/pause.sh`, `resume.sh`, `idle_guard.py` | Instant pause and resume of a run; resume when the GNOME screen blanks |
 | `tools/parallelism_profile.py`, `export_results.py`, `export_module_times.py`, `check_time_factors.py`, `cost_outliers.py`, `cost_table.py`, `overnight_status.py`, `mdwrap.py` | Build-parallelism profile, per-config CSV, check-cost factors and outliers, status summary |
 | `controls/` | Negative controls for Comparator (sorry, extra axiom, `native_decide`, mismatched statement) |
-| `results/` | Per-run summaries; `results/cmp-all/configs.csv` (one row per config; read the build-time caveats in REPORT.md section 3c); `results/module-times.csv.gz` (one row per module with its compile time); prediction and closure data |
+| `results/` | Per-run summaries; `results/cmp-all/configs.csv` (one row per config; read the build-time caveats in REPORT.md section 3b); `results/module-times.csv.gz` (one row per module with its compile time); prediction and closure data |
 | `REPORT.md`, `MANIFEST.txt` | Findings, exact versions |
 
 ## Reproducing
@@ -238,7 +241,7 @@ unless the pipeline's archiving is used.
 ## Status and limits
 
 Comparator has accepted all 416 configurations, the whole library (every `OAI` module, including
-the root `import OAI`) has been built and the root import measured (section 3e of the report), and
+the root `import OAI`) has been built and the root import measured (section 3d of the report), and
 the second-kernel study (nanoda) covers the paired sweep, the long configurations and the modules no
 solution imports (sections 3f and 3h; 15 configurations and one further declaration fail in nanoda,
 with the cause still open, see [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55)). Not done: the

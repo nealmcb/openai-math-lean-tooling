@@ -2,7 +2,7 @@
 """export_probe: measure the size of a configuration's solution export without running the kernel check.
 
 Purpose: a Comparator check streams a text export of the solution's declarations (lean4export) and then has the Lean kernel re-check
-it. Check time follows the export size loosely (see REPORT.md 3d) but the size is only recorded for checks run after a monitor fix, and
+it. Check time follows the export size loosely (see REPORT.md 3c) but the size is only recorded for checks run after a monitor fix, and
 only learned part-way into a check. This runs the export step alone for each configuration, with the same targets Comparator passes
 (the Quot declarations, the theorem names, the permitted axioms, the primitives it always exports and any definition names), counts the
 bytes and discards them (nothing is stored). While the stream passes it also tallies, by counting substrings of each batch of complete lines,

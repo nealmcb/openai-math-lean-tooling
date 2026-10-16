@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """cpu_hours_estimate: rough CPU-hours for verifying the whole library with Lean's kernel and with nanoda, from the recorded measurements.
 
-Purpose: REPORT.md section 1a asks what the whole job costs in CPU time under the two pipelines. Both start from the same build (every OAI module compiled once);
+Purpose: REPORT.md section 1b asks what the whole job costs in CPU time under the two pipelines. Both start from the same build (every OAI module compiled once);
 they differ in two places: Lean's pipeline keeps the kernel check inside the compile and adds Comparator's Lean replay of each of the 416 exports; the nanoda pipeline compiles with
 `debug.skipKernelTC=true` (the compile CPU falls by the share measured in results/skip-kernel-test/sample.jsonl), exports each solution (single-threaded lean4export) and checks the export with
 nanoda (CPU time of the run), and also covers the modules no solution imports (results/uncovered/full.jsonl). Inputs and how each number is formed:
