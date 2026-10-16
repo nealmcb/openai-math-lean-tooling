@@ -158,6 +158,9 @@ Ubuntu 22.04.5 with the default limit of 65530.
   named declarations), and one fails on a single declaration of the same kind, which passes with the latest master (section 3h of the report).
 - Skipping Lean's kernel check while compiling (`-D debug.skipKernelTC=true`) saves about 15% of the
   library's compile CPU time and 27% of its wall time (a sample of 26 modules).
+- A rough guess, not run: a from-scratch, nanoda-only verification of every module might take about 7 to 8 hours and
+  roughly $10 to $15 on one spot 64-vCPU cloud machine; the plan and its assumptions are in section 3i of the report.
+  It waits on nanoda being fixed, and compile time is dominated by loading imports, not by the kernel.
 
 ### Memory mappings (`vm.max_map_count`)
 

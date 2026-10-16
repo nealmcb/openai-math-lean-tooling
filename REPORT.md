@@ -39,7 +39,7 @@ Four findings, most interesting first.
 |---|---|
 | what a single check costs, and the totals | 1b (resources, CPU-hours), 3b (Comparator results), 3c (what makes a check expensive) |
 | the second kernel | 3f (speed, scaling, failures, skipping Lean's kernel), 3h (the modules no solution imports) |
-| the cloud runs | 3g |
+| the cloud runs | 3g, and 3i for a guess at a cheap from-scratch run |
 | the mapping limit and the root import | 2, 3, 3a, 3d (root import), 3e (growth of Mathlib) |
 | what a pass means | 5 |
 | scale and context | 1a, 4, 6, 7 |
@@ -591,6 +591,50 @@ CPU-hours, 1.3 of them export), one failed.
   `ulimit -s unlimited`, and then a checker thread overflows after 488 s and 35 GiB with a 1 GiB stack, in the same `whnf` and `try_reduce_nat` alternation (`results/nanoda-repro/problem355-gdb-backtrace.txt`,
   `tools/isolate_decl.py`). Lean's kernel accepts it in the build.
 
+## 3i. A low-cost, from-scratch, nanoda-only run (a guess; not run)
+
+This section is a plan with cost guesses for someone who wants to reproduce everything with nanoda as the only kernel. It has not been run, and nanoda is not yet fixed for every
+declaration (section 3f), so none of the figures is a measurement of the whole recipe. The inputs are measurements from the runs described in sections 1b, 3f, 3g and 3h.
+
+**Where the compile time goes.** The profiler categories of the 30,908 modules profiled on the cloud (62 CPU-hours, `results/cloud-profile/profile-by-module.csv`) are: import (loading the `.olean`
+files of the module's whole import closure) 51%, typeclass inference 14%, interpretation 9%, tactic execution 7%, `.olean` serialization 5% and kernel type checking 4%. Skipping Lean's kernel
+therefore saves less than the sample's 15% of CPU suggests, and keeping all the `.olean` files in the page cache (68 GB for the library) matters more.
+
+**The slowest nanoda checks.**
+- By work: `PlanarPacking`, 39,559 s (11 CPU-hours) over 847,817 declarations from a 3.85 GB export. Its export takes 840 s on one thread and the check 672 s on 64 threads, so about 25 minutes. Its closure
+  is also the heaviest to build: 564 modules but 140,726 s of laptop compile time, with one module taking 2,121 s.
+- By wall time on a big machine: `MUBSix`, whose 8 GB export alone takes 1,520 s (2,176 s of nanoda at 8 threads, not measured at 64): about 30 to 35 minutes.
+- Among the modules no solution imports: the 16 `SepticProfile` pieces, 34 of the 42 CPU-hours, each of the largest about 6 CPU-hours. They must be spread over the cores, not run one after another.
+
+Once a closure is built, no check needs more than about 35 minutes of wall time, so the build decides the length of the whole run.
+
+**The recipe, in order** (one machine, using the tools of this repository)
+1. Bootstrap (`tools/cloud_bootstrap.sh`) with nanoda_lib at a fixed commit (`f67473b` was the one retested), Lean and Mathlib as pinned in `MANIFEST.txt`, Mathlib from the cache.
+2. Build the closure of `PlanarPacking` first, then `MUBSix`, then everything else, longest predicted check first (`tools/priority_build.py`, `tools/cloud_run.py`), all 122,458 modules
+   including the root `OAI` (which needs `vm.max_map_count` of at least 150,000), with `-D debug.skipKernelTC=true` added in the throttled `lean` wrapper (`tools/make_throttled_sysroot.sh`).
+3. As each closure completes, export it and check the export with nanoda, using the patched Comparator that skips Lean's replay (`skip_builtin_kernel`). Threads: 8 by default, 16 for the other long
+   configurations and 32 to 64 for `PlanarPacking`; Comparator's hard-coded 4 would have to become a setting.
+4. Check the modules no solution imports in batches of 250 (`tools/uncovered_check.py`), with the `SepticProfile` pieces in parallel.
+5. Delete each module's `.setup.json` files as the build goes (497 of the 600 GB), keep a time-limited automatic shutdown, and use a persistent spot request that stops, not terminates, so that
+   an interruption keeps the disk and Lake rebuilds only what is missing.
+
+**Cost guess** on one spot m7a.16xlarge (64 vCPU, 256 GiB). Spot prices read on 2026-10-16 in us-east-1 were $0.79 to $1.26 an hour (median $1.04) for that type, $0.60 to $0.70 for an r7a.8xlarge
+(32 vCPU) and $0.93 to $1.19 for a c7a.16xlarge (64 vCPU, 128 GiB); the on-demand price of the m7a.16xlarge is about $3.7 an hour. The cost per vCPU-hour is nearly the same for all of them, so a larger
+machine mostly buys a shorter run.
+
+| Step | Work | Wall time |
+|---|---|---|
+| Build, all modules, `skipKernelTC` | about 320 vCPU-hours (the 13.8 hours on 32 vCPU of section 3g, times 0.73 for the wall time saved) | about 5 to 6.5 hours, if 64 vCPU is 1.6 times faster than 32 |
+| 416 configurations, export and nanoda | about 50 CPU-hours | overlaps the build; a tail of 0.5 to 1 hour |
+| Modules no solution imports | about 42 CPU-hours | overlaps the build |
+| Bootstrap | | about 0.25 hours |
+| **Total** | about 415 vCPU-hours | **about 7 to 8 hours** |
+
+That is about $8 to $10 of spot compute plus about $1 of disk (700 GB for a day), or $12 to $15 with room for interruptions; on demand it would be about $28 to $30. The guesses that matter most are the
+scaling from 32 to 64 vCPU (unmeasured), whether the patched Comparator and `skipKernelTC` work together end to end (untried), and whether nanoda checks every declaration (it does not yet:
+`SquareDifference` has a declaration that fails, so that configuration would need Lean's kernel). With `skipKernelTC` nanoda is the only kernel that checks most declarations, so the result is only as
+good as nanoda.
+
 ## 4. What is in the library, and what OAI.lean is
 
 - 122,458 `.lean` files under `OAI/` (26.06 M lines, 1.57 GB) plus 416 files in
@@ -691,6 +735,7 @@ two orders smaller.
 - Why `SquareDifference` still overflows in upstream nanoda master (`def_eq` and `lazy_delta_step`): whether it loops or is just deep is not known (nanoda_lib issue 55).
 - Per-declaration Lean-kernel times to join with nanoda's, and a Lean replay time for the 18 long configurations measured the same way as the paired sweep.
 - The paired sweep and the modules no solution imports re-run with upstream nanoda master (only the failing configurations were re-run).
+- The cheap from-scratch nanoda run of section 3i (a plan and cost guesses only; it waits on nanoda being fixed).
 - The `MMAP=OFF` toolchain build, the `GLIBC_TUNABLES` comparison, repeated trials for variance.
 - Proposed upstream README patch: state that building the aggregate target `OAI` needs `vm.max_map_count` of at least 150,000 (measured need: 148,940;
   262,144 leaves a margin), that the per-area libraries build at the Ubuntu default of 65530, and that the `MMAP=OFF` workaround is only needed when
