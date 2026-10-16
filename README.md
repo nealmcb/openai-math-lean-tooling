@@ -11,7 +11,7 @@ recorded run of the code in this repository, with results under `results/`.
 
 The results are **very rough**, but hopefully helpful.
 And I'm pretty sure that they uncovered an issue in the Nanoda kernel, as described at
-[nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55). 
+[nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55).
 
 ## What it tries to answer
 
@@ -88,8 +88,9 @@ is a separate question that Comparator does not address.
 
 ## Overall numbers
 
-Mathlib comes from the cache, so the cost you pay is the solution's own import closure (the OAI
-modules it needs) plus the check.
+Mathlib comes from the cache (`lake exe cache get` downloads its prebuilt compiled files, so it is never
+compiled here), so the cost you pay is the solution's own import closure (the OAI modules it needs) plus
+the check.
 
 The laptop results here reflect the real-world results of trying this all out on a
 Framework Laptop 13, Core i5-1340P (4 performance cores with hyper-threading plus 8
@@ -98,7 +99,7 @@ efficiency cores, 16 threads), 60 GiB RAM, 39 GiB swap, 2 TB NVMe, Ubuntu
 CPU clock was throttled to avoid overheating (thermally limited), and in many cases there was
 contention over cpus, memory, etc. so **these numbers are by no means robust!**
 
- Measured here for the accepted configurations:
+Measured here for the accepted configurations:
 
 | Closure size (OAI modules) | Configs | Median closure size | Compile CPU time, median (max) | Check time, median / p90 / max | Check memory, median (max) |
 |---|---|---|---|---|---|
@@ -106,9 +107,10 @@ contention over cpus, memory, etc. so **these numbers are by no means robust!**
 | 101 to 500 | 112 | 212 | 1.1 h (52 h) | 4 min / 39 min / 2.0 h | 6.5 GiB (20 GiB) |
 | 501 to 2,000 | 59 | 720 | 3.1 h (39 h) | 6 min / 26 min / 10.9 h | 6.9 GiB (13 GiB) |
 | over 2,000 | 15 | 2925 | 8.2 h (60 h) | 15 min / 46 min / 4.7 h | 7.6 GiB (26 GiB) |
-| all 416 accepted | 416 | 78 | | 4 min / 17 min / 10.9 h | 6.5 GiB (26 GiB) |
+| all 416 accepted | 416 | 78 | 558 h for the 107,978 distinct modules (72% timed; about 776 h if the rest are alike) | 4 min / 17 min / 10.9 h | 6.5 GiB (26 GiB) |
 
-(`tools/cost_table.py` regenerates this table. Check times are on the laptop with Lean's kernel.)
+(`tools/cost_table.py` regenerates this table. Check times are on the laptop with Lean's kernel. The compile time in the last row
+is for the union of all the closures, with modules shared by several configurations counted once, so it is not the sum of the rows above.)
 
 - **Building scales with size, checking mostly does not.** The compile time of the closure grows
   with the number of modules, while the typical check takes about 4 minutes in every size class. A
@@ -132,6 +134,29 @@ Details, method and caveats are in [REPORT.md](REPORT.md). Versions pinned in
 [MANIFEST.txt](MANIFEST.txt): openai/math `fd4aeeb2ee`, Lean 4.34.1, Mathlib `d13f23b7`, run on
 Ubuntu 22.04.5 with the default limit of 65530.
 
+**Everything checks, with Lean's kernel.** Comparator accepted all 416 configurations
+(`results/cmp-all/configs.csv`) and rejects the negative controls in `controls/`. The slowest check took
+10.9 hours of active time (`PlanarPacking`); 329 of 416 took under 10 minutes.
+
+### Nanoda: much faster, but it fails on 15 configurations
+
+- A popular alternative kernel, nanoda, accepts 401 of the 416 configurations and takes a median of just
+  21% of Lean's replay time on a paired sweep of 390 (about 5 times faster on 4 threads). It scales
+  almost linearly with threads on large exports (`PlanarPacking`, 3.85 GB export, 672 s on 64 threads
+  against 10.9 hours with Lean's kernel); the 18 configurations whose Lean-based check took over 2,000 s
+  run 3.5 times faster end to end, 15 of them passing.
+- It fails on 15 configurations (a stack overflow, or a memory blow-up past its 31-bit index limit) that
+  Lean's kernel handles in seconds to minutes; two backtraces show the same non-terminating reduction,
+  reported as [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55). Details and a
+  minimal reproduction: section 3f of the report and `results/nanoda-repro/`.
+- The Comparator solutions import 88% of the library's modules. The other 14,481 modules, which Lean's
+  kernel checked only inside the build, were checked with nanoda: 76 of 77 batches pass (about 437,000
+  named declarations), and one fails on a single declaration of the same kind (section 3h of the report).
+- Skipping Lean's kernel check while compiling (`-D debug.skipKernelTC=true`) saves about 15% of the
+  library's compile CPU time and 27% of its wall time (a sample of 26 modules).
+
+### Memory mappings (`vm.max_map_count`)
+
 - Lean maps one file per imported module, plus four more for modules built with the module system
   (Mathlib, Lean core). Peak mappings per process are about `40 + 5*M + O`, where M counts
   module-system modules and O ordinary modules in the import closure.
@@ -141,21 +166,6 @@ Ubuntu 22.04.5 with the default limit of 65530.
   succeeds at 150,000).
 - At Mathlib's recent growth rate, the headroom under the Debian and Ubuntu default is roughly 0.6
   to 1.5 years (a straight-line extrapolation, section 3b of the report).
-- Comparator accepted all 416 configurations (`results/cmp-all/configs.csv`) and rejects the
-  negative controls in `controls/`. The slowest check took 10.9 hours of active time
-  (`PlanarPacking`); 329 of 416 took under 10 minutes.
-
-## Nanoda is much faster, but fails for a small number of modules
-- A popular alternative kernel, nanoda, accepts 401 of the 416 configurations and takes a median of just
-21% of Lean's replay time on a paired sweep of 390 (about 5 times faster on 4 threads). It scales
-  almost linearly with threads on large exports (`PlanarPacking`, 3.85 GB export, 672 s on 64 threads against 10.9 hours with Lean's kernel); the 18 configurations whose Lean-based check took
-  over 2,000 s run 3.5 times faster end to end, 15 of them passing. It fails on 15 configurations (a stack overflow, or a memory blow-up past its 31-bit index limit) that Lean's kernel handles in
-  seconds to minutes; two backtraces show the same non-terminating reduction, reported as
-  [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55). Details and a minimal reproduction: section 3f of the report and `results/nanoda-repro/`.
-- The Comparator solutions import 88% of the library's modules. The other 14,481 modules, which Lean's kernel checked only inside the build, were checked with nanoda: 76 of 77 batches pass
-  (about 437,000 named declarations), one fails on a single declaration of the same kind (section 3h of the report).
-- Skipping Lean's kernel check while compiling (`-D debug.skipKernelTC=true`) saves about 15% of the
-  library's compile CPU time and 27% of its wall time (a sample of 26 modules).
 
 An accepted configuration shows that the Lean solution proves the stated challenge statement using
 only the permitted axioms. It does not show that the challenge statement matches the paper, or that

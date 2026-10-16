@@ -1,32 +1,45 @@
-# Report: can the default Linux memory mapping limit verify OpenAI/math Lean?
+# Report: verifying OpenAI/math in Lean: what it costs, how a second kernel compares, and what the memory-mapping limit has to do with it
 
 Status as of 2026-10-15 (a local workstation plus about $85 of cloud spend; the Comparator run, the root build, the full cloud build, the paired kernel
 sweep and the nanoda checks are complete; the cause of the nanoda failures is open, see nanoda_lib issue 55). Repo pinned at openai/math commit fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb, Lean
-v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Raw data is under results/.
+v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Raw data is under results/. The study began with one question, whether the default Linux limit
+on memory mappings (`vm.max_map_count`) is enough to build the library, and grew into the larger picture below. All numbers are from one thermally limited
+laptop and one cloud instance type, under uneven load, and are rough.
 
 ## 1. Bottom line
 
-- On Ubuntu 22.04.5 (hardware-enablement kernel 6.8, `vm.max_map_count` = 65530) every build and Comparator check succeeded at the default
-  limit: all 107,978 modules in the Comparator solution closure, and all the other modules of `OAI.lean`'s closure. The highest sampled
-  single-process count in any non-root build was 58,559 (89% of the limit).
-- The one module that fails at 65530 is the root `OAI.lean`: with every other module built it fails at the default limit with
-  `failed to read file ...olean` after 13 s, fails at 148,000 and succeeds at 150,000 and above. Its peak is about 148,940 mappings in one
-  process (143k to 149k predicted, section 3a; measured, section 3e).
-- Comparator accepted all 416 configurations and rejected none. Four deliberately wrong solutions (a `sorry`, an extra axiom, `native_decide`,
-  a mismatched statement) were all rejected. Active check time per configuration: median 266 s, 90th percentile 1,036 s, maximum 39,131 s
-  (10.9 hours, `PlanarPacking`); 80 hours in all, 329 checks under 10 minutes and 12 over an hour. What an acceptance does and does not
-  establish is in section 5. Nothing in this report validates the manuscripts' mathematics.
-- The second kernel, nanoda, accepts 401 of the 416 configurations. On a paired sweep of 390 of them it takes a median of 0.21 of Lean's replay time (about 5 times
-  faster, 4 threads against 1), and it scales with threads on large exports (`PlanarPacking`: 672 s on 64 threads against 10.9 hours of Lean's check). The 15
-  it does not accept are all accepted by Lean's kernel in seconds to minutes; nanoda aborts on them with a stack overflow or a runaway that exhausts its 2^31-entry index
-  space. Two backtraces show the same non-terminating `whnf` and `try_reduce_nat` alternation, reported as
-  [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55) (section 3f).
-- The Comparator solutions import only 88% of the library's modules. The other 14,481 modules were checked with nanoda in 77 batches: 76 pass (about 437,000 named
-  declarations), one fails on a single declaration of the same kind (section 3h).
-- Rough CPU cost of the whole job: about 410 CPU-hours with Lean's kernel (compiling 330, Comparator checks 80), about 325 with nanoda replacing Lean's kernel on the
-  416 configurations, and about 365 if nanoda also covers the modules no solution imports (section 1a).
-- The whole library (all 122,458 `OAI` modules, the root included) built on one 32-vCPU cloud machine in 13.8 hours, about 4.7 times the
-  laptop's throughput (section 3g).
+Four findings, most interesting first.
+
+1. **Everything checks with Lean's kernel.** Comparator accepted all 416 configurations and rejected none. Four deliberately wrong solutions (a `sorry`, an extra axiom,
+   `native_decide`, a mismatched statement) were all rejected. Active check time per configuration: median 266 s, 90th percentile 1,036 s, maximum 39,131 s
+   (10.9 hours, `PlanarPacking`); 80 hours in all, 329 checks under 10 minutes and 12 over an hour. What an acceptance does and does not establish is in section 5.
+   Nothing in this report validates the manuscripts' mathematics.
+2. **A second, independent kernel (nanoda) is about 5 times faster, but fails on 15 configurations.** It accepts 401 of the 416. On a paired sweep of 390 of them it
+   takes a median of 0.21 of Lean's replay time (4 threads against 1), and it scales with threads on large exports (`PlanarPacking`: 672 s on 64 threads against 10.9 hours
+   of Lean's check). The 15 it does not accept are all accepted by Lean's kernel in seconds to minutes; nanoda aborts on them with a stack overflow or a runaway
+   that exhausts its 2^31-entry index space. Two backtraces show the same non-terminating `whnf` and `try_reduce_nat` alternation, reported as
+   [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55) (section 3f). The Comparator solutions import only 88% of the library's modules; the other
+   14,481 were checked with nanoda in 77 batches, 76 of which pass (about 437,000 named declarations), and one fails on a single declaration of the same kind (section 3h).
+3. **The cost, in CPU time and in wall time.** Rough CPU cost of the whole job: about 410 CPU-hours with Lean's kernel (compiling 330, Comparator checks 80), about
+   325 with nanoda replacing Lean's kernel on the 416 configurations, and about 365 if nanoda also covers the modules no solution imports (section 1a). The whole library
+   (all 122,458 `OAI` modules, the root included) built on one 32-vCPU cloud machine in 13.8 hours, about 4.7 times the laptop's throughput (section 3g).
+4. **The memory-mapping limit (the original question).** On Ubuntu 22.04.5 (hardware-enablement kernel 6.8, `vm.max_map_count` = 65530) every build and Comparator check
+   succeeded at the default limit: all 107,978 modules in the Comparator solution closure, and all the other modules of `OAI.lean`'s closure. The highest sampled
+   single-process count in any non-root build was 58,559 (89% of the limit). The one module that fails at 65530 is the root `OAI.lean`: with every other module built it
+   fails at the default limit with `failed to read file ...olean` after 13 s, fails at 148,000 and succeeds at 150,000 and above. Its peak is about 148,940 mappings in one
+   process (143k to 149k predicted, section 3a; measured, section 3e).
+
+**Reading guide.**
+
+| If you want | Read |
+|---|---|
+| what a single check costs, and the totals | 1a (resources, CPU-hours), 3c (Comparator results), 3d (what makes a check expensive) |
+| the second kernel | 3f (speed, scaling, failures, skipping Lean's kernel), 3h (the modules no solution imports) |
+| the cloud runs | 3g |
+| the mapping limit and the root import | 2, 3, 3a, 3b (growth of Mathlib), 3e |
+| what a pass means | 5 |
+| scale and context | 4, 6, 7, 7a |
+| what is left | 8 |
 
 ## 1a. Resources the full run took
 

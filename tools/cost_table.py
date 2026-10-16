@@ -6,7 +6,8 @@ configurations by in-repo closure size (the OAI modules that must be built; Math
 number of configurations, median closure size, the summed compile time of the closure in CPU-hours (wall-clock times measured under
 load, so an upper bound on isolated cost, and divisible across cores), the Comparator check time (median, 90th percentile, maximum;
 unpaused time) and the check memory (median, maximum). Reads results/check-time-factors.csv; per-configuration rows are in
-results/cost-outliers.csv. Configurations whose closure is under 90% timed are left out of the compile-time column only.
+results/cost-outliers.csv. Configurations whose closure is under 90% timed are left out of the compile-time column only. The last row's compile time is the union of all
+closures (modules shared by configurations counted once), not the sum of the rows above it.
 Usage: cost_table.py
 """
 import csv, statistics as st
@@ -26,4 +27,10 @@ for name, lo, hi in buckets:
     t = [r['t'] for r in b]; g = [r['g'] for r in b if r['g']]; c = [r['c'] for r in b if r['c'] is not None]
     print(f"| {name} | {len(b)} | {st.median(r['m'] for r in b):.0f} | {st.median(c):.1f} h ({max(c):.0f} h) | {mn(st.median(t))} / {mn(float(np.percentile(t, 90)))} / {mn(max(t))} | {st.median(g):.1f} GiB ({max(g):.0f} GiB) |")
 t = [r['t'] for r in rows]; g = [r['g'] for r in rows if r['g']]
-print(f"| all {len(rows)} accepted | {len(rows)} | {st.median(r['m'] for r in rows):.0f} | | {mn(st.median(t))} / {mn(float(np.percentile(t, 90)))} / {mn(max(t))} | {st.median(g):.1f} GiB ({max(g):.0f} GiB) |")
+# the last row's compile time is the union of the closures, not a sum: configurations share modules, and each is compiled once
+import gzip
+union = set(open(base + '/results/comparator-solution-closure.txt').read().split())
+timed = [float(r['first_build_s']) for r in csv.DictReader(gzip.open(base + '/results/module-times.csv.gz', 'rt'))
+         if r['first_build_s'] and r['likely_pause_artifact'] != '1' and (r['module'] in union or 'OAI.' + r['module'] in union)]
+union_h = sum(timed) / 3600; share = len(timed) / len(union)
+print(f"| all {len(rows)} accepted | {len(rows)} | {st.median(r['m'] for r in rows):.0f} | {union_h:.0f} h for the {len(union):,} distinct modules ({share:.0%} timed; about {union_h / share:.0f} h if the rest are alike) | {mn(st.median(t))} / {mn(float(np.percentile(t, 90)))} / {mn(max(t))} | {st.median(g):.1f} GiB ({max(g):.0f} GiB) |")
