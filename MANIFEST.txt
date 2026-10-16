@@ -7,6 +7,7 @@ comparator: d03acab154d269c06e60e4de7e4cc85deebff94b (https://github.com/leanpro
 lean4export: 076e8e57707e813375e8f9da8bf989799ace9680 (https://github.com/leanprover/lean4export)  [tag v4.34.0; its lean-toolchain file edited locally to v4.34.1 and rebuilt]
 landrun: 811cfff51ceaf3d9843708aa6d22e9b84ccac8b4 (https://github.com/Zouuup/landrun)
 nanoda_lib: 3a2407216ee84a75f9e1aead6803d0578be06ae7 (https://github.com/ammkrn/nanoda_lib)
+nanoda_lib, retested at: f67473b (upstream master, 2026-10-15; used only to re-run the configurations that failed with the commit above, see REPORT.md section 3f)
 go (for landrun): go version go1.26.9 linux/amd64
 kernel: 6.8.0-138-generic
 os: Ubuntu 22.04.5 LTS

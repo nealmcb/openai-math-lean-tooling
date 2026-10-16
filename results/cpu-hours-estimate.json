@@ -24,5 +24,12 @@
  "nanoda_uncovered_h": 41.8,
  "total_lean_h": 407.5,
  "total_nanoda_h_416_only": 323.9,
- "total_nanoda_h_with_uncovered": 365.7
+ "total_nanoda_h_with_uncovered": 365.7,
+ "nanoda_master_retest": {
+  "configs": 14,
+  "export_plus_nanoda_cpu_h": 3.9
+ },
+ "nanoda_checks_h_with_master": 50.1,
+ "total_nanoda_h_416_with_master": 327.8,
+ "total_nanoda_h_with_uncovered_and_master": 369.6
 }

@@ -141,20 +141,21 @@ Ubuntu 22.04.5 with the default limit of 65530.
 (`results/cmp-all/configs.csv`) and rejects the negative controls in `controls/`. The slowest check took
 10.9 hours of active time (`PlanarPacking`); 329 of 416 took under 10 minutes.
 
-### Nanoda: much faster, but it fails on 15 configurations
+### Nanoda: much faster, and upstream's latest version fails on one configuration
 
 - A popular alternative kernel, nanoda, accepts 401 of the 416 configurations and takes a median of just
   21% of Lean's replay time on a paired sweep of 390 (about 5 times faster on 4 threads). It scales
   almost linearly with threads on large exports (`PlanarPacking`, 3.85 GB export, 672 s on 64 threads
   against 10.9 hours with Lean's kernel); the 18 configurations whose Lean-based check took over 2,000 s
   run 3.5 times faster end to end, 15 of them passing.
-- It fails on 15 configurations (a stack overflow, or a memory blow-up past its 31-bit index limit) that
-  Lean's kernel handles in seconds to minutes; two backtraces show the same non-terminating reduction,
-  reported as [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55). Details and a
-  minimal reproduction: section 3f of the report and `results/nanoda-repro/`.
+- It failed on 15 configurations (a stack overflow, or a memory blow-up past its 31-bit index limit) that
+  Lean's kernel handles in seconds to minutes, which we reported as
+  [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55). With the latest upstream master
+  (new bignum and Nat handling) 14 of the 15 pass, most in under a minute; one, `SquareDifference`, still
+  overflows its stack. Details and a minimal reproduction: section 3f of the report and `results/nanoda-repro/`.
 - The Comparator solutions import 88% of the library's modules. The other 14,481 modules, which Lean's
   kernel checked only inside the build, were checked with nanoda: 76 of 77 batches pass (about 437,000
-  named declarations), and one fails on a single declaration of the same kind (section 3h of the report).
+  named declarations), and one fails on a single declaration of the same kind, which passes with the latest master (section 3h of the report).
 - Skipping Lean's kernel check while compiling (`-D debug.skipKernelTC=true`) saves about 15% of the
   library's compile CPU time and 27% of its wall time (a sample of 26 modules).
 
@@ -188,7 +189,7 @@ as plus or minus 50%.
 |---|---|
 | Wall-clock time, build every module and run Comparator on all 416 configurations | laptop (16 threads): 3.8 days; one 32-vCPU cloud machine: 13.8 hours of building, then the checks (the longest, `PlanarPacking`, 9 to 11 hours with Lean's kernel, 11 minutes with nanoda on 64 threads) |
 | Disk | about 150 to 200 GB working set with the pipeline's archiving of generated build files; about 700 GB if they are kept (497 GB of it transient `.setup.json` files); a finished library build kept for later use is 116 GB |
-| CPU time | about 410 CPU-hours with Lean's kernel (compiling 330, Comparator checks 80); about 325 with nanoda replacing Lean's kernel for the 416 configurations, about 365 if it also covers the modules no solution imports (section 1a of the report; laptop-equivalent, plus or minus 30%) |
+| CPU time | about 410 CPU-hours with Lean's kernel (compiling 330, Comparator checks 80); about 330 with nanoda replacing Lean's kernel for the 416 configurations, about 370 if it also covers the modules no solution imports (section 1a of the report; laptop-equivalent, plus or minus 30%) |
 | Memory | builds about 20 to 30 GiB at full speed; checks typically 6.5 GiB, up to 26 GiB; 64 GiB recommended |
 | `vm.max_map_count` | the default 65,530 for everything except the root `OAI.lean`, which needs at least 150,000 |
 
@@ -243,8 +244,8 @@ unless the pipeline's archiving is used.
 Comparator has accepted all 416 configurations, the whole library (every `OAI` module, including
 the root `import OAI`) has been built and the root import measured (section 3d of the report), and
 the second-kernel study (nanoda) covers the paired sweep, the long configurations and the modules no
-solution imports (sections 3f and 3h; 15 configurations and one further declaration fail in nanoda,
-with the cause still open, see [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55)). Not done: the
+solution imports (sections 3f and 3h; 15 configurations and one further declaration failed in the pinned nanoda,
+and all but `SquareDifference` pass with upstream master, see [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55)). Not done: the
 `-DMMAP=OFF` comparison, repeated trials for variance, and per-declaration Lean-kernel times to
 compare with nanoda's. Sampled mapping peaks are lower bounds. The laptop timings come from one
 thermally limited machine while other work was running, and some include periods when the run was

@@ -1,7 +1,7 @@
 # Report: verifying OpenAI/math in Lean: what it costs, how Nanoda compares, and what the memory-mapping limit has to do with it
 
 Status as of 2026-10-15 (a local workstation plus about $85 of cloud spend; the Comparator run, the root build, the full cloud build, the paired kernel
-sweep and the nanoda checks are complete; the cause of the nanoda failures is open, see nanoda_lib issue 55). Repo pinned at openai/math commit fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb, Lean
+sweep and the nanoda checks are complete; upstream nanoda master fixes 14 of the 15 nanoda failures and one remains, see nanoda_lib issue 55). Repo pinned at openai/math commit fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb, Lean
 v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. Raw data is under results/.
 
 The study began with one question, whether the default Linux limit
@@ -16,14 +16,16 @@ Four findings, most interesting first.
    `native_decide`, a mismatched statement) were all rejected. Active check time per configuration: median 266 s, 90th percentile 1,036 s, maximum 39,131 s
    (10.9 hours, `PlanarPacking`); 80 hours in all, 329 checks under 10 minutes and 12 over an hour. What an acceptance does and does not establish is in section 5.
    Nothing in this report validates the manuscripts' mathematics.
-2. **A second, independent kernel (nanoda) is about 5 times faster, but fails on 15 configurations.** It accepts 401 of the 416. On a paired sweep of 390 of them it
-   takes a median of 0.21 of Lean's replay time (4 threads against 1), and it scales with threads on large exports (`PlanarPacking`: 672 s on 64 threads against 10.9 hours
-   of Lean's check). The 15 it does not accept are all accepted by Lean's kernel in seconds to minutes; nanoda aborts on them with a stack overflow or a runaway
-   that exhausts its 2^31-entry index space. Two backtraces show the same non-terminating `whnf` and `try_reduce_nat` alternation, reported as
-   [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55) (section 3f). The Comparator solutions import only 88% of the library's modules; the other
-   14,481 were checked with nanoda in 77 batches, 76 of which pass (about 437,000 named declarations), and one fails on a single declaration of the same kind (section 3h).
+2. **A second, independent kernel (nanoda) is about 5 times faster, and upstream's latest version fails on only one configuration.** On a paired sweep of 390 configurations
+   the pinned nanoda (3a24072) takes a median of 0.21 of Lean's replay time (4 threads against 1), and it scales with threads on large exports (`PlanarPacking`: 672 s on 64 threads
+   against 10.9 hours of Lean's check). It accepted 401 of the 416 configurations; the other 15 are accepted by Lean's kernel in seconds to minutes, and nanoda aborted on them with a stack
+   overflow or a runaway that exhausts its 2^31-entry index space, in a `whnf` and `try_reduce_nat` alternation that two backtraces show. We reported it as
+   [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55); the maintainer pointed to bignum and Nat changes on master that week, and with the latest master (f67473b) 14 of the 15
+   pass (most in under a minute), as does the Problem355 declaration below. The remaining one, `SquareDifference`, still overflows its stack, in a different recursion (`def_eq` and `lazy_delta_step`)
+   (section 3f). The Comparator solutions import only 88% of the library's modules; the other 14,481 were checked with the pinned nanoda in 77 batches, 76 of which pass (about 437,000 named
+   declarations), and one fails on a single declaration of the same kind, which passes with master (section 3h).
 3. **The cost, in CPU time and in wall time.** Rough CPU cost of the whole job: about 410 CPU-hours with Lean's kernel (compiling 330, Comparator checks 80), about
-   325 with nanoda replacing Lean's kernel on the 416 configurations, and about 365 if nanoda also covers the modules no solution imports (section 1b). The whole library
+   330 with nanoda replacing Lean's kernel on the 416 configurations, and about 370 if nanoda also covers the modules no solution imports (section 1b). The whole library
    (all 122,458 `OAI` modules, the root included) built on one 32-vCPU cloud machine in 13.8 hours, about 4.7 times the laptop's throughput (section 3g).
 4. **The memory-mapping limit (the original question).** On Ubuntu 22.04.5 (hardware-enablement kernel 6.8, `vm.max_map_count` = 65530) every build and Comparator check
    succeeded at the default limit: all 107,978 modules in the Comparator solution closure, and all the other modules of `OAI.lean`'s closure. The highest sampled
@@ -114,14 +116,14 @@ modules, so allow plus or minus 30%; the 13.8 hour cloud build on 32 vCPUs bound
 | Step | With Lean's kernel | With nanoda in place of Lean's kernel |
 |---|---|---|
 | Compile all 122,458 modules | about 330 CPU-hours (Lean's kernel check is inside this, about 15% of it) | about 280 (`-D debug.skipKernelTC=true`) |
-| Comparator checks, 416 configurations | 80 (export, then Lean's replay, one thread each) | 46 (export 4 plus nanoda 42, for the 401 configurations that finish; the other 15 have no verdict) |
+| Comparator checks, 416 configurations | 80 (export, then Lean's replay, one thread each) | 50 (export 5 plus nanoda 45) for the 415 configurations that finish with upstream nanoda master (46 for the 401 that finish with the pinned build); `SquareDifference` has no verdict |
 | Modules no solution imports | 0 extra (Lean's kernel already checked them in the compile) | 42 (nanoda, section 3h) |
-| Total | about 410 | about 325 for the 416 configurations, about 365 with the other modules |
+| Total | about 410 | about 330 for the 416 configurations, about 370 with the other modules |
 
 The nanoda total is about 20% lower than the Lean one for the same 416 checks and about 10% lower when nanoda also replaces Lean's kernel for every other module. The
 larger difference is in wall time: with enough cores, the check phase of the nanoda pipeline is bounded by the single-threaded export (`PlanarPacking`: 14 minutes plus
-11 minutes of nanoda on 64 threads, against 10.9 hours), while the build still needs about 280 to 330 CPU-hours of compiling. Nanoda's failures mean its totals do not cover
-15 configurations.
+11 minutes of nanoda on 64 threads, against 10.9 hours), while the build still needs about 280 to 330 CPU-hours of compiling. The nanoda totals do not cover `SquareDifference`,
+which still fails with upstream master.
 
 **Hardware used:** a Framework Laptop 13 (13th Gen Intel Core) with a Core i5-1340P: 4 performance
 cores with hyper-threading (up to 4.6 GHz) plus 8 efficiency cores (up to 3.4 GHz), so 12 physical
@@ -465,7 +467,7 @@ to within about 1% (`SnakyTwentyOne`: predicted 138.6, 113.1, 100.5 and 94.4 s a
 size of a declaration in the export does not predict its cost (`tools/nanoda_cost_proxy.py`: for `SnakyTwentyOne` the proxy puts none of the 10 slowest
 declarations in its top 50), so the thread count has to come from a first run's times.
 
-**Where nanoda fails.** Fifteen configurations do not complete (and `MUBSix`, which did not finish in 90 minutes at 4 threads, finishes in 2,176 s at 8 threads). With the pinned nanoda
+**Where the pinned nanoda fails.** Fifteen configurations do not complete (and `MUBSix`, which did not finish in 90 minutes at 4 threads, finishes in 2,176 s at 8 threads). With the pinned nanoda
 (3a24072) the checker thread's 16 MiB stack overflows (Comparator reports "nanoda kernel rejected the solution" and exit 134, which reads as a verdict on the proof). Every
 failure is a few declarations; all their dependencies check normally. Each begins in the per-declaration log and never ends:
 
@@ -488,11 +490,15 @@ A 7.7 MB export of `sizeFactor_positive` alone reproduces the overflow in under 
 gdb backtrace shows `TypeChecker::whnf` and `TypeChecker::try_reduce_nat` alternating 58,000 times each; the export is too small to hold a term that deep, so this is a reduction that
 does not terminate or an unshared expansion, not a deep term. An export of the single declaration `OAI.Problem355.MainDigitLaw.sampled_orbit_det_gt` (247 MB, section 3h) gives the same
 picture: 1,864,067 frames, 932,010 of `whnf` and 932,007 of `try_reduce_nat`. The Laughlin, `KMedianThreshold`, `SquareDifference` and `ContinuumCoulombHardness` groups have no backtrace yet, so
-whether all fifteen share one cause is open. The main thread has its own stack limit, separate from the checker threads': on the Problem355 export it overflows after 35 s unless `ulimit -s unlimited`
+whether all fifteen share one cause was open (upstream master, below, settles most of it). The main thread has its own stack limit, separate from the checker threads': on the Problem355 export it overflows after 35 s unless `ulimit -s unlimited`
 is set. Everything is written up in [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55); the text is in `results/nanoda-stack-test-cloud/nanoda-issue-draft.md`.
 
+**With upstream master (f67473b).** The maintainer asked us to retry with the latest master, which has changes to bignum and Nat handling. Built from source, unmodified, and run on the same exports (the laptop runs on 4 threads, `tools/nanoda_retest.py`, `results/nanoda-retest.jsonl`; the cloud runs on 8, `tools/cloud_nanoda_retest.sh`, `results/nanoda-retest-cloud.jsonl`): 14 of the 15 configurations pass, and so does the Problem355 declaration (8.9 s against an abort after 488 s at 35 GiB). Most pass in under a minute and under 1 GiB (`DirectedFeedback` and `UniqueGamesTheorem` 28 s and 25 s); `Catalan` takes 396 s and 4.6 GiB (a panic after 2,014 s at 259 GiB before); the Laughlin family 371 to 557 s and at most 14 GiB (127 to 175 GiB before); `ContinuumCoulombHardness` passes in 130 s but peaks at 24 GiB. The 7.7 MB `sizeFactor_positive` export passes in 0.12 s, and a deliberately false export is still rejected. The paired timings above were all measured with the pinned build.
+
+One still fails, `SquareDifference`: a checker thread overflows its 16 MiB stack after about 22 s, in a different recursion: a gdb backtrace has 97,519 frames, 85,249 of them `def_eq` and 12,178 `lazy_delta_step`, with no `whnf` or `try_reduce_nat`. The single declaration `OAI.SquareDifference.tupleSubLaw_full` reproduces it (75 MB export, `results/nanoda-repro/`; overflow in 5.8 s on 4 threads, while Lean's kernel replays it in 5.8 s after 1.8 s of parsing), and two others from the same configuration overflow alone. A larger checker stack does not help the full configuration (64 MiB overflows after 43 s; 256 MiB and 1 GiB were killed by a 40 GiB memory limit after 2 min 20 s). Whether `def_eq` is making progress is not known.
+
 **The long configurations on nanoda alone.** The 18 configurations whose laptop check took over 2,000 s were exported and checked with nanoda on 8 threads, with a 1 GiB checker
-stack, 10 at a time on a 32-vCPU machine (`tools/cloud_long_nanoda.sh`, `results/long-nanoda/`). Fifteen pass; end to end (export plus nanoda) they take 22,396 s against 79,022 s for the
+stack, 10 at a time on a 32-vCPU machine (`tools/cloud_long_nanoda.sh`, `results/long-nanoda/`). Fifteen pass with the pinned build (all 18 with upstream master, below); end to end (export plus nanoda) they take 22,396 s against 79,022 s for the
 laptop's Lean-based checks, 3.5 times less in all, and the single-threaded export is the floor:
 
 | Configuration | Laptop check (Lean) | Export | nanoda, 8 threads | Export + nanoda | Speed-up | Peak memory |
@@ -533,8 +539,8 @@ it refuses to run without an external kernel); the same request is open upstream
 check and most of a long one, so with nanoda alone `PlanarPacking` is 11 minutes on 64 threads instead of 10.9 hours.
 
 **What an alternate-kernel pipeline looks like in these terms.** Build with `debug.skipKernelTC` (about 15% less compile CPU), export each solution once (227 GB of exports in all; about 4 CPU-hours
-in total for the 401 that finish, 14 minutes for `PlanarPacking`), and check with nanoda at a thread count chosen from the first run's times (46 CPU-hours for the 401 configurations that finish,
-against 80 hours of Lean replay and export on one thread for all 416, with the long tail collapsing from hours to minutes). The costs are the 15 configurations above, memory that grows with
+in total, 14 minutes for `PlanarPacking`), and check with nanoda at a thread count chosen from the first run's times (50 CPU-hours for the 415 configurations that finish with upstream master,
+against 80 hours of Lean replay and export on one thread for all 416, with the long tail collapsing from hours to minutes). The costs are the one configuration that still fails with upstream master (15 with the pinned build), memory that grows with
 threads (41 GiB for `PlanarPacking` at 64 threads), and that the build no longer has Lean's kernel as a check, so the external kernel carries all the weight. The correctness questions are
 not addressed here.
 
@@ -581,7 +587,7 @@ CPU-hours, 1.3 of them export), one failed.
   Pieces of about 18,500 named declarations (260,000 to 290,000 counting auxiliary proofs; 735,000 for the larger pieces) took 7 to 17 minutes each, those of about 19,900 took 45 minutes. Memory stayed at 3 to 4 GiB, and the slowest single
   declaration took 3.2 s: it is the number of declarations, not any one of them, that takes the time.
 - **The failure:** `OAI.Problem355.MainDigitLaw.sampled_orbit_det_gt` in `OAI/Geometry/HeilbronnTriangle/MainDigitBadTripleBound.lean` (a bad-triple bound for the Heilbronn triangle problem, going by the names:
-  a 3 by 3 integer determinant above a threshold unless two labels are equal). Its export alone (247 MB, 35,715 dependencies that all check) fails in nanoda: the main thread overflows after 35 s unless
+  a 3 by 3 integer determinant above a threshold unless two labels are equal). Its export alone (247 MB, 35,715 dependencies that all check) fails in the pinned nanoda (it passes in 8.9 s with upstream master, section 3f): the main thread overflows after 35 s unless
   `ulimit -s unlimited`, and then a checker thread overflows after 488 s and 35 GiB with a 1 GiB stack, in the same `whnf` and `try_reduce_nat` alternation (`results/nanoda-repro/problem355-gdb-backtrace.txt`,
   `tools/isolate_decl.py`). Lean's kernel accepts it in the build.
 
@@ -682,9 +688,9 @@ two orders smaller.
 
 ## 8. Not done yet
 
-- The cause in nanoda of the non-terminating reduction: the term that triggers it is not identified, and only two of the six failing groups have a backtrace (nanoda_lib issue 55).
+- Why `SquareDifference` still overflows in upstream nanoda master (`def_eq` and `lazy_delta_step`): whether it loops or is just deep is not known (nanoda_lib issue 55).
 - Per-declaration Lean-kernel times to join with nanoda's, and a Lean replay time for the 18 long configurations measured the same way as the paired sweep.
-- Nanoda on `Catalan`, `UniqueGamesTheorem` and `DirectedFeedback` with the fix, when there is one, and on the other failing groups.
+- The paired sweep and the modules no solution imports re-run with upstream nanoda master (only the failing configurations were re-run).
 - The `MMAP=OFF` toolchain build, the `GLIBC_TUNABLES` comparison, repeated trials for variance.
 - Proposed upstream README patch: state that building the aggregate target `OAI` needs `vm.max_map_count` of at least 150,000 (measured need: 148,940;
   262,144 leaves a margin), that the per-area libraries build at the Ubuntu default of 65530, and that the `MMAP=OFF` workaround is only needed when

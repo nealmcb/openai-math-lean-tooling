@@ -64,6 +64,18 @@ out['nanoda_checks_416_h'] = round(nano_checks, 1); out['nanoda_uncovered_h'] = 
 out['total_lean_h'] = round(compile_cpu_h + lean_check_h, 1)
 out['total_nanoda_h_416_only'] = round(compile_cpu_h * (1 - skip_saving) + nano_checks, 1)
 out['total_nanoda_h_with_uncovered'] = round(out['total_nanoda_h_416_only'] + out['nanoda_uncovered_h'], 1)
+# --- the configurations the pinned nanoda failed on, re-run with upstream master (tools/nanoda_retest.py, tools/cloud_nanoda_retest.sh): their export and nanoda CPU time is added
+retest = {}
+for f in ('/nanoda-retest.jsonl', '/nanoda-retest-cloud.jsonl'):
+    if os.path.exists(R + f):
+        for l in open(R + f):
+            d = json.loads(l)
+            if d.get('nanoda_rc') == 0 and d['config'] != 'Problem355': retest[d['config']] = (d.get('export_s') or 0) + (d.get('cpu_s') or 0)
+for c in ('Laughlin', 'LaughlinPlanar', 'LaughlinFock'): retest[c] += ex.get(c, 0)   # the cloud retest reuses the long run's exports
+out['nanoda_master_retest'] = dict(configs=len(retest), export_plus_nanoda_cpu_h=round(sum(retest.values()) / H, 1))
+out['nanoda_checks_h_with_master'] = round(out['nanoda_checks_416_h'] + sum(retest.values()) / H, 1)
+out['total_nanoda_h_416_with_master'] = round(out['total_nanoda_h_416_only'] + sum(retest.values()) / H, 1)
+out['total_nanoda_h_with_uncovered_and_master'] = round(out['total_nanoda_h_with_uncovered'] + sum(retest.values()) / H, 1)
 json.dump(out, open(R + '/cpu-hours-estimate.json', 'w'), indent=1)
 print(json.dumps(out, indent=1))
 
