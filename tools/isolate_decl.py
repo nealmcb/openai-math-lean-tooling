@@ -5,7 +5,8 @@ Purpose: tools/uncovered_check.py, the sweep and the long run name declarations 
 lean4export (same extra targets as Comparator), keeps the export in scratch/isolate/NAME.export (and a config), and runs nanoda_bin.timing on it once per stack size in --stacks (MiB, default
 16,1024) with --threads threads (default 1), each killed after --timeout seconds (default 300). It prints and appends one JSON line per run to results/isolate-decl.jsonl: export size and
 seconds, number of declarations, stack MiB, exit code, wall seconds, peak RSS, and the declarations that began but did not end (from NANODA_DECL_TIMES). Run where the module is built.
-Usage: isolate_decl.py NAME MODULE DECL [DECL ...] [--stacks 16,1024] [--threads 1] [--timeout 300]
+Usage: isolate_decl.py NAME MODULE DECL [DECL ...] [--stacks 16,1024] [--threads 1] [--timeout 300] [--nanoda PATH]
+--nanoda PATH uses another nanoda_bin (default ext/bin/nanoda_bin.timing; then NANODA_STACK_MB and NANODA_DECL_TIMES are ignored by a build without that patch).
 """
 import os, sys, json, time, subprocess, resource
 base = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')); root = base + '/src/lean'
@@ -24,7 +25,7 @@ if p.returncode: sys.exit(p.stderr[-300:])
 cfg = f'{D}/{name}.json'; json.dump(dict(use_stdin=False, export_file_path=exp, permitted_axioms=['propext', 'Quot.sound', 'Classical.choice'], unpermitted_axiom_hard_error=True, num_threads=threads, nat_extension=True, string_extension=True), open(cfg, 'w'))
 for mb in stacks:
     tf = f'{D}/{name}.{mb}.times'; r0 = resource.getrusage(resource.RUSAGE_CHILDREN); t = time.time()
-    pr = subprocess.Popen(['timeout', '-s', 'KILL', tmo, base + '/ext/bin/nanoda_bin.timing', cfg], env=dict(env, NANODA_STACK_MB=str(mb), NANODA_DECL_TIMES=tf), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    pr = subprocess.Popen(['timeout', '-s', 'KILL', tmo, opt('--nanoda', base + '/ext/bin/nanoda_bin.timing'), cfg], env=dict(env, NANODA_STACK_MB=str(mb), NANODA_DECL_TIMES=tf), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     _, status, ru = os.wait4(pr.pid, 0); wall = time.time() - t; rc = os.waitstatus_to_exitcode(status)
     b, e = {}, set()
     if os.path.exists(tf):

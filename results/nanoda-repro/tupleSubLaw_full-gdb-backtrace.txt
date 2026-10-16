@@ -1,0 +1,68 @@
+[New Thread 0x7ffff595a640 (LWP 3382443)]
+[New Thread 0x7ffff4959640 (LWP 3382444)]
+[New Thread 0x7fffeefef640 (LWP 3382445)]
+[New Thread 0x7fffedfee640 (LWP 3382446)]
+[Thread 0x7fffeefef640 (LWP 3382445) exited]
+[Thread 0x7ffff595a640 (LWP 3382443) exited]
+[Thread 0x7ffff4959640 (LWP 3382444) exited]
+
+Thread 5 "thread_3" received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 0x7fffedfee640 (LWP 3382446)]
+0x000055555560ac86 in indexmap::map::IndexMap<K,V,S>::insert_full ()
+#0  0x000055555560ac86 in indexmap::map::IndexMap<K,V,S>::insert_full ()
+#1  0x00005555555a4906 in nanoda_lib::util::TcCtx::alloc_expr ()
+#2  0x00005555555b5530 in nanoda_lib::util::TcCtx::mk_app ()
+#3  0x00005555555b7864 in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#4  0x00005555555b77b7 in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#5  0x00005555555b7853 in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#6  0x00005555555b783c in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#7  0x00005555555b788c in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#8  0x00005555555b77dc in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#9  0x00005555555b77dc in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#10 0x00005555555b7853 in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#11 0x00005555555b783c in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#12 0x00005555555b783c in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#13 0x00005555555b783c in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#14 0x00005555555b783c in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#15 0x00005555555b783c in nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux ()
+#16 0x00005555555c2efa in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#17 0x00005555555c275c in nanoda_lib::tc::TypeChecker::whnf ()
+#18 0x00005555555c3003 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#19 0x00005555555c275c in nanoda_lib::tc::TypeChecker::whnf ()
+#20 0x00005555555c2bfb in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#21 0x00005555555c275c in nanoda_lib::tc::TypeChecker::whnf ()
+#22 0x00005555555c3003 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#23 0x00005555555c275c in nanoda_lib::tc::TypeChecker::whnf ()
+#24 0x00005555555c2bfb in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#25 0x00005555555c33f8 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#26 0x00005555555c33f8 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#27 0x00005555555c3322 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#28 0x00005555555c33f8 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#29 0x00005555555c275c in nanoda_lib::tc::TypeChecker::whnf ()
+#30 0x00005555555c3003 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#31 0x00005555555c275c in nanoda_lib::tc::TypeChecker::whnf ()
+#32 0x00005555555c2bfb in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#33 0x00005555555c275c in nanoda_lib::tc::TypeChecker::whnf ()
+#34 0x00005555555c3003 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#35 0x00005555555c275c in nanoda_lib::tc::TypeChecker::whnf ()
+#36 0x00005555555c2bfb in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#37 0x00005555555c33f8 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#38 0x00005555555c33f8 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+#39 0x00005555555c3322 in nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux ()
+frames walked: 97519
+85249 nanoda_lib::tc::TypeChecker::def_eq
+12178 nanoda_lib::tc::TypeChecker::lazy_delta_step
+38 nanoda_lib::tc::TypeChecker::whnf_no_unfolding_aux
+24 nanoda_lib::tc::TypeChecker::whnf
+13 nanoda_lib::expr::<impl nanoda_lib::util::TcCtx>::inst_aux
+4 nanoda_lib::tc::TypeChecker::infer
+3 nanoda_lib::tc::TypeChecker::def_eq_app
+1 indexmap::map::IndexMap<K,V,S>::insert_full
+1 nanoda_lib::util::TcCtx::alloc_expr
+1 nanoda_lib::util::TcCtx::mk_app
+1 nanoda_lib::tc::TypeChecker::def_eq_binder_multi
+1 nanoda_lib::tc::<impl nanoda_lib::util::ExportFile>::check_declar
+1 std::sys::backtrace::__rust_begin_short_backtrace
+1 core::ops::function::FnOnce::call_once{{vtable.shim}}
+
+

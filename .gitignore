@@ -18,3 +18,5 @@ results/long-nanoda/times/
 results/uncovered/times/
 results/kernel-pair-sweep-times/
 results/nanoda-repro/sizeFactor_positive.export
+# the unpacked reproduction exports (the .xz is kept)
+results/nanoda-repro/*.export

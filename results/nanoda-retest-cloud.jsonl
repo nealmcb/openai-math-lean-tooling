@@ -1,0 +1,4 @@
+{"config": "Problem355", "nanoda": "/home/srv/s/math/openai-math/ext/bin/nanoda_bin.master", "mem_cap": "55G", "nanoda_rc": 0, "wall_s": 8.9, "cpu_s": 23.1, "rss_gib": 0.39}
+{"config": "Laughlin", "nanoda": "/home/srv/s/math/openai-math/ext/bin/nanoda_bin.master", "mem_cap": "55G", "nanoda_rc": 0, "wall_s": 371.05, "cpu_s": 2881.0, "rss_gib": 3.09}
+{"config": "LaughlinPlanar", "nanoda": "/home/srv/s/math/openai-math/ext/bin/nanoda_bin.master", "mem_cap": "55G", "nanoda_rc": 0, "wall_s": 391.4, "cpu_s": 3045.3, "rss_gib": 3.09}
+{"config": "LaughlinFock", "nanoda": "/home/srv/s/math/openai-math/ext/bin/nanoda_bin.master", "mem_cap": "55G", "nanoda_rc": 0, "wall_s": 556.5, "cpu_s": 4296.7, "rss_gib": 14.13}
