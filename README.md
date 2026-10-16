@@ -1,68 +1,38 @@
 # openai-math-lean-tooling
 
-*OpenAI Math: Lean? Tools & experience on a laptop - CPU-days, disk, mmap requirements*
+*OpenAI Math: Lean? Tools & experience on a laptop - CPU-days, disk, mmap requirements, Nanoda*
 
 Tooling, measurements and a report for building and checking the Lean library in
-[openai/math](https://github.com/openai/math).
+[openai/math](https://github.com/openai/math) ("OAI").
 
 This is an independent, third-party project. It is not affiliated with or endorsed by OpenAI. It was
-developed with assistance from Claude Code (Anthropic); every measurement in the report comes from a
+developed with extensive assistance from Claude Code (Anthropic); every measurement in the report comes from a
 recorded run of the code in this repository, with results under `results/`.
 
-## What it answers
+The results are **very rough**, but hopefully helpful.
+And I'm pretty sure that they uncovered an issue in the Nanoda kernel, as described at
+[nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55). 
+
+## What it tries to answer
 
 1. What does it take to start to verify the OpenAI Math formalizations in Lean?
-2. How many memory mappings (`vm.max_map_count`) does Lean need to compile and check the openai/math
+1. How does the Nanoda kernel for Lean compare in speed, memory and robustness?
+1. How many memory mappings (`vm.max_map_count`) does Lean need to compile and check the openai/math
    library, and what drives the number?
-3. Which of the repository's Comparator configurations check out, how long does each take, and what
+1. Which of the repository's Comparator configurations check out, how long does each take, and what
    does a pass actually establish?
-4. What would a different Lean kernel (here nanoda, in Rust) do for the same checks: how much faster
-   or slower, how does it use extra cores and memory, and where does it fail?
+1. How could I reproduce all this more quickly in the cloud, with a bit of helpful scheduling?
 
 The project is a reproducibility and resource-measurement exercise. It does not try to validate the
 manuscripts' mathematics.
 
-## If you want to check one result
+Why? I'm just a curious guy who was struck by the "Technical note" on mmap at
+[OpenAI / math / lean](https://github.com/openai/math/tree/main/lean)
 
-Each of the 416 Comparator configurations in `ComparatorChallenges/` is a separate job with two Lean
-files. The challenge file is small (median 2.6 KB) and states the theorem in Lean, usually using
-only Mathlib's definitions (386 of the 416 import nothing else), with the proof left as `sorry`; the
-one for `QuasiRiemannHypothesis` is 169 bytes. The solution file, in `OAI/`, supplies the proof and
-may import thousands of OAI modules. Comparator builds the solution, exports its compiled
-declarations, and has the Lean kernel re-check the solution's proof, confirm that the theorem
-statement is identical to the challenge's, and confirm that only the permitted axioms are used.
+> Compiling the entire library may fail if Linux's vm.max_map_count is too low.
 
-A pass therefore shows that the Lean proof is valid for the Lean statement in the challenge file.
-Whether that statement is a faithful formalization of the claim in a paper, or the paper is correct,
-is a separate question that Comparator does not address.
-
-Mathlib comes from the cache, so the cost you pay is the solution's own import closure (the OAI
-modules it needs) plus the check. Measured here for the accepted configurations:
-
-| Closure size (OAI modules) | Configs | Median closure | Compile CPU time, median (max) | Check time, median / p90 / max | Check memory, median (max) |
-|---|---|---|---|---|---|
-| up to 100 modules | 230 | 39 | 0.3 h (4 h) | 4 min / 10 min / 43 min | 6.4 GiB (20 GiB) |
-| 101 to 500 | 112 | 212 | 1.1 h (52 h) | 4 min / 39 min / 2.0 h | 6.5 GiB (20 GiB) |
-| 501 to 2,000 | 59 | 720 | 3.1 h (39 h) | 6 min / 26 min / 10.9 h | 6.9 GiB (13 GiB) |
-| over 2,000 | 15 | 2925 | 8.2 h (60 h) | 15 min / 46 min / 4.7 h | 7.6 GiB (26 GiB) |
-| all 416 accepted | 416 | 78 | | 4 min / 17 min / 10.9 h | 6.5 GiB (26 GiB) |
-
-(`tools/cost_table.py` regenerates this table. Check times are on the laptop with Lean's kernel.)
-
-- **Building scales with size, checking mostly does not.** The compile time of the closure grows
-  with the number of modules, while the typical check takes about 4 minutes in every size class. A
-  size class therefore bounds the build cost well and the check cost poorly: a small closure can
-  hold an expensive proof. Look up the configuration itself in `results/cost-outliers.csv` (one row
-  per configuration: check time, check memory, closure size, compile time) before starting.
-- **Compile times** are wall-clock seconds under load on one thermally limited laptop, so they are
-  upper bounds for isolated builds, and they divide across cores.
-- **Memory:** a typical check peaked at about 6.4 GiB and the heaviest at 26 GiB; individual Lean
-  compiles reached 7 to 10 GiB for the largest generated modules. Smaller machines were not tested.
-- **Mapping limit:** every single-configuration build and check stayed under the Linux default
-  `vm.max_map_count` of 65,530 (highest measured 58,559); see the findings below.
-- **Why costs vary so much** is discussed in section 3d of [REPORT.md](REPORT.md): the expensive
-  checks appear to be large generated certificates checked by kernel computation, not long
-  structural proofs. That is a hypothesis from a few samples.
+Trying to figure out what a good value might be and why led me down a rabbit hole. Thanks to
+Claude Code, it took less than 5 days....
 
 ## A note on scale
 
@@ -97,6 +67,65 @@ about 9 minutes to check. Even a one-module configuration pays the memory-mappin
 (about 54k of the 65,530 default in the checker), so that cost comes from Mathlib, not from the size
 of `OAI`.
 
+## If you want to check one result
+
+Most real mathematicians won't need or care about most of this. Checking a single proof or even
+a bunch of related results doesn't take very long.
+
+## What does it mean to check a result?
+
+Each of the 416 Comparator configurations in `ComparatorChallenges/` is a separate job with two Lean
+files. The challenge file is small (median 2.6 KB) and states the theorem in Lean, usually using
+only Mathlib's definitions (386 of the 416 import nothing else), with the proof left as `sorry`; the
+one for `QuasiRiemannHypothesis` is 169 bytes. The solution file, in `OAI/`, supplies the proof and
+may import thousands of OAI modules. Comparator builds the solution, exports its compiled
+declarations, and has the Lean kernel re-check the solution's proof, confirm that the theorem
+statement is identical to the challenge's, and confirm that only the permitted axioms are used.
+
+A pass therefore shows that the Lean proof is valid for the Lean statement in the challenge file.
+Whether that statement is a faithful formalization of the claim in a paper, or the paper is correct,
+is a separate question that Comparator does not address.
+
+## Overall numbers
+
+Mathlib comes from the cache, so the cost you pay is the solution's own import closure (the OAI
+modules it needs) plus the check.
+
+The laptop results here reflect the real-world results of trying this all out on a
+Framework Laptop 13, Core i5-1340P (4 performance cores with hyper-threading plus 8
+efficiency cores, 16 threads), 60 GiB RAM, 39 GiB swap, 2 TB NVMe, Ubuntu
+22.04.5, kernel 6.8.  Other work was going on on the laptop, and in most cases the
+CPU clock was throttled to avoid overheating (thermally limited), and in many cases there was
+contention over cpus, memory, etc. so **these numbers are by no means robust!**
+
+ Measured here for the accepted configurations:
+
+| Closure size (OAI modules) | Configs | Median closure size | Compile CPU time, median (max) | Check time, median / p90 / max | Check memory, median (max) |
+|---|---|---|---|---|---|
+| up to 100 modules | 230 | 39 | 0.3 h (4 h) | 4 min / 10 min / 43 min | 6.4 GiB (20 GiB) |
+| 101 to 500 | 112 | 212 | 1.1 h (52 h) | 4 min / 39 min / 2.0 h | 6.5 GiB (20 GiB) |
+| 501 to 2,000 | 59 | 720 | 3.1 h (39 h) | 6 min / 26 min / 10.9 h | 6.9 GiB (13 GiB) |
+| over 2,000 | 15 | 2925 | 8.2 h (60 h) | 15 min / 46 min / 4.7 h | 7.6 GiB (26 GiB) |
+| all 416 accepted | 416 | 78 | | 4 min / 17 min / 10.9 h | 6.5 GiB (26 GiB) |
+
+(`tools/cost_table.py` regenerates this table. Check times are on the laptop with Lean's kernel.)
+
+- **Building scales with size, checking mostly does not.** The compile time of the closure grows
+  with the number of modules, while the typical check takes about 4 minutes in every size class. A
+  size class therefore bounds the build cost well and the check cost poorly: a small closure can
+  hold an expensive proof. Look up the configuration itself in `results/cost-outliers.csv` (one row
+  per configuration: check time, check memory, closure size, compile time) before starting.
+- **Compile times** are wall-clock seconds under load on one thermally limited laptop, so they are
+  upper bounds for isolated builds, and they divide across cores.
+- **Memory:** a typical check peaked at about 6.4 GiB and the heaviest at 26 GiB; individual Lean
+  compiles reached 7 to 10 GiB for the largest generated modules. Smaller machines were not tested.
+- **Mapping limit:** every single-configuration build and check stayed under the Linux default
+  `vm.max_map_count` of 65,530 (highest measured 58,559), but if you want to verify them all at
+  once for some reason, you'd need nearly 150,000. See the findings below.
+- **Why costs vary so much** is discussed in section 3d of [REPORT.md](REPORT.md): the expensive
+  checks appear to be large generated certificates checked by kernel computation, not long
+  structural proofs. That is a hypothesis from a few samples.
+
 ## Findings so far
 
 Details, method and caveats are in [REPORT.md](REPORT.md). Versions pinned in
@@ -115,7 +144,10 @@ Ubuntu 22.04.5 with the default limit of 65530.
 - Comparator accepted all 416 configurations (`results/cmp-all/configs.csv`) and rejects the
   negative controls in `controls/`. The slowest check took 10.9 hours of active time
   (`PlanarPacking`); 329 of 416 took under 10 minutes.
-- The second kernel, nanoda, accepts 401 of the 416 configurations and takes a median of 0.21 of Lean's replay time on a paired sweep of 390 (about 5 times faster on 4 threads). It scales
+
+## Nanoda is much faster, but fails for a small number of modules
+- A popular alternative kernel, nanoda, accepts 401 of the 416 configurations and takes a median of just
+21% of Lean's replay time on a paired sweep of 390 (about 5 times faster on 4 threads). It scales
   almost linearly with threads on large exports (`PlanarPacking`, 3.85 GB export, 672 s on 64 threads against 10.9 hours with Lean's kernel); the 18 configurations whose Lean-based check took
   over 2,000 s run 3.5 times faster end to end, 15 of them passing. It fails on 15 configurations (a stack overflow, or a memory blow-up past its 31-bit index limit) that Lean's kernel handles in
   seconds to minutes; two backtraces show the same non-terminating reduction, reported as
@@ -146,10 +178,6 @@ as plus or minus 50%.
 | CPU time | about 410 CPU-hours with Lean's kernel (compiling 330, Comparator checks 80); about 325 with nanoda replacing Lean's kernel for the 416 configurations, about 365 if it also covers the modules no solution imports (section 1a of the report; laptop-equivalent, plus or minus 30%) |
 | Memory | builds about 20 to 30 GiB at full speed; checks typically 6.5 GiB, up to 26 GiB; 64 GiB recommended |
 | `vm.max_map_count` | the default 65,530 for everything except the root `OAI.lean`, which needs at least 150,000 |
-
-Hardware used: Framework Laptop 13, Core i5-1340P (4 performance cores with hyper-threading plus 8
-efficiency cores, 16 threads, thermally limited), 60 GiB RAM, 39 GiB swap, 2 TB NVMe, Ubuntu
-22.04.5, kernel 6.8.
 
 ## Layout
 
