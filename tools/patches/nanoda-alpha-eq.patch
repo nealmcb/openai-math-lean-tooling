@@ -1,0 +1,42 @@
+diff --git a/src/tc.rs b/src/tc.rs
+index a6ad5a6..603d7c3 100644
+--- a/src/tc.rs
++++ b/src/tc.rs
+@@ -983,10 +983,37 @@ impl<'x, 't: 'x, 'p: 't> TypeChecker<'x, 't, 'p> {
+ 
+     pub fn assert_def_eq(&mut self, u: ExprPtr<'t>, v: ExprPtr<'t>) { assert!(self.def_eq(u, v)) }
+ 
++    /// Structural equality up to renaming of bound variables: binder names and styles are ignored. Memoised over pairs of
++    /// pointers so that shared sub-terms are compared once. Every comparison is a conjunction, so a mismatch makes the whole call return `false`
++    /// and a pair that was already visited can be taken as equal.
++    fn alpha_eq(&mut self, x: ExprPtr<'t>, y: ExprPtr<'t>, seen: &mut std::collections::HashSet<(ExprPtr<'t>, ExprPtr<'t>)>) -> bool {
++        if x == y { return true }
++        if !seen.insert((x, y)) { return true }
++        match (self.ctx.read_expr(x), self.ctx.read_expr(y)) {
++            (Var { dbj_idx: a, .. }, Var { dbj_idx: b, .. }) => a == b,
++            (Sort { level: a, .. }, Sort { level: b, .. }) => a == b,
++            (Const { name: n1, levels: l1, .. }, Const { name: n2, levels: l2, .. }) => n1 == n2 && l1 == l2,
++            (App { fun: f1, arg: a1, .. }, App { fun: f2, arg: a2, .. }) => self.alpha_eq(f1, f2, seen) && self.alpha_eq(a1, a2, seen),
++            (Pi { binder_type: t1, body: b1, .. }, Pi { binder_type: t2, body: b2, .. })
++            | (Lambda { binder_type: t1, body: b1, .. }, Lambda { binder_type: t2, body: b2, .. }) => self.alpha_eq(t1, t2, seen) && self.alpha_eq(b1, b2, seen),
++            (Let { binder_type: t1, val: v1, body: b1, .. }, Let { binder_type: t2, val: v2, body: b2, .. }) =>
++                self.alpha_eq(t1, t2, seen) && self.alpha_eq(v1, v2, seen) && self.alpha_eq(b1, b2, seen),
++            (Local { id: i1, .. }, Local { id: i2, .. }) => i1 == i2,
++            (Proj { ty_name: n1, idx: i1, structure: s1, .. }, Proj { ty_name: n2, idx: i2, structure: s2, .. }) => n1 == n2 && i1 == i2 && self.alpha_eq(s1, s2, seen),
++            (NatLit { ptr: a, .. }, NatLit { ptr: b, .. }) => a == b,
++            (StringLit { ptr: a, .. }, StringLit { ptr: b, .. }) => a == b,
++            _ => false,
++        }
++    }
++
+     pub fn def_eq(&mut self, x: ExprPtr<'t>, y: ExprPtr<'t>) -> bool {
+         if let Some(easy) = self.def_eq_quick_check(x, y) {
+             return easy
+         }
++        if self.alpha_eq(x, y, &mut std::collections::HashSet::new()) {
++            self.tc_cache.eq_cache.insert(SortedPair::new(x, y));
++            return true
++        }
+         let defeq_fail_cache_key = (x, y, self.ctx.eager_mode);
+         if self.tc_cache.defeq_fail_cache.contains(&defeq_fail_cache_key) {
+             return false
