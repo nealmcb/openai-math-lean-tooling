@@ -1,0 +1,13 @@
+staged 122459 artifacts
+2026/10/17 20:18:49 INFO  :     3.712 GiB / 4.057 GiB, 91%, 9.450 MiB/s, ETA 37s (xfr#104216/114281)
+2026/10/17 20:19:19 INFO  :     3.933 GiB / 4.277 GiB, 92%, 6.935 MiB/s, ETA 50s (xfr#110564/120629)
+2026/10/17 20:19:49 INFO  :     4.091 GiB / 4.342 GiB, 94%, 5.773 MiB/s, ETA 44s (xfr#115117/122459)
+2026/10/17 20:20:19 INFO  :     4.239 GiB / 4.342 GiB, 98%, 5.165 MiB/s, ETA 20s (xfr#119588/122459)
+2026/10/17 20:20:38 INFO  :     4.342 GiB / 4.342 GiB, 100%, 5.459 MiB/s, ETA 0s
+
+real	8m19.218s
+user	1m54.442s
+sys	0m25.111s
+Elapsed time:         0.8s
+
+uploaded

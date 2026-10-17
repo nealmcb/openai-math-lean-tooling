@@ -1,0 +1,10 @@
+group0 modules=26567 66.78 s 701% cpu 1399252 KB
+group1 modules=23530 593.93 s 1514% cpu 1506452 KB
+group2 modules=16614 226.12 s 556% cpu 1318856 KB
+group3 modules=14057 13.98 s 425% cpu 1321188 KB
+group4 modules=12971 12.87 s 259% cpu 1300676 KB
+group5 modules=9543 395.10 s 1028% cpu 1812896 KB
+group6 modules=9618 246.64 s 147% cpu 1320636 KB
+group7 modules=9558 239.58 s 511% cpu 1353072 KB
+pilot Probability modules=12971 300.05 s 1997% cpu 1469856 KB
+pilot Computability modules=5213 141.81 s 1415% cpu 1318848 KB

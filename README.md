@@ -67,6 +67,31 @@ about 9 minutes to check. Even a one-module configuration pays the memory-mappin
 (about 54k of the 65,530 default in the checker), so that cost comes from Mathlib, not from the size
 of `OAI`.
 
+## A download cache of the compiled library: skip the build
+
+**You do not have to compile the OAI library yourself.** The compiled files of all 122,458 modules
+are published as a Lake artifact cache (Lean 4.34.1, openai/math commit `fd4aeeb2ee`, x86-64
+Linux). `lake build` of any result then downloads only the modules that result needs, instead of
+compiling them:
+
+- **Time:** compiling everything took about 330 CPU-hours, and the closure of one large result
+  can be thousands of modules. The test below built two small results (129 modules) in 50
+  seconds with no module compiled, against about 7.5 minutes without the cache.
+- **Storage:** the compiled files of the whole library are about 93 GB; the cache holds them in
+  4.3 GiB of compressed per-module bundles, and you download just the ones a result needs (2.8 MB
+  for the test above).
+
+Step-by-step recipe from a fresh directory, with measured timings, and how the cache was made:
+[results/lake-cache-test/README.md](results/lake-cache-test/README.md). The cache only saves
+compile time; it is not a verification of the proofs, and Lake's hashes are not cryptographic.
+**Using it means trusting my compile step:** I built the files on my own machines and published
+them. Lake's 64-bit input hash only catches accidental mismatches (a different source,
+dependency or toolchain); nothing else ties a downloaded bundle to the source, so a buggy or
+manipulated build would not be detected. If that matters, compile the modules you care about
+yourself, which costs the compile time the cache saves, and compare the `.olean` files with
+`cmp`: in the 16 modules I rebuilt in a different directory, the `.olean` files were
+byte-identical, so a difference is worth investigating.
+
 ## If you want to check one result
 
 Most real mathematicians won't need or care about most of this. Checking a single proof or even
