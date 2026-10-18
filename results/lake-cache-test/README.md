@@ -19,9 +19,36 @@ The `.olean` files embed the Lean version, so they load only with exactly Lean 4
 covers only the OAI modules; Mathlib and the other dependencies come from their own caches via
 `lake update`.
 
-## Use it from a fresh directory
+## Quick use
 
-Needs elan; takes about 5 minutes and a few GB for the dependencies and Mathlib's own cache.
+In a checkout of openai/math at commit `fd4aeeb2ee` with `lake update` done, put this in
+`~/.lake/config.toml` (once):
+
+```
+cache.defaultService = "oai"
+
+[[cache.service]]
+name = "oai"
+kind = "s3"
+artifactEndpoint = "https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/a"
+revisionEndpoint = "https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/r"
+```
+
+Then, in the `lean` directory of the checkout:
+
+```
+export LAKE_ARTIFACT_CACHE=true
+lake cache get --scope=openai-math/lean-4.34.1 --mappings-only   # once; the 5.6 MB list
+lake build OAI.Some.Module                                       # downloads, does not compile
+```
+
+Editors that run `lake` (such as `lean4-mode` in Emacs) then use the cache too, if they start
+with `LAKE_ARTIFACT_CACHE=true` in their environment.
+
+## Worked example from a fresh directory, with timings
+
+Starts from nothing: needs elan; takes about 5 minutes and a few GB for the dependencies and
+Mathlib's own cache.
 
 ```
 step() { echo; echo "== $(date +%T) $*"; }

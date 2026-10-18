@@ -740,3 +740,13 @@ two orders smaller.
 - Proposed upstream README patch: state that building the aggregate target `OAI` needs `vm.max_map_count` of at least 150,000 (measured need: 148,940;
   262,144 leaves a margin), that the per-area libraries build at the Ubuntu default of 65530, and that the `MMAP=OFF` workaround is only needed when
   the limit cannot be raised.
+- Publishing the Comparator results in a standard, comparable format (idea; interest unknown). For
+  each of the 416 configurations: outcome, kernel, time, and a hash of the exported declarations
+  that were checked, plus the pinned openai/math commit and the Lean, Comparator and nanoda
+  versions. Two independent runs could then be compared, and the file could be signed with Sigstore
+  (a public log of who claimed what, and when; it does not show the claim is true). First check
+  whether Comparator's maintainers or others want a standard format; until then the
+  per-configuration records are in `results/cmp-all/all.jsonl`.
+- Independent rebuilds and a comparison of per-module output hashes, as a first step towards a
+  shared, checked cache of the compiled library (the cache published so far rests on trust in one
+  build).
