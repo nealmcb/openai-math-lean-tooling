@@ -80,6 +80,8 @@ compiling them:
 - **Storage:** the compiled files of the whole library are about 93 GB; the cache holds them in
   4.3 GiB of compressed per-module bundles, and you download just the ones a result needs (2.8 MB
   for the test above).
+  The local cache directory can be moved to a larger disk with `LAKE_CACHE_DIR`; see "On a
+  machine with little disk" in the recipe.
 
 Step-by-step recipe from a fresh directory, with measured timings, and how the cache was made:
 [results/lake-cache-test/README.md](results/lake-cache-test/README.md). The cache only saves

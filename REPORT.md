@@ -713,6 +713,11 @@ and 82 GB during the Comparator run.
   checks, and restored for later builds, so disk never ran out. The `.olean` files (about 105 GB for
   the full closure) must stay uncompressed; the root `OAI.lean` additionally needs them all present
   at once. The cloud alternative was used (section 3g): one 32-vCPU machine built everything in 13.8 hours.
+- With the published Lake cache (`results/lake-cache-test/README.md`), a small-disk machine does
+  not have to build or keep the library: it checks out only the directories it needs and Lake
+  downloads the compressed bundles of their import closures (the whole cache is 4.3 GiB, against
+  about 93 GB of raw build files), and the C files that the archiving above removes can be
+  restored from it without recompiling (`tools/restore_ir_for.py --from-cache`).
 
 ## 7. Other Lean libraries, for context
 

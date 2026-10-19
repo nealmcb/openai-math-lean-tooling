@@ -107,6 +107,26 @@ GB) into the cache directory, which accounts for part of the build time; delete
 (`LAKE_CONFIG` or `~/.lake/config.toml`), not in environment variables; environment variables work
 for a plain `lake cache get`, which downloads everything listed.
 
+## On a machine with little disk
+
+Building the whole library needs far more disk than most machines have (see section 6 of the
+report). With the cache you never build or keep the whole library: check out only the
+directories of the results you want, and Lake downloads and unpacks just their import closures.
+- The cache is compressed, 4.3 GiB for all 122,458 modules, and only the bundles a build needs
+  are downloaded (2.8 MB for the 129 modules above).
+- With `LAKE_ARTIFACT_CACHE=true` Lake also copies each dependency's outputs (Mathlib's, about
+  7 GB) into its local cache directory. With elan that directory is
+  `~/.elan/toolchains/<toolchain>/lake/cache`; set `LAKE_CACHE_DIR` to put it on a larger disk.
+  `du -sh` of it shows what `lake cache clean` would free (there is no dry run).
+- By default an up-to-date module is taken from the cache without copying its outputs into
+  `.lake/build`; only traces and hashes appear there. Set `LAKE_RESTORE_ARTIFACTS=true` for
+  tools that read the `.olean` and `.c` files directly.
+- Modules not in the cache are compiled as usual, and the `.olean` files of a closure must be
+  uncompressed on disk while in use because Lean memory-maps them.
+- If you do have to compile many modules on a small disk, `tools/archive_closure.py` and
+  `tools/restore_ir_for.py` compress and restore the generated C files as a run goes along; with
+  `--from-cache` the second one restores a config's OAI modules from the cache instead.
+
 ## How the cache was made (no rebuild needed)
 
 On a machine with the complete build (here the cloud machine of the study, 32 vCPUs),
