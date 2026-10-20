@@ -11,7 +11,7 @@ KB of source measured on built modules of the same top-level area, times each mo
 upper bound on isolated cost; heavy generated modules make the true figure uncertain). Usage: root_build_status.py [--list] [--estimate]
 """
 import json, os, sys
-base = '/home/srv/s/math/openai-math'; lib = base + '/src/lean/.lake/build/lib/lean'; src = base + '/src/lean'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); lib = base + '/src/lean/.lake/build/lib/lean'; src = base + '/src/lean'
 mods = [json.loads(l)['module'] for l in open(base + '/results/oai-closure-sizes.jsonl')]
 miss = [m for m in mods if not os.path.exists(os.path.join(lib, *m.split('.')) + '.olean')]
 size = lambda m: os.path.getsize(os.path.join(src, *m.split('.')) + '.lean') if os.path.exists(os.path.join(src, *m.split('.')) + '.lean') else 0

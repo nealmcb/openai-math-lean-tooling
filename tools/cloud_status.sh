@@ -4,7 +4,8 @@
 # running now with their age and memory, load, memory, disk, the build progress line, and the hours the machine has been up (price it by the
 # hourly rate of the instance type). Read-only. KEY defaults to ~/.ssh/experiment-pilot.pem.
 HOST=${1:?usage: cloud_status.sh HOST [KEY]}; KEY=${2:-$HOME/.ssh/experiment-pilot.pem}
-ssh -i "$KEY" -o ConnectTimeout=15 ubuntu@"$HOST" 'cd /home/srv/s/math/openai-math/results/cmp-all 2>/dev/null || exit 3
+RB=${REMOTE_BASE:-/home/srv/s/math/openai-math}   # the checkout on the cloud machine (REMOTE_BASE overrides)
+ssh -i "$KEY" -o ConnectTimeout=15 ubuntu@"$HOST" 'cd '"$RB"'/results/cmp-all 2>/dev/null || exit 3
 date -u +"now %FT%TZ, up $(awk "{printf \"%.2f\", \$1/3600}" /proc/uptime) h"
 uptime | sed "s/.*load/load/"; grep -E "MemAvailable|SwapFree" /proc/meminfo | tr "\n" " "; echo; df -h / | tail -1
 echo "--- driver.log"; tail -6 driver.log | cut -c1-200

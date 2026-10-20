@@ -11,7 +11,7 @@ SOURCE_IMPORT_FILE: a Lean file of `import X` lines (for example scratch/ImportB
 """
 import sys, os, re, json, random, time, subprocess, signal
 src, out = sys.argv[1], sys.argv[2]
-base = '/home/srv/s/math/openai-math'; lean_root = base + '/src/lean'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); lean_root = base + '/src/lean'
 imports = [l.strip() for l in open(src) if l.startswith('import OAI')]
 sizes = [int(x) for x in sys.argv[3:]] or [0, 1000, 3000, 6000, len(imports)]
 random.seed(7); order = random.sample(imports, len(imports))

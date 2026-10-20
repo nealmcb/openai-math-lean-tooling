@@ -248,8 +248,8 @@ as plus or minus 50%.
 
 ## Reproducing
 
-The scripts currently assume the checkout lives at `/home/srv/s/math/openai-math` (the `base`
-variable near the top of each script). Change it, or use that path, until this is made configurable.
+The scripts find the checkout from their own location, so it can live in any directory. The cloud
+scripts take the checkout's path on the cloud machine from `REMOTE_BASE`.
 
 Needs: [elan](https://github.com/leanprover/elan), Python 3, `tmux`, `systemd --user`, Linux with
 Landlock (kernel 5.13 or later), Go 1.24 or later (for landrun), and a Rust toolchain only if you

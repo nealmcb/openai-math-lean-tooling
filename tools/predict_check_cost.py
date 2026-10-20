@@ -15,7 +15,7 @@ Usage: nice -n 10 predict_check_cost.py
 """
 import os, re, csv, gzip, json
 import numpy as np
-base = '/home/srv/s/math/openai-math'; root = base + '/src/lean'; table = base + '/results/module-kernel-features.csv.gz'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); root = base + '/src/lean'; table = base + '/results/module-kernel-features.csv.gz'
 imp = re.compile(rb"^\s*(?:public\s+|meta\s+)*import\s+(?:public\s+|meta\s+)*(\S+)", re.M)
 path = lambda m: os.path.join(root, *m.split('.')) + '.lean'
 deps_cache, feats = {}, {}

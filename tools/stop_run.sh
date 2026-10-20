@@ -22,4 +22,4 @@ for q in left:
 print(f'stopped {len(tree)} processes ({len(left)} needed SIGKILL)')
 P
 tmux kill-window -t overnight:pipeline 2>/dev/null
-echo "$(date -Is) STOPPED by tools/stop_run.sh" >> /home/srv/s/math/openai-math/results/cmp-all/driver.log
+echo "$(date -Is) STOPPED by tools/stop_run.sh" >> "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/results/cmp-all/driver.log"

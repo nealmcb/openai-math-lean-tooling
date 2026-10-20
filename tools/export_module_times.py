@@ -15,7 +15,7 @@ import re, glob, os, csv, gzip, json, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pauses as pz
 WINDOWS = [(d, d + 40) for d in sorted({round((e - s_).total_seconds()) for s_, e in pz.load_pauses()}) if d >= 1000]
-base = '/home/srv/s/math/openai-math'; root = base + '/src/lean'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); root = base + '/src/lean'
 secs = lambda s: sum(float(n) * {'ms': .001, 's': 1, 'm': 60, 'h': 3600}[u] for n, u in re.findall(r'([\d.]+)(ms|s|m|h)', s))
 logs = sorted(glob.glob(base + '/results/**/*.log', recursive=True), key=os.path.getmtime)
 first, count = {}, {}

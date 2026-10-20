@@ -15,7 +15,7 @@ ap.add_argument('--away-s', type=float, default=None, help='optional: also resum
 ap.add_argument('--active-s', type=float, default=3, help='idle below this means the user is active: pause')
 ap.add_argument('--pause-on-activity', action='store_true', help='also pause as soon as there is input (off by default)')
 ap.add_argument('--poll-s', type=float, default=2); ap.add_argument('--dry-run', action='store_true'); a = ap.parse_args()
-base = '/home/srv/s/math/openai-math'; R = base + '/results/cmp-all'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); R = base + '/results/cmp-all'
 env = dict(os.environ, DBUS_SESSION_BUS_ADDRESS=f'unix:path=/run/user/{os.getuid()}/bus')
 log = lambda m: (open(R + '/idle_guard.log', 'a').write(f"{datetime.datetime.now().astimezone().isoformat(timespec='seconds')} {m}\n"), print(m, flush=True))
 

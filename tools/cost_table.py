@@ -11,8 +11,9 @@ closures (modules shared by configurations counted once), not the sum of the row
 Usage: cost_table.py
 """
 import csv, statistics as st
+import os
 import numpy as np
-base = '/home/srv/s/math/openai-math'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 rows = list(csv.DictReader(open(base + '/results/check-time-factors.csv')))
 for r in rows:
     r['m'] = int(r['closure_modules']); r['t'] = float(r['check_active_s']); r['g'] = float(r['check_rss_gib']) if r['check_rss_gib'] else None

@@ -5,7 +5,8 @@
 # installs elan and Lean 4.34.1, Go (for landrun), clones openai/math at the pinned commit into $BASE/src, fetches the Mathlib cache,
 # builds landrun, lean4export and comparator at the pinned commits (with their lean-toolchain set to 4.34.1, otherwise lean4export fails
 # with "incompatible header"), and checks that the tools start. Idempotent: each step is skipped if its result exists. The scripts in
-# tools/ assume the checkout is at /home/srv/s/math/openai-math (the default BASE here), so the machine gets that path.
+# tools/ find the checkout from their own location, so BASE can be any directory (the default is where the
+# existing cloud volume keeps it).
 # Needs: git curl python3 build-essential (apt) and sudo for creating $BASE. Run as the normal user; takes about 10 minutes plus the cache.
 # Options: --no-cache skips the Mathlib cache download; --nanoda also builds the second kernel (Rust, nanoda_lib at the pinned commit) into
 # ext/bin/nanoda_bin; --aws-cli installs the AWS CLI v2 (to upload results from an instance role).

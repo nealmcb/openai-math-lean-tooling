@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """overnight_status: summarize results/cmp-all/all.jsonl into STATUS.md (counts, failures, timing, disk, ETA). No model tokens.
-Usage: overnight_status.py   (writes /home/srv/s/math/openai-math/results/cmp-all/STATUS.md; run hourly by tmux window)"""
+Usage: overnight_status.py   (writes results/cmp-all/STATUS.md; run hourly by tmux window)"""
 import json, os, shutil, datetime, collections
-base = '/home/srv/s/math/openai-math'; R = base + '/results/cmp-all'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); R = base + '/results/cmp-all'
 last = {}
 for l in open(R + '/all.jsonl'):
     d = json.loads(l); last[d['config']] = d          # last record per config wins

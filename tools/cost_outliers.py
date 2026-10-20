@@ -18,7 +18,7 @@ Usage: cost_outliers.py [--top 12]
 import os, csv, math, argparse
 import numpy as np
 ap = argparse.ArgumentParser(); ap.add_argument('--top', type=int, default=12); a = ap.parse_args()
-base = '/home/srv/s/math/openai-math'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 fac = {r['config']: r for r in csv.DictReader(open(base + '/results/check-time-factors.csv'))}
 cfg = {r['config']: r for r in csv.DictReader(open(base + '/results/cmp-all/configs.csv'))}
 fl = lambda v: float(v) if v not in (None, '') else None

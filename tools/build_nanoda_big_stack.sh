@@ -7,7 +7,7 @@
 # This is a local change, not upstream: it edits src/lib.rs in ext/nanoda_lib and keeps the original binary as ext/bin/nanoda_bin.stack16MiB.
 # The swap is atomic (rename), so a check that is running keeps the old binary until it ends. Idempotent.
 set -euo pipefail
-BASE=${1:-/home/srv/s/math/openai-math}; N=$BASE/ext/nanoda_lib
+BASE=${1:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}; N=$BASE/ext/nanoda_lib
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 sed -i 's/pub(crate) const STACK_SIZE: usize = 16_777_216;/pub(crate) const STACK_SIZE: usize = 1_073_741_824;/' "$N/src/lib.rs"
 grep -n 'STACK_SIZE: usize' "$N/src/lib.rs"

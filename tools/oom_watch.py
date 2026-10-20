@@ -9,7 +9,7 @@ its last sample, and tails the journal for systemd-oomd lines. Cheap enough to l
 Usage: oom_watch.py [--out results/oom-lab/watch.jsonl] [--interval 1] [--top 8]     (Ctrl-C to stop)
 """
 import os, sys, time, json, argparse, subprocess, collections, signal
-ap = argparse.ArgumentParser(); ap.add_argument('--out', default='/home/srv/s/math/openai-math/results/oom-lab/watch.jsonl')
+ap = argparse.ArgumentParser(); ap.add_argument('--out', default=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'results/oom-lab/watch.jsonl'))
 ap.add_argument('--interval', type=float, default=1.0); ap.add_argument('--top', type=int, default=8); a = ap.parse_args()
 uid = os.getuid(); ROOT = f'/sys/fs/cgroup/user.slice/user-{uid}.slice/user@{uid}.service'
 os.makedirs(os.path.dirname(a.out), exist_ok=True); out = open(a.out, 'a')

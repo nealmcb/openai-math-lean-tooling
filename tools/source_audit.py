@@ -9,7 +9,7 @@ module makes, in the source text of two groups: the modules reachable from OAI.l
 first; strings are not, so counts are approximate. Usage: source_audit.py   (reads about 1.2 GB of source, 15 to 30 s)
 """
 import json, os, re
-base = '/home/srv/s/math/openai-math'; src = base + '/src/lean'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); src = base + '/src/lean'
 closure = {l.strip() for l in open(base + '/results/comparator-solution-closure.txt') if l.strip()}
 reach = [json.loads(l)['module'] for l in open(base + '/results/oai-closure-sizes.jsonl')]
 groups = {'reachable from OAI.lean, in no config closure': [m for m in reach if m != 'OAI' and m not in closure], "in the configs' closures": sorted(closure)}

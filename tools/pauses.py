@@ -9,8 +9,8 @@ in results/cmp-all/driver.log. Checks started by tools/check_scheduler.py (recor
 they lose only the intervals from the lines "<iso time> FROZEN ..." / "<iso time> THAWED ..." (systemctl freeze of the scheduler's units),
 which load_freezes returns. Importable (load_pauses, load_freezes, overlap_s, batch_build_intervals); run as a script to list them.
 """
-import re, datetime as dt
-LOG = '/home/srv/s/math/openai-math/results/cmp-all/driver.log'
+import os, re, datetime as dt
+LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'results/cmp-all/driver.log')
 
 
 def load_pauses(path=LOG):

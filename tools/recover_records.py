@@ -8,7 +8,7 @@ results/cmp-all/logs/<config>.mon (summary.json and stdout.log) but not in all.j
 Usage: recover_records.py [--dry-run]
 """
 import json, os, re, sys, glob, subprocess, datetime as dt
-base = '/home/srv/s/math/openai-math'; R = base + '/results/cmp-all'; root = base + '/src/lean'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); R = base + '/results/cmp-all'; root = base + '/src/lean'
 dry = '--dry-run' in sys.argv
 have = {json.loads(l)['config'] for l in open(R + '/all.jsonl') if json.loads(l).get('outcome') == 'accepted'}
 n = 0

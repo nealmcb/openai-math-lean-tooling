@@ -13,7 +13,7 @@ the first module that is not built is what stops it once the mapping limit is ou
 Usage: root_import_trial.py [--expect-limit 65530] [--root]
 """
 import json, os, re, subprocess, sys, time
-base = '/home/srv/s/math/openai-math'; root = base + '/src/lean'; lib = root + '/.lake/build/lib/lean'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); root = base + '/src/lean'; lib = root + '/.lake/build/lib/lean'
 want = int(sys.argv[sys.argv.index('--expect-limit') + 1]) if '--expect-limit' in sys.argv else 65530
 have = int(open('/proc/sys/vm/max_map_count').read())
 if have != want: sys.exit(f"vm.max_map_count is {have}, expected {want}; refusing to run")

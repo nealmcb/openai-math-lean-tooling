@@ -4,14 +4,14 @@
 # results/cmp-all/STOP exists, archives generated C files (compress, verify, then remove) whenever free
 # disk < SWEEP_GIB, and halts with results/cmp-all/ALERT if disk cannot be recovered. Uses no model tokens.
 # Start: tmux new -d -s overnight tools/overnight.sh     Pause: touch results/cmp-all/STOP     Resume: rm STOP, rerun.
-base=/home/srv/s/math/openai-math; R=$base/results/cmp-all; mkdir -p $R
+base=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd); R=$base/results/cmp-all; mkdir -p $R
 export PATH=$base/ext/bin:$base/ext/lean4export/.lake/build/bin:$HOME/.elan/bin:$PATH
 SWEEP_GIB=${SWEEP_GIB:-65}; MIN_GIB=${MIN_GIB:-35}
 cd $base
 # seed with earlier accepted results so they are not redone
-python3 - <<'P'
-import json,os
-base='/home/srv/s/math/openai-math'; out=base+'/results/cmp-all/all.jsonl'
+python3 - "$base" <<'P'
+import json,os,sys
+base=sys.argv[1]; out=base+'/results/cmp-all/all.jsonl'
 have={json.loads(l)['config'] for l in open(out)} if os.path.exists(out) else set()
 with open(out,'a') as f:
     for src in ('results/cmp-batch/pilot.jsonl','results/cmp-cubic/cubic.jsonl'):
@@ -29,10 +29,10 @@ sweep() {
   dirs=$(cd $base/src/lean/.lake/build && ls -d ir/OAI/* ir/ComparatorChallenges 2>/dev/null)
   [ -n "$dirs" ] && $base/tools/archive_ir.sh sweep-$ts $dirs >> $R/sweep.log 2>&1
 }
-is_done() { python3 - "$1" <<'P'
+is_done() { python3 - "$1" "$R" <<'P'
 import json,sys
 n=sys.argv[1]
-ok=any(json.loads(l)['config']==n and json.loads(l)['outcome']=='accepted' for l in open('/home/srv/s/math/openai-math/results/cmp-all/all.jsonl'))
+ok=any(json.loads(l)['config']==n and json.loads(l)['outcome']=='accepted' for l in open(sys.argv[2]+'/all.jsonl'))
 sys.exit(0 if ok else 1)
 P
 }

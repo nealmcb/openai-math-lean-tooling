@@ -7,7 +7,7 @@ their union, how many configs each module serves, and the same across the batche
 (with the number of files restored per batch, from driver.log). Usage: config_overlap.py   (reads src/lean)
 """
 import os, re, json, glob, collections, statistics as st
-base = '/home/srv/s/math/openai-math'; root = base + '/src/lean'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); root = base + '/src/lean'
 imp = re.compile(rb"^\s*(?:public\s+|meta\s+)*import\s+(?:public\s+|meta\s+)*(\S+)", re.M)
 cache = {}
 def deps(m):

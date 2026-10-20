@@ -3,7 +3,7 @@
 # Purpose: free disk without discarding anything. Restore with:  tar --zstd -xf archive/NAME.tar.zst -C src/lean/.lake/build
 # Note: Lake treats the C file as a tracked output; if a module whose C was archived is rebuilt via `lake build`, Lake regenerates it (seconds per module), so restore first to avoid that.
 set -e
-base=/home/srv/s/math/openai-math; b=$base/src/lean/.lake/build; name=$1; shift
+base=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd); b=$base/src/lean/.lake/build; name=$1; shift
 mkdir -p $base/archive
 cd $b
 before=$(du -sk "$@" 2>/dev/null | awk '{s+=$1} END{print s}')

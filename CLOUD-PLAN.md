@@ -71,7 +71,7 @@ transfer and storage for results, so **$25 to $30**, against a budget alarm at $
    `experiment-instance-role`, ssh from one address only, `instance-initiated-shutdown-behavior
    terminate`, and `shutdown -h +900` as a hard stop at 15 hours.
 2. **Bootstrap:** `tools/cloud_bootstrap.sh` (idempotent; the repository is placed at
-   `/home/srv/s/math/openai-math`, the path the tools assume).
+   `BASE`, by default the path the existing volume uses; the tools find it from their own location).
 3. **Run:** `tools/pipeline.py` with enough workers for the checks, building everything in one batch
    under `tools/vmamon.py`; no archiving. Start the configurations with the longest predicted checks
    first (`results/check-cost-predictions.csv`).

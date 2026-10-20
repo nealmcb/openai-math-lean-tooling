@@ -15,7 +15,7 @@ makespan, and when the last compile and the last check finish, for each P. Usage
 [--speed 1,1.5,2] [--check-speed 1.2]
 """
 import os, re, csv, gzip, json, heapq, sys, collections
-base = '/home/srv/s/math/openai-math'; src = base + '/src/lean'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); src = base + '/src/lean'
 arg = lambda k, d: sys.argv[sys.argv.index(k) + 1] if k in sys.argv else d
 cores = [int(x) for x in arg('--cores', '16,96,192').split(',')]; check_speed = arg('--check-speed', None); speeds = [float(x) for x in arg('--speed', '1,1.5,2').split(',')]
 nodes = [l.strip() for l in open(base + '/results/comparator-solution-closure.txt') if l.strip()]; idx = {m: i for i, m in enumerate(nodes)}

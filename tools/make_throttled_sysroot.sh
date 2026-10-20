@@ -6,7 +6,7 @@
 # long as that lean process. Use it as `LEAN_SYSROOT=BASE/ext/sysroot-throttled LEAN_SLOTS=N BASE/ext/sysroot-throttled/bin/lake build ...`.
 # The laptop's copy (same layout) was made by hand; this builds the same thing for any host. Idempotent.
 set -euo pipefail
-BASE=${1:-/home/srv/s/math/openai-math}; T=$(ls -d "$HOME"/.elan/toolchains/leanprover--lean4---v4.34.1); S=$BASE/ext/sysroot-throttled
+BASE=${1:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}; T=$(ls -d "$HOME"/.elan/toolchains/leanprover--lean4---v4.34.1); S=$BASE/ext/sysroot-throttled
 mkdir -p "$S/bin" "$S/slots"
 for d in include lib share src LICENSE LICENSES; do [ -e "$T/$d" ] && ln -sfn "$T/$d" "$S/$d"; done
 for f in "$T"/bin/*; do n=$(basename "$f"); case $n in lean|lake) ;; *) ln -sfn "$f" "$S/bin/$n";; esac; done

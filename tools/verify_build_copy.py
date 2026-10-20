@@ -2,7 +2,7 @@
 """verify_build_copy: check that a copy of the openai-math checkout and its Lake build is complete and byte-identical where it matters.
 
 Purpose: the cloud build ran on a 1.6 TB disk, 497 GB of it transient `.setup.json` files; the copy to a 250 GB disk leaves those out (Lake regenerates them). This compares an OLD tree
-and a NEW tree (each the openai-math checkout root, for example /mnt/old/home/srv/s/math/openai-math and /home/srv/s/math/openai-math):
+and a NEW tree (each the openai-math checkout root, for example /mnt/old/PATH/TO/CHECKOUT and /PATH/TO/CHECKOUT):
   1. the number of .olean files in every top-level OAI directory, in ComparatorChallenges, and in every package's build directory, old against new;
   2. the number of .c, .c.hash, .trace and .ilean files under src/lean/.lake/build (the files Lake treats as outputs), old against new;
   3. byte-for-byte `cmp` of --samples (default 200) randomly chosen .olean files (fixed --seed), chosen from the new tree;

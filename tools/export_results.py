@@ -7,13 +7,13 @@ is the batch's, from batches.jsonl, shared by the configs in that batch), result
 results/predicted-vmas.jsonl, ComparatorChallenges/*.json. Configs not yet attempted appear with status 'pending'.
 build_wall_s is the time of the build STEP: near zero when the config's modules were already compiled for an earlier config or batch, and shared by every config in a batch
 (see build_scope and modules_compiled_in_this_build); it is not additive across configs.
-Writes /home/srv/s/math/openai-math/results/cmp-all/configs.csv and prints a summary.
+Writes results/cmp-all/configs.csv and prints a summary.
 Usage: export_results.py
 """
 import json, csv, os, glob, sys, datetime as dt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pauses as pz
-base = '/home/srv/s/math/openai-math'; R = base + '/results/cmp-all'; root = base + '/src/lean'
+base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); R = base + '/results/cmp-all'; root = base + '/src/lean'
 size = {n: (sz, s) for sz, n, s in json.load(open(base + '/results/config-solution-size.json'))}
 pred = {}
 for l in open(base + '/results/predicted-vmas.jsonl'):

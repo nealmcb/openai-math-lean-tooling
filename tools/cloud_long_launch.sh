@@ -15,6 +15,7 @@ IP=$($A ec2 describe-instances --instance-ids $IID --query 'Reservations[0].Inst
 echo "$(date -Is) running at $IP"
 S="ssh -i $KEY -o StrictHostKeyChecking=no -o ConnectTimeout=10 ubuntu@$IP"
 until $S 'mountpoint -q /home/srv'; do sleep 10; done
-scp -i $KEY -o StrictHostKeyChecking=no "$base/tools/cloud_long_nanoda.sh" ubuntu@$IP:/home/srv/s/math/openai-math/tools/
-$S 'tmux new-session -d -s long "cd /home/srv/s/math/openai-math && tools/cloud_long_nanoda.sh 2>&1 | tee results/long-nanoda.out"; sleep 5; tmux ls; nproc; free -g | head -2'
+RB=${REMOTE_BASE:-/home/srv/s/math/openai-math}   # the checkout on the cloud machine (REMOTE_BASE overrides)
+scp -i $KEY -o StrictHostKeyChecking=no "$base/tools/cloud_long_nanoda.sh" ubuntu@$IP:$RB/tools/
+$S "tmux new-session -d -s long 'cd $RB && tools/cloud_long_nanoda.sh 2>&1 | tee results/long-nanoda.out'; sleep 5; tmux ls; nproc; free -g | head -2"
 echo "$(date -Is) launched"
