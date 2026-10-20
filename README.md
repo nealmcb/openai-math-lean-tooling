@@ -175,6 +175,12 @@ Ubuntu 22.04.5 with the default limit of 65530.
   almost linearly with threads on large exports (`PlanarPacking`, 3.85 GB export, 672 s on 64 threads
   against 10.9 hours with Lean's kernel); the 18 configurations whose Lean-based check took over 2,000 s
   run 3.5 times faster end to end, 15 of them passing.
+- Which build: these nanoda runs used the pinned nanoda (3a24072) with a 1 GiB checker stack
+  (`tools/patches/nanoda-stack-and-decl-times.patch`) instead of the stock 16 MiB: 381 of the
+  390 paired runs, the 18 long configurations (15 passing) and 5 others, one of which
+  (`DimensionTenChannel`) also passes at 16 MiB; I did not repeat the rest at 16 MiB. Others
+  reported in the issue that `KaplanskyFinitelyPresented` and `GroupRingDeterminant` overflow the
+  stock 16 MiB stack of 3a24072 and pass at 1 GiB, and that upstream master passes them at 16 MiB.
 - It failed on 15 configurations (a stack overflow, or a memory blow-up past its 31-bit index limit) that
   Lean's kernel handles in seconds to minutes, which we reported as
   [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55). With the latest upstream master

@@ -467,6 +467,18 @@ to within about 1% (`SnakyTwentyOne`: predicted 138.6, 113.1, 100.5 and 94.4 s a
 size of a declaration in the export does not predict its cost (`tools/nanoda_cost_proxy.py`: for `SnakyTwentyOne` the proxy puts none of the 10 slowest
 declarations in its top 50), so the thread count has to come from a first run's times.
 
+**Which nanoda build.** The runs with the pinned nanoda (3a24072) in this report, except the master
+retests below, used it with the checker thread's stack raised from the stock 16 MiB to 1 GiB
+(`tools/patches/nanoda-stack-and-decl-times.patch`, `NANODA_STACK_MB`): the 390 paired runs (381
+accepted), the 18 long configurations (15 accepted), the scaling runs of four more
+(`CycleCliqueRamsey`, `MatrixFields`, `PlanarPacking`, `SnakyTwentyOne`) and `DimensionTenChannel`
+(accepted, in 72.5 s; it also passes with the stock stack, in 70.1 s, see
+`results/nanoda-retest.jsonl`). That is 401 accepted, and 15 that fail even at 1 GiB. The other 400
+were not repeated with the stock stack. A third party reported in issue 55 that
+`KaplanskyFinitelyPresented` and `GroupRingDeterminant` overflow the stock stack of 3a24072 (and
+pass at 1 GiB), and that upstream master (f67473b) passes nine configurations, those two included,
+at the stock 16 MiB.
+
 **Where the pinned nanoda fails.** Fifteen configurations do not complete (and `MUBSix`, which did not finish in 90 minutes at 4 threads, finishes in 2,176 s at 8 threads). With the pinned nanoda
 (3a24072) the checker thread's 16 MiB stack overflows (Comparator reports "nanoda kernel rejected the solution" and exit 134, which reads as a verdict on the proof). Every
 failure is a few declarations; all their dependencies check normally. Each begins in the per-declaration log and never ends:
