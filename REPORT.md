@@ -16,13 +16,13 @@ Four findings, most interesting first.
    `native_decide`, a mismatched statement) were all rejected. Active check time per configuration: median 266 s, 90th percentile 1,036 s, maximum 39,131 s
    (10.9 hours, `PlanarPacking`); 80 hours in all, 329 checks under 10 minutes and 12 over an hour. What an acceptance does and does not establish is in section 5.
    Nothing in this report validates the manuscripts' mathematics.
-2. **A second, independent kernel (nanoda) is about 5 times faster, and upstream's latest version fails on only one configuration.** On a paired sweep of 390 configurations
+2. **A second, independent kernel (nanoda) is about 5 times faster; on upstream's latest version one configuration still fails and three need a deeper stack.** On a paired sweep of 390 configurations
    the pinned nanoda (3a24072) takes a median of 0.21 of Lean's replay time (4 threads against 1), and it scales with threads on large exports (`PlanarPacking`: 672 s on 64 threads
    against 10.9 hours of Lean's check). It accepted 401 of the 416 configurations; the other 15 are accepted by Lean's kernel in seconds to minutes, and nanoda aborted on them with a stack
    overflow or a runaway that exhausts its 2^31-entry index space, in a `whnf` and `try_reduce_nat` alternation that two backtraces show. We reported it as
-   [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55); the maintainer pointed to bignum and Nat changes on master that week, and with the latest master (f67473b) 14 of the 15
+   [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55); the maintainer pointed to bignum and Nat changes on master that week, and with the 15 October master (f67473b) 14 of the 15
    pass (most in under a minute), as does the Problem355 declaration below. The remaining one, `SquareDifference`, still overflows its stack, in a different recursion (`def_eq` and `lazy_delta_step`)
-   (section 3f). The Comparator solutions import only 88% of the library's modules; the other 14,481 were checked with the pinned nanoda in 77 batches, 76 of which pass (about 437,000 named
+   (section 3f); on the 21 October master (998e0a8) that configuration fails on one declaration and three others need a deeper stack than the default (section 3f). The Comparator solutions import only 88% of the library's modules; the other 14,481 were checked with the pinned nanoda in 77 batches, 76 of which pass (about 437,000 named
    declarations), and one fails on a single declaration of the same kind, which passes with master (section 3h).
 3. **The cost, in CPU time and in wall time.** Rough CPU cost of the whole job: about 410 CPU-hours with Lean's kernel (compiling 330, Comparator checks 80), about
    330 with nanoda replacing Lean's kernel on the 416 configurations, and about 370 if nanoda also covers the modules no solution imports (section 1b). The whole library
@@ -509,6 +509,36 @@ is set. Everything is written up in [nanoda_lib issue 55](https://github.com/amm
 
 One still fails, `SquareDifference`: a checker thread overflows its 16 MiB stack after about 22 s, in a different recursion: a gdb backtrace has 97,519 frames, 85,249 of them `def_eq` and 12,178 `lazy_delta_step`, with no `whnf` or `try_reduce_nat`. The single declaration `OAI.SquareDifference.tupleSubLaw_full` reproduces it (75 MB export, `results/nanoda-repro/`; overflow in 5.8 s on 4 threads, while Lean's kernel replays it in 5.8 s after 1.8 s of parsing), and two others from the same configuration overflow alone. A larger checker stack does not help the full configuration (64 MiB overflows after 43 s; 256 MiB and 1 GiB were killed by a 40 GiB memory limit after 2 min 20 s). Whether `def_eq` is making progress is not known.
 
+**With the current upstream master (998e0a8, 21 October, v0.4.26).** Two pull requests landed after
+f67473b: #58 removed the `has_fvars` check at the top of `try_reduce_nat`, and #59 added a
+structural alpha-equivalence check (`alpha_eq`) to `def_eq_quick_check`. All runs below use the
+stock 16 MiB stack, 4 threads for the laptop runs and 8 for the cloud runs (`tools/nanoda_ab.py`,
+`tools/nanoda_isolate_run.py`; records in `results/nanoda-ab.jsonl`,
+`results/nanoda-ab-variants.jsonl`, `results/nanoda-ab-kg.jsonl` and
+`results/nanoda-isolate.jsonl`).
+
+- The four `SquareDifference` declarations that the alpha-equivalence check was written for now
+  pass, in 4 to 13 s with 0.2 GiB, and the repro from nanoda_lib issue 57 passes in 0.17 s. 13 of
+  the 15 configurations pass.
+- `SquareDifference` as a whole still fails, because of its fifth declaration,
+  `OAI.SquareDifference.source_ordered_contraction`. With 4 threads it overflows a checker thread's
+  stack after 37 s; with an 8 GiB stack it was still running after 34 minutes at 96 GB. A gdb
+  backtrace of the overflow has about 108,000 frames, alternating `whnf` and
+  `whnf_no_unfolding_aux`. The chain starts at `lazy_delta_step`, then `try_reduce_nat` and `whnf`
+  of a Nat operand, and a depth counter shows `reduce_quot` (`Quot.lift`, `Quotient.lift`,
+  `Quotient.lift₂`) nested at least 18,000 deep, while `reduce_rec` and `reduce_proj` never nest
+  beyond 500. The cause is not found.
+- Three configurations that pass at the stock stack on f67473b now overflow it:
+  `ContinuumCoulombHardness` (after 37 s), `KaplanskyFinitelyPresented` and `GroupRingDeterminant`
+  (after about 21 to 25 s). With a 1 GiB stack all three pass: Kaplansky and GroupRing in about the
+  time they take on f67473b, `ContinuumCoulombHardness` in 447 s at 28 GiB (130 s and 24 GiB on
+  f67473b).
+- Putting the `has_fvars` check back only for the argument of `Nat.succ`
+  (`tools/patches/nanoda-succ-fvars-guard.patch`, three lines) makes all three pass at the stock
+  stack, `ContinuumCoulombHardness` in 62 s at 1.7 GiB, and keeps the nanoda_lib issue 57 repro
+  passing (0.15 s); with the check in every branch the repro runs out of memory again. This was
+  tested on the 15 configurations, those two and the repro, not on the other ~380.
+
 **The long configurations on nanoda alone.** The 18 configurations whose laptop check took over 2,000 s were exported and checked with nanoda on 8 threads, with a 1 GiB checker
 stack, 10 at a time on a 32-vCPU machine (`tools/cloud_long_nanoda.sh`, `results/long-nanoda/`). Fifteen pass with the pinned build (all 18 with upstream master, below); end to end (export plus nanoda) they take 22,396 s against 79,022 s for the
 laptop's Lean-based checks, 3.5 times less in all, and the single-threaded export is the floor:
@@ -749,9 +779,14 @@ two orders smaller.
 
 ## 8. Not done yet
 
-- Why `SquareDifference` still overflows in upstream nanoda master (`def_eq` and `lazy_delta_step`): whether it loops or is just deep is not known (nanoda_lib issue 55).
+- Why `SquareDifference`'s declaration `source_ordered_contraction` still overflows in upstream
+  nanoda master: the nesting is in `Quot.lift` reductions entered from `try_reduce_nat`, at least
+  18,000 deep; whether it is a very deep finite evaluation or a runaway is not known.
 - Per-declaration Lean-kernel times to join with nanoda's, and a Lean replay time for the 18 long configurations measured the same way as the paired sweep.
-- The paired sweep and the modules no solution imports re-run with upstream nanoda master (only the failing configurations were re-run).
+- The paired sweep and the modules no solution imports re-run with upstream nanoda master (only the
+  failing configurations were re-run). On the current master (998e0a8) the sweep of the other ~380
+  configurations is held until the cases above work; when run, it should stop at the first
+  regression.
 - The cheap from-scratch nanoda run of section 3i (a plan and cost guesses only; it waits on nanoda being fixed).
 - The `MMAP=OFF` toolchain build, the `GLIBC_TUNABLES` comparison, repeated trials for variance.
 - Proposed upstream README patch: state that building the aggregate target `OAI` needs `vm.max_map_count` of at least 150,000 (measured need: 148,940;

@@ -22,7 +22,7 @@ env = dict(os.environ, PATH=f"{base}/ext/lean4export/.lake/build/bin:{os.path.ex
 W = base + '/scratch/retest'; os.makedirs(W, exist_ok=True); OUT = base + '/results/nanoda-retest.jsonl'
 try:
     d = os.path.dirname(os.path.dirname(os.path.dirname(NANODA)))   # .../target/release/nanoda_bin -> source tree
-    commit = subprocess.run(['git', '-C', d, 'rev-parse', '--short', 'HEAD'], capture_output=True, text=True).stdout.strip() or None
+    commit = subprocess.run(['git', '-C', d, 'rev-parse', '--short', 'HEAD'], capture_output=True, text=True).stdout.strip() or None if os.path.exists(d + '/Cargo.toml') else None   # a binary outside a source tree has no commit to report
 except Exception: commit = None
 
 

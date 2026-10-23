@@ -168,7 +168,7 @@ Ubuntu 22.04.5 with the default limit of 65530.
 (`results/cmp-all/configs.csv`) and rejects the negative controls in `controls/`. The slowest check took
 10.9 hours of active time (`PlanarPacking`); 329 of 416 took under 10 minutes.
 
-### Nanoda: much faster, and upstream's latest version fails on one configuration
+### Nanoda: much faster, with a few configurations that still fail or need a deeper stack on upstream's latest version
 
 - A popular alternative kernel, nanoda, accepts 401 of the 416 configurations and takes a median of just
   21% of Lean's replay time on a paired sweep of 390 (about 5 times faster on 4 threads). It scales
@@ -181,11 +181,18 @@ Ubuntu 22.04.5 with the default limit of 65530.
   (`DimensionTenChannel`) also passes at 16 MiB; I did not repeat the rest at 16 MiB. Others
   reported in the issue that `KaplanskyFinitelyPresented` and `GroupRingDeterminant` overflow the
   stock 16 MiB stack of 3a24072 and pass at 1 GiB, and that upstream master passes them at 16 MiB.
-- It failed on 15 configurations (a stack overflow, or a memory blow-up past its 31-bit index limit) that
-  Lean's kernel handles in seconds to minutes, which we reported as
-  [nanoda_lib issue 55](https://github.com/ammkrn/nanoda_lib/issues/55). With the latest upstream master
-  (new bignum and Nat handling) 14 of the 15 pass, most in under a minute; one, `SquareDifference`, still
-  overflows its stack. Details and a minimal reproduction: section 3f of the report and `results/nanoda-repro/`.
+- It failed on 15 configurations (a stack overflow, or a memory blow-up past its 31-bit index
+  limit) that Lean's kernel handles in seconds to minutes, which we reported as [nanoda_lib issue
+  55](https://github.com/ammkrn/nanoda_lib/issues/55) (the follow-up issues are linked from there).
+  With the 15 October upstream master (f67473b, new bignum and Nat handling) 14 of the 15 pass,
+  most in under a minute; one, `SquareDifference`, still overflows its stack. The 21 October master
+  (998e0a8) fixes four of the five `SquareDifference` declarations that failed, but the fifth still
+  overflows, and three configurations (`ContinuumCoulombHardness`, `KaplanskyFinitelyPresented`,
+  `GroupRingDeterminant`) now need a stack deeper than the default 16 MiB. Keeping the `has_fvars`
+  check, but only for the argument of `Nat.succ` (three lines,
+  `tools/patches/nanoda-succ-fvars-guard.patch`), made all three pass at the default stack in our
+  runs. Details: section 3f of the report, `results/nanoda-repro/` and the run records
+  `results/nanoda-ab*.jsonl`.
 - The Comparator solutions import 88% of the library's modules. The other 14,481 modules, which Lean's
   kernel checked only inside the build, were checked with nanoda: 76 of 77 batches pass (about 437,000
   named declarations), and one fails on a single declaration of the same kind, which passes with the latest master (section 3h of the report).
@@ -238,7 +245,7 @@ as plus or minus 50%.
 | `tools/pipeline.py`, `run_comparator_batch.py` | Batched builds plus parallel Comparator checks, resumable, with per-batch archiving of generated build files |
 | `tools/root_build.py`, `root_import_trial.py` | Build the modules only `OAI.lean` needs, in chunks, and import the whole library at a chosen mapping limit |
 | `tools/cloud_bootstrap.sh`, `cloud_run.py`, `priority_build.py`, `cloud_finish_build.py`, `cloud_status.sh`, `cloud_schedule_model.py`, `make_throttled_sysroot.sh` | Cloud run: install, priority-ordered parallel builds without compiling a module twice, status, and the schedule model |
-| `tools/nanoda_pilot.py`, `nanoda_scaling.py`, `nanoda_stack_test.py`, `nanoda_thread_model.py`, `nanoda_cost_proxy.py`, `kernel_pair_sweep.py`, `kernel_replay_time.lean`, `skip_kernel_test.py`, `skip_kernel_sample.py`, `export_vs_check.py`, `profile_from_builds.py`, `tools/patches/` | Second-kernel study: nanoda against Lean's kernel, thread scaling, per-declaration times, the skip-kernel build option, and the local patches (a Comparator option to skip Lean's replay; nanoda with a configurable stack and per-declaration times) |
+| `tools/nanoda_pilot.py`, `nanoda_scaling.py`, `nanoda_stack_test.py`, `nanoda_thread_model.py`, `nanoda_cost_proxy.py`, `kernel_pair_sweep.py`, `nanoda_ab.py`, `nanoda_isolate_run.py`, `kernel_replay_time.lean`, `skip_kernel_test.py`, `skip_kernel_sample.py`, `export_vs_check.py`, `profile_from_builds.py`, `tools/patches/` | Second-kernel study: nanoda against Lean's kernel, thread scaling, per-declaration times, the skip-kernel build option, and the local patches (a Comparator option to skip Lean's replay; nanoda with a configurable stack and per-declaration times) |
 | `tools/cloud_long_nanoda.sh`, `cloud_long_launch.sh`, `uncovered_check.py`, `list_module_decls.lean`, `solution_coverage.py`, `isolate_decl.py`, `cpu_hours_estimate.py` | The long configurations and the modules no solution imports checked with nanoda on a cloud machine; which modules the solutions reach; one declaration exported and checked alone; the CPU-hours estimate |
 | `tools/pause.sh`, `resume.sh`, `idle_guard.py` | Instant pause and resume of a run; resume when the GNOME screen blanks |
 | `tools/parallelism_profile.py`, `export_results.py`, `export_module_times.py`, `check_time_factors.py`, `cost_outliers.py`, `cost_table.py`, `overnight_status.py`, `mdwrap.py` | Build-parallelism profile, per-config CSV, check-cost factors and outliers, status summary |
