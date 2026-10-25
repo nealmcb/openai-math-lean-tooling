@@ -1,0 +1,13 @@
+# Checker stack needed with the let fix alone (nanoda 37cb87b + tools/patches/nanoda-let-fvar-and-succ-guard-37cb87b.patch
+# without its Nat.succ hunk), STACK_SIZE rebuilt per column; 4 threads, laptop, MemoryMax 20G. Default is 16 MiB.
+# config                     32 MiB            64 MiB             128 MiB           256 MiB
+MatchingFPRAS                pass 20.2 s 2.7GB pass 20.5 s 2.8GB  pass 20.5 s 2.8GB pass 23.2 s 2.7GB
+ContingencyTables            pass 18.8 s 1.7GB pass 19.3 s 1.7GB  pass 21.8 s 1.7GB pass 20.1 s 1.7GB
+LogspaceEquality             overflow 20.5 s   pass 37.9 s 2.8GB  pass 39.8 s 2.8GB pass 37.2 s 2.8GB
+KaplanskyFinitelyPresented   -                 pass 23.3 s 1.2GB  -                 -
+KaplanskyDirectFiniteness    -                 pass 23.8 s 1.2GB  -                 -
+GroupRingDeterminant         -                 pass 32.3 s 1.2GB  -                 -
+PeriodicGroup                -                 pass 16.8 s 1.6GB  -                 -
+RandomizedMeanPayoff         -                 pass 12.1 s 4.3GB  -                 -
+ContinuumCoulombHardness     -                 overflow 34 s 4GB  -                 overflow 48 s 13GB
+SquareDifference (16 MiB)    pass 16.9 s 0.65GB (fails on master at any stack: 8 GiB still running at 34 min, 96 GB)
