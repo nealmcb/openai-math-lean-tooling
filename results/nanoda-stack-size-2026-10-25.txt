@@ -11,3 +11,11 @@ PeriodicGroup                -                 pass 16.8 s 1.6GB  -             
 RandomizedMeanPayoff         -                 pass 12.1 s 4.3GB  -                 -
 ContinuumCoulombHardness     -                 overflow 34 s 4GB  -                 overflow 48 s 13GB
 SquareDifference (16 MiB)    pass 16.9 s 0.65GB (fails on master at any stack: 8 GiB still running at 34 min, 96 GB)
+
+# With the let fix AND the Nat.succ guard (tools/patches/nanoda-let-fvar-and-succ-guard-37cb87b.patch), STACK_SIZE 64 MiB, 4 threads:
+MatchingFPRAS                pass 20.1 s 2.6GB
+ContingencyTables            pass 16.7 s 1.4GB
+LogspaceEquality             pass 21.3 s 1.7GB
+ContinuumCoulombHardness     pass 50.0 s 1.8GB
+SquareDifference             pass 16.8 s 0.6GB
+# (the five others pass with let + guard at the default 16 MiB, so also at 64 MiB)
