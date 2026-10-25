@@ -1,0 +1,15 @@
+--- a/src/tc.rs
++++ b/src/tc.rs
+@@ -721,7 +721,11 @@
+         // value (unfolded lazily by `whnf`), so that `Nat` arithmetic on the variable is not
+         // evaluated eagerly, then substitute the value back into the inferred type.
+         let x = self.ctx.mk_unique(binder_name, crate::expr::BinderStyle::Default, binder_type);
+-        self.tc_cache.let_vals.insert(x, val);
++        // MUTANT M2: key the value by a Local built from the name and type alone (first binding wins)
++        let key = self.ctx.mk_dbj_level(binder_name, crate::expr::BinderStyle::Default, binder_type);
++        self.ctx.replace_dbj_level(key);
++        let v0 = *self.tc_cache.let_vals.entry(key).or_insert(val);
++        self.tc_cache.let_vals.insert(x, v0);
+         let body = self.ctx.inst(body, &[x]);
+         let ty = self.infer(body, flag);
+         let ty = self.ctx.abstr(ty, &[x]);

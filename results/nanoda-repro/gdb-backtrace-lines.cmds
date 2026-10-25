@@ -1,0 +1,19 @@
+set pagination off
+handle SIGSEGV stop nopass
+run
+bt 12
+python
+# Tally frames (inlined ones too) by function:line; print the outermost 70. Needs a build with line tables:
+#   CARGO_PROFILE_RELEASE_DEBUG=line-tables-only cargo build --release
+import gdb, collections
+f = gdb.newest_frame(); c = collections.Counter(); n = 0; order = []; tail = []
+while f is not None and n < 3000000:
+    sal = f.find_sal(); key = f"{f.name()}:{sal.line}" + (" [inline]" if f.type() == gdb.INLINE_FRAME else "")
+    c[key] += 1; n += 1
+    tail.append(key); tail = tail[-70:]
+    f = f.older()
+print("frames walked:", n)
+for k, v in c.most_common(20): print(v, k)
+print("outermost 70:"); print("\n".join(tail))
+end
+quit
