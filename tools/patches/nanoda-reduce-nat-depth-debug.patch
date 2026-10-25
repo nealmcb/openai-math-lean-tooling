@@ -1,0 +1,57 @@
+diff --git a/src/tc.rs b/src/tc.rs
+index 1f0cee1..9155506 100644
+--- a/src/tc.rs
++++ b/src/tc.rs
+@@ -75,6 +75,7 @@ pub struct TypeChecker<'x, 't, 'p> {
+     /// to make sure that all of the universe paramters actually used in a declaration `d` are
+     /// properly represented in the declaration's uparams info.
+     pub(crate) declar_info: Option<DeclarInfo<'t>>,
++    pub(crate) dbg_stack: Vec<ExprPtr<'t>>,
+ }
+ 
+ impl<'p> ExportFile<'p> {
+@@ -189,7 +190,7 @@ impl<'p> ExportFile<'p> {
+ impl<'x, 't: 'x, 'p: 't> TypeChecker<'x, 't, 'p> {
+     pub fn new(dag: &'x mut TcCtx<'t, 'p>, env: &'x Env<'x, 't>, declar_info: Option<DeclarInfo<'t>>) -> Self {
+         assert_eq!(dag.dbj_level_counter, 0);
+-        Self { ctx: dag, env, tc_cache: TcCache::new(), declar_info } 
++        Self { ctx: dag, env, tc_cache: TcCache::new(), declar_info, dbg_stack: Vec::new() } 
+     }
+ 
+     /// Conduct the preliminary checks done on all declarations; a declaration
+@@ -399,6 +400,35 @@ impl<'x, 't: 'x, 'p: 't> TypeChecker<'x, 't, 'p> {
+     /// or an application of a supported binary operation. `e` must have no free
+     /// variables.
+     pub(crate) fn try_reduce_nat(&mut self, e: ExprPtr<'t>) -> Option<ExprPtr<'t>> {
++        // DEBUG instrumentation (scratch only): keep the nesting stack; report the first deep nesting
++        thread_local! { static DONE: std::cell::Cell<bool> = std::cell::Cell::new(false); }
++        self.dbg_stack.push(e);
++        let d = self.dbg_stack.len();
++        if d == 2000 && !DONE.with(|c| c.replace(true)) {
++            let trunc = |s: String, n: usize| { let c: Vec<char> = s.chars().collect(); if c.len() > n { format!("{}...[{} chars]", c[..n].iter().collect::<String>(), c.len()) } else { s } };
++            eprintln!("DEEP try_reduce_nat depth {} in declaration {:?}", d, self.declar_info.map(|i| self.ctx.debug_print(i.name)));
++            let st = self.dbg_stack.clone();
++            let mut counts = std::collections::BTreeMap::new();
++            let mut fv_levels = Vec::new();
++            for (i, x) in st.iter().enumerate() {
++                let (f0, a0) = self.ctx.unfold_apps(*x);
++                let head = match self.ctx.read_expr(f0) { Const { name, .. } => format!("{:?}/{}", self.ctx.debug_print(name), a0.len()), _ => String::from("<non-const>") };
++                let fv = self.ctx.has_fvars(*x);
++                if fv { fv_levels.push(i + 1) }
++                *counts.entry((head, fv)).or_insert(0usize) += 1;
++            }
++            eprintln!("  (head/nargs, has_fvars) counts: {:?}", counts);
++            eprintln!("  levels with fvars (first 20): {:?} of {}", &fv_levels[..fv_levels.len().min(20)], fv_levels.len());
++            for i in [0usize, 1, 2, 3, 4, 5, 1000, 1001, 1002, 1998] { eprintln!("  level {}: {}", i + 1, trunc(format!("{:?}", self.ctx.debug_print(st[i])), 900)); }
++        }
++        thread_local! { static MAXD: std::cell::Cell<usize> = std::cell::Cell::new(1000); }
++        if d > MAXD.with(|c| c.get()) && d.is_power_of_two() { MAXD.with(|c| c.set(d)); eprintln!("MAXDEPTH try_reduce_nat >= {} in {:?}", d, self.declar_info.map(|i| self.ctx.debug_print(i.name))); }
++        let r = self.try_reduce_nat_inner(e);
++        self.dbg_stack.pop();
++        r
++    }
++
++    fn try_reduce_nat_inner(&mut self, e: ExprPtr<'t>) -> Option<ExprPtr<'t>> {
+         if !self.ctx.export_file.config.nat_extension {
+             return None
+         }

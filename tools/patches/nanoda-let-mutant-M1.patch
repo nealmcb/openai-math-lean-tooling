@@ -1,0 +1,11 @@
+--- a/src/tc.rs
++++ b/src/tc.rs
+@@ -715,7 +715,7 @@
+             self.infer_sort_of(binder_type, flag);
+             let val_ty = self.infer(val, flag);
+             // assert that the type annotation of the let value is appropriate.
+-            self.assert_def_eq(val_ty, binder_type);
++            let _ = (val_ty, binder_type); // MUTANT M1: check removed
+         }
+         // As the reference kernel's `infer_let`: check the body with a free variable that has a
+         // value (unfolded lazily by `whnf`), so that `Nat` arithmetic on the variable is not
