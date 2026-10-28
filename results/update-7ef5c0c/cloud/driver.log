@@ -1,0 +1,77 @@
+2026-10-27T22:04:58+00:00 start: openai/math 7ef5c0cc5; disk 88G free
+2026-10-27T22:04:58+00:00 lake build of SubexponentialSAT LocalSmoothing DefocusingNLS
+2026-10-27T22:55:55+00:00 start: openai/math 7ef5c0cc5; disk 79G free
+2026-10-27T22:55:55+00:00 lake build of SubexponentialSAT LocalSmoothing DefocusingNLS
+2026-10-27T23:07:04+00:00 lake build exit 0 (6638 Built lines so far)
+2026-10-27T23:07:04+00:00 lake build of HodgeConjectureCMAbelianVarieties/main
+2026-10-27T23:07:04+00:00 nanoda_ab (small) on SubexponentialSAT LocalSmoothing DefocusingNLS
+2026-10-27T23:09:49+00:00 start: openai/math 7ef5c0cc5; disk 80G free
+2026-10-27T23:09:49+00:00 lake build of SubexponentialSAT LocalSmoothing DefocusingNLS
+2026-10-27T23:10:51+00:00 lake build exit 0 (6862 Built lines so far)
+2026-10-27T23:10:51+00:00 nanoda_ab (small) on SubexponentialSAT LocalSmoothing DefocusingNLS
+2026-10-27T23:10:51+00:00 lake build of HodgeConjectureCMAbelianVarieties/main
+{"config": "DefocusingNLS", "label": "master", "export_bytes": 1082034792, "rc": 0, "wall_s": 83.8, "rss_gib": 2.54}
+{"config": "DefocusingNLS", "label": "master+71", "export_bytes": 1082034792, "rc": 0, "wall_s": 86.7, "rss_gib": 2.48}
+{"config": "SubexponentialSAT", "label": "master", "export_bytes": 2355643683, "rc": 134, "wall_s": 100.5, "rss_gib": 2.87}
+{"config": "SubexponentialSAT", "label": "master+71", "export_bytes": 2355643683, "rc": 134, "wall_s": 103.7, "rss_gib": 2.85}
+{"config": "LocalSmoothing", "label": "master", "export_bytes": 1135615389, "rc": 0, "wall_s": 459.6, "rss_gib": 10.47}
+{"config": "LocalSmoothing", "label": "master+71", "export_bytes": 1135615389, "rc": 0, "wall_s": 462.8, "rss_gib": 10.67}
+2026-10-27T23:29:41+00:00 stack overflow at 16 MiB in: SubexponentialSAT; rerunning with the 64 MiB builds
+resuming: 3 configurations already recorded, 1 to go
+{"config": "SubexponentialSAT", "label": "master.64M", "export_bytes": 2355643683, "rc": 134, "wall_s": 195.2, "rss_gib": 23.81}
+{"config": "SubexponentialSAT", "label": "master+71.64M", "export_bytes": 2355643683, "rc": 134, "wall_s": 201.1, "rss_gib": 25.38}
+2026-10-27T23:40:45+00:00 nanoda_ab (small) done
+2026-10-28T00:23:05+00:00 start: openai/math 7ef5c0cc5; disk 76G free
+2026-10-28T00:23:05+00:00 lake build of SubexponentialSAT LocalSmoothing DefocusingNLS
+2026-10-28T00:24:07+00:00 lake build exit 0 (18268 Built lines so far)
+2026-10-28T00:24:07+00:00 lake build of HodgeConjectureCMAbelianVarieties/main
+2026-10-28T00:24:07+00:00 nanoda_ab (small) on SubexponentialSAT LocalSmoothing DefocusingNLS
+resuming: 3 configurations already recorded, 1 to go
+{"config": "SubexponentialSAT", "label": "master", "export_bytes": 2355643683, "rc": 134, "wall_s": 107.5, "rss_gib": 2.83}
+{"config": "SubexponentialSAT", "label": "master+71", "export_bytes": 2355643683, "rc": 134, "wall_s": 108.9, "rss_gib": 2.85}
+2026-10-28T00:34:03+00:00 stack overflow at 16 MiB in: SubexponentialSAT; rerunning with the 64 MiB builds
+resuming: 3 configurations already recorded, 1 to go
+{"config": "SubexponentialSAT", "label": null, "export_bytes": 0, "rc": null, "wall_s": null, "rss_gib": null}
+2026-10-28T00:34:31+00:00 nanoda_ab (small) done
+2026-10-28T01:38:00+00:00 start: openai/math 7ef5c0cc5; disk 77G free
+2026-10-28T01:38:00+00:00 lake build of SubexponentialSAT LocalSmoothing DefocusingNLS
+2026-10-28T01:39:02+00:00 lake build exit 0 (19222 Built lines so far)
+2026-10-28T01:39:02+00:00 lake build of HodgeConjectureCMAbelianVarieties/main
+2026-10-28T01:39:02+00:00 nanoda_ab (small) on SubexponentialSAT LocalSmoothing DefocusingNLS
+resuming: 3 configurations already recorded, 1 to go
+{"config": "SubexponentialSAT", "label": null, "export_bytes": 0, "rc": null, "wall_s": null, "rss_gib": null}
+2026-10-28T01:40:39+00:00 stack overflow at 16 MiB in: SubexponentialSAT; rerunning with the 64 MiB builds
+resuming: 3 configurations already recorded, 1 to go
+{"config": "SubexponentialSAT", "label": null, "export_bytes": 0, "rc": null, "wall_s": null, "rss_gib": null}
+2026-10-28T01:40:39+00:00 nanoda_ab (small) done
+2026-10-28T01:48:20+00:00 start: openai/math 7ef5c0cc5; disk 79G free
+2026-10-28T01:48:20+00:00 lake build of SubexponentialSAT LocalSmoothing DefocusingNLS
+2026-10-28T01:49:22+00:00 lake build exit 0 (19319 Built lines so far)
+2026-10-28T01:49:22+00:00 lake build of HodgeConjectureCMAbelianVarieties/main
+2026-10-28T01:49:22+00:00 nanoda_ab (small) on SubexponentialSAT LocalSmoothing DefocusingNLS
+resuming: 3 configurations already recorded, 1 to go
+{"config": "SubexponentialSAT", "label": null, "export_bytes": 0, "rc": null, "wall_s": null, "rss_gib": null}
+2026-10-28T01:50:31+00:00 stack overflow at 16 MiB in: SubexponentialSAT; rerunning with the 64 MiB builds
+resuming: 3 configurations already recorded, 1 to go
+{"config": "SubexponentialSAT", "label": null, "export_bytes": 0, "rc": null, "wall_s": null, "rss_gib": null}
+2026-10-28T01:50:31+00:00 nanoda_ab (small) done
+2026-10-28T01:56:33+00:00 start: openai/math 7ef5c0cc5; disk 79G free
+2026-10-28T01:56:33+00:00 lake build of SubexponentialSAT LocalSmoothing DefocusingNLS
+2026-10-28T01:57:23+00:00 lake build exit 0 (19351 Built lines so far)
+2026-10-28T01:57:23+00:00 lake build of HodgeConjectureCMAbelianVarieties/main
+2026-10-28T01:57:23+00:00 nanoda_ab (small) on SubexponentialSAT LocalSmoothing DefocusingNLS
+resuming: 3 configurations already recorded, 1 to go
+{"config": "SubexponentialSAT", "label": "master", "export_bytes": 2355643683, "rc": 134, "wall_s": 64.5, "rss_gib": 2.84}
+{"config": "SubexponentialSAT", "label": "master+71", "export_bytes": 2355643683, "rc": 134, "wall_s": 64.8, "rss_gib": 2.84}
+2026-10-28T02:03:14+00:00 stack overflow at 16 MiB in: SubexponentialSAT; rerunning with the 64 MiB builds
+resuming: 3 configurations already recorded, 1 to go
+{"config": "SubexponentialSAT", "label": "master.64M", "export_bytes": 2355643683, "rc": 134, "wall_s": 136.8, "rss_gib": 23.72}
+{"config": "SubexponentialSAT", "label": "master+71.64M", "export_bytes": 2355643683, "rc": 134, "wall_s": 137.9, "rss_gib": 24.3}
+2026-10-28T02:10:06+00:00 nanoda_ab (small) done
+2026-10-28T05:21:56+00:00 lake build exit 0 (40067 Built lines so far)
+2026-10-28T05:21:56+00:00 nanoda_ab (big) on HodgeConjectureCMAbelianVarieties/main
+resuming: 3 configurations already recorded, 1 to go
+{"config": "HodgeConjectureCMAbelianVarieties/main", "label": "master", "export_bytes": 6370374404, "rc": 0, "wall_s": 1900.4, "rss_gib": 20.0}
+{"config": "HodgeConjectureCMAbelianVarieties/main", "label": "master+71", "export_bytes": 6370374404, "rc": 0, "wall_s": 1934.8, "rss_gib": 21.57}
+2026-10-28T06:32:24+00:00 nanoda_ab (big) done
+2026-10-28T06:32:24+00:00 all done; disk 66G free

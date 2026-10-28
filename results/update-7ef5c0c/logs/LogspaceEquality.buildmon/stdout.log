@@ -1,0 +1,1598 @@
+warning: PrimeNumberTheoremAnd: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/fixed-point-theorems' has local changes
+ℹ [8924/8963] Fetched OAI.Computability.Logspace.Deterministic
+info: stderr:
+cumulative profiling times:
+	.olean serialization 590ms
+	C code generation 2.8ms
+	attribute application 3.66ms
+	blocked (unaccounted) 11.1ms
+	compilation (IR) 3.97ms
+	compilation (LCNF base) 19.5ms
+	compilation (LCNF impure) 14.8ms
+	compilation (LCNF mono) 12.2ms
+	congr simp thm 17.9ms
+	dsimp 8.17ms
+	elaboration 455ms
+	fix level params 2.25ms
+	import 4.36s
+	initialization 43.8ms
+	instantiate metavars 5.78ms
+	interpretation 1.56s
+	let-to-have transformation 0.8ms
+	linting 166ms
+	module linting 0.00124ms
+	norm_num 277ms
+	overlappingInstancesLinter 21.7ms
+	parsing 56.3ms
+	process pre-definitions 105ms
+	ring 127ms
+	share common exprs 47.7ms
+	simp 438ms
+	tactic execution 617ms
+	tacticAnalysis 145ms
+	type checking 441ms
+	typeclass inference 1.3s
+ℹ [8925/8963] Fetched OAI.Computability.Logspace.AffineSampling
+info: stderr:
+cumulative profiling times:
+	.olean serialization 933ms
+	C code generation 9.42ms
+	attribute application 16.3ms
+	blocked (unaccounted) 10.2s
+	compilation (IR) 7.04ms
+	compilation (LCNF base) 135ms
+	compilation (LCNF impure) 41.7ms
+	compilation (LCNF mono) 92.1ms
+	congr simp thm 208ms
+	dsimp 238ms
+	elaboration 1.95s
+	fix level params 24.2ms
+	grind 69.7ms
+	grind ac 0.399ms
+	grind cutsat 0.0925ms
+	grind ematch 12.4ms
+	grind linarith 3.37ms
+	grind mark subsingleton 9.47ms
+	grind ring 0.529ms
+	grind simp 19.4ms
+	import 4.61s
+	initialization 49.4ms
+	instantiate metavars 121ms
+	interpretation 10.6s
+	let-to-have transformation 48ms
+	linting 1e+03ms
+	module linting 0.00107ms
+	norm_num 1.03s
+	overlappingInstancesLinter 219ms
+	parsing 206ms
+	process pre-definitions 711ms
+	ring 1.4s
+	share common exprs 516ms
+	simp 7.86s
+	sym canon 6.15ms
+	sym typeclass inference 268ms
+	tactic execution 5.59s
+	tacticAnalysis 736ms
+	type checking 2.9s
+	typeclass inference 13.9s
+ℹ [8926/8963] Fetched OAI.Computability.Logspace.TransitionTables
+info: stderr:
+cumulative profiling times:
+	.olean serialization 291ms
+	C code generation 2.27ms
+	attribute application 11ms
+	blocked (unaccounted) 24.1ms
+	compilation (IR) 1.1ms
+	compilation (LCNF base) 12ms
+	compilation (LCNF impure) 12.2ms
+	compilation (LCNF mono) 21.2ms
+	congr simp thm 14.2ms
+	elaboration 176ms
+	fix level params 0.499ms
+	import 4.27s
+	initialization 50.2ms
+	instantiate metavars 0.845ms
+	interpretation 508ms
+	let-to-have transformation 2.63ms
+	linting 64.9ms
+	module linting 0.00141ms
+	overlappingInstancesLinter 18ms
+	parsing 9.99ms
+	process pre-definitions 24.9ms
+	share common exprs 2.86ms
+	simp 203ms
+	tactic execution 93.3ms
+	tacticAnalysis 42ms
+	type checking 44.9ms
+	typeclass inference 86.4ms
+ℹ [8927/8963] Fetched OAI.Computability.Logspace.Amplification
+info: stderr:
+cumulative profiling times:
+	.olean serialization 287ms
+	C code generation 1.37ms
+	attribute application 0.304ms
+	compilation (IR) 0.737ms
+	compilation (LCNF base) 15.3ms
+	compilation (LCNF impure) 7.72ms
+	compilation (LCNF mono) 7.57ms
+	congr simp thm 13.1ms
+	dsimp 23.8ms
+	elaboration 198ms
+	fix level params 1.16ms
+	import 3.86s
+	initialization 38.1ms
+	instantiate metavars 7.17ms
+	interpretation 675ms
+	let-to-have transformation 0.241ms
+	linting 58.8ms
+	module linting 0.00129ms
+	norm_num 18.7ms
+	overlappingInstancesLinter 17.6ms
+	parsing 27.1ms
+	process pre-definitions 29.9ms
+	ring 27.2ms
+	share common exprs 28.1ms
+	simp 272ms
+	tactic execution 526ms
+	tacticAnalysis 76.4ms
+	type checking 380ms
+	typeclass inference 645ms
+ℹ [8928/8963] Fetched OAI.Computability.Logspace.ProbabilityHierarchy
+info: stderr:
+cumulative profiling times:
+	.olean serialization 433ms
+	C code generation 1.28ms
+	attribute application 2.66ms
+	blocked (unaccounted) 7.05s
+	compilation (IR) 0.592ms
+	compilation (LCNF base) 9.87ms
+	compilation (LCNF impure) 2.65ms
+	compilation (LCNF mono) 9.13ms
+	congr simp thm 97.5ms
+	dsimp 20.9ms
+	elaboration 568ms
+	fix level params 9.06ms
+	grind 127ms
+	grind ac 0.141ms
+	grind cutsat 0.232ms
+	grind ematch 14.6ms
+	grind linarith 4.94ms
+	grind mark subsingleton 10.5ms
+	grind ring 0.293ms
+	grind simp 47.2ms
+	import 3.85s
+	initialization 57.9ms
+	instantiate metavars 39.7ms
+	interpretation 6s
+	let-to-have transformation 3.24ms
+	linting 287ms
+	module linting 0.00137ms
+	norm_num 837ms
+	overlappingInstancesLinter 39.7ms
+	parsing 77.1ms
+	process pre-definitions 168ms
+	ring 427ms
+	share common exprs 179ms
+	simp 1.17s
+	sym canon 13.5ms
+	sym typeclass inference 308ms
+	tactic execution 1.9s
+	tacticAnalysis 223ms
+	type checking 784ms
+	typeclass inference 4.13s
+ℹ [8929/8963] Fetched OAI.Computability.Logspace.CounterPrograms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 659ms
+	C code generation 4.59ms
+	attribute application 4.2ms
+	blocked (unaccounted) 3.69s
+	compilation (IR) 2.49ms
+	compilation (LCNF base) 33.2ms
+	compilation (LCNF impure) 15.7ms
+	compilation (LCNF mono) 36.7ms
+	congr simp thm 68.9ms
+	dsimp 27.8ms
+	elaboration 781ms
+	fix level params 8.3ms
+	grind 68.4ms
+	grind ac 0.00526ms
+	grind cutsat 0.0704ms
+	grind ematch 0.604ms
+	grind linarith 0.0035ms
+	grind mark subsingleton 4.39ms
+	grind ring 0.0151ms
+	grind simp 36.4ms
+	import 4.13s
+	initialization 55.5ms
+	instantiate metavars 22.1ms
+	interpretation 2.17s
+	let-to-have transformation 5.31ms
+	linting 491ms
+	module linting 0.00129ms
+	norm_num 15.5ms
+	overlappingInstancesLinter 51.1ms
+	parsing 114ms
+	process pre-definitions 221ms
+	ring 96.6ms
+	share common exprs 76ms
+	simp 4.28s
+	sym canon 4.06ms
+	sym typeclass inference 72.1ms
+	tactic execution 2.84s
+	tacticAnalysis 309ms
+	type checking 2.43s
+	typeclass inference 3.63s
+ℹ [8930/8963] Fetched OAI.Computability.Logspace.ProbabilityAtoms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 572ms
+	C code generation 0.832ms
+	attribute application 1.16ms
+	blocked (unaccounted) 7.16s
+	compilation (IR) 0.225ms
+	compilation (LCNF base) 2.53ms
+	compilation (LCNF impure) 1.02ms
+	compilation (LCNF mono) 1.81ms
+	congr simp thm 122ms
+	dsimp 10.8ms
+	elaboration 861ms
+	fix level params 12.5ms
+	grind 742ms
+	grind ac 8.26ms
+	grind cutsat 0.818ms
+	grind ematch 222ms
+	grind linarith 37.9ms
+	grind mark subsingleton 140ms
+	grind ring 12.4ms
+	grind simp 160ms
+	import 3.97s
+	initialization 24.5ms
+	instantiate metavars 28.9ms
+	interpretation 6.03s
+	let-to-have transformation 1.21ms
+	linting 448ms
+	module linting 0.00141ms
+	norm_num 1.43s
+	overlappingInstancesLinter 51.4ms
+	parsing 104ms
+	process pre-definitions 243ms
+	ring 657ms
+	share common exprs 209ms
+	simp 1.23s
+	sym canon 64ms
+	sym typeclass inference 1.89s
+	tactic execution 2.21s
+	tacticAnalysis 291ms
+	type checking 2.02s
+	typeclass inference 4.75s
+ℹ [8931/8963] Fetched OAI.Computability.Logspace.RecursivePrograms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 597ms
+	C code generation 3.82ms
+	attribute application 3.3ms
+	blocked (unaccounted) 4.09s
+	compilation (IR) 2.64ms
+	compilation (LCNF base) 34ms
+	compilation (LCNF impure) 13.4ms
+	compilation (LCNF mono) 23.2ms
+	congr simp thm 59ms
+	dsimp 6.64ms
+	elaboration 1.25s
+	fix level params 7.92ms
+	grind 120ms
+	grind ac 0.00374ms
+	grind cutsat 0.0582ms
+	grind ematch 0.638ms
+	grind linarith 0.00228ms
+	grind mark subsingleton 3.61ms
+	grind ring 0.0113ms
+	grind simp 27.4ms
+	import 3.65s
+	initialization 24.9ms
+	instantiate metavars 14.1ms
+	interpretation 5.41s
+	let-to-have transformation 3.95ms
+	linting 412ms
+	module linting 0.00115ms
+	norm_num 36.7ms
+	overlappingInstancesLinter 71ms
+	parsing 94.6ms
+	process pre-definitions 157ms
+	ring 150ms
+	share common exprs 55.6ms
+	simp 1.05s
+	sym canon 20.3ms
+	sym typeclass inference 69.2ms
+	tactic execution 1.39s
+	tacticAnalysis 311ms
+	type checking 1.1s
+	typeclass inference 2.57s
+ℹ [8932/8963] Fetched OAI.Computability.Logspace.ConfigurationGraph
+info: stderr:
+cumulative profiling times:
+	.olean serialization 397ms
+	C code generation 3.83ms
+	attribute application 3.48ms
+	blocked (unaccounted) 1.91s
+	compilation (IR) 2.6ms
+	compilation (LCNF base) 21.8ms
+	compilation (LCNF impure) 15.8ms
+	compilation (LCNF mono) 25.8ms
+	congr simp thm 29.2ms
+	dsimp 21ms
+	elaboration 424ms
+	fix level params 2.76ms
+	grind 23.7ms
+	grind ac 0.0109ms
+	grind cutsat 0.131ms
+	grind ematch 1.38ms
+	grind linarith 0.00697ms
+	grind mark subsingleton 1.22ms
+	grind ring 0.024ms
+	grind simp 16.9ms
+	import 3.64s
+	initialization 24.7ms
+	instantiate metavars 8.65ms
+	interpretation 1.2s
+	let-to-have transformation 1.6ms
+	linting 194ms
+	module linting 0.0015ms
+	norm_num 66.7ms
+	overlappingInstancesLinter 27.5ms
+	parsing 47.7ms
+	process pre-definitions 59.7ms
+	ring 24ms
+	share common exprs 25ms
+	simp 789ms
+	sym canon 3.65ms
+	sym typeclass inference 23.2ms
+	tactic execution 745ms
+	tacticAnalysis 153ms
+	type checking 501ms
+	typeclass inference 1.31s
+ℹ [8933/8963] Fetched OAI.Computability.Logspace.CompressionBounds
+info: stderr:
+cumulative profiling times:
+	.olean serialization 563ms
+	C code generation 1.39ms
+	attribute application 3.37ms
+	blocked (unaccounted) 3.89s
+	compilation (IR) 0.921ms
+	compilation (LCNF base) 12ms
+	compilation (LCNF impure) 7.29ms
+	compilation (LCNF mono) 10.3ms
+	congr simp thm 59.3ms
+	dsimp 7.06ms
+	elaboration 819ms
+	fix level params 17.2ms
+	grind 1.62s
+	grind ac 10.4ms
+	grind cutsat 2.57ms
+	grind ematch 368ms
+	grind linarith 63.5ms
+	grind mark subsingleton 311ms
+	grind ring 20.2ms
+	grind simp 323ms
+	import 4.02s
+	initialization 49.1ms
+	instantiate metavars 40ms
+	interpretation 5.27s
+	let-to-have transformation 4.35ms
+	linting 453ms
+	module linting 0.00116ms
+	norm_num 673ms
+	overlappingInstancesLinter 47.5ms
+	parsing 119ms
+	process pre-definitions 230ms
+	ring 537ms
+	share common exprs 182ms
+	simp 931ms
+	sym canon 177ms
+	sym typeclass inference 2.43s
+	tactic execution 2.69s
+	tacticAnalysis 303ms
+	type checking 2.78s
+	typeclass inference 4.34s
+ℹ [8934/8963] Fetched OAI.Computability.Logspace.ContourTraversal
+info: stderr:
+cumulative profiling times:
+	.olean serialization 596ms
+	C code generation 5.13ms
+	aesop 28.4ms
+	attribute application 1.67ms
+	blocked (unaccounted) 1.75s
+	compilation (IR) 16.7ms
+	compilation (LCNF base) 58.1ms
+	compilation (LCNF impure) 31.4ms
+	compilation (LCNF mono) 46.1ms
+	congr simp thm 49.1ms
+	dsimp 6.35ms
+	elaboration 1.82s
+	fix level params 8.4ms
+	grind 251ms
+	grind ac 0.0396ms
+	grind cutsat 0.169ms
+	grind ematch 11.8ms
+	grind linarith 0.0296ms
+	grind mark subsingleton 10.1ms
+	grind ring 0.0973ms
+	grind simp 171ms
+	import 4.33s
+	initialization 44.4ms
+	instantiate metavars 22.9ms
+	interpretation 1.64s
+	let-to-have transformation 7.74ms
+	linting 599ms
+	module linting 0.00129ms
+	overlappingInstancesLinter 77.2ms
+	parsing 104ms
+	process pre-definitions 208ms
+	share common exprs 39ms
+	simp 1.08s
+	sym canon 33.2ms
+	sym typeclass inference 413ms
+	tactic execution 2.02s
+	tacticAnalysis 346ms
+	type checking 718ms
+	typeclass inference 728ms
+ℹ [8935/8963] Fetched OAI.Computability.Logspace.CatalyticComparison
+info: stderr:
+cumulative profiling times:
+	.olean serialization 436ms
+	C code generation 3.52ms
+	attribute application 4.87ms
+	blocked (unaccounted) 2.85s
+	compilation (IR) 2.32ms
+	compilation (LCNF base) 26.8ms
+	compilation (LCNF impure) 15.8ms
+	compilation (LCNF mono) 20.7ms
+	congr simp thm 79.3ms
+	dsimp 21.7ms
+	elaboration 1.55s
+	fix level params 5.21ms
+	grind 75.1ms
+	grind ac 0.00542ms
+	grind cutsat 0.0581ms
+	grind ematch 9.07ms
+	grind linarith 0.00279ms
+	grind mark subsingleton 8.23ms
+	grind ring 0.0148ms
+	grind simp 34.7ms
+	import 3.93s
+	initialization 52.7ms
+	instantiate metavars 20.3ms
+	interpretation 2.95s
+	let-to-have transformation 1.01ms
+	linting 382ms
+	module linting 0.00128ms
+	norm_num 88.9ms
+	overlappingInstancesLinter 59.8ms
+	parsing 92.6ms
+	process pre-definitions 213ms
+	ring 268ms
+	share common exprs 62ms
+	simp 1.21s
+	sym canon 41.3ms
+	sym typeclass inference 1.05s
+	tactic execution 1.62s
+	tacticAnalysis 258ms
+	type checking 744ms
+	typeclass inference 2.74s
+ℹ [8936/8963] Fetched OAI.Computability.Logspace.DyadicArithmetic
+info: stderr:
+cumulative profiling times:
+	.olean serialization 597ms
+	C code generation 7.97ms
+	attribute application 13.7ms
+	blocked (unaccounted) 8.31s
+	compilation (IR) 10.2ms
+	compilation (LCNF base) 83.3ms
+	compilation (LCNF impure) 39.3ms
+	compilation (LCNF mono) 84.2ms
+	congr simp thm 93.7ms
+	dsimp 25.3ms
+	elaboration 1.44s
+	fix level params 7.76ms
+	grind 77ms
+	grind ac 0.0914ms
+	grind cutsat 0.29ms
+	grind ematch 9.74ms
+	grind linarith 0.128ms
+	grind mark subsingleton 3.87ms
+	grind ring 0.19ms
+	grind simp 34.4ms
+	import 4s
+	initialization 36.4ms
+	instantiate metavars 35.2ms
+	interpretation 11.4s
+	let-to-have transformation 4.71ms
+	linting 738ms
+	module linting 0.00156ms
+	norm_num 128ms
+	overlappingInstancesLinter 107ms
+	parsing 122ms
+	process pre-definitions 263ms
+	ring 327ms
+	share common exprs 138ms
+	simp 2.34s
+	sym canon 5.89ms
+	sym typeclass inference 129ms
+	tactic execution 5.77s
+	tacticAnalysis 432ms
+	type checking 2.44s
+	typeclass inference 6.36s
+ℹ [8937/8963] Fetched OAI.Computability.Logspace.EstimatorBounds
+info: stderr:
+cumulative profiling times:
+	.olean serialization 967ms
+	C code generation 2.1ms
+	attribute application 9.87ms
+	blocked (unaccounted) 4.74s
+	compilation (IR) 1.37ms
+	compilation (LCNF base) 22.6ms
+	compilation (LCNF impure) 7.78ms
+	compilation (LCNF mono) 26.2ms
+	congr simp thm 84.1ms
+	dsimp 30.8ms
+	elaboration 1.49s
+	fix level params 19ms
+	grind 541ms
+	grind ac 0.857ms
+	grind cutsat 0.34ms
+	grind ematch 47.1ms
+	grind linarith 6.43ms
+	grind mark subsingleton 110ms
+	grind ring 2.26ms
+	grind simp 107ms
+	import 3.72s
+	initialization 25ms
+	instantiate metavars 47.6ms
+	interpretation 6.3s
+	let-to-have transformation 3.25ms
+	linting 606ms
+	module linting 0.00135ms
+	norm_num 372ms
+	overlappingInstancesLinter 124ms
+	parsing 147ms
+	process pre-definitions 269ms
+	ring 582ms
+	share common exprs 203ms
+	simp 1.41s
+	sym canon 94.1ms
+	sym typeclass inference 1.95s
+	tactic execution 4.14s
+	tacticAnalysis 523ms
+	type checking 2.31s
+	typeclass inference 6.79s
+ℹ [8938/8963] Fetched OAI.Computability.Logspace.AllocationPrograms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 289ms
+	C code generation 1.76ms
+	attribute application 1.09ms
+	blocked (unaccounted) 83.1ms
+	compilation (IR) 1.08ms
+	compilation (LCNF base) 16.3ms
+	compilation (LCNF impure) 8.26ms
+	compilation (LCNF mono) 19.5ms
+	congr simp thm 41.9ms
+	elaboration 584ms
+	fix level params 2.23ms
+	import 3.73s
+	initialization 54.3ms
+	instantiate metavars 7.79ms
+	interpretation 4.86s
+	let-to-have transformation 7.54ms
+	linting 171ms
+	module linting 0.00125ms
+	norm_num 28ms
+	overlappingInstancesLinter 20.3ms
+	parsing 43.2ms
+	process pre-definitions 80.7ms
+	ring 109ms
+	share common exprs 43.2ms
+	simp 696ms
+	tactic execution 706ms
+	tacticAnalysis 150ms
+	type checking 193ms
+	typeclass inference 1.31s
+ℹ [8939/8963] Fetched OAI.Computability.Logspace.QueryPrograms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 912ms
+	C code generation 6.64ms
+	attribute application 3.83ms
+	blocked (unaccounted) 13.4s
+	compilation (IR) 4.29ms
+	compilation (LCNF base) 56.4ms
+	compilation (LCNF impure) 25.3ms
+	compilation (LCNF mono) 43.9ms
+	congr simp thm 55.3ms
+	dsimp 5.5ms
+	elaboration 929ms
+	fix level params 8.05ms
+	grind 748ms
+	grind ac 8.42ms
+	grind cutsat 0.443ms
+	grind ematch 214ms
+	grind linarith 128ms
+	grind mark subsingleton 121ms
+	grind ring 36ms
+	grind simp 48.1ms
+	import 3.68s
+	initialization 25.5ms
+	instantiate metavars 52.8ms
+	interpretation 6.25s
+	let-to-have transformation 5.65ms
+	linting 454ms
+	module linting 0.00119ms
+	norm_num 124ms
+	overlappingInstancesLinter 50ms
+	parsing 122ms
+	process pre-definitions 180ms
+	ring 353ms
+	share common exprs 192ms
+	simp 1.38s
+	sym canon 25.9ms
+	sym typeclass inference 118ms
+	tactic execution 2.71s
+	tacticAnalysis 300ms
+	type checking 5.71s
+	typeclass inference 4.59s
+ℹ [8940/8963] Fetched OAI.Computability.Logspace.EstimatorOperations
+info: stderr:
+cumulative profiling times:
+	.olean serialization 469ms
+	C code generation 2.13ms
+	attribute application 1.23ms
+	blocked (unaccounted) 645ms
+	compilation (IR) 1.29ms
+	compilation (LCNF base) 16.3ms
+	compilation (LCNF impure) 9.97ms
+	compilation (LCNF mono) 10.6ms
+	congr simp thm 36.2ms
+	dsimp 13.5ms
+	elaboration 780ms
+	fix level params 8.72ms
+	grind 19.8ms
+	grind ac 0.00568ms
+	grind cutsat 0.0933ms
+	grind ematch 0.698ms
+	grind linarith 0.0036ms
+	grind mark subsingleton 1.45ms
+	grind ring 0.122ms
+	grind simp 11.7ms
+	import 3.7s
+	initialization 24.2ms
+	instantiate metavars 31.7ms
+	interpretation 4.02s
+	let-to-have transformation 4.47ms
+	linting 297ms
+	module linting 0.00134ms
+	norm_num 102ms
+	overlappingInstancesLinter 49.2ms
+	parsing 112ms
+	process pre-definitions 177ms
+	ring 246ms
+	share common exprs 120ms
+	simp 647ms
+	sym canon 4.06ms
+	sym typeclass inference 166ms
+	tactic execution 4.56s
+	tacticAnalysis 261ms
+	type checking 552ms
+	typeclass inference 3.82s
+ℹ [8941/8963] Fetched OAI.Computability.Logspace.ContourPrograms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 440ms
+	C code generation 3.29ms
+	attribute application 7.98ms
+	blocked (unaccounted) 5.86s
+	compilation (IR) 2.2ms
+	compilation (LCNF base) 35.2ms
+	compilation (LCNF impure) 14.4ms
+	compilation (LCNF mono) 34.6ms
+	congr simp thm 71.8ms
+	dsimp 0.938ms
+	elaboration 841ms
+	fix level params 5.26ms
+	grind 37.1ms
+	grind ac 0.00809ms
+	grind cutsat 0.0385ms
+	grind ematch 2.24ms
+	grind linarith 0.00492ms
+	grind mark subsingleton 2.15ms
+	grind ring 0.0207ms
+	grind simp 18ms
+	import 3.68s
+	initialization 24.4ms
+	instantiate metavars 13.9ms
+	interpretation 8.37s
+	let-to-have transformation 3.24ms
+	linting 249ms
+	module linting 0.0012ms
+	norm_num 54.5ms
+	overlappingInstancesLinter 39.1ms
+	parsing 82.5ms
+	process pre-definitions 91.5ms
+	ring 199ms
+	share common exprs 75.8ms
+	simp 1.16s
+	sym canon 2.53ms
+	sym typeclass inference 26ms
+	tactic execution 3.29s
+	tacticAnalysis 182ms
+	type checking 1.45s
+	typeclass inference 2.79s
+⚠ [8942/8963] Built ComparatorChallenges.LogspaceEquality (3.4s)
+warning: ComparatorChallenges/LogspaceEquality.lean:136:8: declaration uses `sorry`
+ℹ [8943/8963] Fetched OAI.Computability.Logspace.CompressionPrograms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 394ms
+	C code generation 7.87ms
+	attribute application 2.79ms
+	blocked (unaccounted) 4.04s
+	compilation (IR) 4.36ms
+	compilation (LCNF base) 69.3ms
+	compilation (LCNF impure) 24.9ms
+	compilation (LCNF mono) 53.7ms
+	congr simp thm 39.6ms
+	dsimp 14.7ms
+	elaboration 749ms
+	fix level params 3.69ms
+	grind 39.8ms
+	grind ac 0.00246ms
+	grind cutsat 0.0251ms
+	grind ematch 0.574ms
+	grind linarith 0.0473ms
+	grind mark subsingleton 1.38ms
+	grind ring 0.00873ms
+	grind simp 36ms
+	import 3.57s
+	initialization 25ms
+	instantiate metavars 14.1ms
+	interpretation 2.35s
+	let-to-have transformation 1.76ms
+	linting 266ms
+	module linting 0.00134ms
+	norm_num 137ms
+	overlappingInstancesLinter 42.9ms
+	parsing 73.7ms
+	process pre-definitions 88.9ms
+	ring 101ms
+	share common exprs 49.8ms
+	simp 744ms
+	sym canon 3.78ms
+	sym typeclass inference 90.5ms
+	tactic execution 2.05s
+	tacticAnalysis 216ms
+	type checking 739ms
+	typeclass inference 1.52s
+ℹ [8944/8963] Fetched OAI.Computability.Logspace.HierarchicalEstimator
+info: stderr:
+cumulative profiling times:
+	.olean serialization 896ms
+	C code generation 3.51ms
+	attribute application 7.27ms
+	blocked (unaccounted) 2.01s
+	compilation (IR) 2.29ms
+	compilation (LCNF base) 23.7ms
+	compilation (LCNF impure) 11ms
+	compilation (LCNF mono) 21.4ms
+	congr simp thm 260ms
+	dsimp 51.4ms
+	elaboration 1.14s
+	fix level params 12.4ms
+	grind 208ms
+	grind ac 0.501ms
+	grind cutsat 0.191ms
+	grind ematch 20ms
+	grind linarith 0.36ms
+	grind mark subsingleton 25.9ms
+	grind ring 0.417ms
+	grind simp 98.1ms
+	import 3.73s
+	initialization 25.1ms
+	instantiate metavars 42.2ms
+	interpretation 3.75s
+	let-to-have transformation 10.6ms
+	linting 577ms
+	module linting 0.00133ms
+	norm_num 185ms
+	overlappingInstancesLinter 111ms
+	parsing 133ms
+	process pre-definitions 179ms
+	ring 260ms
+	share common exprs 127ms
+	simp 15.3s
+	sym canon 27.4ms
+	sym typeclass inference 628ms
+	tactic execution 4.08s
+	tacticAnalysis 576ms
+	type checking 2.61s
+	typeclass inference 4.81s
+ℹ [8945/8963] Fetched OAI.Computability.Logspace.BoundedTours
+info: stderr:
+cumulative profiling times:
+	.olean serialization 409ms
+	C code generation 3.94ms
+	attribute application 2.16ms
+	blocked (unaccounted) 1.16s
+	compilation (IR) 2.37ms
+	compilation (LCNF base) 23ms
+	compilation (LCNF impure) 11.5ms
+	compilation (LCNF mono) 24.1ms
+	congr simp thm 24.4ms
+	dsimp 0.295ms
+	elaboration 328ms
+	fix level params 3.86ms
+	grind 43ms
+	grind ac 0.00406ms
+	grind cutsat 0.0343ms
+	grind ematch 0.757ms
+	grind linarith 0.00286ms
+	grind mark subsingleton 2.74ms
+	grind ring 0.0126ms
+	grind simp 27.8ms
+	import 3.74s
+	initialization 24.7ms
+	instantiate metavars 11.9ms
+	interpretation 2.44s
+	let-to-have transformation 0.927ms
+	linting 143ms
+	module linting 0.00116ms
+	norm_num 32.8ms
+	overlappingInstancesLinter 22.2ms
+	parsing 37.4ms
+	process pre-definitions 50.5ms
+	ring 116ms
+	share common exprs 45.5ms
+	simp 572ms
+	sym canon 4.95ms
+	sym typeclass inference 29.2ms
+	tactic execution 1.12s
+	tacticAnalysis 137ms
+	type checking 933ms
+	typeclass inference 1.51s
+ℹ [8946/8963] Fetched OAI.Computability.Logspace.SparseRows
+info: stderr:
+cumulative profiling times:
+	.olean serialization 343ms
+	C code generation 2.03ms
+	attribute application 1.27ms
+	blocked (unaccounted) 1.95s
+	compilation (IR) 4.32ms
+	compilation (LCNF base) 26.7ms
+	compilation (LCNF impure) 5.19ms
+	compilation (LCNF mono) 20.6ms
+	congr simp thm 29.5ms
+	dsimp 7.86ms
+	elaboration 568ms
+	fix level params 6.66ms
+	grind 50.7ms
+	grind ac 0.011ms
+	grind cutsat 0.124ms
+	grind ematch 1.34ms
+	grind linarith 0.107ms
+	grind mark subsingleton 3.8ms
+	grind ring 0.0987ms
+	grind simp 17.8ms
+	import 3.82s
+	initialization 25.3ms
+	instantiate metavars 8.86ms
+	interpretation 1.57s
+	let-to-have transformation 1.33ms
+	linting 202ms
+	module linting 0.00114ms
+	norm_num 97.6ms
+	overlappingInstancesLinter 24.6ms
+	parsing 42.4ms
+	process pre-definitions 80.1ms
+	ring 29.1ms
+	share common exprs 28ms
+	simp 274ms
+	sym canon 10.7ms
+	sym typeclass inference 94ms
+	tactic execution 1.43s
+	tacticAnalysis 163ms
+	type checking 475ms
+	typeclass inference 957ms
+ℹ [8947/8963] Fetched OAI.Computability.Logspace.ProbabilityDecision
+info: stderr:
+cumulative profiling times:
+	.olean serialization 364ms
+	C code generation 0.986ms
+	attribute application 3.83ms
+	blocked (unaccounted) 267ms
+	compilation (IR) 0.514ms
+	compilation (LCNF base) 4.32ms
+	compilation (LCNF impure) 2.08ms
+	compilation (LCNF mono) 5.65ms
+	congr simp thm 21.6ms
+	dsimp 1.42ms
+	elaboration 344ms
+	fix level params 5.25ms
+	import 4.34s
+	initialization 25.4ms
+	instantiate metavars 6.86ms
+	interpretation 2.31s
+	let-to-have transformation 0.329ms
+	linting 84.8ms
+	module linting 0.00129ms
+	norm_num 218ms
+	overlappingInstancesLinter 21.3ms
+	parsing 34.2ms
+	process pre-definitions 56.7ms
+	ring 74.3ms
+	share common exprs 32.4ms
+	simp 159ms
+	tactic execution 918ms
+	tacticAnalysis 92.5ms
+	type checking 227ms
+	typeclass inference 1.53s
+ℹ [8948/8963] Fetched OAI.Computability.Logspace.EstimatorInterfaces
+info: stderr:
+cumulative profiling times:
+	.olean serialization 428ms
+	C code generation 3.47ms
+	attribute application 6.52ms
+	blocked (unaccounted) 5.62s
+	compilation (IR) 4.25ms
+	compilation (LCNF base) 26ms
+	compilation (LCNF impure) 15.6ms
+	compilation (LCNF mono) 40.5ms
+	congr simp thm 43.8ms
+	dsimp 10.9ms
+	elaboration 1.28s
+	fix level params 10.9ms
+	grind 109ms
+	grind ac 0.019ms
+	grind cutsat 0.034ms
+	grind ematch 1.12ms
+	grind linarith 0.0139ms
+	grind mark subsingleton 5.81ms
+	grind ring 0.0351ms
+	grind simp 63.3ms
+	import 3.75s
+	initialization 25.7ms
+	instantiate metavars 16.8ms
+	interpretation 5.24s
+	let-to-have transformation 2.76ms
+	linting 392ms
+	module linting 0.0013ms
+	norm_num 26.8ms
+	overlappingInstancesLinter 79.9ms
+	parsing 84.6ms
+	process pre-definitions 155ms
+	ring 128ms
+	share common exprs 40.9ms
+	simp 811ms
+	sym canon 6.48ms
+	sym typeclass inference 33.5ms
+	tactic execution 2.38s
+	tacticAnalysis 298ms
+	type checking 663ms
+	typeclass inference 1.65s
+ℹ [8949/8963] Fetched OAI.Computability.Logspace.FiniteFieldPrograms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 431ms
+	C code generation 4.72ms
+	attribute application 20.9ms
+	blocked (unaccounted) 340ms
+	compilation (IR) 2.77ms
+	compilation (LCNF base) 39.8ms
+	compilation (LCNF impure) 16.8ms
+	compilation (LCNF mono) 23.3ms
+	congr simp thm 31.7ms
+	dsimp 5.53ms
+	elaboration 873ms
+	fix level params 5.19ms
+	grind 340ms
+	grind mark subsingleton 44.2ms
+	grind simp 29.5ms
+	import 3.96s
+	initialization 24.7ms
+	instantiate metavars 14.4ms
+	interpretation 1.64s
+	let-to-have transformation 7.6ms
+	linting 203ms
+	module linting 0.00164ms
+	norm_num 92.4ms
+	overlappingInstancesLinter 57ms
+	parsing 68.9ms
+	process pre-definitions 90.7ms
+	ring 42.9ms
+	share common exprs 60.6ms
+	simp 1.09s
+	sym canon 358ms
+	sym typeclass inference 2.84s
+	tactic execution 2.27s
+	tacticAnalysis 213ms
+	type checking 592ms
+	typeclass inference 1.64s
+ℹ [8950/8963] Fetched OAI.Computability.Logspace.QueryCombinators
+info: stderr:
+cumulative profiling times:
+	.olean serialization 311ms
+	C code generation 2.27ms
+	attribute application 1.37ms
+	blocked (unaccounted) 313ms
+	compilation (IR) 1.52ms
+	compilation (LCNF base) 28.1ms
+	compilation (LCNF impure) 8.2ms
+	compilation (LCNF mono) 16.1ms
+	congr simp thm 4.02ms
+	dsimp 1.88ms
+	elaboration 655ms
+	fix level params 1.66ms
+	import 3.72s
+	initialization 25.2ms
+	instantiate metavars 2.76ms
+	interpretation 1.26s
+	let-to-have transformation 1.06ms
+	linting 178ms
+	module linting 0.00136ms
+	norm_num 6.36ms
+	overlappingInstancesLinter 32.2ms
+	parsing 44ms
+	process pre-definitions 62.1ms
+	ring 21.8ms
+	share common exprs 12.5ms
+	simp 102ms
+	tactic execution 872ms
+	tacticAnalysis 177ms
+	type checking 253ms
+	typeclass inference 532ms
+ℹ [8951/8963] Fetched OAI.Computability.Logspace.EstimatorInstructions
+info: stderr:
+cumulative profiling times:
+	.olean serialization 604ms
+	C code generation 5.19ms
+	attribute application 3.68ms
+	blocked (unaccounted) 3.77s
+	compilation (IR) 3.54ms
+	compilation (LCNF base) 41.9ms
+	compilation (LCNF impure) 17.7ms
+	compilation (LCNF mono) 28.6ms
+	congr simp thm 53ms
+	dsimp 10.1ms
+	elaboration 842ms
+	fix level params 5.5ms
+	grind 138ms
+	grind ac 0.0297ms
+	grind cutsat 0.362ms
+	grind ematch 8.85ms
+	grind linarith 0.0192ms
+	grind mark subsingleton 21ms
+	grind ring 0.148ms
+	grind simp 98.5ms
+	import 3.54s
+	initialization 24.8ms
+	instantiate metavars 16.7ms
+	interpretation 4.05s
+	let-to-have transformation 4.83ms
+	linting 181ms
+	module linting 0.00139ms
+	norm_num 23.7ms
+	overlappingInstancesLinter 50.1ms
+	parsing 74.2ms
+	process pre-definitions 88.9ms
+	ring 78.5ms
+	share common exprs 42.4ms
+	simp 2.39s
+	sym canon 15.6ms
+	sym typeclass inference 77.2ms
+	tactic execution 1.33s
+	tacticAnalysis 240ms
+	type checking 1.92s
+	typeclass inference 2s
+ℹ [8952/8963] Fetched OAI.Computability.Logspace.EstimatorMachine
+info: stderr:
+cumulative profiling times:
+	.olean serialization 472ms
+	C code generation 4.48ms
+	attribute application 4.52ms
+	blocked (unaccounted) 5.09s
+	compilation (IR) 2.53ms
+	compilation (LCNF base) 23.3ms
+	compilation (LCNF impure) 13.4ms
+	compilation (LCNF mono) 138ms
+	congr simp thm 18ms
+	dsimp 10.7ms
+	elaboration 1.72s
+	fix level params 4.55ms
+	grind 32.1ms
+	grind ac 0.0114ms
+	grind cutsat 0.114ms
+	grind ematch 1.82ms
+	grind linarith 0.0556ms
+	grind mark subsingleton 3.31ms
+	grind ring 0.0284ms
+	grind simp 17.9ms
+	import 3.52s
+	initialization 25.2ms
+	instantiate metavars 12.4ms
+	interpretation 5.99s
+	let-to-have transformation 1.46ms
+	linting 240ms
+	module linting 0.00116ms
+	norm_num 16.3ms
+	overlappingInstancesLinter 35.7ms
+	parsing 76.4ms
+	process pre-definitions 65.1ms
+	ring 59.3ms
+	share common exprs 38.8ms
+	simp 290ms
+	sym canon 3.93ms
+	sym typeclass inference 48.2ms
+	tactic execution 3.76s
+	tacticAnalysis 265ms
+	type checking 514ms
+	typeclass inference 958ms
+ℹ [8953/8963] Fetched OAI.Computability.Logspace.IterationSchedule
+info: stderr:
+cumulative profiling times:
+	.olean serialization 299ms
+	C code generation 2.52ms
+	attribute application 0.802ms
+	compilation (IR) 1.25ms
+	compilation (LCNF base) 22.1ms
+	compilation (LCNF impure) 6.26ms
+	compilation (LCNF mono) 11.2ms
+	congr simp thm 15.9ms
+	dsimp 11.7ms
+	elaboration 210ms
+	fix level params 1.6ms
+	grind 11.6ms
+	grind mark subsingleton 0.641ms
+	grind simp 3.02ms
+	import 3.55s
+	initialization 24.8ms
+	instantiate metavars 5.16ms
+	interpretation 3.9s
+	let-to-have transformation 1.6ms
+	linting 43.5ms
+	module linting 0.00132ms
+	norm_num 8.61ms
+	overlappingInstancesLinter 9.82ms
+	parsing 15.9ms
+	process pre-definitions 18.1ms
+	ring 43.7ms
+	share common exprs 19.1ms
+	simp 704ms
+	sym canon 1.4ms
+	sym typeclass inference 3.44ms
+	tactic execution 581ms
+	tacticAnalysis 48.9ms
+	type checking 423ms
+	typeclass inference 1.16s
+ℹ [8954/8963] Fetched OAI.Computability.Logspace.EstimatorParameters
+info: stderr:
+cumulative profiling times:
+	.olean serialization 327ms
+	C code generation 0.736ms
+	attribute application 1.5ms
+	blocked (unaccounted) 1.04s
+	compilation (IR) 0.197ms
+	compilation (LCNF base) 3.14ms
+	compilation (LCNF impure) 0.999ms
+	compilation (LCNF mono) 1.77ms
+	congr simp thm 4.99ms
+	dsimp 2.01ms
+	elaboration 703ms
+	fix level params 1.09ms
+	grind 161ms
+	grind ac 0.0294ms
+	grind cutsat 0.463ms
+	grind ematch 9.98ms
+	grind linarith 0.0177ms
+	grind mark subsingleton 30.7ms
+	grind ring 0.311ms
+	grind simp 25.4ms
+	import 3.5s
+	initialization 24.3ms
+	instantiate metavars 2.64ms
+	interpretation 745ms
+	let-to-have transformation 0.249ms
+	linting 31.9ms
+	module linting 0.0012ms
+	norm_num 8.76ms
+	overlappingInstancesLinter 6.74ms
+	parsing 13ms
+	process pre-definitions 22.6ms
+	ring 32.4ms
+	share common exprs 10.3ms
+	simp 85ms
+	sym canon 128ms
+	sym typeclass inference 414ms
+	tactic execution 726ms
+	tacticAnalysis 46.6ms
+	type checking 861ms
+	typeclass inference 436ms
+ℹ [8955/8963] Fetched OAI.Computability.Logspace.RowEvaluation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 415ms
+	C code generation 4.85ms
+	attribute application 13ms
+	blocked (unaccounted) 3.27s
+	compilation (IR) 3.08ms
+	compilation (LCNF base) 46.2ms
+	compilation (LCNF impure) 17.4ms
+	compilation (LCNF mono) 35.4ms
+	congr simp thm 11ms
+	dsimp 12.5ms
+	elaboration 2.03s
+	fix level params 3.98ms
+	grind 71.7ms
+	grind ac 0.0729ms
+	grind cutsat 1.11ms
+	grind dsimp 0.142ms
+	grind ematch 3.3ms
+	grind linarith 0.0835ms
+	grind mark subsingleton 10.7ms
+	grind ring 0.392ms
+	grind simp 32.1ms
+	import 3.39s
+	initialization 24ms
+	instantiate metavars 10ms
+	interpretation 1.61s
+	let-to-have transformation 4.18ms
+	linting 144ms
+	module linting 0.00113ms
+	norm_num 5.61ms
+	overlappingInstancesLinter 34.1ms
+	parsing 70ms
+	process pre-definitions 65.3ms
+	ring 17.6ms
+	share common exprs 27.2ms
+	simp 291ms
+	sym canon 16.3ms
+	sym typeclass inference 54.4ms
+	tactic execution 4.19s
+	tacticAnalysis 219ms
+	type checking 531ms
+	typeclass inference 856ms
+ℹ [8956/8963] Fetched OAI.Computability.Logspace.ConfigurationEvaluation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 431ms
+	C code generation 6.85ms
+	attribute application 5.95ms
+	blocked (unaccounted) 332ms
+	compilation (IR) 3.34ms
+	compilation (LCNF base) 62.8ms
+	compilation (LCNF impure) 26.1ms
+	compilation (LCNF mono) 56.9ms
+	congr simp thm 20.3ms
+	dsimp 3.19ms
+	elaboration 1.45s
+	fix level params 5.75ms
+	grind 98.8ms
+	grind ac 0.11ms
+	grind cutsat 0.551ms
+	grind ematch 14.4ms
+	grind linarith 0.0223ms
+	grind mark subsingleton 14.4ms
+	grind ring 0.179ms
+	grind simp 96.6ms
+	import 3.62s
+	initialization 25ms
+	instantiate metavars 8.85ms
+	interpretation 1.9s
+	let-to-have transformation 3.39ms
+	linting 157ms
+	module linting 0.00126ms
+	norm_num 42.7ms
+	overlappingInstancesLinter 35ms
+	parsing 58.7ms
+	process pre-definitions 65.7ms
+	ring 42.3ms
+	share common exprs 34.1ms
+	simp 712ms
+	sym canon 17ms
+	sym typeclass inference 58.5ms
+	tactic execution 1.26s
+	tacticAnalysis 189ms
+	type checking 554ms
+	typeclass inference 1.62s
+ℹ [8957/8963] Fetched OAI.Computability.Logspace.TransitionEvaluation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 362ms
+	C code generation 2.09ms
+	attribute application 1.13ms
+	blocked (unaccounted) 15.5s
+	compilation (IR) 1.25ms
+	compilation (LCNF base) 16.3ms
+	compilation (LCNF impure) 5.87ms
+	compilation (LCNF mono) 78.2ms
+	congr simp thm 10.6ms
+	dsimp 8.52ms
+	elaboration 896ms
+	fix level params 2.95ms
+	grind 157ms
+	grind ac 0.00745ms
+	grind cutsat 0.0749ms
+	grind ematch 2.64ms
+	grind linarith 0.0042ms
+	grind mark subsingleton 43.1ms
+	grind ring 0.019ms
+	grind simp 28.9ms
+	import 3.67s
+	initialization 32.5ms
+	instantiate metavars 8.07ms
+	interpretation 1.06s
+	let-to-have transformation 2.88ms
+	linting 129ms
+	module linting 0.00134ms
+	norm_num 8.59ms
+	overlappingInstancesLinter 20.3ms
+	parsing 53.1ms
+	process pre-definitions 49.9ms
+	ring 30.2ms
+	share common exprs 24.9ms
+	simp 163ms
+	sym canon 200ms
+	sym typeclass inference 873ms
+	tactic execution 33.9s
+	tacticAnalysis 168ms
+	type checking 314ms
+	typeclass inference 925ms
+ℹ [8958/8963] Fetched OAI.Computability.Logspace.TerminalEvaluation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 369ms
+	C code generation 3.28ms
+	attribute application 1.74ms
+	blocked (unaccounted) 11.7s
+	compilation (IR) 2.01ms
+	compilation (LCNF base) 24ms
+	compilation (LCNF impure) 9.89ms
+	compilation (LCNF mono) 131ms
+	congr simp thm 9.55ms
+	dsimp 18.7ms
+	elaboration 1.13s
+	fix level params 3.39ms
+	grind 633ms
+	grind ac 0.00292ms
+	grind cutsat 0.0528ms
+	grind ematch 1.15ms
+	grind linarith 0.0532ms
+	grind mark subsingleton 179ms
+	grind ring 0.00716ms
+	grind simp 65.8ms
+	import 3.55s
+	initialization 24.1ms
+	instantiate metavars 10.6ms
+	interpretation 1.01s
+	let-to-have transformation 13.6ms
+	linting 128ms
+	module linting 0.00104ms
+	norm_num 8.79ms
+	overlappingInstancesLinter 24.2ms
+	parsing 60.3ms
+	process pre-definitions 53.9ms
+	ring 11.6ms
+	share common exprs 24.5ms
+	simp 227ms
+	sym canon 736ms
+	sym typeclass inference 2.22s
+	tactic execution 28.4s
+	tacticAnalysis 206ms
+	type checking 480ms
+	typeclass inference 868ms
+ℹ [8959/8963] Fetched OAI.Computability.Logspace.CompressionEvaluation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 381ms
+	C code generation 4.21ms
+	attribute application 12.2ms
+	blocked (unaccounted) 3.14s
+	compilation (IR) 3.09ms
+	compilation (LCNF base) 30.4ms
+	compilation (LCNF impure) 15.1ms
+	compilation (LCNF mono) 81.3ms
+	congr simp thm 12ms
+	dsimp 15.3ms
+	elaboration 1.44s
+	fix level params 4.7ms
+	import 3.55s
+	initialization 24.5ms
+	instantiate metavars 10.4ms
+	interpretation 1.85s
+	let-to-have transformation 4.19ms
+	linting 138ms
+	module linting 0.00129ms
+	norm_num 252ms
+	overlappingInstancesLinter 30.5ms
+	parsing 58.4ms
+	process pre-definitions 63.9ms
+	ring 40.3ms
+	share common exprs 41ms
+	simp 153ms
+	tactic execution 5.71s
+	tacticAnalysis 196ms
+	type checking 1.03s
+	typeclass inference 1.1s
+ℹ [8960/8963] Fetched OAI.Computability.Logspace.HierarchyEvaluation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 753ms
+	C code generation 6.99ms
+	attribute application 6.31ms
+	blocked (unaccounted) 14.7s
+	compilation (IR) 3.87ms
+	compilation (LCNF base) 40.1ms
+	compilation (LCNF impure) 26.6ms
+	compilation (LCNF mono) 188ms
+	congr simp thm 35.6ms
+	dsimp 48.3ms
+	elaboration 3.02s
+	fix level params 11.1ms
+	grind 828ms
+	grind ac 0.0393ms
+	grind cutsat 0.311ms
+	grind ematch 10.4ms
+	grind linarith 0.115ms
+	grind mark subsingleton 227ms
+	grind ring 0.156ms
+	grind simp 123ms
+	import 3.59s
+	initialization 25.3ms
+	instantiate metavars 38.1ms
+	interpretation 3.92s
+	let-to-have transformation 12.7ms
+	linting 396ms
+	module linting 0.00116ms
+	norm_num 38.5ms
+	overlappingInstancesLinter 63.3ms
+	parsing 144ms
+	process pre-definitions 153ms
+	ring 54.7ms
+	share common exprs 86.5ms
+	simp 931ms
+	sym canon 836ms
+	sym typeclass inference 1.94s
+	tactic execution 18.3s
+	tacticAnalysis 518ms
+	type checking 1.47s
+	typeclass inference 2.68s
+ℹ [8961/8963] Fetched OAI.Computability.Logspace.DiagonalEvaluation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 724ms
+	C code generation 8.76ms
+	attribute application 7.06ms
+	blocked (unaccounted) 38s
+	compilation (IR) 5.41ms
+	compilation (LCNF base) 71ms
+	compilation (LCNF impure) 39.6ms
+	compilation (LCNF mono) 218ms
+	congr simp thm 30.8ms
+	dsimp 39.7ms
+	elaboration 8.98s
+	fix level params 10.1ms
+	grind 1.49s
+	grind ac 1.56ms
+	grind cutsat 5.53ms
+	grind ematch 80.9ms
+	grind linarith 2.59ms
+	grind mark subsingleton 435ms
+	grind ring 4.77ms
+	grind simp 1.7s
+	import 3.49s
+	initialization 24.1ms
+	instantiate metavars 25.3ms
+	interpretation 3.23s
+	let-to-have transformation 14.8ms
+	linting 359ms
+	module linting 0.00114ms
+	norm_num 21.5ms
+	overlappingInstancesLinter 72.5ms
+	parsing 149ms
+	process pre-definitions 147ms
+	ring 43.8ms
+	share common exprs 73ms
+	simp 681ms
+	sym canon 628ms
+	sym typeclass inference 2.13s
+	tactic execution 31.7s
+	tacticAnalysis 515ms
+	type checking 17.6s
+	typeclass inference 2.32s
+ℹ [8962/8963] Fetched OAI.Computability.Logspace.UniformEstimator
+info: stderr:
+cumulative profiling times:
+	.olean serialization 361ms
+	C code generation 1.69ms
+	attribute application 12ms
+	blocked (unaccounted) 1.65s
+	compilation (IR) 0.913ms
+	compilation (LCNF base) 7.79ms
+	compilation (LCNF impure) 4.69ms
+	compilation (LCNF mono) 6.24ms
+	congr simp thm 2.86ms
+	dsimp 1.23ms
+	elaboration 656ms
+	fix level params 1.98ms
+	grind 26.1ms
+	grind mark subsingleton 5.77ms
+	grind simp 10.7ms
+	import 3.49s
+	initialization 24ms
+	instantiate metavars 5.51ms
+	interpretation 797ms
+	let-to-have transformation 2.38ms
+	linting 90.5ms
+	module linting 0.00136ms
+	norm_num 0.471ms
+	overlappingInstancesLinter 19.5ms
+	parsing 43.7ms
+	process pre-definitions 26.7ms
+	ring 5.28ms
+	share common exprs 13.4ms
+	simp 50.1ms
+	sym canon 58.6ms
+	sym typeclass inference 452ms
+	tactic execution 3.58s
+	tacticAnalysis 139ms
+	type checking 1.35s
+	typeclass inference 330ms
+ℹ [8963/8963] Fetched OAI.Computability.Logspace.Equality
+info: stderr:
+cumulative profiling times:
+	.olean serialization 235ms
+	C code generation 0.208ms
+	attribute application 0.0567ms
+	blocked (unaccounted) 68.2ms
+	congr simp thm 2.74ms
+	dsimp 1.26ms
+	elaboration 43.8ms
+	fix level params 0.483ms
+	import 3.45s
+	initialization 24.4ms
+	instantiate metavars 1.36ms
+	interpretation 450ms
+	let-to-have transformation 1.45ms
+	linting 12.4ms
+	module linting 0.00133ms
+	norm_num 51.5ms
+	overlappingInstancesLinter 2.38ms
+	parsing 3.84ms
+	process pre-definitions 5.34ms
+	ring 21ms
+	share common exprs 6.69ms
+	simp 29.8ms
+	tactic execution 112ms
+	tacticAnalysis 15.5ms
+	type checking 39.9ms
+	typeclass inference 170ms
+Build completed successfully (8963 jobs).

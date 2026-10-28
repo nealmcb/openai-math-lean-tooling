@@ -1,0 +1,10 @@
+
+--- stderr
+Running as unit: run-u19.service; invocation ID: 52516ab595e245c9b2ccb2ac434bad6a
+TIME 1900.40 27956.47 935.49 20972496
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 31min 40.411s
+CPU time consumed: 8h 1min 31.970s
+Memory peak: 256.0K
+Memory swap peak: 0B

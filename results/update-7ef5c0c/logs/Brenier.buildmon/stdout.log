@@ -1,0 +1,116 @@
+warning: PrimeNumberTheoremAnd: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/fixed-point-theorems' has local changes
+✔ [8924/9013] Fetched OAI.Analysis.Brenier.MovingBoundary
+✔ [8925/9013] Fetched OAI.Analysis.Brenier.SharpSlices
+✔ [8926/9013] Fetched OAI.Analysis.Brenier.MovingTrace
+✔ [8927/9013] Fetched OAI.Analysis.Brenier.DensityCDF
+✔ [8928/9013] Fetched OAI.Analysis.Brenier.EndpointEnergy
+✔ [8929/9013] Fetched OAI.Analysis.Brenier.PlaneEnvelopes
+✔ [8930/9013] Fetched OAI.Analysis.Brenier.Basic
+✔ [8931/9013] Fetched OAI.Analysis.Brenier.Potential
+✔ [8932/9013] Fetched OAI.Analysis.Brenier.Laplacian
+✔ [8933/9013] Fetched OAI.Analysis.Brenier.Flux
+✔ [8934/9013] Fetched OAI.Analysis.Brenier.HalfspaceKernel
+✔ [8935/9013] Fetched OAI.Analysis.Brenier.SurfaceCoordinates
+✔ [8936/9013] Fetched OAI.Analysis.Brenier.TriangularRecursion
+✔ [8937/9013] Fetched OAI.Analysis.Brenier.Coordinates
+✔ [8938/9013] Fetched OAI.Analysis.Brenier.BoundaryStrip
+✔ [8939/9013] Fetched OAI.Analysis.Brenier.AffineCertificate
+✔ [8940/9013] Fetched OAI.Analysis.Brenier.Difference
+✔ [8941/9013] Fetched OAI.Analysis.Brenier.MomentAlgebra
+✔ [8942/9013] Fetched OAI.Analysis.Brenier.FiniteCoupling
+✔ [8943/9013] Fetched OAI.Analysis.Brenier.CutVariation
+✔ [8944/9013] Fetched OAI.Analysis.Brenier.Quantiles
+✔ [8945/9013] Fetched OAI.Analysis.Brenier.TriangularSampling
+✔ [8946/9013] Fetched OAI.Analysis.Brenier.CellEnergy
+✔ [8947/9013] Fetched OAI.Analysis.Brenier.CompactMeasure
+✔ [8948/9013] Fetched OAI.Analysis.Brenier.Coupling
+✔ [8949/9013] Fetched OAI.Analysis.Brenier.MapDistance
+✔ [8950/9013] Fetched OAI.Analysis.Brenier.Conjugacy
+✔ [8951/9013] Fetched OAI.Analysis.Brenier.Uniform
+✔ [8952/9013] Fetched OAI.Analysis.Brenier.Atomic
+✔ [8953/9013] Fetched OAI.Analysis.Brenier.SurfaceMeasure
+✔ [8954/9013] Fetched OAI.Analysis.Brenier.LineDerivative
+✔ [8955/9013] Fetched OAI.Analysis.Brenier.Midpoint
+✔ [8956/9013] Fetched OAI.Analysis.Brenier.Cube
+✔ [8957/9013] Fetched OAI.Analysis.Brenier.Optimality
+✔ [8958/9013] Fetched OAI.Analysis.Brenier.AffineTies
+✔ [8959/9013] Fetched OAI.Analysis.Brenier.Translation
+✔ [8960/9013] Fetched OAI.Analysis.Brenier.CutDerivative
+✔ [8961/9013] Fetched OAI.Analysis.Brenier.NormalizedSections
+✔ [8962/9013] Fetched OAI.Analysis.Brenier.Wasserstein
+✔ [8963/9013] Fetched OAI.Analysis.Brenier.TriangularDomination
+✔ [8964/9013] Fetched OAI.Analysis.Brenier.ConvexOptimality
+✔ [8965/9013] Fetched OAI.Analysis.Brenier.Argmax
+✔ [8966/9013] Fetched OAI.Analysis.Brenier.MaxCalculus
+✔ [8967/9013] Fetched OAI.Analysis.Brenier.AffineOptimality
+✔ [8968/9013] Fetched OAI.Analysis.Brenier.MapLimits
+✔ [8969/9013] Fetched OAI.Analysis.Brenier.SupportingInterpolation
+✔ [8970/9013] Fetched OAI.Analysis.Brenier.MapTransport
+✔ [8971/9013] Fetched OAI.Analysis.Brenier.SliceInterpolation
+✔ [8972/9013] Fetched OAI.Analysis.Brenier.CompactTransport
+✔ [8973/9013] Fetched OAI.Analysis.Brenier.Quantization
+✔ [8974/9013] Fetched OAI.Analysis.Brenier.SharpTargets
+✔ [8975/9013] Fetched OAI.Analysis.Brenier.PotentialLimits
+✔ [8976/9013] Fetched OAI.Analysis.Brenier.CellGeometry
+✔ [8977/9013] Fetched OAI.Analysis.Brenier.PotentialTime
+✔ [8978/9013] Fetched OAI.Analysis.Brenier.Minimizers
+✔ [8979/9013] Fetched OAI.Analysis.Brenier.AtomicTransport
+✔ [8980/9013] Fetched OAI.Analysis.Brenier.UniformInterpolation
+✔ [8981/9013] Fetched OAI.Analysis.Brenier.MaxLimits
+✔ [8982/9013] Fetched OAI.Analysis.Brenier.SharpMaps
+✔ [8983/9013] Fetched OAI.Analysis.Brenier.CellMeasure
+✔ [8984/9013] Fetched OAI.Analysis.Brenier.Interfaces
+✔ [8985/9013] Fetched OAI.Analysis.Brenier.AffinePaths
+✔ [8986/9013] Fetched OAI.Analysis.Brenier.PrescribedCells
+✔ [8987/9013] Fetched OAI.Analysis.Brenier.CellContinuity
+✔ [8988/9013] Fetched OAI.Analysis.Brenier.FacetConnectivity
+✔ [8989/9013] Fetched OAI.Analysis.Brenier.SharpOptimality
+✔ [8990/9013] Fetched OAI.Analysis.Brenier.SharpRectangle
+✔ [8991/9013] Fetched OAI.Analysis.Brenier.CellDerivative
+✔ [8992/9013] Fetched OAI.Analysis.Brenier.FaceContinuity
+✔ [8993/9013] Fetched OAI.Analysis.Brenier.StationaryMoment
+✔ [8994/9013] Fetched OAI.Analysis.Brenier.Sections
+✔ [8995/9013] Fetched OAI.Analysis.Brenier.FixedMass
+✔ [8996/9013] Fetched OAI.Analysis.Brenier.Sharpness
+✔ [8997/9013] Fetched OAI.Analysis.Brenier.Existence
+✔ [8998/9013] Fetched OAI.Analysis.Brenier.CellFaces
+✔ [8999/9013] Fetched OAI.Analysis.Brenier.ConvexDensity
+✔ [9000/9013] Fetched OAI.Analysis.Brenier.InterceptContinuity
+✔ [9001/9013] Fetched OAI.Analysis.Brenier.PrefixSections
+✔ [9002/9013] Fetched OAI.Analysis.Brenier.CanonicalLaplacian
+✔ [9003/9013] Fetched OAI.Analysis.Brenier.Approximation
+✔ [9004/9013] Fetched OAI.Analysis.Brenier.ConvexQuantiles
+✔ [9005/9013] Fetched OAI.Analysis.Brenier.MassDerivative
+✔ [9006/9013] Fetched OAI.Analysis.Brenier.AtomicPaths
+✔ [9007/9013] Fetched OAI.Analysis.Brenier.PrefixSampling
+✔ [9008/9013] Fetched OAI.Analysis.Brenier.InterceptEnergy
+✔ [9009/9013] Fetched OAI.Analysis.Brenier.NormalizedPaths
+✔ [9010/9013] Fetched OAI.Analysis.Brenier.CanonicalPaths
+✔ [9011/9013] Fetched OAI.Analysis.Brenier.ClosedPaths
+✔ [9012/9013] Fetched OAI.Analysis.Brenier.Stability
+⚠ [9013/9013] Built ComparatorChallenges.Brenier (5.5s)
+warning: ComparatorChallenges/Brenier.lean:73:8: declaration uses `sorry`
+warning: ComparatorChallenges/Brenier.lean:88:8: declaration uses `sorry`
+Build completed successfully (9013 jobs).

@@ -99,7 +99,7 @@ def regression(runs):
 def one(s):
     n, threads, mem, tmo = s['name'], s['threads'], s['mem'], s['timeout']
     if stop.is_set(): return
-    c = json.load(open(f'{root}/ComparatorChallenges/{n}.json')); exp = f'{W}/{n}.export'
+    c = json.load(open(f'{root}/ComparatorChallenges/{n}.json')); exp = f'{W}/{n.replace("/", "__")}.{os.getpid()}.export'   # "/" for a config in a subdirectory (Hodge); the pid keeps two concurrent runs from sharing one export
     targets = QUOT + c['theorem_names'] + c.get('permitted_axioms', []) + PRIM + (c.get('definition_names') or [])
     p, wall, _, _ = stage(['bash', '-c', f'cd {root} && lake env lean4export {c["solution_module"]} -- ' + ' '.join(targets) + f' > {exp}'], mem, tmo)
     size = os.path.getsize(exp) if os.path.exists(exp) else 0
@@ -110,7 +110,7 @@ def one(s):
             if len(export_failures) >= 3: stop.set()
         return
     export_failures.clear()
-    cfg = f'{W}/{n}.json'
+    cfg = f'{W}/{n.replace("/", "__")}.{os.getpid()}.json'
     json.dump(dict(use_stdin=False, export_file_path=exp, permitted_axioms=c.get('permitted_axioms', []), unpermitted_axiom_hard_error=True, num_threads=threads,
                    nat_extension=True, string_extension=True), open(cfg, 'w'))
     runs = {}
@@ -119,7 +119,11 @@ def one(s):
         p, w, cpu, rss = stage([path, cfg], mem, tmo)
         if 'Failed to connect to bus' in p.stderr + p.stdout:   # systemd-run itself failed (the machine is going down, or has no user manager): not a result of the build
             infra_failed.set(); stop.set(); os.remove(cfg); os.remove(exp); return
-        rec = dict(config=n, label=label, commit=commits[label], sha256=shas[label], host=HOST, started=started, threads=threads, mem_cap=mem, timeout_s=int(tmo), export_s=round(wall, 1), export_bytes=size,
+        logf = f"{os.path.dirname(os.path.abspath(opt['--out']))}/nanoda-logs/{n.replace('/', '__')}.{label}.log"   # the full output, not only the tail
+        os.makedirs(os.path.dirname(logf), exist_ok=True); open(logf, 'w').write(p.stdout + '\n--- stderr\n' + p.stderr)
+        info = path + '.info'   # written by tools/build_nanoda_variant.sh: base commit, merged branches, patches, stack
+        rec = dict(config=n, label=label, commit=commits[label], build=open(info).read().strip() if os.path.exists(info) else None, log=os.path.relpath(logf, base),
+                   sha256=shas[label], host=HOST, started=started, threads=threads, mem_cap=mem, timeout_s=int(tmo), export_s=round(wall, 1), export_bytes=size,
                    rc=p.returncode, wall_s=round(w, 1), cpu_s=cpu and round(cpu, 1), rss_gib=rss and round(rss, 2), tail=(p.stdout + p.stderr).strip().splitlines()[-3:])
         record(rec); runs[label] = rec
     why = regression(runs) if stop_on_regression else None

@@ -1,0 +1,168 @@
+{
+ "label": "LogspaceEquality",
+ "cmd": [
+  "lake",
+  "env",
+  "/srv/s/math/openai-math-lean-tooling/ext/comparator/.lake/build/bin/comparator",
+  "ComparatorChallenges/LogspaceEquality.json"
+ ],
+ "started": "2026-10-27T20:53:21+00:00",
+ "wall_s": 148.862,
+ "exit_code": 0,
+ "vm_max_map_count": 65530,
+ "samples": 1257,
+ "interval_s": 0.1,
+ "peak_per_process_vmas_sampled": 53824,
+ "peak_concurrent_processes": 4,
+ "peak_sum_vmas_sampled": 59817,
+ "peak_sum_rss_bytes": 9553883136,
+ "min_mem_available_kb": 30848444,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 2324092,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53824,
+   "max_rss": 7201492992,
+   "cpu_s": 20.12,
+   "minflt": 232110,
+   "majflt": 2,
+   "rchar": 77950779,
+   "wchar": 440737852
+  },
+  {
+   "pid": 2323755,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53779,
+   "max_rss": 6738182144,
+   "cpu_s": 4.3,
+   "minflt": 225307,
+   "majflt": 0,
+   "rchar": 78504747,
+   "wchar": 16777276
+  },
+  {
+   "pid": 2323796,
+   "comm": "lake",
+   "cmd": "lake build OAI.Computability.Logspace.Equality",
+   "max_vmas": 5980,
+   "max_rss": 1996910592,
+   "cpu_s": 9.75,
+   "minflt": 280868,
+   "majflt": 0,
+   "rchar": 1248547687,
+   "wchar": 4873126
+  },
+  {
+   "pid": 2323504,
+   "comm": "lake",
+   "cmd": "lake build ComparatorChallenges.LogspaceEquality",
+   "max_vmas": 5953,
+   "max_rss": 1971589120,
+   "cpu_s": 8.5,
+   "minflt": 278054,
+   "majflt": 0,
+   "rchar": 1246663282,
+   "wchar": 4835056
+  },
+  {
+   "pid": 2323254,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5928,
+   "max_rss": 1797677056,
+   "cpu_s": 2.4,
+   "minflt": 254755,
+   "majflt": 0,
+   "rchar": 1065764331,
+   "wchar": 4835055
+  },
+  {
+   "pid": 2323354,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 104,
+   "max_rss": 8228864,
+   "cpu_s": 0.17,
+   "minflt": 1030,
+   "majflt": 0,
+   "rchar": 36982126,
+   "wchar": 1
+  },
+  {
+   "pid": 2323260,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 87,
+   "max_rss": 7966720,
+   "cpu_s": 0.2,
+   "minflt": 1344,
+   "majflt": 0,
+   "rchar": 56106094,
+   "wchar": 1
+  },
+  {
+   "pid": 2323811,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 83,
+   "max_rss": 7315456,
+   "cpu_s": 0.2,
+   "minflt": 1277,
+   "majflt": 0,
+   "rchar": 51383306,
+   "wchar": 1
+  },
+  {
+   "pid": 2323904,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 81,
+   "max_rss": 7720960,
+   "cpu_s": 0.08,
+   "minflt": 952,
+   "majflt": 0,
+   "rchar": 18210872,
+   "wchar": 1
+  },
+  {
+   "pid": 2323520,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 80,
+   "max_rss": 7053312,
+   "cpu_s": 0.12,
+   "minflt": 1057,
+   "majflt": 0,
+   "rchar": 30544388,
+   "wchar": 1
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 457515128,
+ "export_bytes_largest": 440737852,
+ "export_processes": 2,
+ "export_timeline": [
+  {
+   "pid": 2323755,
+   "start_s": 13.8,
+   "end_s": 18.4,
+   "bytes": 16777276,
+   "max_rss_bytes": 6738182144
+  },
+  {
+   "pid": 2324092,
+   "start_s": 27.0,
+   "end_s": 47.7,
+   "bytes": 440737852,
+   "max_rss_bytes": 7201492992
+  }
+ ],
+ "export_done_s": 47.7,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 137.46,
+ "children_cpu_sys_s": 17.9
+}

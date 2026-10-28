@@ -1,0 +1,14 @@
+{"config": "SubexponentialSAT", "label": "master+71+guard.64M", "export_bytes": 2355643683, "rc": 0, "wall_s": 185.6, "rss_gib": 26.83}
+Exception in thread Thread-1 (run):
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/srv/s/math/openai-math/tools/nanoda_ab.py", line 136, in run
+    try: one(s)
+         ^^^^^^
+  File "/home/srv/s/math/openai-math/tools/nanoda_ab.py", line 131, in one
+    os.remove(cfg); os.remove(exp)
+    ^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/srv/s/math/openai-math/scratch/ab/SubexponentialSAT.json'
