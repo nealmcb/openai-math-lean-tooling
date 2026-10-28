@@ -1,0 +1,10 @@
+
+--- stderr
+Running as unit: run-u20.service; invocation ID: bf70e25ed6ee4fa786f19c5f8c61ba81
+TIME 1934.82 28490.88 946.22 22621828
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 32min 14.830s
+CPU time consumed: 8h 10min 37.109s
+Memory peak: 288.0K
+Memory swap peak: 0B

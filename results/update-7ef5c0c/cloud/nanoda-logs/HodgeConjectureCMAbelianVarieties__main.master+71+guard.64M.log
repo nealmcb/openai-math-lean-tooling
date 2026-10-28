@@ -1,0 +1,10 @@
+
+--- stderr
+Running as unit: run-u23.service; invocation ID: 94ddb20d4a314841a570f566502e4c5f
+TIME 1953.67 28696.22 964.36 22361644
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 32min 33.680s
+CPU time consumed: 8h 14min 20.587s
+Memory peak: 512.0K
+Memory swap peak: 0B

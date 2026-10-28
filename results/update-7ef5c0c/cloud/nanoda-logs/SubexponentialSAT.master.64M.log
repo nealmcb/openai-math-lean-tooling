@@ -1,0 +1,14 @@
+
+--- stderr
+Running as unit: run-u11.service; invocation ID: 63454bea149848d59172712a9735a093
+
+thread 'thread_5' (30523) has overflowed its stack
+fatal runtime error: stack overflow, aborting
+Command terminated by signal 6
+TIME 136.80 765.86 35.05 24871356
+Finished with result: exit-code
+Main processes terminated with: code=exited/status=134
+Service runtime: 2min 16.808s
+CPU time consumed: 13min 20.920s
+Memory peak: 256.0K
+Memory swap peak: 0B

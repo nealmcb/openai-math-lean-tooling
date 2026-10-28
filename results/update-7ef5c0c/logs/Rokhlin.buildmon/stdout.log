@@ -1,0 +1,446 @@
+warning: PrimeNumberTheoremAnd: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/srv/s/math/openai-math-lean-tooling/src/lean/.lake/packages/fixed-point-theorems' has local changes
+ℹ [8924/8937] Fetched OAI.Dynamics.MultipleMixing.Foundations
+info: stderr:
+cumulative profiling times:
+	.olean serialization 501ms
+	C code generation 0.483ms
+	aesop 206ms
+	attribute application 3.29ms
+	blocked (unaccounted) 2.14ms
+	compilation (IR) 0.536ms
+	compilation (LCNF base) 5.04ms
+	compilation (LCNF impure) 2.65ms
+	compilation (LCNF mono) 3.79ms
+	congr simp thm 43.2ms
+	dsimp 89.2ms
+	elaboration 688ms
+	fix level params 21.5ms
+	import 3.49s
+	initialization 24ms
+	instantiate metavars 31.9ms
+	interpretation 2.42s
+	let-to-have transformation 2.05ms
+	linting 255ms
+	module linting 0.00113ms
+	norm_num 154ms
+	overlappingInstancesLinter 47ms
+	parsing 112ms
+	process pre-definitions 140ms
+	ring 122ms
+	share common exprs 96.8ms
+	simp 1.77s
+	tactic execution 3.1s
+	tacticAnalysis 299ms
+	type checking 1.13s
+	typeclass inference 9.23s
+ℹ [8925/8937] Fetched OAI.Dynamics.MultipleMixing.Entropy
+info: stderr:
+cumulative profiling times:
+	.olean serialization 407ms
+	C code generation 0.888ms
+	aesop 209ms
+	attribute application 1.49ms
+	compilation (IR) 0.421ms
+	compilation (LCNF base) 5.05ms
+	compilation (LCNF impure) 1.98ms
+	compilation (LCNF mono) 3.24ms
+	congr simp thm 18.9ms
+	dsimp 47.1ms
+	elaboration 522ms
+	fix level params 13.5ms
+	import 3.44s
+	initialization 24.6ms
+	instantiate metavars 15.1ms
+	interpretation 1.52s
+	let-to-have transformation 1.46ms
+	linting 179ms
+	module linting 0.00122ms
+	norm_num 48.4ms
+	overlappingInstancesLinter 42.2ms
+	parsing 74.7ms
+	process pre-definitions 67.1ms
+	ring 88.8ms
+	share common exprs 50.6ms
+	simp 688ms
+	tactic execution 1.38s
+	tacticAnalysis 226ms
+	type checking 653ms
+	typeclass inference 2.94s
+ℹ [8926/8937] Fetched OAI.Dynamics.MultipleMixing.HilbertCodes
+info: stderr:
+cumulative profiling times:
+	.olean serialization 846ms
+	C code generation 1.2ms
+	attribute application 8.04ms
+	blocked (unaccounted) 6.12s
+	compilation (IR) 0.385ms
+	compilation (LCNF base) 8.05ms
+	compilation (LCNF impure) 1.87ms
+	compilation (LCNF mono) 4.06ms
+	congr simp thm 35.7ms
+	dsimp 143ms
+	elaboration 2.66s
+	fix level params 40.9ms
+	import 3.53s
+	initialization 24.4ms
+	instantiate metavars 42.2ms
+	interpretation 2.71s
+	let-to-have transformation 4.62ms
+	linting 320ms
+	module linting 0.00119ms
+	norm_num 33.4ms
+	overlappingInstancesLinter 72.3ms
+	parsing 127ms
+	process pre-definitions 276ms
+	ring 43ms
+	share common exprs 133ms
+	simp 1.12s
+	tactic execution 7.34s
+	tacticAnalysis 356ms
+	type checking 3.66s
+	typeclass inference 35.2s
+ℹ [8927/8937] Fetched OAI.Dynamics.MultipleMixing.Arrays
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1.22s
+	C code generation 4.31ms
+	attribute application 16.5ms
+	blocked (unaccounted) 2.05s
+	compilation (IR) 3.02ms
+	compilation (LCNF base) 26.2ms
+	compilation (LCNF impure) 13.5ms
+	compilation (LCNF mono) 27.5ms
+	congr simp thm 75.1ms
+	dsimp 56.4ms
+	elaboration 2.05s
+	fix level params 36.6ms
+	import 3.44s
+	initialization 24.2ms
+	instantiate metavars 38.5ms
+	interpretation 2.46s
+	let-to-have transformation 5.62ms
+	linting 359ms
+	module linting 0.00126ms
+	norm_num 1.44ms
+	overlappingInstancesLinter 93.5ms
+	parsing 180ms
+	process pre-definitions 248ms
+	ring 17.5ms
+	share common exprs 110ms
+	simp 1.11s
+	tactic execution 3.14s
+	tacticAnalysis 439ms
+	type checking 1.31s
+	typeclass inference 7.8s
+ℹ [8928/8937] Fetched OAI.Dynamics.MultipleMixing.Saturation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 584ms
+	C code generation 1.44ms
+	attribute application 6.56ms
+	blocked (unaccounted) 578ms
+	compilation (IR) 0.82ms
+	compilation (LCNF base) 7.13ms
+	compilation (LCNF impure) 4.05ms
+	compilation (LCNF mono) 10.5ms
+	congr simp thm 12.8ms
+	dsimp 84.8ms
+	elaboration 1.04s
+	fix level params 16.4ms
+	import 3.49s
+	initialization 24.1ms
+	instantiate metavars 18.7ms
+	interpretation 1.45s
+	let-to-have transformation 39.9ms
+	linting 155ms
+	module linting 0.00131ms
+	norm_num 6.32ms
+	overlappingInstancesLinter 47.9ms
+	parsing 86.2ms
+	process pre-definitions 112ms
+	ring 6.49ms
+	share common exprs 50.3ms
+	simp 194ms
+	tactic execution 1.54s
+	tacticAnalysis 222ms
+	type checking 615ms
+	typeclass inference 4.71s
+ℹ [8929/8937] Fetched OAI.Dynamics.MultipleMixing.Joinings
+info: stderr:
+cumulative profiling times:
+	.olean serialization 48.5s
+	C code generation 16.8ms
+	attribute application 54.7ms
+	blocked (unaccounted) 6.67s
+	compilation (IR) 8.57ms
+	compilation (LCNF base) 424ms
+	compilation (LCNF impure) 39.8ms
+	compilation (LCNF mono) 112ms
+	congr simp thm 146ms
+	dsimp 1.92s
+	elaboration 14.4s
+	fix level params 204ms
+	import 3.45s
+	initialization 24.5ms
+	instantiate metavars 164ms
+	interpretation 4.93s
+	let-to-have transformation 1.58s
+	linting 1.09s
+	module linting 0.00132ms
+	norm_num 21.1ms
+	overlappingInstancesLinter 231ms
+	parsing 283ms
+	process pre-definitions 838ms
+	ring 7.51ms
+	share common exprs 599ms
+	simp 2.29s
+	tactic execution 29s
+	tacticAnalysis 1.09s
+	type checking 10.9s
+	typeclass inference 71.9s
+ℹ [8930/8937] Fetched OAI.Dynamics.MultipleMixing.Tensors
+info: stderr:
+cumulative profiling times:
+	.olean serialization 22.2s
+	C code generation 0.604ms
+	attribute application 4.08ms
+	blocked (unaccounted) 4.67s
+	compilation (IR) 0.14ms
+	compilation (LCNF base) 2.2ms
+	compilation (LCNF impure) 0.628ms
+	compilation (LCNF mono) 0.985ms
+	congr simp thm 39ms
+	dsimp 902ms
+	elaboration 2.64s
+	fix level params 85.9ms
+	import 3.66s
+	initialization 24.6ms
+	instantiate metavars 69.4ms
+	interpretation 1.96s
+	let-to-have transformation 11.6ms
+	linting 371ms
+	module linting 0.00133ms
+	norm_num 9.61ms
+	overlappingInstancesLinter 55.6ms
+	parsing 112ms
+	process pre-definitions 313ms
+	ring 10.5ms
+	share common exprs 251ms
+	simp 499ms
+	tactic execution 8.58s
+	tacticAnalysis 298ms
+	type checking 4.32s
+	typeclass inference 18.3s
+ℹ [8931/8937] Fetched OAI.Dynamics.MultipleMixing.ExactLines
+info: stderr:
+cumulative profiling times:
+	.olean serialization 4.99s
+	C code generation 1.81ms
+	attribute application 89.1ms
+	blocked (unaccounted) 10.7s
+	compilation (IR) 1.16ms
+	compilation (LCNF base) 15.8ms
+	compilation (LCNF impure) 4.77ms
+	compilation (LCNF mono) 14.5ms
+	congr simp thm 101ms
+	dsimp 1.87s
+	elaboration 5.68s
+	fix level params 239ms
+	import 3.76s
+	initialization 25ms
+	instantiate metavars 203ms
+	interpretation 7.34s
+	let-to-have transformation 169ms
+	linting 1.49s
+	module linting 0.00146ms
+	norm_num 8.17ms
+	overlappingInstancesLinter 280ms
+	parsing 418ms
+	process pre-definitions 1.02s
+	ring 30ms
+	share common exprs 704ms
+	simp 1.56s
+	tactic execution 19.3s
+	tacticAnalysis 1.13s
+	type checking 9.41s
+	typeclass inference 33.3s
+ℹ [8932/8937] Fetched OAI.Dynamics.MultipleMixing.FibreMeasures
+info: stderr:
+cumulative profiling times:
+	.olean serialization 4.33s
+	C code generation 1.46ms
+	aesop 45ms
+	attribute application 2.96ms
+	blocked (unaccounted) 96.2ms
+	compilation (IR) 0.795ms
+	compilation (LCNF base) 21.4ms
+	compilation (LCNF impure) 3.65ms
+	compilation (LCNF mono) 15.2ms
+	congr simp thm 56.2ms
+	dsimp 265ms
+	elaboration 5.4s
+	fix level params 72.5ms
+	import 4.89s
+	initialization 25.9ms
+	instantiate metavars 57.8ms
+	interpretation 3.22s
+	let-to-have transformation 149ms
+	linting 746ms
+	module linting 0.00139ms
+	norm_num 12.2ms
+	overlappingInstancesLinter 156ms
+	parsing 208ms
+	process pre-definitions 596ms
+	ring 9.03ms
+	share common exprs 225ms
+	simp 838ms
+	tactic execution 8.77s
+	tacticAnalysis 634ms
+	type checking 3.8s
+	typeclass inference 23.9s
+ℹ [8933/8937] Fetched OAI.Dynamics.MultipleMixing.OrbitCancellation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.69s
+	C code generation 1.24ms
+	attribute application 10.3ms
+	blocked (unaccounted) 1.69s
+	compilation (IR) 0.278ms
+	compilation (LCNF base) 3.82ms
+	compilation (LCNF impure) 1.33ms
+	compilation (LCNF mono) 2.24ms
+	congr simp thm 107ms
+	dsimp 419ms
+	elaboration 3.57s
+	fix level params 58ms
+	import 3.66s
+	initialization 24.7ms
+	instantiate metavars 59.7ms
+	interpretation 2.23s
+	let-to-have transformation 50.5ms
+	linting 452ms
+	module linting 0.00145ms
+	norm_num 1.9ms
+	overlappingInstancesLinter 83.1ms
+	parsing 154ms
+	process pre-definitions 276ms
+	ring 6.05ms
+	share common exprs 209ms
+	simp 284ms
+	tactic execution 4.8s
+	tacticAnalysis 425ms
+	type checking 2.55s
+	typeclass inference 11.3s
+ℹ [8934/8937] Fetched OAI.Dynamics.MultipleMixing.WeakLimits
+info: stderr:
+cumulative profiling times:
+	.olean serialization 411ms
+	C code generation 0.821ms
+	attribute application 0.269ms
+	compilation (IR) 0.197ms
+	compilation (LCNF base) 1.49ms
+	compilation (LCNF impure) 0.932ms
+	compilation (LCNF mono) 1.56ms
+	congr simp thm 11.8ms
+	elaboration 340ms
+	fix level params 4.61ms
+	import 4.78s
+	initialization 30.3ms
+	instantiate metavars 5.89ms
+	interpretation 630ms
+	let-to-have transformation 0.894ms
+	linting 60.7ms
+	module linting 0.00165ms
+	overlappingInstancesLinter 20.6ms
+	parsing 34.1ms
+	process pre-definitions 43.1ms
+	share common exprs 15.4ms
+	simp 125ms
+	tactic execution 463ms
+	tacticAnalysis 82.5ms
+	type checking 155ms
+	typeclass inference 2.52s
+ℹ [8935/8937] Fetched OAI.Dynamics.MultipleMixing.Tail
+info: stderr:
+cumulative profiling times:
+	.olean serialization 353ms
+	C code generation 1.16ms
+	attribute application 0.356ms
+	compilation (IR) 0.271ms
+	compilation (LCNF base) 2.74ms
+	compilation (LCNF impure) 1.15ms
+	compilation (LCNF mono) 1.76ms
+	congr simp thm 8.28ms
+	dsimp 25.9ms
+	elaboration 290ms
+	fix level params 5.55ms
+	import 4.43s
+	initialization 30.3ms
+	instantiate metavars 8.9ms
+	interpretation 1.06s
+	let-to-have transformation 0.667ms
+	linting 103ms
+	module linting 0.0015ms
+	norm_num 31.9ms
+	overlappingInstancesLinter 23ms
+	parsing 50ms
+	process pre-definitions 49.4ms
+	ring 59.3ms
+	share common exprs 29.6ms
+	simp 186ms
+	tactic execution 812ms
+	tacticAnalysis 123ms
+	type checking 216ms
+	typeclass inference 1.33s
+⚠ [8936/8937] Built ComparatorChallenges.Rokhlin (5.9s)
+warning: ComparatorChallenges/Rokhlin.lean:30:8: declaration uses `sorry`
+ℹ [8937/8937] Fetched OAI.Dynamics.MultipleMixing.Main
+info: stderr:
+cumulative profiling times:
+	.olean serialization 291ms
+	C code generation 0.27ms
+	attribute application 0.166ms
+	congr simp thm 5.47ms
+	dsimp 4.17ms
+	elaboration 79.9ms
+	fix level params 1.9ms
+	import 4.6s
+	initialization 31.8ms
+	instantiate metavars 5.03ms
+	interpretation 550ms
+	let-to-have transformation 0.217ms
+	linting 44.3ms
+	module linting 0.00157ms
+	norm_num 9.08ms
+	overlappingInstancesLinter 10.5ms
+	parsing 21.9ms
+	process pre-definitions 16.4ms
+	share common exprs 8.47ms
+	simp 280ms
+	tactic execution 363ms
+	tacticAnalysis 56.1ms
+	type checking 119ms
+	typeclass inference 743ms
+Build completed successfully (8937 jobs).

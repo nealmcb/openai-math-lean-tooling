@@ -1,0 +1,162 @@
+{
+ "label": "Brenier-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.Brenier",
+  "OAI.Analysis.Brenier.Stability"
+ ],
+ "started": "2026-10-27T20:44:25+00:00",
+ "wall_s": 15.837,
+ "exit_code": 0,
+ "vm_max_map_count": 65530,
+ "samples": 67,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 53831,
+ "peak_concurrent_processes": 9,
+ "peak_sum_vmas_sampled": 60462,
+ "peak_sum_rss_bytes": 9063813120,
+ "min_mem_available_kb": 33265080,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 2311298,
+   "comm": "lean",
+   "cmd": "",
+   "max_vmas": 53831,
+   "max_rss": 7041572864,
+   "cpu_s": 3.11,
+   "minflt": 153319,
+   "majflt": 296,
+   "rchar": 11669688,
+   "wchar": 2
+  },
+  {
+   "pid": 2309746,
+   "comm": "lake",
+   "cmd": "/home/neal/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake build ComparatorChallenges.Brenier OAI.Analysis.Brenier.Stability",
+   "max_vmas": 6061,
+   "max_rss": 2061668352,
+   "cpu_s": 13.95,
+   "minflt": 461371,
+   "majflt": 42,
+   "rchar": 1277379256,
+   "wchar": 78068182
+  },
+  {
+   "pid": 2311056,
+   "comm": "curl",
+   "cmd": "curl -s -S -f -o /srv/s/math/openai-math-lean-tooling/scratch/oai-lake-cache/cache/artifacts/40cff2d157465b27.ltar -L https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/a/openai-math/lean-4.34.1/40cff2d157465b27.art",
+   "max_vmas": 208,
+   "max_rss": 13238272,
+   "cpu_s": 0.07,
+   "minflt": 1112,
+   "majflt": 0,
+   "rchar": 239131,
+   "wchar": 773
+  },
+  {
+   "pid": 2310131,
+   "comm": "curl",
+   "cmd": "curl -s -S -f -o /srv/s/math/openai-math-lean-tooling/scratch/oai-lake-cache/cache/artifacts/3e6557dce94a1841.ltar -L https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/a/openai-math/lean-4.34.1/3e6557dce94a1841.art",
+   "max_vmas": 207,
+   "max_rss": 12713984,
+   "cpu_s": 0.05,
+   "minflt": 1030,
+   "majflt": 0,
+   "rchar": 169437,
+   "wchar": 1
+  },
+  {
+   "pid": 2310423,
+   "comm": "curl",
+   "cmd": "curl -s -S -f -o /srv/s/math/openai-math-lean-tooling/scratch/oai-lake-cache/cache/artifacts/0f4a054d0cefbf07.ltar -L https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/a/openai-math/lean-4.34.1/0f4a054d0cefbf07.art",
+   "max_vmas": 207,
+   "max_rss": 13500416,
+   "cpu_s": 0.07,
+   "minflt": 1111,
+   "majflt": 0,
+   "rchar": 239131,
+   "wchar": 773
+  },
+  {
+   "pid": 2311036,
+   "comm": "curl",
+   "cmd": "curl -s -S -f -o /srv/s/math/openai-math-lean-tooling/scratch/oai-lake-cache/cache/artifacts/5f98208071ce90b7.ltar -L https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/a/openai-math/lean-4.34.1/5f98208071ce90b7.art",
+   "max_vmas": 207,
+   "max_rss": 13238272,
+   "cpu_s": 0.07,
+   "minflt": 1109,
+   "majflt": 0,
+   "rchar": 239131,
+   "wchar": 773
+  },
+  {
+   "pid": 2311449,
+   "comm": "curl",
+   "cmd": "curl -s -S -f -o /srv/s/math/openai-math-lean-tooling/scratch/oai-lake-cache/cache/artifacts/c93eaae6aeba28e1.ltar -L https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/a/openai-math/lean-4.34.1/c93eaae6aeba28e1.art",
+   "max_vmas": 207,
+   "max_rss": 13238272,
+   "cpu_s": 0.06,
+   "minflt": 1113,
+   "majflt": 0,
+   "rchar": 239131,
+   "wchar": 773
+  },
+  {
+   "pid": 2311794,
+   "comm": "curl",
+   "cmd": "curl -s -S -f -o /srv/s/math/openai-math-lean-tooling/scratch/oai-lake-cache/cache/artifacts/43764f8b3722b848.ltar -L https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/a/openai-math/lean-4.34.1/43764f8b3722b848.art",
+   "max_vmas": 207,
+   "max_rss": 12582912,
+   "cpu_s": 0.04,
+   "minflt": 955,
+   "majflt": 0,
+   "rchar": 128477,
+   "wchar": 1
+  },
+  {
+   "pid": 2310051,
+   "comm": "curl",
+   "cmd": "curl -s -S -f -o /srv/s/math/openai-math-lean-tooling/scratch/oai-lake-cache/cache/artifacts/dec10562d0f5414f.ltar -L https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/a/openai-math/lean-4.34.1/dec10562d0f5414f.art",
+   "max_vmas": 206,
+   "max_rss": 13369344,
+   "cpu_s": 0.05,
+   "minflt": 1090,
+   "majflt": 0,
+   "rchar": 239130,
+   "wchar": 773
+  },
+  {
+   "pid": 2310047,
+   "comm": "curl",
+   "cmd": "curl -s -S -f -o /srv/s/math/openai-math-lean-tooling/scratch/oai-lake-cache/cache/artifacts/d6f6a98b72ec1ad8.ltar -L https://pub-7e3c38d28090402696f4d21cb0c6f98c.r2.dev/a/openai-math/lean-4.34.1/d6f6a98b72ec1ad8.art",
+   "max_vmas": 206,
+   "max_rss": 13369344,
+   "cpu_s": 0.06,
+   "minflt": 1087,
+   "majflt": 0,
+   "rchar": 239131,
+   "wchar": 773
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [
+  {
+   "comm": "lean",
+   "pid": 2311298,
+   "start_s": 12.4,
+   "end_s": 15.4,
+   "cpu_s": 3.1,
+   "max_rss_bytes": 7041572864
+  }
+ ],
+ "children_cpu_user_s": 15.09,
+ "children_cpu_sys_s": 14.55
+}
