@@ -1,0 +1,168 @@
+{
+ "label": "LocalSmoothing",
+ "cmd": [
+  "lake",
+  "env",
+  "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator",
+  "ComparatorChallenges/LocalSmoothing.json"
+ ],
+ "started": "2026-10-28T17:10:11+00:00",
+ "wall_s": 618.272,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 4849,
+ "interval_s": 0.1,
+ "peak_per_process_vmas_sampled": 56043,
+ "peak_concurrent_processes": 4,
+ "peak_sum_vmas_sampled": 62038,
+ "peak_sum_rss_bytes": 15718363136,
+ "min_mem_available_kb": 95348816,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 11873,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 56043,
+   "max_rss": 8433590272,
+   "cpu_s": 63.65,
+   "minflt": 251537,
+   "majflt": 6610,
+   "rchar": 78895320,
+   "wchar": 1135611966
+  },
+  {
+   "pid": 11650,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53785,
+   "max_rss": 6769979392,
+   "cpu_s": 13.23,
+   "minflt": 225729,
+   "majflt": 2,
+   "rchar": 77951024,
+   "wchar": 178434110
+  },
+  {
+   "pid": 11669,
+   "comm": "lake",
+   "cmd": "lake build OAI.Analysis.Fourier.LocalSmoothing.Comparator",
+   "max_vmas": 5993,
+   "max_rss": 2002784256,
+   "cpu_s": 10.2,
+   "minflt": 279322,
+   "majflt": 0,
+   "rchar": 1093981268,
+   "wchar": 4834872
+  },
+  {
+   "pid": 11451,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5956,
+   "max_rss": 1966919680,
+   "cpu_s": 9.26,
+   "minflt": 279265,
+   "majflt": 0,
+   "rchar": 1070166035,
+   "wchar": 4834872
+  },
+  {
+   "pid": 11260,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5926,
+   "max_rss": 1796247552,
+   "cpu_s": 3.05,
+   "minflt": 254848,
+   "majflt": 0,
+   "rchar": 891007791,
+   "wchar": 4834871
+  },
+  {
+   "pid": 11892,
+   "comm": "nanoda.master+7",
+   "cmd": "/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M /tmp/tmp.XXCazICC",
+   "max_vmas": 72,
+   "max_rss": 10983088128,
+   "cpu_s": 1825.29,
+   "minflt": 28049356,
+   "majflt": 0,
+   "rchar": 1135770180,
+   "wchar": 1
+  },
+  {
+   "pid": 11439,
+   "comm": "comparator",
+   "cmd": "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator ComparatorChallenges/LocalSmoothing.json",
+   "max_vmas": 70,
+   "max_rss": 4383801344,
+   "cpu_s": 44.66,
+   "minflt": 74971,
+   "majflt": 0,
+   "rchar": 4770839324,
+   "wchar": 2459338997
+  },
+  {
+   "pid": 11576,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 65,
+   "max_rss": 19795968,
+   "cpu_s": 0.09,
+   "minflt": 5255,
+   "majflt": 0,
+   "rchar": 1364885,
+   "wchar": 1818625
+  },
+  {
+   "pid": 11317,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 47,
+   "max_rss": 9084928,
+   "cpu_s": 0.02,
+   "minflt": 675,
+   "majflt": 0,
+   "rchar": 710938,
+   "wchar": 65537
+  },
+  {
+   "pid": 11338,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 45,
+   "max_rss": 8847360,
+   "cpu_s": 0.02,
+   "minflt": 1071,
+   "majflt": 0,
+   "rchar": 461456,
+   "wchar": 364545
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 1314046076,
+ "export_bytes_largest": 1135611966,
+ "export_processes": 2,
+ "export_timeline": [
+  {
+   "pid": 11650,
+   "start_s": 13.9,
+   "end_s": 27.1,
+   "bytes": 178434110,
+   "max_rss_bytes": 6769979392
+  },
+  {
+   "pid": 11873,
+   "start_s": 35.8,
+   "end_s": 107.7,
+   "bytes": 1135611966,
+   "max_rss_bytes": 8433590272
+  }
+ ],
+ "export_done_s": 107.7,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 1886.22,
+ "children_cpu_sys_s": 90.73
+}

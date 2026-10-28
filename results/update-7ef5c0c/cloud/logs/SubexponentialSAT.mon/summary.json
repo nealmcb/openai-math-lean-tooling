@@ -1,0 +1,168 @@
+{
+ "label": "SubexponentialSAT",
+ "cmd": [
+  "lake",
+  "env",
+  "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator",
+  "ComparatorChallenges/SubexponentialSAT.json"
+ ],
+ "started": "2026-10-28T17:01:35+00:00",
+ "wall_s": 506.24,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 3612,
+ "interval_s": 0.1,
+ "peak_per_process_vmas_sampled": 56877,
+ "peak_concurrent_processes": 4,
+ "peak_sum_vmas_sampled": 62874,
+ "peak_sum_rss_bytes": 26119499776,
+ "min_mem_available_kb": 89915252,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 10799,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 56877,
+   "max_rss": 11150528512,
+   "cpu_s": 118.62,
+   "minflt": 318409,
+   "majflt": 18802,
+   "rchar": 78370144,
+   "wchar": 2355642430
+  },
+  {
+   "pid": 10387,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53782,
+   "max_rss": 6642487296,
+   "cpu_s": 9.35,
+   "minflt": 225984,
+   "majflt": 3,
+   "rchar": 79531325,
+   "wchar": 72601662
+  },
+  {
+   "pid": 10595,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5993,
+   "max_rss": 2021670912,
+   "cpu_s": 10.4,
+   "minflt": 278251,
+   "majflt": 0,
+   "rchar": 1116845772,
+   "wchar": 4839945
+  },
+  {
+   "pid": 9957,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5992,
+   "max_rss": 2016305152,
+   "cpu_s": 9.17,
+   "minflt": 279252,
+   "majflt": 0,
+   "rchar": 1070167062,
+   "wchar": 4834872
+  },
+  {
+   "pid": 9767,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5928,
+   "max_rss": 1795432448,
+   "cpu_s": 2.82,
+   "minflt": 254431,
+   "majflt": 0,
+   "rchar": 889501356,
+   "wchar": 4834871
+  },
+  {
+   "pid": 9883,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 71,
+   "max_rss": 15687680,
+   "cpu_s": 0.05,
+   "minflt": 2729,
+   "majflt": 0,
+   "rchar": 480538,
+   "wchar": 483329
+  },
+  {
+   "pid": 9946,
+   "comm": "comparator",
+   "cmd": "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator ComparatorChallenges/SubexponentialSAT.json",
+   "max_vmas": 71,
+   "max_rss": 8377356288,
+   "cpu_s": 83.47,
+   "minflt": 62786,
+   "majflt": 0,
+   "rchar": 7128985630,
+   "wchar": 4793568998
+  },
+  {
+   "pid": 11041,
+   "comm": "nanoda.master+7",
+   "cmd": "/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M /tmp/tmp.XXMpxTqk",
+   "max_vmas": 71,
+   "max_rss": 18863648768,
+   "cpu_s": 814.52,
+   "minflt": 18431995,
+   "majflt": 0,
+   "rchar": 2355798474,
+   "wchar": 1
+  },
+  {
+   "pid": 9877,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 70,
+   "max_rss": 10215424,
+   "cpu_s": 0.02,
+   "minflt": 1067,
+   "majflt": 0,
+   "rchar": 116692,
+   "wchar": 356353
+  },
+  {
+   "pid": 10126,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 66,
+   "max_rss": 19173376,
+   "cpu_s": 0.09,
+   "minflt": 5120,
+   "majflt": 0,
+   "rchar": 1336480,
+   "wchar": 1736705
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 2428244092,
+ "export_bytes_largest": 2355642430,
+ "export_processes": 2,
+ "export_timeline": [
+  {
+   "pid": 10387,
+   "start_s": 12.8,
+   "end_s": 22.0,
+   "bytes": 72601662,
+   "max_rss_bytes": 6642487296
+  },
+  {
+   "pid": 10799,
+   "start_s": 30.3,
+   "end_s": 170.7,
+   "bytes": 2355642430,
+   "max_rss_bytes": 11150528512
+  }
+ ],
+ "export_done_s": 170.7,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 987.22,
+ "children_cpu_sys_s": 67.69
+}

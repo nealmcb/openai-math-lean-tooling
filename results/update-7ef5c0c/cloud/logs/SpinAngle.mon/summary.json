@@ -1,0 +1,168 @@
+{
+ "label": "SpinAngle",
+ "cmd": [
+  "lake",
+  "env",
+  "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator",
+  "ComparatorChallenges/SpinAngle.json"
+ ],
+ "started": "2026-10-28T16:54:02+00:00",
+ "wall_s": 99.757,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 675,
+ "interval_s": 0.1,
+ "peak_per_process_vmas_sampled": 53786,
+ "peak_concurrent_processes": 4,
+ "peak_sum_vmas_sampled": 59780,
+ "peak_sum_rss_bytes": 9498075136,
+ "min_mem_available_kb": 124150000,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 2444,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53786,
+   "max_rss": 6968213504,
+   "cpu_s": 25.46,
+   "minflt": 230723,
+   "majflt": 307,
+   "rchar": 79280616,
+   "wchar": 473387070
+  },
+  {
+   "pid": 2230,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53784,
+   "max_rss": 6702235648,
+   "cpu_s": 13.14,
+   "minflt": 226974,
+   "majflt": 1111,
+   "rchar": 78522384,
+   "wchar": 172118078
+  },
+  {
+   "pid": 2247,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5962,
+   "max_rss": 1971445760,
+   "cpu_s": 9.21,
+   "minflt": 278886,
+   "majflt": 1,
+   "rchar": 1070408904,
+   "wchar": 4836396
+  },
+  {
+   "pid": 2035,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5956,
+   "max_rss": 1973178368,
+   "cpu_s": 9.24,
+   "minflt": 277911,
+   "majflt": 51,
+   "rchar": 1070178283,
+   "wchar": 4834872
+  },
+  {
+   "pid": 1845,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5928,
+   "max_rss": 1798561792,
+   "cpu_s": 3.14,
+   "minflt": 254483,
+   "majflt": 0,
+   "rchar": 889501356,
+   "wchar": 4834871
+  },
+  {
+   "pid": 2242,
+   "comm": "lean",
+   "cmd": "lean --print-prefix",
+   "max_vmas": 72,
+   "max_rss": 57053184,
+   "cpu_s": 0.01,
+   "minflt": 1912,
+   "majflt": 0,
+   "rchar": 10709,
+   "wchar": 2
+  },
+  {
+   "pid": 1961,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 71,
+   "max_rss": 14077952,
+   "cpu_s": 0.04,
+   "minflt": 1369,
+   "majflt": 0,
+   "rchar": 92855,
+   "wchar": 135169
+  },
+  {
+   "pid": 1955,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 68,
+   "max_rss": 10039296,
+   "cpu_s": 0.03,
+   "minflt": 1067,
+   "majflt": 0,
+   "rchar": 149748,
+   "wchar": 397313
+  },
+  {
+   "pid": 2024,
+   "comm": "comparator",
+   "cmd": "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator ComparatorChallenges/SpinAngle.json",
+   "max_vmas": 67,
+   "max_rss": 2104815616,
+   "cpu_s": 22.01,
+   "minflt": 72826,
+   "majflt": 0,
+   "rchar": 3417469017,
+   "wchar": 1128573721
+  },
+  {
+   "pid": 2371,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 65,
+   "max_rss": 19050496,
+   "cpu_s": 0.09,
+   "minflt": 5053,
+   "majflt": 0,
+   "rchar": 1223622,
+   "wchar": 1638401
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 645505148,
+ "export_bytes_largest": 473387070,
+ "export_processes": 2,
+ "export_timeline": [
+  {
+   "pid": 2230,
+   "start_s": 13.7,
+   "end_s": 27.8,
+   "bytes": 172118078,
+   "max_rss_bytes": 6702235648
+  },
+  {
+   "pid": 2444,
+   "start_s": 36.2,
+   "end_s": 61.9,
+   "bytes": 473387070,
+   "max_rss_bytes": 6968213504
+  }
+ ],
+ "export_done_s": 61.9,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 114.18,
+ "children_cpu_sys_s": 25.47
+}

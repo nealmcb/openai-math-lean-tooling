@@ -1,0 +1,81 @@
+{
+ "label": "KaplanskyQuasitrace-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.KaplanskyQuasitrace",
+  "OAI.Analysis.Kaplansky.Main"
+ ],
+ "started": "2026-10-28T17:36:10+00:00",
+ "wall_s": 6.6,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 29,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5956,
+ "peak_concurrent_processes": 2,
+ "peak_sum_vmas_sampled": 5974,
+ "peak_sum_rss_bytes": 1864032256,
+ "min_mem_available_kb": 108736636,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 17438,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5956,
+   "max_rss": 1864032256,
+   "cpu_s": 4.94,
+   "minflt": 254581,
+   "majflt": 0,
+   "rchar": 937807389,
+   "wchar": 4853683
+  },
+  {
+   "pid": 17495,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 46,
+   "max_rss": 9330688,
+   "cpu_s": 0.02,
+   "minflt": 589,
+   "majflt": 0,
+   "rchar": 491101,
+   "wchar": 45057
+  },
+  {
+   "pid": 17516,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 44,
+   "max_rss": 9248768,
+   "cpu_s": 0.02,
+   "minflt": 1141,
+   "majflt": 0,
+   "rchar": 391072,
+   "wchar": 282625
+  },
+  {
+   "pid": 17571,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 43,
+   "max_rss": 10117120,
+   "cpu_s": 0.02,
+   "minflt": 1367,
+   "majflt": 0,
+   "rchar": 198351,
+   "wchar": 200705
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 2.28,
+ "children_cpu_sys_s": 5.14
+}

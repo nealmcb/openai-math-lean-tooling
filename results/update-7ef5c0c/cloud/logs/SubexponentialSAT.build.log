@@ -1,0 +1,91 @@
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8923/10407] Replayed ComparatorChallenges.SubexponentialSAT
+warning: ComparatorChallenges/SubexponentialSAT.lean:194:8: declaration uses `sorry`
+ℹ [9409/10407] Replayed OAI.Algorithms.SubexponentialSAT.SqrtLog.SquarefreeKeyMapProgram
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/SquarefreeKeyMapProgram.lean:537:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.Squarefree.KeyMapProgram.native_map_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/SquarefreeKeyMapProgram.lean:538:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.Squarefree.KeyMapProgram.mapped_eq_filter_map' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [9480/10407] Replayed OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafStatisticsProgramAudit
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafStatisticsProgramAudit.lean:9:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafStatisticsProgram.program_primitive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafStatisticsProgramAudit.lean:10:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafStatisticsProgram.Arity.program_primitive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafStatisticsProgramAudit.lean:11:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafStatisticsProgram.Finalize.program_runsIn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafStatisticsProgramAudit.lean:12:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafStatisticsProgram.Binary.lifted_eval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [9545/10407] Replayed OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafStatisticsProgramPositivity
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafStatisticsProgramPositivity.lean:59:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafStatisticsProgram.arity_pos_of_free_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [10629/10875] Replayed OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafQueryFrontendExact
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafQueryFrontendExact.lean:89:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafQueryFrontend.frontend_eval_with_inputLengths' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [10656/10875] Replayed OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafQueryFrontendReplay
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafQueryFrontendReplay.lean:179:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafQueryFrontend.frontend_avoids_outerCarried' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafQueryFrontendReplay.lean:180:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafQueryFrontend.frontend_eval_rebase_outerCarried' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [10657/10875] Replayed OAI.Algorithms.SubexponentialSAT.SqrtLog.PackingCallerProgramReplay
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/PackingCallerProgramReplay.lean:77:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.PackingCallerProgram.Replay.command_avoids' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/PackingCallerProgramReplay.lean:78:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.PackingCallerProgram.Replay.replay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [11162/11427] Replayed OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafParametersProgramSerializationBounds
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafParametersProgramSerializationBounds.lean:63:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafParametersProgram.Serialization.guarded_lengths_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLog/LeafParametersProgramSerializationBounds.lean:64:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLog.LeafParametersProgram.Serialization.uniform_guarded_lengths_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [12014/12015] Replayed OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.Final
+info: OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean:197:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.compiled_exact_count_and_sat' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean:198:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.exact_count_and_sat' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean:199:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.exact_count_eth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean:200:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.sat_polynomial_space' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: OAI/Algorithms/SubexponentialSAT/SqrtLogSpace/Final.lean:201:0: 'OAI.Algorithms.SubexponentialSAT.SqrtLogSpace.original_sat_main' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (12015 jobs).

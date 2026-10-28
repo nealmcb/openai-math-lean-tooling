@@ -1,0 +1,173 @@
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+Building ComparatorChallenges.SpinAngle
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8924/8924] Replayed ComparatorChallenges.SpinAngle
+warning: ComparatorChallenges/SpinAngle.lean:521:8: declaration uses `sorry`
+Build completed successfully (8924 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.SpinAngle.TypeAngle.one_sided_type_angle, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.SpinAngle
+Building OAI.RepresentationTheory.SpinAngle.TypeAngle
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+ℹ [8924/8926] Replayed OAI.RepresentationTheory.SpinAngle.Core
+info: stderr:
+cumulative profiling times:
+	.olean serialization 2.24s
+	C code generation 4.97ms
+	aesop 18.5ms
+	attribute application 140ms
+	blocked (unaccounted) 9.07s
+	compilation (IR) 2.73ms
+	compilation (LCNF base) 42.1ms
+	compilation (LCNF impure) 12.8ms
+	compilation (LCNF mono) 26.3ms
+	congr simp thm 136ms
+	dsimp 114ms
+	elaboration 9.02s
+	fix level params 61.2ms
+	import 3.58s
+	initialization 24.9ms
+	instantiate metavars 87.5ms
+	interpretation 3.18s
+	let-to-have transformation 13.2ms
+	linting 563ms
+	module linting 0.00152ms
+	norm_num 38.6ms
+	overlappingInstancesLinter 157ms
+	parsing 249ms
+	process pre-definitions 584ms
+	ring 34.4ms
+	share common exprs 275ms
+	simp 3.74s
+	tactic execution 19.2s
+	tacticAnalysis 631ms
+	type checking 8.1s
+	typeclass inference 80.2s
+ℹ [8925/8926] Replayed OAI.RepresentationTheory.SpinAngle.Compression
+info: stderr:
+cumulative profiling times:
+	.olean serialization 249ms
+	C code generation 0.229ms
+	attribute application 0.0922ms
+	congr simp thm 1.31ms
+	elaboration 73.7ms
+	fix level params 1.33ms
+	import 3.42s
+	initialization 24.1ms
+	instantiate metavars 0.652ms
+	interpretation 418ms
+	let-to-have transformation 0.222ms
+	linting 17.7ms
+	module linting 0.00139ms
+	norm_num 3.32ms
+	overlappingInstancesLinter 7.78ms
+	parsing 8.69ms
+	process pre-definitions 5.54ms
+	ring 2.47ms
+	share common exprs 3.32ms
+	simp 258ms
+	tactic execution 112ms
+	tacticAnalysis 28.2ms
+	type checking 47.1ms
+	typeclass inference 716ms
+ℹ [8926/8926] Replayed OAI.RepresentationTheory.SpinAngle.TypeAngle
+info: stderr:
+cumulative profiling times:
+	.olean serialization 248ms
+	C code generation 0.378ms
+	attribute application 0.113ms
+	compilation (IR) 0.0604ms
+	compilation (LCNF base) 0.39ms
+	compilation (LCNF impure) 0.342ms
+	compilation (LCNF mono) 0.511ms
+	congr simp thm 6.32ms
+	elaboration 91.9ms
+	fix level params 2.4ms
+	import 3.46s
+	initialization 24.1ms
+	instantiate metavars 2.41ms
+	interpretation 412ms
+	let-to-have transformation 0.262ms
+	linting 19.9ms
+	module linting 0.00132ms
+	norm_num 1.26ms
+	overlappingInstancesLinter 8.34ms
+	parsing 11.6ms
+	process pre-definitions 9.36ms
+	ring 8.46ms
+	share common exprs 7.22ms
+	simp 49.2ms
+	tactic execution 273ms
+	tacticAnalysis 35.3ms
+	type checking 76.5ms
+	typeclass inference 488ms
+Build completed successfully (8926 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.SpinAngle.TypeAngle.one_sided_type_angle, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.RepresentationTheory.SpinAngle.TypeAngle
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Lean default kernel replay skipped by configuration (skip_builtin_kernel)
+Your solution is okay!

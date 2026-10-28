@@ -1,0 +1,168 @@
+{
+ "label": "HarmonicGrowth",
+ "cmd": [
+  "lake",
+  "env",
+  "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator",
+  "ComparatorChallenges/HarmonicGrowth.json"
+ ],
+ "started": "2026-10-28T17:44:39+00:00",
+ "wall_s": 172.792,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 1212,
+ "interval_s": 0.1,
+ "peak_per_process_vmas_sampled": 53816,
+ "peak_concurrent_processes": 4,
+ "peak_sum_vmas_sampled": 59813,
+ "peak_sum_rss_bytes": 10436116480,
+ "min_mem_available_kb": 120699700,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 22095,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53816,
+   "max_rss": 7652241408,
+   "cpu_s": 40.46,
+   "minflt": 235651,
+   "majflt": 1429,
+   "rchar": 78405240,
+   "wchar": 785154110
+  },
+  {
+   "pid": 21875,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53786,
+   "max_rss": 6774849536,
+   "cpu_s": 13.32,
+   "minflt": 225685,
+   "majflt": 0,
+   "rchar": 77951024,
+   "wchar": 178413630
+  },
+  {
+   "pid": 21896,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5968,
+   "max_rss": 1976446976,
+   "cpu_s": 9.5,
+   "minflt": 278032,
+   "majflt": 0,
+   "rchar": 1072072299,
+   "wchar": 4862340
+  },
+  {
+   "pid": 21680,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5957,
+   "max_rss": 1960591360,
+   "cpu_s": 9.34,
+   "minflt": 280110,
+   "majflt": 0,
+   "rchar": 1070163670,
+   "wchar": 4834872
+  },
+  {
+   "pid": 21490,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5929,
+   "max_rss": 1796059136,
+   "cpu_s": 3.45,
+   "minflt": 254449,
+   "majflt": 0,
+   "rchar": 889501356,
+   "wchar": 4834871
+  },
+  {
+   "pid": 21888,
+   "comm": "lean",
+   "cmd": "lean --print-prefix",
+   "max_vmas": 72,
+   "max_rss": 45400064,
+   "cpu_s": 0.01,
+   "minflt": 1658,
+   "majflt": 0,
+   "rchar": 10709,
+   "wchar": 2
+  },
+  {
+   "pid": 22108,
+   "comm": "lean",
+   "cmd": "lean --print-prefix",
+   "max_vmas": 72,
+   "max_rss": 64196608,
+   "cpu_s": 0.01,
+   "minflt": 2047,
+   "majflt": 0,
+   "rchar": 10709,
+   "wchar": 2
+  },
+  {
+   "pid": 21600,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 70,
+   "max_rss": 10182656,
+   "cpu_s": 0.03,
+   "minflt": 1064,
+   "majflt": 0,
+   "rchar": 116692,
+   "wchar": 274433
+  },
+  {
+   "pid": 21606,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 69,
+   "max_rss": 13279232,
+   "cpu_s": 0.05,
+   "minflt": 1156,
+   "majflt": 0,
+   "rchar": 40802,
+   "wchar": 118785
+  },
+  {
+   "pid": 21669,
+   "comm": "comparator",
+   "cmd": "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator ComparatorChallenges/HarmonicGrowth.json",
+   "max_vmas": 69,
+   "max_rss": 3289366528,
+   "cpu_s": 32.42,
+   "minflt": 69394,
+   "majflt": 0,
+   "rchar": 4047499352,
+   "wchar": 1758427938
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 963567740,
+ "export_bytes_largest": 785154110,
+ "export_processes": 2,
+ "export_timeline": [
+  {
+   "pid": 21875,
+   "start_s": 14.7,
+   "end_s": 28.0,
+   "bytes": 178413630,
+   "max_rss_bytes": 6774849536
+  },
+  {
+   "pid": 22095,
+   "start_s": 36.9,
+   "end_s": 78.8,
+   "bytes": 785154110,
+   "max_rss_bytes": 7652241408
+  }
+ ],
+ "export_done_s": 78.8,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 254.51,
+ "children_cpu_sys_s": 30.19
+}

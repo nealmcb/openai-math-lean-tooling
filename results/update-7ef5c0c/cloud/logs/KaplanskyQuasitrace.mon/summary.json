@@ -1,0 +1,168 @@
+{
+ "label": "KaplanskyQuasitrace",
+ "cmd": [
+  "lake",
+  "env",
+  "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator",
+  "ComparatorChallenges/KaplanskyQuasitrace.json"
+ ],
+ "started": "2026-10-28T17:36:16+00:00",
+ "wall_s": 123.798,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 917,
+ "interval_s": 0.1,
+ "peak_per_process_vmas_sampled": 25962,
+ "peak_concurrent_processes": 4,
+ "peak_sum_vmas_sampled": 31958,
+ "peak_sum_rss_bytes": 7583600640,
+ "min_mem_available_kb": 98588520,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 18226,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 25962,
+   "max_rss": 4278804480,
+   "cpu_s": 28.2,
+   "minflt": 171628,
+   "majflt": 0,
+   "rchar": 75502600,
+   "wchar": 608145470
+  },
+  {
+   "pid": 18012,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 22920,
+   "max_rss": 3509792768,
+   "cpu_s": 16.36,
+   "minflt": 153839,
+   "majflt": 3,
+   "rchar": 75234904,
+   "wchar": 338255934
+  },
+  {
+   "pid": 17817,
+   "comm": "lake",
+   "cmd": "lake build ComparatorChallenges.KaplanskyQuasitrace",
+   "max_vmas": 5957,
+   "max_rss": 1865433088,
+   "cpu_s": 4.6,
+   "minflt": 277310,
+   "majflt": 0,
+   "rchar": 1006597782,
+   "wchar": 4835024
+  },
+  {
+   "pid": 18031,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5956,
+   "max_rss": 1868107776,
+   "cpu_s": 4.98,
+   "minflt": 276466,
+   "majflt": 0,
+   "rchar": 1014569060,
+   "wchar": 4853532
+  },
+  {
+   "pid": 17627,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5928,
+   "max_rss": 1795756032,
+   "cpu_s": 3.03,
+   "minflt": 254535,
+   "majflt": 0,
+   "rchar": 889501356,
+   "wchar": 4834871
+  },
+  {
+   "pid": 17743,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 69,
+   "max_rss": 13238272,
+   "cpu_s": 0.04,
+   "minflt": 1180,
+   "majflt": 0,
+   "rchar": 92855,
+   "wchar": 126977
+  },
+  {
+   "pid": 17806,
+   "comm": "comparator",
+   "cmd": "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator ComparatorChallenges/KaplanskyQuasitrace.json",
+   "max_vmas": 68,
+   "max_rss": 2823397376,
+   "cpu_s": 32.79,
+   "minflt": 113880,
+   "majflt": 0,
+   "rchar": 3729804418,
+   "wchar": 1564289252
+  },
+  {
+   "pid": 17941,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 65,
+   "max_rss": 19165184,
+   "cpu_s": 0.08,
+   "minflt": 5029,
+   "majflt": 0,
+   "rchar": 1076049,
+   "wchar": 1572865
+  },
+  {
+   "pid": 18503,
+   "comm": "nanoda.master+7",
+   "cmd": "/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M /tmp/tmp.XXsx9m6w",
+   "max_vmas": 59,
+   "max_rss": 884404224,
+   "cpu_s": 97.24,
+   "minflt": 384968,
+   "majflt": 0,
+   "rchar": 608300384,
+   "wchar": 1
+  },
+  {
+   "pid": 17684,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 47,
+   "max_rss": 9142272,
+   "cpu_s": 0.02,
+   "minflt": 590,
+   "majflt": 0,
+   "rchar": 535902,
+   "wchar": 49153
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 946401404,
+ "export_bytes_largest": 608145470,
+ "export_processes": 2,
+ "export_timeline": [
+  {
+   "pid": 18012,
+   "start_s": 11.3,
+   "end_s": 27.5,
+   "bytes": 338255934,
+   "max_rss_bytes": 3509792768
+  },
+  {
+   "pid": 18226,
+   "start_s": 34.4,
+   "end_s": 62.6,
+   "bytes": 608145470,
+   "max_rss_bytes": 4278804480
+  }
+ ],
+ "export_done_s": 62.6,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 174.5,
+ "children_cpu_sys_s": 20.08
+}

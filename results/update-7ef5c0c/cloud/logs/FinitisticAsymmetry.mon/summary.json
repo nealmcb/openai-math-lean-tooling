@@ -1,0 +1,168 @@
+{
+ "label": "FinitisticAsymmetry",
+ "cmd": [
+  "lake",
+  "env",
+  "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator",
+  "ComparatorChallenges/FinitisticAsymmetry.json"
+ ],
+ "started": "2026-10-28T17:30:56+00:00",
+ "wall_s": 169.551,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 1271,
+ "interval_s": 0.1,
+ "peak_per_process_vmas_sampled": 54372,
+ "peak_concurrent_processes": 4,
+ "peak_sum_vmas_sampled": 60366,
+ "peak_sum_rss_bytes": 9719173120,
+ "min_mem_available_kb": 109443272,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 16567,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 54372,
+   "max_rss": 7213428736,
+   "cpu_s": 26.87,
+   "minflt": 231504,
+   "majflt": 2,
+   "rchar": 78002680,
+   "wchar": 501690430
+  },
+  {
+   "pid": 16342,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53785,
+   "max_rss": 6725349376,
+   "cpu_s": 10.65,
+   "minflt": 224889,
+   "majflt": 1,
+   "rchar": 77951024,
+   "wchar": 118575166
+  },
+  {
+   "pid": 16362,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5992,
+   "max_rss": 2007457792,
+   "cpu_s": 9.28,
+   "minflt": 279076,
+   "majflt": 0,
+   "rchar": 1075904551,
+   "wchar": 4834872
+  },
+  {
+   "pid": 16138,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5991,
+   "max_rss": 2017738752,
+   "cpu_s": 9.18,
+   "minflt": 279768,
+   "majflt": 0,
+   "rchar": 1070160574,
+   "wchar": 4834872
+  },
+  {
+   "pid": 15948,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5928,
+   "max_rss": 1795768320,
+   "cpu_s": 2.92,
+   "minflt": 254598,
+   "majflt": 0,
+   "rchar": 889501351,
+   "wchar": 4834871
+  },
+  {
+   "pid": 16064,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 71,
+   "max_rss": 13344768,
+   "cpu_s": 0.03,
+   "minflt": 1201,
+   "majflt": 0,
+   "rchar": 92855,
+   "wchar": 135169
+  },
+  {
+   "pid": 16127,
+   "comm": "comparator",
+   "cmd": "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator ComparatorChallenges/FinitisticAsymmetry.json",
+   "max_vmas": 66,
+   "max_rss": 2097631232,
+   "cpu_s": 20.62,
+   "minflt": 54602,
+   "majflt": 0,
+   "rchar": 3424158370,
+   "wchar": 1131632127
+  },
+  {
+   "pid": 16262,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 66,
+   "max_rss": 14200832,
+   "cpu_s": 0.04,
+   "minflt": 2061,
+   "majflt": 0,
+   "rchar": 224169,
+   "wchar": 233473
+  },
+  {
+   "pid": 16487,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 65,
+   "max_rss": 14123008,
+   "cpu_s": 0.04,
+   "minflt": 2068,
+   "majflt": 0,
+   "rchar": 224169,
+   "wchar": 233473
+  },
+  {
+   "pid": 16585,
+   "comm": "nanoda.master+7",
+   "cmd": "/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M /tmp/tmp.XX8D4wZQ",
+   "max_vmas": 60,
+   "max_rss": 861396992,
+   "cpu_s": 190.63,
+   "minflt": 375403,
+   "majflt": 0,
+   "rchar": 501845630,
+   "wchar": 1
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 620265596,
+ "export_bytes_largest": 501690430,
+ "export_processes": 2,
+ "export_timeline": [
+  {
+   "pid": 16342,
+   "start_s": 13.3,
+   "end_s": 23.8,
+   "bytes": 118575166,
+   "max_rss_bytes": 6725349376
+  },
+  {
+   "pid": 16567,
+   "start_s": 32.0,
+   "end_s": 58.7,
+   "bytes": 501690430,
+   "max_rss_bytes": 7213428736
+  }
+ ],
+ "export_done_s": 58.7,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 252.23,
+ "children_cpu_sys_s": 25.15
+}

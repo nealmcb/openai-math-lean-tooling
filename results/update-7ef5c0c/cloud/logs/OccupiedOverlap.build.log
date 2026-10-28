@@ -1,0 +1,1222 @@
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8924/8980] Replayed ComparatorChallenges.OccupiedOverlap
+warning: ComparatorChallenges/OccupiedOverlap.lean:260:8: declaration uses `sorry`
+warning: ComparatorChallenges/OccupiedOverlap.lean:263:8: declaration uses `sorry`
+ℹ [8925/8980] Replayed OAI.LinearAlgebra.MatrixState.HilbertSchmidt
+info: stderr:
+cumulative profiling times:
+	.olean serialization 281ms
+	C code generation 0.411ms
+	attribute application 0.462ms
+	compilation (IR) 0.0365ms
+	compilation (LCNF base) 1.85ms
+	compilation (LCNF impure) 0.187ms
+	compilation (LCNF mono) 0.571ms
+	congr simp thm 9.27ms
+	dsimp 0.707ms
+	elaboration 310ms
+	fix level params 2.31ms
+	import 3.56s
+	initialization 24.2ms
+	instantiate metavars 5.53ms
+	interpretation 479ms
+	let-to-have transformation 0.511ms
+	linting 38.6ms
+	module linting 0.00125ms
+	norm_num 0.979ms
+	overlappingInstancesLinter 32.3ms
+	parsing 16.6ms
+	process pre-definitions 41.5ms
+	ring 3.87ms
+	share common exprs 13.8ms
+	simp 121ms
+	tactic execution 1.11s
+	tacticAnalysis 55.4ms
+	type checking 806ms
+	typeclass inference 1.95s
+ℹ [8926/8980] Replayed OAI.LinearAlgebra.MatrixState.QuarterRoot
+info: stderr:
+cumulative profiling times:
+	.olean serialization 282ms
+	C code generation 0.241ms
+	attribute application 0.18ms
+	blocked (unaccounted) 277ms
+	congr simp thm 9.36ms
+	dsimp 0.378ms
+	elaboration 170ms
+	fix level params 1.43ms
+	import 3.64s
+	initialization 25.2ms
+	instantiate metavars 0.924ms
+	interpretation 496ms
+	let-to-have transformation 0.179ms
+	linting 43.7ms
+	module linting 0.00129ms
+	overlappingInstancesLinter 12.6ms
+	parsing 7.11ms
+	process pre-definitions 23.1ms
+	share common exprs 4.37ms
+	simp 201ms
+	tactic execution 413ms
+	tacticAnalysis 37.3ms
+	type checking 279ms
+	typeclass inference 1.33s
+ℹ [8927/8980] Replayed OAI.RepresentationTheory.YoungSymmetry.Polytabloid
+info: stderr:
+cumulative profiling times:
+	.olean serialization 361ms
+	C code generation 0.477ms
+	attribute application 11.3ms
+	blocked (unaccounted) 127ms
+	compilation (IR) 0.0599ms
+	compilation (LCNF base) 0.452ms
+	compilation (LCNF impure) 0.32ms
+	compilation (LCNF mono) 0.498ms
+	congr simp thm 22ms
+	dsimp 1.22ms
+	elaboration 335ms
+	fix level params 3.83ms
+	import 3.59s
+	initialization 24.2ms
+	instantiate metavars 6.43ms
+	interpretation 703ms
+	let-to-have transformation 1.78ms
+	linting 104ms
+	module linting 0.0135ms
+	norm_num 2.69ms
+	overlappingInstancesLinter 32.8ms
+	parsing 42.7ms
+	process pre-definitions 92.1ms
+	ring 8.08ms
+	share common exprs 26.7ms
+	simp 1.18s
+	tactic execution 825ms
+	tacticAnalysis 112ms
+	type checking 328ms
+	typeclass inference 3.47s
+ℹ [8928/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.Characters
+info: stderr:
+cumulative profiling times:
+	.olean serialization 359ms
+	C code generation 0.233ms
+	attribute application 0.0716ms
+	congr simp thm 11.3ms
+	elaboration 101ms
+	fix level params 13.3ms
+	import 3.65s
+	initialization 24.7ms
+	instantiate metavars 1.82ms
+	interpretation 447ms
+	let-to-have transformation 0.122ms
+	linting 28.3ms
+	module linting 0.0013ms
+	norm_num 0.882ms
+	overlappingInstancesLinter 11.3ms
+	parsing 9.26ms
+	process pre-definitions 25.6ms
+	ring 3.73ms
+	share common exprs 5ms
+	simp 270ms
+	tactic execution 244ms
+	tacticAnalysis 47.1ms
+	type checking 81.2ms
+	typeclass inference 1.15s
+ℹ [8929/8980] Replayed OAI.RepresentationTheory.YoungSymmetry.Irreducible
+info: stderr:
+cumulative profiling times:
+	.olean serialization 354ms
+	C code generation 0.491ms
+	attribute application 0.323ms
+	compilation (IR) 0.0425ms
+	compilation (LCNF base) 0.605ms
+	compilation (LCNF impure) 0.207ms
+	compilation (LCNF mono) 0.353ms
+	congr simp thm 6.3ms
+	elaboration 141ms
+	fix level params 1.31ms
+	import 3.62s
+	initialization 26.8ms
+	instantiate metavars 6.44ms
+	interpretation 618ms
+	let-to-have transformation 0.319ms
+	linting 64ms
+	module linting 0.00132ms
+	norm_num 9.8ms
+	overlappingInstancesLinter 14.7ms
+	parsing 22.8ms
+	process pre-definitions 67.1ms
+	ring 4.94ms
+	share common exprs 10.8ms
+	simp 242ms
+	tactic execution 746ms
+	tacticAnalysis 74.4ms
+	type checking 218ms
+	typeclass inference 3.43s
+ℹ [8930/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.Uncertainty
+info: stderr:
+cumulative profiling times:
+	.olean serialization 277ms
+	C code generation 0.228ms
+	attribute application 1.95ms
+	congr simp thm 8.58ms
+	elaboration 254ms
+	fix level params 2.48ms
+	import 3.59s
+	initialization 23.9ms
+	instantiate metavars 6.18ms
+	interpretation 473ms
+	let-to-have transformation 0.457ms
+	linting 17.4ms
+	module linting 0.0014ms
+	norm_num 0.946ms
+	overlappingInstancesLinter 8.01ms
+	parsing 7.13ms
+	process pre-definitions 20.6ms
+	ring 7.85ms
+	share common exprs 13.2ms
+	simp 230ms
+	tactic execution 960ms
+	tacticAnalysis 23.4ms
+	type checking 486ms
+	typeclass inference 3.78s
+ℹ [8931/8980] Replayed OAI.RepresentationTheory.YoungSymmetry.Dimensions
+info: stderr:
+cumulative profiling times:
+	.olean serialization 306ms
+	C code generation 0.42ms
+	attribute application 1.1ms
+	congr simp thm 14.8ms
+	dsimp 1.67ms
+	elaboration 183ms
+	fix level params 3.15ms
+	import 3.67s
+	initialization 25.8ms
+	instantiate metavars 7.65ms
+	interpretation 1.36s
+	let-to-have transformation 0.72ms
+	linting 45.1ms
+	module linting 0.00123ms
+	norm_num 7.82ms
+	overlappingInstancesLinter 10ms
+	parsing 28.7ms
+	process pre-definitions 58.3ms
+	ring 32.6ms
+	share common exprs 20.9ms
+	simp 569ms
+	tactic execution 741ms
+	tacticAnalysis 64.6ms
+	type checking 375ms
+	typeclass inference 2.01s
+ℹ [8932/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.Coefficients
+info: stderr:
+cumulative profiling times:
+	.olean serialization 309ms
+	C code generation 0.341ms
+	attribute application 0.174ms
+	congr simp thm 15.8ms
+	elaboration 277ms
+	fix level params 7.82ms
+	import 3.61s
+	initialization 24.4ms
+	instantiate metavars 7.77ms
+	interpretation 657ms
+	let-to-have transformation 5.24ms
+	linting 69.9ms
+	module linting 0.00117ms
+	norm_num 7.32ms
+	overlappingInstancesLinter 19.8ms
+	parsing 12.9ms
+	process pre-definitions 26ms
+	ring 28.1ms
+	share common exprs 26.3ms
+	simp 387ms
+	tactic execution 655ms
+	tacticAnalysis 59.6ms
+	type checking 232ms
+	typeclass inference 3.15s
+ℹ [8933/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.Action
+info: stderr:
+cumulative profiling times:
+	.olean serialization 244ms
+	C code generation 0.36ms
+	attribute application 2.09ms
+	compilation (IR) 0.0602ms
+	compilation (LCNF base) 0.82ms
+	compilation (LCNF impure) 0.264ms
+	compilation (LCNF mono) 0.595ms
+	elaboration 50.5ms
+	fix level params 0.436ms
+	import 3.68s
+	initialization 25ms
+	instantiate metavars 0.336ms
+	interpretation 331ms
+	let-to-have transformation 0.0578ms
+	linting 11.3ms
+	module linting 0.00138ms
+	overlappingInstancesLinter 9.72ms
+	parsing 2.44ms
+	process pre-definitions 17.3ms
+	share common exprs 1.08ms
+	tactic execution 54ms
+	tacticAnalysis 10.3ms
+	type checking 22.6ms
+	typeclass inference 133ms
+ℹ [8934/8980] Replayed OAI.Probability.CubeShuffle.Basic
+info: stderr:
+cumulative profiling times:
+	.olean serialization 330ms
+	C code generation 1.74ms
+	attribute application 0.988ms
+	blocked (unaccounted) 1.28s
+	compilation (IR) 0.764ms
+	compilation (LCNF base) 9.85ms
+	compilation (LCNF impure) 3.54ms
+	compilation (LCNF mono) 6.48ms
+	congr simp thm 20.4ms
+	dsimp 1.59ms
+	elaboration 253ms
+	fix level params 8.22ms
+	import 3.63s
+	initialization 24.6ms
+	instantiate metavars 10.9ms
+	interpretation 1.93s
+	let-to-have transformation 0.701ms
+	linting 112ms
+	module linting 0.00143ms
+	norm_num 436ms
+	overlappingInstancesLinter 26.3ms
+	parsing 45.6ms
+	process pre-definitions 80.2ms
+	ring 149ms
+	share common exprs 90.6ms
+	simp 544ms
+	tactic execution 816ms
+	tacticAnalysis 98ms
+	type checking 304ms
+	typeclass inference 1.94s
+ℹ [8935/8980] Replayed OAI.Probability.CubeShuffle.FiniteKernel
+info: stderr:
+cumulative profiling times:
+	.olean serialization 271ms
+	C code generation 0.244ms
+	attribute application 4.2ms
+	congr simp thm 10.2ms
+	dsimp 1.23ms
+	elaboration 164ms
+	fix level params 2.17ms
+	import 3.58s
+	initialization 25.2ms
+	instantiate metavars 2.58ms
+	interpretation 1.11s
+	let-to-have transformation 0.204ms
+	linting 67.3ms
+	module linting 0.00121ms
+	norm_num 17.6ms
+	overlappingInstancesLinter 23.5ms
+	parsing 28.6ms
+	process pre-definitions 44.3ms
+	ring 81.5ms
+	share common exprs 19.3ms
+	simp 131ms
+	tactic execution 513ms
+	tacticAnalysis 60.5ms
+	type checking 162ms
+	typeclass inference 1.06s
+ℹ [8936/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.Averaging
+info: stderr:
+cumulative profiling times:
+	.olean serialization 383ms
+	C code generation 0.526ms
+	attribute application 2.33ms
+	blocked (unaccounted) 108ms
+	compilation (IR) 0.0657ms
+	compilation (LCNF base) 0.384ms
+	compilation (LCNF impure) 0.313ms
+	compilation (LCNF mono) 0.441ms
+	congr simp thm 31.5ms
+	elaboration 464ms
+	fix level params 10.9ms
+	import 3.67s
+	initialization 24.4ms
+	instantiate metavars 8.81ms
+	interpretation 998ms
+	let-to-have transformation 4.54ms
+	linting 106ms
+	module linting 0.00128ms
+	norm_num 131ms
+	overlappingInstancesLinter 57.6ms
+	parsing 29.3ms
+	process pre-definitions 75.1ms
+	ring 58ms
+	share common exprs 47ms
+	simp 575ms
+	tactic execution 869ms
+	tacticAnalysis 94.8ms
+	type checking 759ms
+	typeclass inference 7.08s
+ℹ [8937/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.Sampling
+info: stderr:
+cumulative profiling times:
+	.olean serialization 300ms
+	C code generation 0.383ms
+	attribute application 5.9ms
+	compilation (IR) 0.0319ms
+	compilation (LCNF base) 0.498ms
+	compilation (LCNF impure) 0.128ms
+	compilation (LCNF mono) 0.254ms
+	congr simp thm 9.48ms
+	elaboration 248ms
+	fix level params 4.34ms
+	import 3.65s
+	initialization 25.8ms
+	instantiate metavars 2.17ms
+	interpretation 452ms
+	let-to-have transformation 0.57ms
+	linting 32.6ms
+	module linting 0.00138ms
+	norm_num 3.51ms
+	overlappingInstancesLinter 17.1ms
+	parsing 13.7ms
+	process pre-definitions 22.3ms
+	ring 3.61ms
+	share common exprs 12.1ms
+	simp 342ms
+	tactic execution 231ms
+	tacticAnalysis 45.1ms
+	type checking 253ms
+	typeclass inference 2.73s
+ℹ [8938/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.KernelBounds
+info: stderr:
+cumulative profiling times:
+	.olean serialization 274ms
+	C code generation 0.257ms
+	attribute application 0.0852ms
+	congr simp thm 4.82ms
+	elaboration 119ms
+	fix level params 1.82ms
+	import 3.56s
+	initialization 25.4ms
+	instantiate metavars 1.34ms
+	interpretation 358ms
+	let-to-have transformation 0.245ms
+	linting 18.6ms
+	module linting 0.0012ms
+	norm_num 0.599ms
+	overlappingInstancesLinter 8.06ms
+	parsing 7.91ms
+	process pre-definitions 20.4ms
+	ring 3.76ms
+	share common exprs 5.72ms
+	simp 179ms
+	tactic execution 130ms
+	tacticAnalysis 22.7ms
+	type checking 117ms
+	typeclass inference 949ms
+ℹ [8939/8980] Replayed OAI.RepresentationTheory.YoungSymmetry.UnitaryModel
+info: stderr:
+cumulative profiling times:
+	.olean serialization 285ms
+	C code generation 0.249ms
+	attribute application 0.0908ms
+	congr simp thm 1.67ms
+	elaboration 395ms
+	fix level params 1.41ms
+	import 3.75s
+	initialization 25.3ms
+	instantiate metavars 2.59ms
+	interpretation 327ms
+	let-to-have transformation 0.434ms
+	linting 10.1ms
+	module linting 0.0012ms
+	overlappingInstancesLinter 4.24ms
+	parsing 6.36ms
+	process pre-definitions 74.4ms
+	share common exprs 6.47ms
+	simp 32.3ms
+	tactic execution 431ms
+	tacticAnalysis 16.1ms
+	type checking 1.2s
+	typeclass inference 637ms
+ℹ [8943/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.Frames
+info: stderr:
+cumulative profiling times:
+	.olean serialization 356ms
+	C code generation 0.275ms
+	attribute application 4.27ms
+	blocked (unaccounted) 1.3s
+	congr simp thm 17.8ms
+	elaboration 540ms
+	fix level params 12.6ms
+	import 3.63s
+	initialization 24.8ms
+	instantiate metavars 14.9ms
+	interpretation 1.35s
+	let-to-have transformation 3.95ms
+	linting 95.3ms
+	module linting 0.00115ms
+	norm_num 156ms
+	overlappingInstancesLinter 36.3ms
+	parsing 37.1ms
+	process pre-definitions 132ms
+	ring 16.7ms
+	share common exprs 40.1ms
+	simp 609ms
+	tactic execution 1.51s
+	tacticAnalysis 99.5ms
+	type checking 850ms
+	typeclass inference 12.1s
+ℹ [8947/8980] Replayed OAI.RepresentationTheory.RowColumn.Entropy
+info: stderr:
+cumulative profiling times:
+	.olean serialization 261ms
+	C code generation 0.24ms
+	attribute application 0.0695ms
+	congr simp thm 17.6ms
+	dsimp 0.828ms
+	elaboration 51ms
+	fix level params 1.82ms
+	import 3.62s
+	initialization 24.7ms
+	instantiate metavars 4.79ms
+	interpretation 1.05s
+	let-to-have transformation 0.0905ms
+	linting 32.5ms
+	module linting 0.00127ms
+	norm_num 26.7ms
+	overlappingInstancesLinter 24.9ms
+	parsing 20.9ms
+	process pre-definitions 15.6ms
+	ring 22ms
+	share common exprs 10.9ms
+	simp 338ms
+	tactic execution 255ms
+	tacticAnalysis 36.5ms
+	type checking 101ms
+	typeclass inference 1.28s
+ℹ [8957/8980] Replayed OAI.Probability.CubeShuffle.Coin
+info: stderr:
+cumulative profiling times:
+	.olean serialization 494ms
+	C code generation 0.362ms
+	attribute application 0.0289ms
+	compilation (IR) 0.0622ms
+	compilation (LCNF base) 0.601ms
+	compilation (LCNF impure) 0.273ms
+	compilation (LCNF mono) 0.468ms
+	congr simp thm 2.48ms
+	dsimp 8.67ms
+	elaboration 31.1ms
+	fix level params 0.329ms
+	import 3.58s
+	initialization 25.3ms
+	instantiate metavars 0.639ms
+	interpretation 396ms
+	let-to-have transformation 0.0542ms
+	linting 32ms
+	module linting 0.00125ms
+	norm_num 13.9ms
+	overlappingInstancesLinter 31.6ms
+	parsing 10.9ms
+	process pre-definitions 5.93ms
+	ring 10.2ms
+	share common exprs 1.93ms
+	simp 19.6ms
+	tactic execution 38.7ms
+	tacticAnalysis 12.8ms
+	type checking 21ms
+	typeclass inference 74.6ms
+ℹ [8958/8980] Replayed OAI.Probability.CubeShuffle.ButterflyRoutes
+info: stderr:
+cumulative profiling times:
+	.olean serialization 275ms
+	C code generation 1.74ms
+	attribute application 0.505ms
+	blocked (unaccounted) 24.7ms
+	compilation (IR) 0.921ms
+	compilation (LCNF base) 8.78ms
+	compilation (LCNF impure) 4.31ms
+	compilation (LCNF mono) 6.75ms
+	congr simp thm 11.5ms
+	dsimp 27.2ms
+	elaboration 136ms
+	fix level params 1.62ms
+	import 4.5s
+	initialization 46.1ms
+	instantiate metavars 4.37ms
+	interpretation 567ms
+	let-to-have transformation 0.382ms
+	linting 55.2ms
+	module linting 0.00109ms
+	norm_num 25.7ms
+	overlappingInstancesLinter 10.8ms
+	parsing 27.5ms
+	process pre-definitions 35.6ms
+	ring 18.7ms
+	share common exprs 15ms
+	simp 416ms
+	tactic execution 490ms
+	tacticAnalysis 51.1ms
+	type checking 98.8ms
+	typeclass inference 818ms
+ℹ [8959/8980] Replayed OAI.Probability.CubeShuffle.QueryTree
+info: stderr:
+cumulative profiling times:
+	.olean serialization 313ms
+	C code generation 2.11ms
+	attribute application 0.317ms
+	blocked (unaccounted) 111ms
+	compilation (IR) 1.24ms
+	compilation (LCNF base) 14.1ms
+	compilation (LCNF impure) 6.49ms
+	compilation (LCNF mono) 10.1ms
+	congr simp thm 19.7ms
+	elaboration 165ms
+	fix level params 2.98ms
+	import 3.74s
+	initialization 24.1ms
+	instantiate metavars 6.14ms
+	interpretation 645ms
+	let-to-have transformation 0.524ms
+	linting 55.8ms
+	module linting 0.00125ms
+	norm_num 25.9ms
+	overlappingInstancesLinter 14.3ms
+	parsing 27.5ms
+	process pre-definitions 50.1ms
+	ring 6.9ms
+	share common exprs 14.8ms
+	simp 422ms
+	tactic execution 715ms
+	tacticAnalysis 69.4ms
+	type checking 134ms
+	typeclass inference 449ms
+ℹ [8960/8980] Replayed OAI.Probability.CubeShuffle.ButterflyCycles
+info: stderr:
+cumulative profiling times:
+	.olean serialization 388ms
+	C code generation 1.01ms
+	attribute application 4.17ms
+	blocked (unaccounted) 0.181ms
+	compilation (IR) 0.321ms
+	compilation (LCNF base) 3.87ms
+	compilation (LCNF impure) 1.55ms
+	compilation (LCNF mono) 3.15ms
+	congr simp thm 25.4ms
+	dsimp 20ms
+	elaboration 409ms
+	fix level params 6.43ms
+	import 3.69s
+	initialization 24.1ms
+	instantiate metavars 15.6ms
+	interpretation 1.36s
+	let-to-have transformation 3.79ms
+	linting 124ms
+	module linting 0.00118ms
+	norm_num 87.3ms
+	overlappingInstancesLinter 21.3ms
+	parsing 73.8ms
+	process pre-definitions 108ms
+	ring 57.1ms
+	share common exprs 45.8ms
+	simp 1.54s
+	tactic execution 905ms
+	tacticAnalysis 163ms
+	type checking 408ms
+	typeclass inference 3.73s
+ℹ [8961/8980] Replayed OAI.Probability.CubeShuffle.RoutingNetwork
+info: stderr:
+cumulative profiling times:
+	.olean serialization 488ms
+	C code generation 0.871ms
+	attribute application 3.81ms
+	blocked (unaccounted) 3.31ms
+	compilation (IR) 0.22ms
+	compilation (LCNF base) 1.65ms
+	compilation (LCNF impure) 1.08ms
+	compilation (LCNF mono) 1.61ms
+	congr simp thm 60.3ms
+	dsimp 23ms
+	elaboration 568ms
+	fix level params 10.1ms
+	import 3.74s
+	initialization 24.8ms
+	instantiate metavars 14.3ms
+	interpretation 1.24s
+	let-to-have transformation 3.69ms
+	linting 133ms
+	module linting 0.0013ms
+	norm_num 74.8ms
+	overlappingInstancesLinter 48.1ms
+	parsing 68.8ms
+	process pre-definitions 110ms
+	ring 36.7ms
+	share common exprs 39.5ms
+	simp 1.53s
+	tactic execution 906ms
+	tacticAnalysis 170ms
+	type checking 424ms
+	typeclass inference 3.39s
+ℹ [8962/8980] Replayed OAI.Probability.CubeShuffle.ParallelLayers
+info: stderr:
+cumulative profiling times:
+	.olean serialization 387ms
+	C code generation 3.95ms
+	attribute application 1.11ms
+	blocked (unaccounted) 1.65ms
+	compilation (IR) 1.78ms
+	compilation (LCNF base) 13.5ms
+	compilation (LCNF impure) 8.79ms
+	compilation (LCNF mono) 13.9ms
+	congr simp thm 33.6ms
+	dsimp 8.59ms
+	elaboration 419ms
+	fix level params 5.23ms
+	import 3.64s
+	initialization 25.7ms
+	instantiate metavars 7.19ms
+	interpretation 800ms
+	let-to-have transformation 1.95ms
+	linting 81.2ms
+	module linting 0.00124ms
+	norm_num 1.53ms
+	overlappingInstancesLinter 29.1ms
+	parsing 62.4ms
+	process pre-definitions 93.9ms
+	ring 13.1ms
+	share common exprs 22ms
+	simp 655ms
+	tactic execution 718ms
+	tacticAnalysis 119ms
+	type checking 200ms
+	typeclass inference 1.28s
+ℹ [8963/8980] Replayed OAI.Probability.CubeShuffle.CycleColoring
+info: stderr:
+cumulative profiling times:
+	.olean serialization 286ms
+	C code generation 0.595ms
+	attribute application 0.744ms
+	compilation (IR) 0.102ms
+	compilation (LCNF base) 1.05ms
+	compilation (LCNF impure) 0.544ms
+	compilation (LCNF mono) 1.02ms
+	congr simp thm 7.04ms
+	dsimp 1.12ms
+	elaboration 136ms
+	fix level params 2.66ms
+	import 3.8s
+	initialization 27.6ms
+	instantiate metavars 4.32ms
+	interpretation 523ms
+	let-to-have transformation 0.412ms
+	linting 42ms
+	module linting 0.00142ms
+	norm_num 3.68ms
+	overlappingInstancesLinter 15.3ms
+	parsing 27.1ms
+	process pre-definitions 21.6ms
+	ring 4.96ms
+	share common exprs 9.71ms
+	simp 227ms
+	tactic execution 306ms
+	tacticAnalysis 54.8ms
+	type checking 105ms
+	typeclass inference 357ms
+ℹ [8964/8980] Replayed OAI.Probability.CubeShuffle.PairRouting
+info: stderr:
+cumulative profiling times:
+	.olean serialization 345ms
+	C code generation 1.36ms
+	attribute application 13.1ms
+	compilation (IR) 0.666ms
+	compilation (LCNF base) 10.4ms
+	compilation (LCNF impure) 2.96ms
+	compilation (LCNF mono) 4.79ms
+	congr simp thm 34.8ms
+	elaboration 373ms
+	fix level params 5.6ms
+	import 3.75s
+	initialization 25.3ms
+	instantiate metavars 11.5ms
+	interpretation 853ms
+	let-to-have transformation 2.28ms
+	linting 89.9ms
+	module linting 0.00133ms
+	norm_num 4.1ms
+	overlappingInstancesLinter 34.6ms
+	parsing 50ms
+	process pre-definitions 47.4ms
+	ring 6.63ms
+	share common exprs 22.6ms
+	simp 1.64s
+	tactic execution 617ms
+	tacticAnalysis 128ms
+	type checking 215ms
+	typeclass inference 1.44s
+ℹ [8965/8980] Replayed OAI.Probability.CubeShuffle.RecursiveDensity
+info: stderr:
+cumulative profiling times:
+	.olean serialization 398ms
+	C code generation 0.908ms
+	attribute application 0.421ms
+	blocked (unaccounted) 39.6ms
+	compilation (IR) 0.259ms
+	compilation (LCNF base) 1.79ms
+	compilation (LCNF impure) 1.23ms
+	compilation (LCNF mono) 6.76ms
+	congr simp thm 28.8ms
+	dsimp 4.23ms
+	elaboration 265ms
+	fix level params 5.77ms
+	import 4.03s
+	initialization 48.6ms
+	instantiate metavars 9.54ms
+	interpretation 1.15s
+	let-to-have transformation 35.2ms
+	linting 140ms
+	module linting 0.0192ms
+	norm_num 79.4ms
+	overlappingInstancesLinter 29.7ms
+	parsing 47.1ms
+	process pre-definitions 61.8ms
+	ring 41.7ms
+	share common exprs 32.4ms
+	simp 658ms
+	tactic execution 1.18s
+	tacticAnalysis 136ms
+	type checking 332ms
+	typeclass inference 1.44s
+ℹ [8966/8980] Replayed OAI.Probability.CubeShuffle.DensityMoments
+info: stderr:
+cumulative profiling times:
+	.olean serialization 434ms
+	C code generation 1.76ms
+	attribute application 0.852ms
+	blocked (unaccounted) 67.2ms
+	compilation (IR) 0.62ms
+	compilation (LCNF base) 5.03ms
+	compilation (LCNF impure) 4.56ms
+	compilation (LCNF mono) 8.53ms
+	congr simp thm 43.7ms
+	dsimp 19.7ms
+	elaboration 387ms
+	fix level params 10.2ms
+	import 3.79s
+	initialization 26ms
+	instantiate metavars 24.9ms
+	interpretation 4.24s
+	let-to-have transformation 24.3ms
+	linting 159ms
+	module linting 0.00127ms
+	norm_num 1.01s
+	overlappingInstancesLinter 28.1ms
+	parsing 68.7ms
+	process pre-definitions 142ms
+	ring 269ms
+	share common exprs 108ms
+	simp 751ms
+	tactic execution 2.41s
+	tacticAnalysis 165ms
+	type checking 706ms
+	typeclass inference 4.1s
+ℹ [8967/8980] Replayed OAI.Probability.CubeShuffle.ModifiedRouting
+info: stderr:
+cumulative profiling times:
+	.olean serialization 424ms
+	C code generation 4.94ms
+	attribute application 0.542ms
+	blocked (unaccounted) 479ms
+	compilation (IR) 0.872ms
+	compilation (LCNF base) 8.37ms
+	compilation (LCNF impure) 4.16ms
+	compilation (LCNF mono) 7ms
+	congr simp thm 36.1ms
+	dsimp 10.6ms
+	elaboration 367ms
+	fix level params 5.61ms
+	import 3.72s
+	initialization 25.9ms
+	instantiate metavars 14.1ms
+	interpretation 1.09s
+	let-to-have transformation 31.3ms
+	linting 108ms
+	module linting 0.00129ms
+	norm_num 84ms
+	overlappingInstancesLinter 28.7ms
+	parsing 56.6ms
+	process pre-definitions 73.1ms
+	ring 48.8ms
+	share common exprs 39.5ms
+	simp 761ms
+	tactic execution 1.35s
+	tacticAnalysis 145ms
+	type checking 504ms
+	typeclass inference 1.39s
+ℹ [8968/8980] Replayed OAI.Probability.CubeShuffle.ModifiedDensity
+info: stderr:
+cumulative profiling times:
+	.olean serialization 408ms
+	C code generation 1.59ms
+	attribute application 0.467ms
+	blocked (unaccounted) 27.2ms
+	compilation (IR) 0.381ms
+	compilation (LCNF base) 3.13ms
+	compilation (LCNF impure) 1.86ms
+	compilation (LCNF mono) 2.83ms
+	congr simp thm 19.5ms
+	dsimp 10.3ms
+	elaboration 320ms
+	fix level params 7.92ms
+	import 3.9s
+	initialization 53.6ms
+	instantiate metavars 16.1ms
+	interpretation 1.76s
+	let-to-have transformation 12.5ms
+	linting 102ms
+	module linting 0.00159ms
+	norm_num 230ms
+	overlappingInstancesLinter 24.6ms
+	parsing 52.9ms
+	process pre-definitions 69.8ms
+	ring 130ms
+	share common exprs 66.4ms
+	simp 470ms
+	tactic execution 949ms
+	tacticAnalysis 135ms
+	type checking 384ms
+	typeclass inference 2.21s
+ℹ [8969/8980] Replayed OAI.Probability.CubeShuffle.ModifiedKernel
+info: stderr:
+cumulative profiling times:
+	.olean serialization 288ms
+	C code generation 0.44ms
+	attribute application 0.0838ms
+	blocked (unaccounted) 18.5ms
+	compilation (IR) 0.0667ms
+	compilation (LCNF base) 0.503ms
+	compilation (LCNF impure) 0.311ms
+	compilation (LCNF mono) 0.501ms
+	congr simp thm 2.72ms
+	elaboration 44.5ms
+	fix level params 0.649ms
+	import 4.03s
+	initialization 32.1ms
+	instantiate metavars 1.05ms
+	interpretation 385ms
+	let-to-have transformation 1.35ms
+	linting 11.1ms
+	module linting 0.00145ms
+	norm_num 3.31ms
+	overlappingInstancesLinter 6.84ms
+	parsing 6.66ms
+	process pre-definitions 7.23ms
+	share common exprs 2.72ms
+	simp 121ms
+	tactic execution 110ms
+	tacticAnalysis 17.7ms
+	type checking 27.1ms
+	typeclass inference 122ms
+ℹ [8970/8980] Replayed OAI.Probability.CubeShuffle.Generation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 267ms
+	C code generation 0.555ms
+	attribute application 0.123ms
+	blocked (unaccounted) 1.46ms
+	compilation (IR) 0.128ms
+	compilation (LCNF base) 0.93ms
+	compilation (LCNF impure) 3.15ms
+	compilation (LCNF mono) 1.03ms
+	congr simp thm 2.55ms
+	elaboration 54.1ms
+	fix level params 4.18ms
+	import 4.06s
+	initialization 24.9ms
+	instantiate metavars 1.84ms
+	interpretation 426ms
+	let-to-have transformation 0.207ms
+	linting 25.3ms
+	module linting 0.00141ms
+	overlappingInstancesLinter 12.4ms
+	parsing 9.26ms
+	process pre-definitions 15.9ms
+	share common exprs 3.59ms
+	simp 89.7ms
+	tactic execution 127ms
+	tacticAnalysis 28.3ms
+	type checking 57.8ms
+	typeclass inference 377ms
+ℹ [8971/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.CommutingBlocks
+info: stderr:
+cumulative profiling times:
+	.olean serialization 322ms
+	C code generation 0.359ms
+	attribute application 1.35ms
+	congr simp thm 18.7ms
+	dsimp 1.13ms
+	elaboration 440ms
+	fix level params 5.29ms
+	import 3.61s
+	initialization 24.7ms
+	instantiate metavars 6.1ms
+	interpretation 571ms
+	let-to-have transformation 1.01ms
+	linting 62.5ms
+	module linting 0.00167ms
+	norm_num 0.992ms
+	overlappingInstancesLinter 15.8ms
+	parsing 33ms
+	process pre-definitions 36.3ms
+	ring 13.5ms
+	share common exprs 24.3ms
+	simp 165ms
+	tactic execution 1.21s
+	tacticAnalysis 72.4ms
+	type checking 438ms
+	typeclass inference 5.51s
+ℹ [8972/8980] Replayed OAI.RepresentationTheory.FiniteUnitary.Fourier
+info: stderr:
+cumulative profiling times:
+	.olean serialization 298ms
+	C code generation 0.301ms
+	attribute application 0.154ms
+	congr simp thm 11.8ms
+	dsimp 2ms
+	elaboration 254ms
+	fix level params 2.83ms
+	import 3.52s
+	initialization 26.5ms
+	instantiate metavars 2.3ms
+	interpretation 431ms
+	let-to-have transformation 0.471ms
+	linting 19.4ms
+	module linting 0.00158ms
+	norm_num 4.03ms
+	overlappingInstancesLinter 10.9ms
+	parsing 9.76ms
+	process pre-definitions 13.8ms
+	ring 6.63ms
+	share common exprs 9.29ms
+	simp 239ms
+	tactic execution 203ms
+	tacticAnalysis 37ms
+	type checking 199ms
+	typeclass inference 1.44s
+ℹ [8973/8980] Replayed OAI.Probability.CubeShuffle.ExceptionalOperators
+info: stderr:
+cumulative profiling times:
+	.olean serialization 371ms
+	C code generation 1.23ms
+	attribute application 3.03ms
+	compilation (IR) 0.425ms
+	compilation (LCNF base) 3.71ms
+	compilation (LCNF impure) 2.48ms
+	compilation (LCNF mono) 4.4ms
+	congr simp thm 20.3ms
+	elaboration 328ms
+	fix level params 5.2ms
+	import 3.9s
+	initialization 26.4ms
+	instantiate metavars 6.67ms
+	interpretation 611ms
+	let-to-have transformation 1.64ms
+	linting 52ms
+	module linting 0.00146ms
+	overlappingInstancesLinter 16.6ms
+	parsing 28.7ms
+	process pre-definitions 37.1ms
+	share common exprs 20.3ms
+	simp 195ms
+	tactic execution 1.38s
+	tacticAnalysis 73.4ms
+	type checking 286ms
+	typeclass inference 3.3s
+ℹ [8974/8980] Replayed OAI.Probability.CubeShuffle.DimensionEstimates
+info: stderr:
+cumulative profiling times:
+	.olean serialization 317ms
+	C code generation 0.331ms
+	attribute application 0.361ms
+	blocked (unaccounted) 1.56ms
+	congr simp thm 32.5ms
+	dsimp 21.4ms
+	elaboration 213ms
+	fix level params 11.9ms
+	import 3.63s
+	initialization 24.7ms
+	instantiate metavars 18.5ms
+	interpretation 5.43s
+	let-to-have transformation 0.632ms
+	linting 113ms
+	module linting 0.00125ms
+	norm_num 724ms
+	overlappingInstancesLinter 12.7ms
+	parsing 37.5ms
+	process pre-definitions 93.3ms
+	ring 291ms
+	share common exprs 92.7ms
+	simp 719ms
+	tactic execution 998ms
+	tacticAnalysis 98.1ms
+	type checking 495ms
+	typeclass inference 4.76s
+ℹ [8975/8980] Replayed OAI.Probability.CubeShuffle.NetworkSpectral
+info: stderr:
+cumulative profiling times:
+	.olean serialization 280ms
+	C code generation 0.239ms
+	attribute application 0.0785ms
+	congr simp thm 2.93ms
+	elaboration 93.2ms
+	fix level params 1.15ms
+	import 3.71s
+	initialization 26.6ms
+	instantiate metavars 0.872ms
+	interpretation 338ms
+	let-to-have transformation 0.299ms
+	linting 14.1ms
+	module linting 0.00118ms
+	norm_num 5.5ms
+	overlappingInstancesLinter 6.6ms
+	parsing 6.55ms
+	process pre-definitions 6.77ms
+	share common exprs 4.53ms
+	simp 44.3ms
+	tactic execution 95.2ms
+	tacticAnalysis 18.8ms
+	type checking 53.3ms
+	typeclass inference 618ms
+ℹ [8976/8980] Replayed OAI.Probability.CubeShuffle.Physical
+info: stderr:
+cumulative profiling times:
+	.olean serialization 292ms
+	C code generation 0.603ms
+	attribute application 9.75ms
+	compilation (IR) 0.194ms
+	compilation (LCNF base) 1.21ms
+	compilation (LCNF impure) 0.858ms
+	compilation (LCNF mono) 1.26ms
+	congr simp thm 4.02ms
+	elaboration 139ms
+	fix level params 1.93ms
+	import 4.02s
+	initialization 24.8ms
+	instantiate metavars 3.34ms
+	interpretation 446ms
+	let-to-have transformation 0.518ms
+	linting 23.9ms
+	module linting 0.00142ms
+	overlappingInstancesLinter 10.2ms
+	parsing 15.3ms
+	process pre-definitions 12.3ms
+	share common exprs 9.26ms
+	simp 71.3ms
+	tactic execution 517ms
+	tacticAnalysis 37.6ms
+	type checking 122ms
+	typeclass inference 1.04s
+ℹ [8977/8980] Replayed OAI.RepresentationTheory.YoungSymmetry.ShapeBounds
+info: stderr:
+cumulative profiling times:
+	.olean serialization 309ms
+	C code generation 0.266ms
+	attribute application 0.174ms
+	congr simp thm 19.4ms
+	dsimp 5.83ms
+	elaboration 72ms
+	fix level params 1.94ms
+	import 3.74s
+	initialization 24.9ms
+	instantiate metavars 7.5ms
+	interpretation 2.29s
+	let-to-have transformation 0.278ms
+	linting 52.3ms
+	module linting 0.00141ms
+	norm_num 269ms
+	overlappingInstancesLinter 4.13ms
+	parsing 14.5ms
+	process pre-definitions 25.5ms
+	ring 92.6ms
+	share common exprs 49.5ms
+	simp 383ms
+	tactic execution 308ms
+	tacticAnalysis 32.9ms
+	type checking 206ms
+	typeclass inference 1.17s
+ℹ [8978/8980] Replayed OAI.Probability.CubeShuffle.ShapeSpectral
+info: stderr:
+cumulative profiling times:
+	.olean serialization 324ms
+	C code generation 0.303ms
+	attribute application 0.14ms
+	congr simp thm 21.1ms
+	dsimp 62.5ms
+	elaboration 787ms
+	fix level params 4.17ms
+	import 3.72s
+	initialization 25ms
+	instantiate metavars 17.6ms
+	interpretation 3.51s
+	let-to-have transformation 0.961ms
+	linting 56.3ms
+	module linting 0.00142ms
+	norm_num 474ms
+	overlappingInstancesLinter 7.8ms
+	parsing 24.8ms
+	process pre-definitions 58.7ms
+	ring 112ms
+	share common exprs 58.3ms
+	simp 418ms
+	tactic execution 2.9s
+	tacticAnalysis 67.5ms
+	type checking 815ms
+	typeclass inference 4.43s
+ℹ [8979/8980] Replayed OAI.Probability.CubeShuffle.FourierBound
+info: stderr:
+cumulative profiling times:
+	.olean serialization 275ms
+	C code generation 0.236ms
+	attribute application 0.838ms
+	congr simp thm 4.45ms
+	elaboration 132ms
+	fix level params 1.65ms
+	import 3.58s
+	initialization 25ms
+	instantiate metavars 2.61ms
+	interpretation 417ms
+	let-to-have transformation 0.37ms
+	linting 21.2ms
+	module linting 0.00134ms
+	norm_num 0.445ms
+	overlappingInstancesLinter 7.77ms
+	parsing 7.99ms
+	process pre-definitions 10.5ms
+	ring 6.18ms
+	share common exprs 7.74ms
+	simp 70.1ms
+	tactic execution 257ms
+	tacticAnalysis 21.9ms
+	type checking 135ms
+	typeclass inference 1.11s
+Build completed successfully (8980 jobs).

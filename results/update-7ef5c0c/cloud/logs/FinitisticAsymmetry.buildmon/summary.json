@@ -1,0 +1,45 @@
+{
+ "label": "FinitisticAsymmetry-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.FinitisticAsymmetry",
+  "OAI.Algebra.FinitisticAsymmetry.Main"
+ ],
+ "started": "2026-10-28T17:30:47+00:00",
+ "wall_s": 8.339,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 37,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5989,
+ "peak_concurrent_processes": 1,
+ "peak_sum_vmas_sampled": 5989,
+ "peak_sum_rss_bytes": 1968369664,
+ "min_mem_available_kb": 118946548,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 15751,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5989,
+   "max_rss": 1968369664,
+   "cpu_s": 9.03,
+   "minflt": 258385,
+   "majflt": 0,
+   "rchar": 999877656,
+   "wchar": 4835023
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 5.47,
+ "children_cpu_sys_s": 6.01
+}

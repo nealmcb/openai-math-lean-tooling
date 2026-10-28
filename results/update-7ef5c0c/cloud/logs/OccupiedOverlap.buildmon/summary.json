@@ -1,0 +1,45 @@
+{
+ "label": "OccupiedOverlap-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.OccupiedOverlap",
+  "OAI.RepresentationTheory.RowColumn.Occupied"
+ ],
+ "started": "2026-10-28T17:38:20+00:00",
+ "wall_s": 9.191,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 41,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5981,
+ "peak_concurrent_processes": 1,
+ "peak_sum_vmas_sampled": 5981,
+ "peak_sum_rss_bytes": 1978814464,
+ "min_mem_available_kb": 125865112,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 18523,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5981,
+   "max_rss": 1978814464,
+   "cpu_s": 9.41,
+   "minflt": 256931,
+   "majflt": 0,
+   "rchar": 995630522,
+   "wchar": 4865539
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 5.5,
+ "children_cpu_sys_s": 6.72
+}

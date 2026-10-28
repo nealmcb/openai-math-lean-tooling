@@ -1,0 +1,45 @@
+{
+ "label": "ElementaryPositivity-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.ElementaryPositivity",
+  "OAI.Combinatorics.Chromatic.Main"
+ ],
+ "started": "2026-10-28T17:40:25+00:00",
+ "wall_s": 9.214,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 41,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5989,
+ "peak_concurrent_processes": 1,
+ "peak_sum_vmas_sampled": 5989,
+ "peak_sum_rss_bytes": 1968570368,
+ "min_mem_available_kb": 125791200,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 19365,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5989,
+   "max_rss": 1968570368,
+   "cpu_s": 9.5,
+   "minflt": 256270,
+   "majflt": 0,
+   "rchar": 1001329553,
+   "wchar": 4990020
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 5.49,
+ "children_cpu_sys_s": 6.85
+}

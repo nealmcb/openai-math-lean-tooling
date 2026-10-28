@@ -39,14 +39,41 @@ the first run shared its export file with a concurrent run, the second ran alone
 result. Hodge's export is 6.37 GB; its closure is 33,169 OAI modules (2.69 million lines),
 built on the cloud in about 3.4 h of build time, during which Lean's kernel accepted every module.
 
-**Comparator with Lean's kernel** (laptop, `local.jsonl`, logs in `logs/`): Rokhlin, Brenier,
-EuclideanFiveColor, KServer, LogspaceEquality, Naimark accepted. Not run on the others.
-
 nanoda here checks each solution's export with the configuration's permitted axioms; it does not
-compare the theorem statement with the challenge's, which only Comparator does. For Hodge this
-matters: the solution states the theorem with OAI's own copies of `IsProjective`,
-`HasComplexMultiplication` and `algebraicCycleClassSpan`, while the challenge uses those of its
-helper library, so whether Comparator accepts it is open.
+compare the theorem statement with the challenge's, which only Comparator does.
+
+## Comparator
+
+All 20 affected configurations have been run through Comparator, which compares each solution's
+theorem statement and definitions with the challenge's and checks the axioms:
+
+- **Comparator with Lean's kernel** (laptop, `local.jsonl`, logs in `logs/`): Rokhlin, Brenier,
+  EuclideanFiveColor, KServer, LogspaceEquality, Naimark accepted.
+- **Comparator with nanoda in place of Lean's replay** (cloud r7a.4xlarge, 2026-10-28,
+  `tools/cloud_compare_update.sh`; `cloud/compare.jsonl`, full output in `cloud/logs/`): the other
+  14, with Comparator built with `tools/patches/comparator-skip-builtin-kernel.patch` (sha256
+  `9239d2775569`) and nanoda `master+71+guard.64M`. The only change to the published
+  configurations is `"enable_nanoda": true` and `"skip_builtin_kernel": true`
+  (`cloud/compare-config-edits.patch`). 13 accepted, in 110–618 s each.
+- **HodgeConjectureCMAbelianVarieties/main is rejected**, at the statement comparison, before any
+  kernel runs: `Challenge and solution theorem statement do not match:
+  'HodgeCM.hodge_conjecture_for_cm_abelian_varieties'`. The same rejection with the configuration
+  exactly as published (`cloud/hodge-published.json`, output `cloud/hodge-stock-comparator.log`;
+  the same Comparator binary, whose patch is inactive without `skip_builtin_kernel`).
+
+**Why Hodge fails.** `Solution.lean` states the theorem with OAI's own copies of the definitions
+(`OAI.AlgebraicGeometry.Foundations.ProjectiveSpaceIs.IsProjective`,
+`OAI.AlgebraicGeometry.ComplexMultiplication.Definitions.HasComplexMultiplication`,
+`OAI.AlgebraicGeometry.ComplexPoint.Basic.ComplexSchemePoint.algebraicCycleClassSpan`), while
+`Challenge.lean` uses those of its 259-module helper library (credited in `lean/docs/032.md` to
+Paul-Lez/HodgeConjecture) and its own `CM.lean`. `tools/find_bridge.py` finds that the challenge's
+closure (259 in-repo modules) and the solution's (33,170) share no module, that no module in the
+solution's closure imports anything on the challenge's side, and that no file anywhere under `OAI/`
+(162,417 scanned) does either, so no lemma relating the two sets of definitions can exist in the
+published files. The solution itself builds (Lean's kernel accepted every module) and nanoda
+accepts its export; what fails is the match with the challenge's statement. The same doubt was
+raised on the Lean Zulip by Joseph Myers and Kevin Buzzard, without a Comparator run:
+https://leanprover.zulipchat.com/#narrow/channel/583339-AI-authored-projects/topic/OpenAI.20releases.20solutions.20to.20hundreds.20of.20problems/with/635342154
 
 ## Machines and gaps
 

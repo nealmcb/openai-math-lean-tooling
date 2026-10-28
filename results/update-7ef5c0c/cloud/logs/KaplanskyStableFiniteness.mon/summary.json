@@ -1,0 +1,168 @@
+{
+ "label": "KaplanskyStableFiniteness",
+ "cmd": [
+  "lake",
+  "env",
+  "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator",
+  "ComparatorChallenges/KaplanskyStableFiniteness.json"
+ ],
+ "started": "2026-10-28T17:33:54+00:00",
+ "wall_s": 135.628,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 971,
+ "interval_s": 0.1,
+ "peak_per_process_vmas_sampled": 53785,
+ "peak_concurrent_processes": 4,
+ "peak_sum_vmas_sampled": 59780,
+ "peak_sum_rss_bytes": 9305620480,
+ "min_mem_available_kb": 106481052,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 17175,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 53785,
+   "max_rss": 6903197696,
+   "cpu_s": 19.9,
+   "minflt": 227819,
+   "majflt": 11,
+   "rchar": 77951024,
+   "wchar": 343826494
+  },
+  {
+   "pid": 17398,
+   "comm": "lean4export",
+   "cmd": "",
+   "max_vmas": 26065,
+   "max_rss": 4324106240,
+   "cpu_s": 29.26,
+   "minflt": 171383,
+   "majflt": 28,
+   "rchar": 75511669,
+   "wchar": 635224126
+  },
+  {
+   "pid": 17193,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5993,
+   "max_rss": 1894105088,
+   "cpu_s": 5.12,
+   "minflt": 277254,
+   "majflt": 0,
+   "rchar": 1018433964,
+   "wchar": 4902393
+  },
+  {
+   "pid": 16981,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5953,
+   "max_rss": 1963290624,
+   "cpu_s": 9.02,
+   "minflt": 277664,
+   "majflt": 0,
+   "rchar": 1070167746,
+   "wchar": 4834872
+  },
+  {
+   "pid": 16791,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5929,
+   "max_rss": 1795715072,
+   "cpu_s": 3.12,
+   "minflt": 254633,
+   "majflt": 0,
+   "rchar": 889501351,
+   "wchar": 4834871
+  },
+  {
+   "pid": 17188,
+   "comm": "lean",
+   "cmd": "lean --print-prefix",
+   "max_vmas": 72,
+   "max_rss": 56176640,
+   "cpu_s": 0.01,
+   "minflt": 1883,
+   "majflt": 0,
+   "rchar": 10709,
+   "wchar": 2
+  },
+  {
+   "pid": 16907,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 69,
+   "max_rss": 14491648,
+   "cpu_s": 0.04,
+   "minflt": 2105,
+   "majflt": 0,
+   "rchar": 258834,
+   "wchar": 241665
+  },
+  {
+   "pid": 16901,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 67,
+   "max_rss": 10199040,
+   "cpu_s": 0.02,
+   "minflt": 1101,
+   "majflt": 0,
+   "rchar": 149748,
+   "wchar": 409601
+  },
+  {
+   "pid": 16970,
+   "comm": "comparator",
+   "cmd": "/home/srv/s/math/openai-math/ext/comparator-skip/.lake/build/bin/comparator ComparatorChallenges/KaplanskyStableFiniteness.json",
+   "max_vmas": 67,
+   "max_rss": 2916651008,
+   "cpu_s": 33.96,
+   "minflt": 115565,
+   "majflt": 0,
+   "rchar": 3856522390,
+   "wchar": 1624018116
+  },
+  {
+   "pid": 17422,
+   "comm": "nanoda.master+7",
+   "cmd": "/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M /tmp/tmp.XXfc3iCf",
+   "max_vmas": 59,
+   "max_rss": 901881856,
+   "cpu_s": 111.97,
+   "minflt": 433303,
+   "majflt": 0,
+   "rchar": 635379194,
+   "wchar": 1
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 979050620,
+ "export_bytes_largest": 635224126,
+ "export_processes": 2,
+ "export_timeline": [
+  {
+   "pid": 17175,
+   "start_s": 13.5,
+   "end_s": 33.4,
+   "bytes": 343826494,
+   "max_rss_bytes": 6903197696
+  },
+  {
+   "pid": 17398,
+   "start_s": 40.3,
+   "end_s": 69.5,
+   "bytes": 635224126,
+   "max_rss_bytes": 4324106240
+  }
+ ],
+ "export_done_s": 69.5,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 196.42,
+ "children_cpu_sys_s": 23.32
+}

@@ -1,0 +1,1154 @@
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8924/8960] Replayed ComparatorChallenges.HarmonicGrowth
+warning: ComparatorChallenges/HarmonicGrowth.lean:98:8: declaration uses `sorry`
+ℹ [8925/8960] Replayed OAI.Geometry.HarmonicGrowth.Basic
+info: stderr:
+cumulative profiling times:
+	.olean serialization 249ms
+	C code generation 0.348ms
+	attribute application 0.161ms
+	blocked (unaccounted) 33.2ms
+	compilation (IR) 0.0595ms
+	compilation (LCNF base) 0.53ms
+	compilation (LCNF impure) 0.163ms
+	compilation (LCNF mono) 0.186ms
+	congr simp thm 1.79ms
+	elaboration 72ms
+	fix level params 0.142ms
+	import 3.74s
+	initialization 25.2ms
+	instantiate metavars 0.166ms
+	interpretation 350ms
+	let-to-have transformation 0.0982ms
+	linting 12.3ms
+	module linting 0.00156ms
+	overlappingInstancesLinter 3.44ms
+	parsing 9.24ms
+	process pre-definitions 6.82ms
+	share common exprs 0.726ms
+	simp 0.501ms
+	tacticAnalysis 16.5ms
+	type checking 84.9ms
+	typeclass inference 84.2ms
+ℹ [8926/8960] Replayed OAI.Geometry.HarmonicGrowth.Berger
+info: stderr:
+cumulative profiling times:
+	.olean serialization 308ms
+	C code generation 0.983ms
+	attribute application 3.22ms
+	blocked (unaccounted) 346ms
+	compilation (IR) 0.439ms
+	compilation (LCNF base) 6.4ms
+	compilation (LCNF impure) 1.99ms
+	compilation (LCNF mono) 3.6ms
+	congr simp thm 9.23ms
+	dsimp 10.4ms
+	elaboration 305ms
+	fix level params 3.52ms
+	import 3.68s
+	initialization 24.4ms
+	instantiate metavars 4.67ms
+	interpretation 1.16s
+	let-to-have transformation 0.698ms
+	linting 92.2ms
+	module linting 0.00144ms
+	norm_num 6.61ms
+	overlappingInstancesLinter 19.4ms
+	parsing 29.7ms
+	process pre-definitions 43.4ms
+	ring 65.1ms
+	share common exprs 26.4ms
+	simp 321ms
+	tactic execution 536ms
+	tacticAnalysis 98.3ms
+	type checking 421ms
+	typeclass inference 1.63s
+ℹ [8927/8960] Replayed OAI.Geometry.HarmonicGrowth.PolynomialControl
+info: stderr:
+cumulative profiling times:
+	.olean serialization 438ms
+	C code generation 1.93ms
+	attribute application 10.4ms
+	blocked (unaccounted) 0.12ms
+	compilation (IR) 0.932ms
+	compilation (LCNF base) 11.7ms
+	compilation (LCNF impure) 10ms
+	compilation (LCNF mono) 12.2ms
+	congr simp thm 34.6ms
+	elaboration 624ms
+	fix level params 14ms
+	import 3.46s
+	initialization 24.3ms
+	instantiate metavars 30.4ms
+	interpretation 2.97s
+	let-to-have transformation 2.29ms
+	linting 139ms
+	module linting 0.00124ms
+	norm_num 324ms
+	overlappingInstancesLinter 41.2ms
+	parsing 50.6ms
+	process pre-definitions 146ms
+	ring 47.5ms
+	share common exprs 93.3ms
+	simp 2.77s
+	tactic execution 3.56s
+	tacticAnalysis 152ms
+	type checking 1.11s
+	typeclass inference 7.34s
+ℹ [8928/8960] Replayed OAI.Geometry.HarmonicGrowth.LieGeneration
+info: stderr:
+cumulative profiling times:
+	.olean serialization 552ms
+	C code generation 0.98ms
+	attribute application 2.08ms
+	blocked (unaccounted) 3.62s
+	compilation (IR) 0.214ms
+	compilation (LCNF base) 4.37ms
+	compilation (LCNF impure) 1.23ms
+	compilation (LCNF mono) 3.46ms
+	congr simp thm 62.8ms
+	dsimp 7.67ms
+	elaboration 2.53s
+	fix level params 20.7ms
+	import 3.57s
+	initialization 24.4ms
+	instantiate metavars 70.1ms
+	interpretation 2.16s
+	let-to-have transformation 2.61ms
+	linting 251ms
+	module linting 0.00118ms
+	norm_num 107ms
+	overlappingInstancesLinter 42.9ms
+	parsing 77.6ms
+	process pre-definitions 182ms
+	ring 140ms
+	share common exprs 190ms
+	simp 12.7s
+	tactic execution 3.79s
+	tacticAnalysis 332ms
+	type checking 1.32s
+	typeclass inference 4.77s
+ℹ [8929/8960] Replayed OAI.Geometry.HarmonicGrowth.ComplexHarmonics
+info: stderr:
+cumulative profiling times:
+	.olean serialization 517ms
+	C code generation 0.722ms
+	attribute application 28.5ms
+	compilation (IR) 0.189ms
+	compilation (LCNF base) 4.69ms
+	compilation (LCNF impure) 0.885ms
+	compilation (LCNF mono) 2.02ms
+	congr simp thm 26.9ms
+	dsimp 2.92ms
+	elaboration 784ms
+	fix level params 18.8ms
+	import 3.39s
+	initialization 24.1ms
+	instantiate metavars 23.6ms
+	interpretation 1.09s
+	let-to-have transformation 3.01ms
+	linting 138ms
+	module linting 0.0015ms
+	norm_num 6.63ms
+	overlappingInstancesLinter 38.9ms
+	parsing 58.9ms
+	process pre-definitions 142ms
+	ring 58.2ms
+	share common exprs 74.6ms
+	simp 1.7s
+	tactic execution 5.48s
+	tacticAnalysis 168ms
+	type checking 1.3s
+	typeclass inference 8.67s
+ℹ [8930/8960] Replayed OAI.Geometry.HarmonicGrowth.LieSaturation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 520ms
+	C code generation 1.39ms
+	aesop 165ms
+	attribute application 12ms
+	blocked (unaccounted) 1.25ms
+	compilation (IR) 0.692ms
+	compilation (LCNF base) 13ms
+	compilation (LCNF impure) 2.96ms
+	compilation (LCNF mono) 6.72ms
+	congr simp thm 32.6ms
+	dsimp 3.91ms
+	elaboration 5.23s
+	fix level params 24.5ms
+	import 3.5s
+	initialization 24.5ms
+	instantiate metavars 28.1ms
+	interpretation 1.89s
+	let-to-have transformation 41.8ms
+	linting 217ms
+	module linting 0.00097ms
+	norm_num 40.7ms
+	overlappingInstancesLinter 51.8ms
+	parsing 89.4ms
+	process pre-definitions 245ms
+	ring 60.4ms
+	share common exprs 88.2ms
+	simp 2.53s
+	tactic execution 5.59s
+	tacticAnalysis 245ms
+	type checking 1.8s
+	typeclass inference 11s
+ℹ [8931/8960] Replayed OAI.Geometry.HarmonicGrowth.RealForms
+info: stderr:
+cumulative profiling times:
+	.olean serialization 363ms
+	C code generation 0.355ms
+	attribute application 9.59ms
+	congr simp thm 14.3ms
+	dsimp 11.9ms
+	elaboration 991ms
+	fix level params 9.21ms
+	import 3.44s
+	initialization 24.4ms
+	instantiate metavars 12.1ms
+	interpretation 811ms
+	let-to-have transformation 23.4ms
+	linting 110ms
+	module linting 0.00112ms
+	norm_num 0.235ms
+	overlappingInstancesLinter 32.3ms
+	parsing 41.9ms
+	process pre-definitions 233ms
+	ring 5.12ms
+	share common exprs 46ms
+	simp 3.66s
+	tactic execution 1.14s
+	tacticAnalysis 127ms
+	type checking 1.26s
+	typeclass inference 15.9s
+ℹ [8932/8960] Replayed OAI.Geometry.HarmonicGrowth.Angular
+info: stderr:
+cumulative profiling times:
+	.olean serialization 535ms
+	C code generation 0.786ms
+	attribute application 17.7ms
+	blocked (unaccounted) 11.5ms
+	compilation (IR) 0.145ms
+	compilation (LCNF base) 6.43ms
+	compilation (LCNF impure) 0.734ms
+	compilation (LCNF mono) 1.75ms
+	congr simp thm 55.4ms
+	elaboration 1.64s
+	fix level params 10.1ms
+	import 4.39s
+	initialization 55.2ms
+	instantiate metavars 31.7ms
+	interpretation 1.54s
+	let-to-have transformation 6.65ms
+	linting 230ms
+	module linting 0.00112ms
+	norm_num 14.6ms
+	overlappingInstancesLinter 45.7ms
+	parsing 75.9ms
+	process pre-definitions 236ms
+	ring 67.9ms
+	share common exprs 86.5ms
+	simp 3.12s
+	tactic execution 4.68s
+	tacticAnalysis 198ms
+	type checking 1.63s
+	typeclass inference 8.37s
+ℹ [8933/8960] Replayed OAI.Geometry.HarmonicGrowth.AngularTrace
+info: stderr:
+cumulative profiling times:
+	.olean serialization 436ms
+	C code generation 0.51ms
+	attribute application 2.56ms
+	blocked (unaccounted) 0.473ms
+	compilation (IR) 0.067ms
+	compilation (LCNF base) 1.16ms
+	compilation (LCNF impure) 0.364ms
+	compilation (LCNF mono) 0.689ms
+	congr simp thm 15.2ms
+	elaboration 416ms
+	fix level params 5.28ms
+	import 3.66s
+	initialization 25.2ms
+	instantiate metavars 20ms
+	interpretation 860ms
+	let-to-have transformation 4.18ms
+	linting 83.7ms
+	module linting 0.0012ms
+	norm_num 66.4ms
+	overlappingInstancesLinter 20.6ms
+	parsing 43ms
+	process pre-definitions 57.1ms
+	ring 125ms
+	share common exprs 46.9ms
+	simp 2.74s
+	tactic execution 837ms
+	tacticAnalysis 102ms
+	type checking 32.6s
+	typeclass inference 2.93s
+ℹ [8934/8960] Replayed OAI.Geometry.HarmonicGrowth.Attainment
+info: stderr:
+cumulative profiling times:
+	.olean serialization 427ms
+	C code generation 0.615ms
+	attribute application 19ms
+	compilation (IR) 0.0815ms
+	compilation (LCNF base) 1.93ms
+	compilation (LCNF impure) 0.437ms
+	compilation (LCNF mono) 7.46ms
+	congr simp thm 13.5ms
+	dsimp 37.9ms
+	elaboration 699ms
+	fix level params 12.5ms
+	import 3.69s
+	initialization 25.4ms
+	instantiate metavars 16ms
+	interpretation 2.86s
+	let-to-have transformation 1.33ms
+	linting 108ms
+	module linting 0.00118ms
+	norm_num 88.9ms
+	overlappingInstancesLinter 26.9ms
+	parsing 50.5ms
+	process pre-definitions 136ms
+	ring 55.3ms
+	share common exprs 52.6ms
+	simp 460ms
+	tactic execution 1.71s
+	tacticAnalysis 114ms
+	type checking 1.56s
+	typeclass inference 6.56s
+ℹ [8935/8960] Replayed OAI.Geometry.HarmonicGrowth.Flow
+info: stderr:
+cumulative profiling times:
+	.olean serialization 378ms
+	C code generation 1.41ms
+	attribute application 4.01ms
+	blocked (unaccounted) 972ms
+	compilation (IR) 0.435ms
+	compilation (LCNF base) 17.2ms
+	compilation (LCNF impure) 2.42ms
+	compilation (LCNF mono) 4.76ms
+	congr simp thm 11.2ms
+	dsimp 12.8ms
+	elaboration 1.12s
+	fix level params 12.7ms
+	import 3.7s
+	initialization 44.3ms
+	instantiate metavars 11ms
+	interpretation 1.26s
+	let-to-have transformation 2.55ms
+	linting 160ms
+	module linting 0.00125ms
+	norm_num 14.9ms
+	overlappingInstancesLinter 36.9ms
+	parsing 65.1ms
+	process pre-definitions 119ms
+	ring 68.9ms
+	share common exprs 67.9ms
+	simp 681ms
+	tactic execution 2.41s
+	tacticAnalysis 164ms
+	type checking 1.47s
+	typeclass inference 12.7s
+ℹ [8936/8960] Replayed OAI.Geometry.HarmonicGrowth.Damping
+info: stderr:
+cumulative profiling times:
+	.olean serialization 346ms
+	C code generation 0.429ms
+	attribute application 1.25ms
+	compilation (IR) 0.0651ms
+	compilation (LCNF base) 2.51ms
+	compilation (LCNF impure) 0.355ms
+	compilation (LCNF mono) 0.825ms
+	congr simp thm 24.3ms
+	dsimp 3.11ms
+	elaboration 584ms
+	fix level params 9.73ms
+	import 3.55s
+	initialization 24.1ms
+	instantiate metavars 12ms
+	interpretation 1.73s
+	let-to-have transformation 1.56ms
+	linting 147ms
+	module linting 0.00115ms
+	norm_num 62.6ms
+	overlappingInstancesLinter 20ms
+	parsing 48.4ms
+	process pre-definitions 91.3ms
+	ring 142ms
+	share common exprs 59.4ms
+	simp 371ms
+	tactic execution 1.29s
+	tacticAnalysis 118ms
+	type checking 734ms
+	typeclass inference 6.12s
+ℹ [8937/8960] Replayed OAI.Geometry.HarmonicGrowth.Variation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 888ms
+	C code generation 0.562ms
+	attribute application 9.72ms
+	compilation (IR) 0.0595ms
+	compilation (LCNF base) 0.434ms
+	compilation (LCNF impure) 0.334ms
+	compilation (LCNF mono) 0.467ms
+	congr simp thm 21.9ms
+	dsimp 2.25ms
+	elaboration 2.23s
+	fix level params 27.7ms
+	import 3.59s
+	initialization 24.4ms
+	instantiate metavars 23.1ms
+	interpretation 1.99s
+	let-to-have transformation 5.99ms
+	linting 217ms
+	module linting 0.00136ms
+	norm_num 45.9ms
+	overlappingInstancesLinter 47ms
+	parsing 94.3ms
+	process pre-definitions 270ms
+	ring 116ms
+	share common exprs 116ms
+	simp 878ms
+	tactic execution 4.89s
+	tacticAnalysis 241ms
+	type checking 11.1s
+	typeclass inference 24.5s
+ℹ [8938/8960] Replayed OAI.Geometry.HarmonicGrowth.ScalarODE
+info: stderr:
+cumulative profiling times:
+	.olean serialization 239ms
+	C code generation 0.249ms
+	attribute application 0.128ms
+	congr simp thm 1.82ms
+	dsimp 1.61ms
+	elaboration 141ms
+	fix level params 1.33ms
+	import 3.52s
+	initialization 24.2ms
+	instantiate metavars 3.67ms
+	interpretation 886ms
+	let-to-have transformation 0.314ms
+	linting 40.3ms
+	module linting 0.00133ms
+	norm_num 21.2ms
+	overlappingInstancesLinter 5.11ms
+	parsing 18.6ms
+	process pre-definitions 18.8ms
+	ring 49.2ms
+	share common exprs 17.4ms
+	simp 54.5ms
+	tactic execution 345ms
+	tacticAnalysis 43.3ms
+	type checking 190ms
+	typeclass inference 947ms
+ℹ [8939/8960] Replayed OAI.Geometry.HarmonicGrowth.Taylor
+info: stderr:
+cumulative profiling times:
+	.olean serialization 264ms
+	C code generation 0.236ms
+	attribute application 0.105ms
+	congr simp thm 4.17ms
+	dsimp 11.3ms
+	elaboration 103ms
+	fix level params 2.7ms
+	import 3.69s
+	initialization 24.5ms
+	instantiate metavars 7.58ms
+	interpretation 1.41s
+	let-to-have transformation 0.268ms
+	linting 38.3ms
+	module linting 0.00131ms
+	norm_num 54.5ms
+	overlappingInstancesLinter 7.02ms
+	parsing 15.1ms
+	process pre-definitions 31.7ms
+	ring 93.6ms
+	share common exprs 24.9ms
+	simp 104ms
+	tactic execution 1.88s
+	tacticAnalysis 43.3ms
+	type checking 168ms
+	typeclass inference 2.45s
+ℹ [8940/8960] Replayed OAI.Geometry.HarmonicGrowth.PulseODE
+info: stderr:
+cumulative profiling times:
+	.olean serialization 421ms
+	C code generation 0.286ms
+	attribute application 4.51ms
+	congr simp thm 10.3ms
+	dsimp 68.6ms
+	elaboration 1.03s
+	fix level params 17.9ms
+	import 3.52s
+	initialization 24.3ms
+	instantiate metavars 22.9ms
+	interpretation 6.11s
+	let-to-have transformation 58ms
+	linting 173ms
+	module linting 0.00122ms
+	norm_num 181ms
+	overlappingInstancesLinter 27.4ms
+	parsing 60ms
+	process pre-definitions 146ms
+	ring 229ms
+	share common exprs 102ms
+	simp 332ms
+	tactic execution 3.95s
+	tacticAnalysis 170ms
+	type checking 2.06s
+	typeclass inference 13.4s
+ℹ [8941/8960] Replayed OAI.Geometry.HarmonicGrowth.SmoothWord
+info: stderr:
+cumulative profiling times:
+	.olean serialization 323ms
+	C code generation 0.852ms
+	attribute application 1.05ms
+	blocked (unaccounted) 5.81ms
+	compilation (IR) 0.292ms
+	compilation (LCNF base) 2.17ms
+	compilation (LCNF impure) 1.08ms
+	compilation (LCNF mono) 2.58ms
+	congr simp thm 9.47ms
+	dsimp 9.48ms
+	elaboration 507ms
+	fix level params 6.07ms
+	import 3.52s
+	initialization 24.6ms
+	instantiate metavars 8.64ms
+	interpretation 1.11s
+	let-to-have transformation 0.962ms
+	linting 94.3ms
+	module linting 0.00128ms
+	norm_num 81ms
+	overlappingInstancesLinter 34.1ms
+	parsing 40.2ms
+	process pre-definitions 60.3ms
+	ring 85.4ms
+	share common exprs 34.4ms
+	simp 212ms
+	tactic execution 904ms
+	tacticAnalysis 109ms
+	type checking 501ms
+	typeclass inference 5.3s
+ℹ [8942/8960] Replayed OAI.Geometry.HarmonicGrowth.Transmission
+info: stderr:
+cumulative profiling times:
+	.olean serialization 992ms
+	C code generation 0.589ms
+	attribute application 59.7ms
+	blocked (unaccounted) 326ms
+	compilation (IR) 0.0389ms
+	compilation (LCNF base) 0.542ms
+	compilation (LCNF impure) 0.15ms
+	compilation (LCNF mono) 0.278ms
+	congr simp thm 35.2ms
+	dsimp 43ms
+	elaboration 5.02s
+	fix level params 98.3ms
+	import 3.47s
+	initialization 24.6ms
+	instantiate metavars 84.3ms
+	interpretation 5.18s
+	let-to-have transformation 168ms
+	linting 739ms
+	module linting 0.00125ms
+	norm_num 154ms
+	overlappingInstancesLinter 122ms
+	parsing 209ms
+	process pre-definitions 537ms
+	ring 236ms
+	share common exprs 360ms
+	simp 828ms
+	tactic execution 9.23s
+	tacticAnalysis 599ms
+	type checking 11.5s
+	typeclass inference 45.7s
+ℹ [8943/8960] Replayed OAI.Geometry.HarmonicGrowth.InsertedWord
+info: stderr:
+cumulative profiling times:
+	.olean serialization 390ms
+	C code generation 0.419ms
+	attribute application 4.55ms
+	congr simp thm 12.5ms
+	dsimp 8.26ms
+	elaboration 888ms
+	fix level params 10.9ms
+	import 3.77s
+	initialization 25.4ms
+	instantiate metavars 9.03ms
+	interpretation 1.11s
+	let-to-have transformation 55.4ms
+	linting 131ms
+	module linting 0.00122ms
+	norm_num 68.7ms
+	overlappingInstancesLinter 32.5ms
+	parsing 55.6ms
+	process pre-definitions 94.4ms
+	ring 62.2ms
+	share common exprs 42.9ms
+	simp 380ms
+	tactic execution 1.48s
+	tacticAnalysis 138ms
+	type checking 2.02s
+	typeclass inference 9.95s
+ℹ [8944/8960] Replayed OAI.Geometry.HarmonicGrowth.EndpointBounds
+info: stderr:
+cumulative profiling times:
+	.olean serialization 1s
+	C code generation 0.474ms
+	attribute application 23.7ms
+	congr simp thm 15.6ms
+	dsimp 80.4ms
+	elaboration 3.96s
+	fix level params 77ms
+	import 3.64s
+	initialization 24.3ms
+	instantiate metavars 88.4ms
+	interpretation 4.1s
+	let-to-have transformation 579ms
+	linting 329ms
+	module linting 0.00126ms
+	norm_num 472ms
+	overlappingInstancesLinter 77.8ms
+	parsing 137ms
+	process pre-definitions 441ms
+	ring 263ms
+	share common exprs 297ms
+	simp 229ms
+	tactic execution 9.72s
+	tacticAnalysis 328ms
+	type checking 16.6s
+	typeclass inference 28.1s
+ℹ [8945/8960] Replayed OAI.Geometry.HarmonicGrowth.ControlWords
+info: stderr:
+cumulative profiling times:
+	.olean serialization 599ms
+	C code generation 1.15ms
+	attribute application 13.5ms
+	compilation (IR) 0.489ms
+	compilation (LCNF base) 8.77ms
+	compilation (LCNF impure) 2.4ms
+	compilation (LCNF mono) 4.57ms
+	congr simp thm 59.1ms
+	dsimp 26.9ms
+	elaboration 1.29s
+	fix level params 34ms
+	import 3.61s
+	initialization 24.3ms
+	instantiate metavars 51.9ms
+	interpretation 3.48s
+	let-to-have transformation 37.6ms
+	linting 156ms
+	module linting 0.00129ms
+	norm_num 14.5ms
+	overlappingInstancesLinter 48.6ms
+	parsing 84.8ms
+	process pre-definitions 218ms
+	ring 15.7ms
+	share common exprs 110ms
+	simp 4.65s
+	tactic execution 4.59s
+	tacticAnalysis 187ms
+	type checking 5.86s
+	typeclass inference 14.5s
+ℹ [8946/8960] Replayed OAI.Geometry.HarmonicGrowth.PulseSystem
+info: stderr:
+cumulative profiling times:
+	.olean serialization 569ms
+	C code generation 0.328ms
+	attribute application 6.53ms
+	blocked (unaccounted) 1.44s
+	congr simp thm 70.1ms
+	dsimp 7.68ms
+	elaboration 890ms
+	fix level params 11.1ms
+	import 3.51s
+	initialization 24.5ms
+	instantiate metavars 7.97ms
+	interpretation 637ms
+	let-to-have transformation 82.6ms
+	linting 63.7ms
+	module linting 0.00141ms
+	norm_num 2.61ms
+	overlappingInstancesLinter 20.8ms
+	parsing 32.8ms
+	process pre-definitions 67.2ms
+	ring 12.2ms
+	share common exprs 29.3ms
+	simp 68ms
+	tactic execution 921ms
+	tacticAnalysis 83.6ms
+	type checking 3.75s
+	typeclass inference 3.25s
+ℹ [8947/8960] Replayed OAI.Geometry.HarmonicGrowth.Curvature
+info: stderr:
+cumulative profiling times:
+	.olean serialization 581ms
+	C code generation 1.43ms
+	attribute application 0.689ms
+	blocked (unaccounted) 1.94s
+	compilation (IR) 0.547ms
+	compilation (LCNF base) 10.3ms
+	compilation (LCNF impure) 2.11ms
+	compilation (LCNF mono) 7.99ms
+	congr simp thm 16.7ms
+	dsimp 14.8ms
+	elaboration 953ms
+	fix level params 20.4ms
+	import 3.44s
+	initialization 24.4ms
+	instantiate metavars 46ms
+	interpretation 5.51s
+	let-to-have transformation 7.17ms
+	linting 456ms
+	module linting 0.00128ms
+	norm_num 157ms
+	overlappingInstancesLinter 29.3ms
+	parsing 65.2ms
+	process pre-definitions 206ms
+	ring 750ms
+	share common exprs 339ms
+	simp 1.75s
+	tactic execution 966ms
+	tacticAnalysis 229ms
+	type checking 1.39s
+	typeclass inference 3.2s
+ℹ [8948/8960] Replayed OAI.Geometry.HarmonicGrowth.Profiles
+info: stderr:
+cumulative profiling times:
+	.olean serialization 429ms
+	C code generation 0.737ms
+	attribute application 1.1ms
+	blocked (unaccounted) 976ms
+	compilation (IR) 0.217ms
+	compilation (LCNF base) 3.26ms
+	compilation (LCNF impure) 1.07ms
+	compilation (LCNF mono) 1.75ms
+	congr simp thm 15.7ms
+	dsimp 51.8ms
+	elaboration 736ms
+	fix level params 13ms
+	import 3.56s
+	initialization 24.2ms
+	instantiate metavars 31.7ms
+	interpretation 5.38s
+	let-to-have transformation 1.8ms
+	linting 229ms
+	module linting 0.00134ms
+	norm_num 1.45s
+	overlappingInstancesLinter 32.6ms
+	parsing 82.1ms
+	process pre-definitions 160ms
+	ring 520ms
+	share common exprs 187ms
+	simp 517ms
+	tactic execution 2.29s
+	tacticAnalysis 250ms
+	type checking 1.13s
+	typeclass inference 4.71s
+ℹ [8949/8960] Replayed OAI.Geometry.HarmonicGrowth.AngularStream
+info: stderr:
+cumulative profiling times:
+	.olean serialization 276ms
+	C code generation 0.632ms
+	attribute application 0.757ms
+	blocked (unaccounted) 9.72ms
+	compilation (IR) 0.175ms
+	compilation (LCNF base) 1.47ms
+	compilation (LCNF impure) 0.833ms
+	compilation (LCNF mono) 1.24ms
+	congr simp thm 5.11ms
+	dsimp 12.4ms
+	elaboration 219ms
+	fix level params 3.56ms
+	import 3.59s
+	initialization 24.7ms
+	instantiate metavars 4.04ms
+	interpretation 737ms
+	let-to-have transformation 0.534ms
+	linting 59.6ms
+	module linting 0.00111ms
+	norm_num 51ms
+	overlappingInstancesLinter 17.5ms
+	parsing 26.8ms
+	process pre-definitions 25.3ms
+	ring 45.4ms
+	share common exprs 21ms
+	simp 163ms
+	tactic execution 430ms
+	tacticAnalysis 67.9ms
+	type checking 200ms
+	typeclass inference 1.52s
+ℹ [8950/8960] Replayed OAI.Geometry.HarmonicGrowth.GlobalControl
+info: stderr:
+cumulative profiling times:
+	.olean serialization 678ms
+	C code generation 0.462ms
+	attribute application 25.8ms
+	blocked (unaccounted) 797ms
+	congr simp thm 33.3ms
+	dsimp 12.7ms
+	elaboration 1.96s
+	fix level params 26.2ms
+	import 3.54s
+	initialization 24.8ms
+	instantiate metavars 25.2ms
+	interpretation 1.87s
+	let-to-have transformation 2.4ms
+	linting 189ms
+	module linting 0.00157ms
+	norm_num 79.3ms
+	overlappingInstancesLinter 52.4ms
+	parsing 79ms
+	process pre-definitions 142ms
+	ring 114ms
+	share common exprs 95.9ms
+	simp 238ms
+	tactic execution 2.35s
+	tacticAnalysis 240ms
+	type checking 33.8s
+	typeclass inference 8.77s
+ℹ [8951/8960] Replayed OAI.Geometry.HarmonicGrowth.StreamData
+info: stderr:
+cumulative profiling times:
+	.olean serialization 493ms
+	C code generation 0.717ms
+	attribute application 18.6ms
+	blocked (unaccounted) 4.27s
+	compilation (IR) 0.184ms
+	compilation (LCNF base) 4.34ms
+	compilation (LCNF impure) 0.81ms
+	compilation (LCNF mono) 1.65ms
+	congr simp thm 25.7ms
+	dsimp 13.2ms
+	elaboration 2.08s
+	fix level params 11.7ms
+	import 3.59s
+	initialization 24.6ms
+	instantiate metavars 17.6ms
+	interpretation 1.91s
+	let-to-have transformation 4.28ms
+	linting 128ms
+	module linting 0.00126ms
+	norm_num 403ms
+	overlappingInstancesLinter 32.9ms
+	parsing 46.6ms
+	process pre-definitions 158ms
+	ring 191ms
+	share common exprs 94.9ms
+	simp 307ms
+	tactic execution 6s
+	tacticAnalysis 127ms
+	type checking 3.31s
+	typeclass inference 17s
+ℹ [8952/8960] Replayed OAI.Geometry.HarmonicGrowth.Cycling
+info: stderr:
+cumulative profiling times:
+	.olean serialization 281ms
+	C code generation 0.827ms
+	attribute application 0.347ms
+	compilation (IR) 0.305ms
+	compilation (LCNF base) 3.02ms
+	compilation (LCNF impure) 1.49ms
+	compilation (LCNF mono) 2.83ms
+	congr simp thm 13.5ms
+	dsimp 18.7ms
+	elaboration 209ms
+	fix level params 3.46ms
+	import 3.53s
+	initialization 24.3ms
+	instantiate metavars 5.71ms
+	interpretation 760ms
+	let-to-have transformation 0.642ms
+	linting 56.8ms
+	module linting 0.00128ms
+	norm_num 9.24ms
+	overlappingInstancesLinter 15.8ms
+	parsing 28.9ms
+	process pre-definitions 31.3ms
+	ring 37.5ms
+	share common exprs 18.8ms
+	simp 255ms
+	tactic execution 555ms
+	tacticAnalysis 76.4ms
+	type checking 193ms
+	typeclass inference 1.49s
+ℹ [8953/8960] Replayed OAI.Geometry.HarmonicGrowth.Counting
+info: stderr:
+cumulative profiling times:
+	.olean serialization 4.98s
+	C code generation 29.8ms
+	attribute application 2.49ms
+	blocked (unaccounted) 2.31s
+	compilation (IR) 11.7ms
+	compilation (LCNF base) 95.1ms
+	compilation (LCNF impure) 59.3ms
+	compilation (LCNF mono) 69.6ms
+	congr simp thm 538ms
+	elaboration 2.75s
+	fix level params 218ms
+	import 3.7s
+	initialization 24.6ms
+	instantiate metavars 15.5ms
+	interpretation 137s
+	let-to-have transformation 1.93ms
+	linting 263ms
+	module linting 0.00119ms
+	norm_num 104s
+	overlappingInstancesLinter 63.8ms
+	parsing 151ms
+	process pre-definitions 5.44s
+	ring 259ms
+	share common exprs 4.39s
+	simp 157ms
+	tactic execution 676ms
+	tacticAnalysis 283ms
+	type checking 22.9s
+	typeclass inference 30.9s
+ℹ [8954/8960] Replayed OAI.Geometry.HarmonicGrowth.HopfSpectrum
+info: stderr:
+cumulative profiling times:
+	.olean serialization 434ms
+	C code generation 0.934ms
+	attribute application 1.92ms
+	blocked (unaccounted) 317ms
+	compilation (IR) 0.29ms
+	compilation (LCNF base) 12.9ms
+	compilation (LCNF impure) 1.45ms
+	compilation (LCNF mono) 2.6ms
+	congr simp thm 14.4ms
+	elaboration 910ms
+	fix level params 12.5ms
+	import 3.63s
+	initialization 25ms
+	instantiate metavars 20.8ms
+	interpretation 1.68s
+	let-to-have transformation 1.49ms
+	linting 132ms
+	module linting 0.00116ms
+	norm_num 93.2ms
+	overlappingInstancesLinter 35ms
+	parsing 44.6ms
+	process pre-definitions 146ms
+	ring 178ms
+	share common exprs 73.4ms
+	simp 1.31s
+	tactic execution 4.14s
+	tacticAnalysis 124ms
+	type checking 2.04s
+	typeclass inference 5.78s
+ℹ [8955/8960] Replayed OAI.Geometry.HarmonicGrowth.SpectralSelection
+info: stderr:
+cumulative profiling times:
+	.olean serialization 326ms
+	C code generation 0.529ms
+	attribute application 0.629ms
+	compilation (IR) 0.0516ms
+	compilation (LCNF base) 0.696ms
+	compilation (LCNF impure) 0.18ms
+	compilation (LCNF mono) 0.258ms
+	congr simp thm 14.6ms
+	dsimp 0.576ms
+	elaboration 132ms
+	fix level params 3.31ms
+	import 3.64s
+	initialization 25ms
+	instantiate metavars 5.1ms
+	interpretation 1.21s
+	let-to-have transformation 0.576ms
+	linting 48.5ms
+	module linting 0.00154ms
+	norm_num 206ms
+	overlappingInstancesLinter 9.71ms
+	parsing 22.1ms
+	process pre-definitions 32.9ms
+	ring 51ms
+	share common exprs 34.1ms
+	simp 122ms
+	tactic execution 4.39s
+	tacticAnalysis 63.2ms
+	type checking 392ms
+	typeclass inference 1.09s
+ℹ [8956/8960] Replayed OAI.Geometry.HarmonicGrowth.PolarGeometry
+info: stderr:
+cumulative profiling times:
+	.olean serialization 364ms
+	C code generation 0.615ms
+	attribute application 0.657ms
+	blocked (unaccounted) 24.3ms
+	compilation (IR) 0.0586ms
+	compilation (LCNF base) 0.901ms
+	compilation (LCNF impure) 0.223ms
+	compilation (LCNF mono) 0.445ms
+	congr simp thm 9.65ms
+	dsimp 21.5ms
+	elaboration 575ms
+	fix level params 7.74ms
+	import 3.58s
+	initialization 24.5ms
+	instantiate metavars 16.8ms
+	interpretation 1.52s
+	let-to-have transformation 3.19ms
+	linting 159ms
+	module linting 0.00123ms
+	norm_num 115ms
+	overlappingInstancesLinter 19ms
+	parsing 44.1ms
+	process pre-definitions 74.7ms
+	ring 202ms
+	share common exprs 103ms
+	simp 2.66s
+	tactic execution 1.16s
+	tacticAnalysis 121ms
+	type checking 735ms
+	typeclass inference 2.12s
+ℹ [8957/8960] Replayed OAI.Geometry.HarmonicGrowth.Intrinsic
+info: stderr:
+cumulative profiling times:
+	.olean serialization 314ms
+	C code generation 0.42ms
+	attribute application 0.374ms
+	compilation (IR) 0.0584ms
+	compilation (LCNF base) 0.951ms
+	compilation (LCNF impure) 0.23ms
+	compilation (LCNF mono) 0.456ms
+	congr simp thm 7.34ms
+	dsimp 7.34ms
+	elaboration 197ms
+	fix level params 3.95ms
+	import 3.6s
+	initialization 25ms
+	instantiate metavars 7.32ms
+	interpretation 1.26s
+	let-to-have transformation 1.38ms
+	linting 81.5ms
+	module linting 0.00159ms
+	norm_num 53.1ms
+	overlappingInstancesLinter 12.5ms
+	parsing 34.2ms
+	process pre-definitions 34.4ms
+	ring 87.6ms
+	share common exprs 37ms
+	simp 251ms
+	tactic execution 810ms
+	tacticAnalysis 83.4ms
+	type checking 359ms
+	typeclass inference 1.98s
+ℹ [8958/8960] Replayed OAI.Geometry.HarmonicGrowth.Realization
+info: stderr:
+cumulative profiling times:
+	.olean serialization 417ms
+	C code generation 0.711ms
+	attribute application 0.794ms
+	blocked (unaccounted) 1.2s
+	compilation (IR) 0.101ms
+	compilation (LCNF base) 1.23ms
+	compilation (LCNF impure) 0.405ms
+	compilation (LCNF mono) 0.652ms
+	congr simp thm 43.9ms
+	dsimp 2.09ms
+	elaboration 405ms
+	fix level params 5.3ms
+	import 3.42s
+	initialization 25ms
+	instantiate metavars 11.8ms
+	interpretation 1.61s
+	let-to-have transformation 1.32ms
+	linting 87ms
+	module linting 0.00138ms
+	norm_num 119ms
+	overlappingInstancesLinter 14.9ms
+	parsing 35.3ms
+	process pre-definitions 67.1ms
+	ring 120ms
+	share common exprs 56.3ms
+	simp 654ms
+	tactic execution 1.15s
+	tacticAnalysis 95.3ms
+	type checking 1.31s
+	typeclass inference 6.38s
+ℹ [8959/8960] Replayed OAI.Geometry.HarmonicGrowth.Growth
+info: stderr:
+cumulative profiling times:
+	.olean serialization 360ms
+	C code generation 0.293ms
+	attribute application 0.655ms
+	congr simp thm 12.9ms
+	dsimp 29.5ms
+	elaboration 849ms
+	fix level params 6.11ms
+	import 3.46s
+	initialization 24.6ms
+	instantiate metavars 14.8ms
+	interpretation 1.76s
+	let-to-have transformation 1.9ms
+	linting 125ms
+	module linting 0.00132ms
+	norm_num 104ms
+	overlappingInstancesLinter 20.8ms
+	parsing 52.7ms
+	process pre-definitions 96.2ms
+	ring 155ms
+	share common exprs 72.9ms
+	simp 160ms
+	tactic execution 2.12s
+	tacticAnalysis 137ms
+	type checking 1.07s
+	typeclass inference 4.5s
+ℹ [8960/8960] Replayed OAI.Geometry.HarmonicGrowth.Main
+info: stderr:
+cumulative profiling times:
+	.olean serialization 290ms
+	C code generation 0.986ms
+	attribute application 0.292ms
+	compilation (IR) 0.236ms
+	compilation (LCNF base) 7.15ms
+	compilation (LCNF impure) 1.26ms
+	compilation (LCNF mono) 3.08ms
+	congr simp thm 4.29ms
+	dsimp 2.5ms
+	elaboration 280ms
+	fix level params 3.45ms
+	import 3.45s
+	initialization 24.5ms
+	instantiate metavars 5.75ms
+	interpretation 569ms
+	let-to-have transformation 0.864ms
+	linting 53.3ms
+	module linting 0.00117ms
+	norm_num 18.6ms
+	overlappingInstancesLinter 10.9ms
+	parsing 27.4ms
+	process pre-definitions 32.1ms
+	ring 41.1ms
+	share common exprs 23.7ms
+	simp 174ms
+	tactic execution 800ms
+	tacticAnalysis 64.8ms
+	type checking 374ms
+	typeclass inference 3.22s
+Build completed successfully (8960 jobs).
