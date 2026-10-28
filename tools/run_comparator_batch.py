@@ -10,7 +10,8 @@ STOP file exists. Outcome is parsed from Comparator's own output, never inferred
 Usage: run_comparator_batch.py LEAN_ROOT OUT.jsonl CONFIG_NAME [CONFIG_NAME...]
   (CONFIG_NAME = ComparatorChallenges/<name>.json basename without .json)
 Env: needs landrun and lean4export on PATH (see ../MANIFEST.txt), COMPARATOR_BIN optional. Each check runs in a systemd unit named
-cmp-<config> (so it can be stopped on its own, and a second check of the same config is skipped); CHECK_MEMMAX (e.g. 30G) caps its memory; CHECK_CPUS (e.g. 24-31) pins it to those CPUs with taskset.
+cmp-<config> (so it can be stopped on its own, and a second check of the same config is skipped); COMPARATOR_NANODA (a nanoda_bin path) is passed to Comparator, and each record names the Comparator and
+nanoda binaries with their sha256 and the nanoda build description; CHECK_MEMMAX (e.g. 30G) caps its memory; CHECK_CPUS (e.g. 24-31) pins it to those CPUs with taskset.
 A check stopped by tools/check_scheduler.py is recorded as outcome "preempted" and is to be re-run.
 """
 import sys, os, json, time, subprocess, re, tempfile, datetime
@@ -62,17 +63,27 @@ def snap():
     return dict(load1=round(os.getloadavg()[0], 1), free_gib=round(shutil.disk_usage("/home").free / 2**30, 1))
 
 
+def sha_info(path):   # sha256 of a binary, and the build description tools/build_nanoda_variant.sh writes next to it
+    import hashlib
+    if not path or not os.path.exists(path): return None, None
+    info = path + ".info"
+    return hashlib.sha256(open(path, "rb").read()).hexdigest(), (open(info).read().strip() if os.path.exists(info) else None)
+
+
 for name in names:
+    safe = name.replace("/", "__")   # a config in a subdirectory (HodgeConjectureCMAbelianVarieties/main) in unit and file names
     if name in done:
         continue
     if os.path.exists(stopfile):
         print("STOP file present; exiting"); break
-    if subprocess.run(["systemctl", "--user", "is-active", "--quiet", f"cmp-{name}"]).returncode == 0:
-        print(name, "is already being checked (unit cmp-%s); skipping" % name, flush=True); continue
+    if subprocess.run(["systemctl", "--user", "is-active", "--quiet", f"cmp-{safe}"]).returncode == 0:
+        print(name, "is already being checked (unit cmp-%s); skipping" % safe, flush=True); continue
     cfg = json.load(open(os.path.join(root, f"ComparatorChallenges/{name}.json")))
     logdir = os.path.join(os.path.dirname(os.path.abspath(out)), "logs"); os.makedirs(logdir, exist_ok=True)
     rec = dict(config=name, solution=cfg["solution_module"], challenge=cfg["challenge_module"],
-               nanoda=bool(cfg.get("enable_nanoda")), started=datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"))
+               nanoda=bool(cfg.get("enable_nanoda")), skip_builtin_kernel=bool(cfg.get("skip_builtin_kernel")),
+               comparator=comparator, comparator_sha256=sha_info(comparator)[0], nanoda_bin=os.environ.get("COMPARATOR_NANODA"),
+               nanoda_sha256=sha_info(os.environ.get("COMPARATOR_NANODA"))[0], nanoda_build=sha_info(os.environ.get("COMPARATOR_NANODA"))[1], started=datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"))
     sol = cfg["solution_module"]
     srcf = os.path.join(root, *sol.split(".")) + ".lean"
     rec.update(closure_in_repo=CLOSURE.get(sol, {}).get("in_repo_closure"), predicted_vmas=PRED.get(sol, {}).get("predicted_vmas"),
@@ -83,14 +94,14 @@ for name in names:
         rc_b = 0
         rec.update(build_skipped=True, batch=os.environ.get("BATCH_ID"), build_exit=0)
     else:
-        bmon = os.path.join(logdir, f"{name}.buildmon")
+        bmon = os.path.join(logdir, f"{safe}.buildmon")
         rc_b, t_b = run(["python3", "-I", os.path.join(here, "vmamon.py"), "--out", bmon, "--interval", "0.2", "--label", name + "-build", "--",
-                         "lake", "build", cfg["challenge_module"], cfg["solution_module"]], os.path.join(logdir, f"{name}.build.driver.log"))
+                         "lake", "build", cfg["challenge_module"], cfg["solution_module"]], os.path.join(logdir, f"{safe}.build.driver.log"))
         try:
             bs = json.load(open(os.path.join(bmon, "summary.json")))
             rc_b = bs["exit_code"]
             btext = open(os.path.join(bmon, "stdout.log"), errors="replace").read()
-            open(os.path.join(logdir, f"{name}.build.log"), "w").write(btext)
+            open(os.path.join(logdir, f"{safe}.build.log"), "w").write(btext)
             rec.update(build_peak_vmas=bs["peak_per_process_vmas_sampled"], build_peak_procs=bs["peak_concurrent_processes"],
                        build_peak_proc_rss_gib=round(max([t["max_rss"] for t in bs["top_processes"]] or [0]) / 2**30, 1),
                        build_vmamon_class=bs["classification"], **build_stats(btext))
@@ -98,12 +109,13 @@ for name in names:
             rec.update(build_monitor_error=str(e)[:100])
         rec.update(build_exit=rc_b, build_s=round(t_b, 1))
     if rc_b == 0:
-        mon = os.path.join(logdir, f"{name}.mon")
+        mon = os.path.join(logdir, f"{safe}.mon")
         env_path = os.environ["PATH"]
         # vmamon runs INSIDE the sandboxed service so it sees the comparator process tree.
-        cmd = ["systemd-run", "--user", "--wait", "--pipe", "--collect", f"--unit=cmp-{name}", "--property=RestrictAddressFamilies=~AF_UNIX",
+        cmd = ["systemd-run", "--user", "--wait", "--pipe", "--collect", f"--unit=cmp-{safe}", "--property=RestrictAddressFamilies=~AF_UNIX",
                *(["--property=MemoryMax=" + os.environ["CHECK_MEMMAX"]] if os.environ.get("CHECK_MEMMAX") else []),
-               "-E", f"PATH={env_path}", "-E", f"HOME={os.environ['HOME']}", f"--working-directory={root}",
+               "-E", f"PATH={env_path}", "-E", f"HOME={os.environ['HOME']}",
+               *(["-E", "COMPARATOR_NANODA=" + os.environ["COMPARATOR_NANODA"]] if os.environ.get("COMPARATOR_NANODA") else []), f"--working-directory={root}",
                *(["taskset", "-c", os.environ["CHECK_CPUS"]] if os.environ.get("CHECK_CPUS") else []),
                "python3", "-I", os.path.join(here, "vmamon.py"), "--out", mon, "--interval", "0.1", "--label", name, "--",
                "lake", "env", comparator, f"ComparatorChallenges/{name}.json"]
@@ -124,11 +136,11 @@ for name in names:
                    vmamon_class=s.get("classification"),
                    outcome="accepted" if ok else ("tool_missing:" + tool_missing[0] if tool_missing else "rejected_or_error"),
                    detail=(m[-1][:300] if m and not ok else ""))
-        pre = os.path.join(os.path.dirname(os.path.abspath(out)), "preempted", name)     # set by tools/check_scheduler.py before it stops the unit
+        pre = os.path.join(os.path.dirname(os.path.abspath(out)), "preempted", safe)     # set by tools/check_scheduler.py before it stops the unit
         if os.path.exists(pre):
             os.remove(pre); rec.update(outcome="preempted", detail="stopped by check_scheduler under memory pressure; to be re-run")
     else:
-        rec.update(outcome="build_failed", detail=tail(os.path.join(logdir, f"{name}.build.log"), 400))
+        rec.update(outcome="build_failed", detail=tail(os.path.join(logdir, f"{safe}.build.log"), 400))
     with open(out, "a") as f:
         f.write(json.dumps(rec) + "\n")
     print(rec["config"], rec["outcome"], rec.get("build_s"), rec.get("cmp_s"), flush=True)

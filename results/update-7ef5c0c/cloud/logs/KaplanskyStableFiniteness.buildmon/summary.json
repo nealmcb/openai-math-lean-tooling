@@ -1,0 +1,81 @@
+{
+ "label": "KaplanskyStableFiniteness-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.KaplanskyStableFiniteness",
+  "OAI.Analysis.Kaplansky.StableFiniteness"
+ ],
+ "started": "2026-10-28T17:33:45+00:00",
+ "wall_s": 8.327,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 37,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5957,
+ "peak_concurrent_processes": 2,
+ "peak_sum_vmas_sampled": 5975,
+ "peak_sum_rss_bytes": 1968558080,
+ "min_mem_available_kb": 112870896,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 16602,
+   "comm": "lake",
+   "cmd": "/home/ubuntu/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake build ComparatorChallenges.KaplanskyStableFiniteness OAI.Analysis.Kaplansky.StableFiniteness",
+   "max_vmas": 5957,
+   "max_rss": 1968558080,
+   "cpu_s": 8.88,
+   "minflt": 255999,
+   "majflt": 0,
+   "rchar": 997042588,
+   "wchar": 4902392
+  },
+  {
+   "pid": 16659,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 46,
+   "max_rss": 9457664,
+   "cpu_s": 0.02,
+   "minflt": 589,
+   "majflt": 0,
+   "rchar": 491101,
+   "wchar": 45057
+  },
+  {
+   "pid": 16680,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 45,
+   "max_rss": 9232384,
+   "cpu_s": 0.02,
+   "minflt": 1143,
+   "majflt": 0,
+   "rchar": 391072,
+   "wchar": 290817
+  },
+  {
+   "pid": 16735,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 44,
+   "max_rss": 10006528,
+   "cpu_s": 0.02,
+   "minflt": 1368,
+   "majflt": 0,
+   "rchar": 198351,
+   "wchar": 200705
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 5.4,
+ "children_cpu_sys_s": 6.01
+}

@@ -1,0 +1,69 @@
+{
+ "label": "SubexponentialSAT-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.SubexponentialSAT",
+  "OAI.Algorithms.SubexponentialSAT.Main"
+ ],
+ "started": "2026-10-28T17:01:27+00:00",
+ "wall_s": 8.057,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 36,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5993,
+ "peak_concurrent_processes": 2,
+ "peak_sum_vmas_sampled": 5997,
+ "peak_sum_rss_bytes": 2018041856,
+ "min_mem_available_kb": 124113852,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 9380,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5993,
+   "max_rss": 2018041856,
+   "cpu_s": 9.78,
+   "minflt": 259832,
+   "majflt": 0,
+   "rchar": 1040825360,
+   "wchar": 4840094
+  },
+  {
+   "pid": 9609,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 69,
+   "max_rss": 15613952,
+   "cpu_s": 0.05,
+   "minflt": 2509,
+   "majflt": 0,
+   "rchar": 478739,
+   "wchar": 368641
+  },
+  {
+   "pid": 9591,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 45,
+   "max_rss": 8114176,
+   "cpu_s": 0.02,
+   "minflt": 1034,
+   "majflt": 0,
+   "rchar": 211782,
+   "wchar": 40961
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 6.18,
+ "children_cpu_sys_s": 5.68
+}

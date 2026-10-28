@@ -1,0 +1,14 @@
+{
+  "challenge_module": "ComparatorChallenges.HodgeConjectureCMAbelianVarieties.Challenge",
+  "solution_module": "ComparatorChallenges.HodgeConjectureCMAbelianVarieties.Solution",
+  "theorem_names": [
+    "HodgeCM.hodge_conjecture_for_cm_abelian_varieties"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

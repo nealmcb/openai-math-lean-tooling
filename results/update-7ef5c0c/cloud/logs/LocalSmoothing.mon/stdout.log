@@ -1,0 +1,86 @@
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+Building ComparatorChallenges.LocalSmoothing
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8924/8924] Replayed ComparatorChallenges.LocalSmoothing
+warning: ComparatorChallenges/LocalSmoothing.lean:84:8: declaration uses `sorry`
+warning: ComparatorChallenges/LocalSmoothing.lean:99:8: declaration uses `sorry`
+warning: ComparatorChallenges/LocalSmoothing.lean:109:8: declaration uses `sorry`
+warning: ComparatorChallenges/LocalSmoothing.lean:120:8: declaration uses `sorry`
+warning: ComparatorChallenges/LocalSmoothing.lean:129:8: declaration uses `sorry`
+warning: ComparatorChallenges/LocalSmoothing.lean:134:8: declaration uses `sorry`
+Build completed successfully (8924 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.Analysis.Fourier.LocalSmoothing.Comparator.euclidean_local_smoothing, OAI.Analysis.Fourier.LocalSmoothing.Comparator.bochner_riesz, OAI.Analysis.Fourier.LocalSmoothing.Comparator.spherical_restriction, OAI.Analysis.Fourier.LocalSmoothing.Comparator.kakeya_maximal, OAI.Analysis.Fourier.LocalSmoothing.Comparator.kakeya, OAI.Analysis.Fourier.LocalSmoothing.Comparator.stein_square, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.LocalSmoothing
+Building OAI.Analysis.Fourier.LocalSmoothing.Comparator
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+Build completed successfully (11184 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.Analysis.Fourier.LocalSmoothing.Comparator.euclidean_local_smoothing, OAI.Analysis.Fourier.LocalSmoothing.Comparator.bochner_riesz, OAI.Analysis.Fourier.LocalSmoothing.Comparator.spherical_restriction, OAI.Analysis.Fourier.LocalSmoothing.Comparator.kakeya_maximal, OAI.Analysis.Fourier.LocalSmoothing.Comparator.kakeya, OAI.Analysis.Fourier.LocalSmoothing.Comparator.stein_square, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.Analysis.Fourier.LocalSmoothing.Comparator
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Lean default kernel replay skipped by configuration (skip_builtin_kernel)
+Your solution is okay!

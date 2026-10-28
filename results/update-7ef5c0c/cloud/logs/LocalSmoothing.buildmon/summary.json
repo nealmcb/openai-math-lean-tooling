@@ -1,0 +1,45 @@
+{
+ "label": "LocalSmoothing-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.LocalSmoothing",
+  "OAI.Analysis.Fourier.LocalSmoothing.Comparator"
+ ],
+ "started": "2026-10-28T17:10:02+00:00",
+ "wall_s": 9.281,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 41,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5992,
+ "peak_concurrent_processes": 1,
+ "peak_sum_vmas_sampled": 5992,
+ "peak_sum_rss_bytes": 1998323712,
+ "min_mem_available_kb": 110076944,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 11062,
+   "comm": "lake",
+   "cmd": "/home/ubuntu/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake build ComparatorChallenges.LocalSmoothing OAI.Analysis.Fourier.LocalSmoothing.Comparator",
+   "max_vmas": 5992,
+   "max_rss": 1998323712,
+   "cpu_s": 9.99,
+   "minflt": 256270,
+   "majflt": 0,
+   "rchar": 1017959834,
+   "wchar": 4835423
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 5.93,
+ "children_cpu_sys_s": 7.14
+}

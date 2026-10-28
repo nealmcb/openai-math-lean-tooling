@@ -1,0 +1,45 @@
+{
+ "label": "LittleFinitistic-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.LittleFinitistic",
+  "OAI.Algebra.Finitistic.Main"
+ ],
+ "started": "2026-10-28T17:28:14+00:00",
+ "wall_s": 6.12,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 27,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5953,
+ "peak_concurrent_processes": 1,
+ "peak_sum_vmas_sampled": 5953,
+ "peak_sum_rss_bytes": 1855553536,
+ "min_mem_available_kb": 123285360,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 14570,
+   "comm": "lake",
+   "cmd": "/home/ubuntu/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake build ComparatorChallenges.LittleFinitistic OAI.Algebra.Finitistic.Main",
+   "max_vmas": 5953,
+   "max_rss": 1855553536,
+   "cpu_s": 4.26,
+   "minflt": 254343,
+   "majflt": 0,
+   "rchar": 923373695,
+   "wchar": 4835017
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 1.91,
+ "children_cpu_sys_s": 4.96
+}

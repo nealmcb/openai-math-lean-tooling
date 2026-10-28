@@ -1,0 +1,45 @@
+{
+ "label": "HodgeConjectureCMAbelianVarieties/main-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.HodgeConjectureCMAbelianVarieties.Challenge",
+  "ComparatorChallenges.HodgeConjectureCMAbelianVarieties.Solution"
+ ],
+ "started": "2026-10-28T17:01:27+00:00",
+ "wall_s": 14.595,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 66,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5977,
+ "peak_concurrent_processes": 1,
+ "peak_sum_vmas_sampled": 5977,
+ "peak_sum_rss_bytes": 2322649088,
+ "min_mem_available_kb": 123228676,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 9377,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5977,
+   "max_rss": 2322649088,
+   "cpu_s": 23.06,
+   "minflt": 259964,
+   "majflt": 0,
+   "rchar": 1363215591,
+   "wchar": 4835071
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 16.56,
+ "children_cpu_sys_s": 8.55
+}

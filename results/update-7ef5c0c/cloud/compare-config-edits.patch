@@ -1,0 +1,169 @@
+diff --git a/lean/ComparatorChallenges/DefocusingNLS.json b/lean/ComparatorChallenges/DefocusingNLS.json
+index 102d91046..d441a9988 100644
+--- a/lean/ComparatorChallenges/DefocusingNLS.json
++++ b/lean/ComparatorChallenges/DefocusingNLS.json
+@@ -12,5 +12,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/ElementaryPositivity.json b/lean/ComparatorChallenges/ElementaryPositivity.json
+index ac44283ea..a7e375ef4 100644
+--- a/lean/ComparatorChallenges/ElementaryPositivity.json
++++ b/lean/ComparatorChallenges/ElementaryPositivity.json
+@@ -12,5 +12,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/FinitisticAsymmetry.json b/lean/ComparatorChallenges/FinitisticAsymmetry.json
+index 0631e74d2..a663cf37f 100644
+--- a/lean/ComparatorChallenges/FinitisticAsymmetry.json
++++ b/lean/ComparatorChallenges/FinitisticAsymmetry.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/HarmonicGrowth.json b/lean/ComparatorChallenges/HarmonicGrowth.json
+index 9884b60ea..8a79007e0 100644
+--- a/lean/ComparatorChallenges/HarmonicGrowth.json
++++ b/lean/ComparatorChallenges/HarmonicGrowth.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/HodgeConjectureCMAbelianVarieties/main.json b/lean/ComparatorChallenges/HodgeConjectureCMAbelianVarieties/main.json
+index 7a3ee084f..82f38c76a 100644
+--- a/lean/ComparatorChallenges/HodgeConjectureCMAbelianVarieties/main.json
++++ b/lean/ComparatorChallenges/HodgeConjectureCMAbelianVarieties/main.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/KaplanskyQuasitrace.json b/lean/ComparatorChallenges/KaplanskyQuasitrace.json
+index 1799a3b03..6d4aff0ad 100644
+--- a/lean/ComparatorChallenges/KaplanskyQuasitrace.json
++++ b/lean/ComparatorChallenges/KaplanskyQuasitrace.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/KaplanskyStableFiniteness.json b/lean/ComparatorChallenges/KaplanskyStableFiniteness.json
+index 7eeca66ec..c02fa2dc5 100644
+--- a/lean/ComparatorChallenges/KaplanskyStableFiniteness.json
++++ b/lean/ComparatorChallenges/KaplanskyStableFiniteness.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/LittleFinitistic.json b/lean/ComparatorChallenges/LittleFinitistic.json
+index 8c6846e6c..3f21b9de2 100644
+--- a/lean/ComparatorChallenges/LittleFinitistic.json
++++ b/lean/ComparatorChallenges/LittleFinitistic.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/LocalSmoothing.json b/lean/ComparatorChallenges/LocalSmoothing.json
+index 88c1e1c33..e61de550d 100644
+--- a/lean/ComparatorChallenges/LocalSmoothing.json
++++ b/lean/ComparatorChallenges/LocalSmoothing.json
+@@ -13,5 +13,7 @@
+     "propext",
+     "Quot.sound",
+     "Classical.choice"
+-  ]
++  ],
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/LogKodairaFiberNegative.json b/lean/ComparatorChallenges/LogKodairaFiberNegative.json
+index ce98b6e80..ec3ef4e7e 100644
+--- a/lean/ComparatorChallenges/LogKodairaFiberNegative.json
++++ b/lean/ComparatorChallenges/LogKodairaFiberNegative.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/MaximalSeshadriConstants.json b/lean/ComparatorChallenges/MaximalSeshadriConstants.json
+index 965f87b11..bbf1aa6f2 100644
+--- a/lean/ComparatorChallenges/MaximalSeshadriConstants.json
++++ b/lean/ComparatorChallenges/MaximalSeshadriConstants.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/OccupiedOverlap.json b/lean/ComparatorChallenges/OccupiedOverlap.json
+index 017e050fb..c540e82a5 100644
+--- a/lean/ComparatorChallenges/OccupiedOverlap.json
++++ b/lean/ComparatorChallenges/OccupiedOverlap.json
+@@ -11,5 +11,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/SpinAngle.json b/lean/ComparatorChallenges/SpinAngle.json
+index d89eb986d..30eab1618 100644
+--- a/lean/ComparatorChallenges/SpinAngle.json
++++ b/lean/ComparatorChallenges/SpinAngle.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }
+diff --git a/lean/ComparatorChallenges/SubexponentialSAT.json b/lean/ComparatorChallenges/SubexponentialSAT.json
+index d4cc9e707..627df2593 100644
+--- a/lean/ComparatorChallenges/SubexponentialSAT.json
++++ b/lean/ComparatorChallenges/SubexponentialSAT.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }

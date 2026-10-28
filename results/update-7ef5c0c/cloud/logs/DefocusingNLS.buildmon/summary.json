@@ -1,0 +1,45 @@
+{
+ "label": "DefocusingNLS-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.DefocusingNLS",
+  "OAI.MathematicalPhysics.DefocusingNLS.MainTheorems"
+ ],
+ "started": "2026-10-28T17:20:29+00:00",
+ "wall_s": 9.613,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 42,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5985,
+ "peak_concurrent_processes": 1,
+ "peak_sum_vmas_sampled": 5985,
+ "peak_sum_rss_bytes": 2007007232,
+ "min_mem_available_kb": 125739580,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 11943,
+   "comm": "lake",
+   "cmd": "",
+   "max_vmas": 5985,
+   "max_rss": 2007007232,
+   "cpu_s": 10.45,
+   "minflt": 256675,
+   "majflt": 0,
+   "rchar": 1017444190,
+   "wchar": 4835175
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 6.27,
+ "children_cpu_sys_s": 7.18
+}

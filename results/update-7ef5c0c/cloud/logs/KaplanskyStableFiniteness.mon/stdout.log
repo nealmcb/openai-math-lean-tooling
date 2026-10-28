@@ -1,0 +1,2724 @@
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+Building ComparatorChallenges.KaplanskyStableFiniteness
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+⚠ [8924/8924] Replayed ComparatorChallenges.KaplanskyStableFiniteness
+warning: ComparatorChallenges/KaplanskyStableFiniteness.lean:240:8: declaration uses `sorry`
+Build completed successfully (8924 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.KaplanskyConsequences.stable_finiteness_bundle, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.KaplanskyStableFiniteness
+Building OAI.Analysis.Kaplansky.StableFiniteness
+warning: PrimeNumberTheoremAnd: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/PrimeNumberTheoremAnd' has local changes
+warning: belyi: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/belyi' has local changes
+warning: formal-schemes: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/formal-schemes' has local changes
+warning: elliptic-curves: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/elliptic-curves' has local changes
+warning: tempered-fundamental-groups: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tempered-fundamental-groups' has local changes
+warning: oka: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/oka' has local changes
+warning: orbicurve-cores: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/orbicurve-cores' has local changes
+warning: pi1: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/pi1' has local changes
+warning: heights: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/heights' has local changes
+warning: genl: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/genl' has local changes
+warning: tate-curves-theta: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/tate-curves-theta' has local changes
+warning: iut: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/iut' has local changes
+warning: gromov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/gromov' has local changes
+warning: SphereEversion: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/SphereEversion' has local changes
+warning: schoenflies-lean: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/schoenflies-lean' has local changes
+warning: ClassFieldTheory: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/ClassFieldTheory' has local changes
+warning: AINTLIB: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AINTLIB' has local changes
+warning: AbsorptionCutoff: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/AbsorptionCutoff' has local changes
+warning: StrongPNT: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/StrongPNT' has local changes
+warning: carleson: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/carleson' has local changes
+warning: rellich-kondrachov: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/rellich-kondrachov' has local changes
+warning: Zeta3Irrational: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/Zeta3Irrational' has local changes
+warning: fixed-point-theorems: repository '/home/srv/s/math/openai-math/src/lean/.lake/packages/fixed-point-theorems' has local changes
+ℹ [2085/2312] Replayed OAI.Analysis.Cuntz.Content
+info: stderr:
+cumulative profiling times:
+	.olean serialization 109ms
+	C code generation 0.335ms
+	attribute application 0.753ms
+	blocked (unaccounted) 307ms
+	compilation (IR) 0.0518ms
+	compilation (LCNF base) 0.714ms
+	compilation (LCNF impure) 0.196ms
+	compilation (LCNF mono) 0.441ms
+	congr simp thm 3.69ms
+	elaboration 204ms
+	fix level params 2.66ms
+	import 1.64s
+	initialization 24.4ms
+	instantiate metavars 11.4ms
+	interpretation 851ms
+	let-to-have transformation 0.309ms
+	linting 98.5ms
+	module linting 0.00147ms
+	norm_num 18.6ms
+	overlappingInstancesLinter 40.9ms
+	parsing 20.8ms
+	process pre-definitions 51.5ms
+	ring 45.2ms
+	share common exprs 15.4ms
+	simp 17.8ms
+	tactic execution 393ms
+	tacticAnalysis 99.3ms
+	type checking 178ms
+	typeclass inference 532ms
+ℹ [2112/2312] Replayed OAI.Algebra.OrderedStates.RationalCone
+info: stderr:
+cumulative profiling times:
+	.olean serialization 52.1ms
+	C code generation 0.264ms
+	attribute application 0.0994ms
+	compilation (IR) 0.0303ms
+	compilation (LCNF base) 4.67ms
+	compilation (LCNF impure) 0.123ms
+	compilation (LCNF mono) 0.356ms
+	congr simp thm 2.02ms
+	elaboration 101ms
+	fix level params 3.66ms
+	import 1.32s
+	initialization 24.5ms
+	instantiate metavars 4.45ms
+	interpretation 288ms
+	let-to-have transformation 0.282ms
+	linting 41ms
+	module linting 0.00135ms
+	overlappingInstancesLinter 10.2ms
+	parsing 11.8ms
+	process pre-definitions 30.5ms
+	share common exprs 10.3ms
+	simp 57.1ms
+	tactic execution 534ms
+	tacticAnalysis 43.4ms
+	type checking 122ms
+	typeclass inference 671ms
+ℹ [2113/2312] Replayed OAI.Algebra.OrderedStates.Semigroup
+info: stderr:
+cumulative profiling times:
+	.olean serialization 82.1ms
+	C code generation 1.22ms
+	attribute application 4.32ms
+	blocked (unaccounted) 58.8ms
+	compilation (IR) 0.715ms
+	compilation (LCNF base) 6.45ms
+	compilation (LCNF impure) 3.46ms
+	compilation (LCNF mono) 7.74ms
+	congr simp thm 6.22ms
+	elaboration 230ms
+	fix level params 3.79ms
+	import 1.44s
+	initialization 50ms
+	instantiate metavars 3.38ms
+	interpretation 458ms
+	let-to-have transformation 0.612ms
+	linting 58.6ms
+	module linting 0.00127ms
+	overlappingInstancesLinter 27ms
+	parsing 25.3ms
+	process pre-definitions 35.5ms
+	share common exprs 9.72ms
+	simp 182ms
+	tactic execution 330ms
+	tacticAnalysis 78.2ms
+	type checking 152ms
+	typeclass inference 918ms
+ℹ [3042/3076] Replayed OAI.Analysis.Cuntz.Comparison
+info: stderr:
+cumulative profiling times:
+	.olean serialization 124ms
+	C code generation 0.742ms
+	attribute application 1.1ms
+	blocked (unaccounted) 1.03s
+	compilation (IR) 0.286ms
+	compilation (LCNF base) 2.55ms
+	compilation (LCNF impure) 1.39ms
+	compilation (LCNF mono) 6.25ms
+	congr simp thm 19.5ms
+	dsimp 31.6ms
+	elaboration 246ms
+	fix level params 4.19ms
+	import 1.92s
+	initialization 26.7ms
+	instantiate metavars 9.83ms
+	interpretation 491ms
+	let-to-have transformation 0.336ms
+	linting 53.6ms
+	module linting 0.00132ms
+	overlappingInstancesLinter 26.8ms
+	parsing 19.5ms
+	process pre-definitions 41.1ms
+	share common exprs 11.6ms
+	simp 229ms
+	tactic execution 873ms
+	tacticAnalysis 52.6ms
+	type checking 251ms
+	typeclass inference 2.18s
+ℹ [3043/3076] Replayed OAI.Analysis.Quasitrace.Basic
+info: stderr:
+cumulative profiling times:
+	.olean serialization 118ms
+	C code generation 0.262ms
+	attribute application 0.607ms
+	blocked (unaccounted) 23ms
+	compilation (IR) 0.0369ms
+	compilation (LCNF base) 0.309ms
+	compilation (LCNF impure) 0.207ms
+	compilation (LCNF mono) 0.238ms
+	congr simp thm 6.95ms
+	elaboration 162ms
+	fix level params 4.93ms
+	import 1.51s
+	initialization 24.5ms
+	instantiate metavars 1.48ms
+	interpretation 296ms
+	let-to-have transformation 0.305ms
+	linting 31.7ms
+	module linting 0.00141ms
+	overlappingInstancesLinter 10.9ms
+	parsing 12.3ms
+	process pre-definitions 31.3ms
+	share common exprs 8.27ms
+	simp 45.2ms
+	tactic execution 452ms
+	tacticAnalysis 31.7ms
+	type checking 249ms
+	typeclass inference 2.92s
+ℹ [3044/3076] Replayed OAI.Analysis.Quasitrace.Order
+info: stderr:
+cumulative profiling times:
+	.olean serialization 73.4ms
+	C code generation 0.154ms
+	attribute application 0.247ms
+	blocked (unaccounted) 7.77ms
+	congr simp thm 3.08ms
+	elaboration 32ms
+	fix level params 1.16ms
+	import 1.95s
+	initialization 25.3ms
+	instantiate metavars 0.869ms
+	interpretation 404ms
+	let-to-have transformation 0.0954ms
+	linting 34.2ms
+	module linting 0.00133ms
+	norm_num 8.17ms
+	overlappingInstancesLinter 11.5ms
+	parsing 11.1ms
+	process pre-definitions 13.6ms
+	ring 23.5ms
+	share common exprs 3.89ms
+	simp 60.2ms
+	tactic execution 145ms
+	tacticAnalysis 25.9ms
+	type checking 81.3ms
+	typeclass inference 473ms
+ℹ [3045/3076] Replayed OAI.Analysis.Quasitrace.Infiniteness
+info: stderr:
+cumulative profiling times:
+	.olean serialization 76.3ms
+	C code generation 0.52ms
+	attribute application 0.52ms
+	compilation (IR) 0.193ms
+	compilation (LCNF base) 4.95ms
+	compilation (LCNF impure) 1.1ms
+	compilation (LCNF mono) 2.39ms
+	congr simp thm 4.3ms
+	dsimp 167ms
+	elaboration 73.9ms
+	fix level params 1.14ms
+	import 1.88s
+	initialization 25ms
+	instantiate metavars 1.93ms
+	interpretation 304ms
+	let-to-have transformation 0.103ms
+	linting 20.4ms
+	module linting 0.00136ms
+	norm_num 2.13ms
+	overlappingInstancesLinter 11.2ms
+	parsing 5.86ms
+	process pre-definitions 12ms
+	share common exprs 3.49ms
+	simp 193ms
+	tactic execution 149ms
+	tacticAnalysis 27ms
+	type checking 45.1ms
+	typeclass inference 424ms
+ℹ [3046/3076] Replayed OAI.Analysis.Cuntz.Monoid
+info: stderr:
+cumulative profiling times:
+	.olean serialization 81.6ms
+	C code generation 0.384ms
+	attribute application 2.88ms
+	compilation (IR) 0.181ms
+	compilation (LCNF base) 1.33ms
+	compilation (LCNF impure) 0.673ms
+	compilation (LCNF mono) 1.06ms
+	congr simp thm 2.56ms
+	elaboration 98.5ms
+	fix level params 1.59ms
+	import 2.01s
+	initialization 24.7ms
+	instantiate metavars 8.45ms
+	interpretation 435ms
+	let-to-have transformation 0.141ms
+	linting 24.5ms
+	module linting 0.00115ms
+	overlappingInstancesLinter 26.4ms
+	parsing 14ms
+	process pre-definitions 29.8ms
+	share common exprs 3.62ms
+	simp 986ms
+	tactic execution 257ms
+	tacticAnalysis 47.1ms
+	type checking 74.6ms
+	typeclass inference 684ms
+ℹ [3047/3076] Replayed OAI.Analysis.Cuntz.State
+info: stderr:
+cumulative profiling times:
+	.olean serialization 85.2ms
+	C code generation 0.237ms
+	attribute application 0.553ms
+	blocked (unaccounted) 1.1ms
+	compilation (IR) 0.0357ms
+	compilation (LCNF base) 0.426ms
+	compilation (LCNF impure) 0.185ms
+	compilation (LCNF mono) 0.22ms
+	congr simp thm 2.05ms
+	elaboration 52.6ms
+	fix level params 1.2ms
+	import 1.93s
+	initialization 25ms
+	instantiate metavars 0.852ms
+	interpretation 351ms
+	let-to-have transformation 0.123ms
+	linting 13.2ms
+	module linting 0.00119ms
+	norm_num 0.543ms
+	overlappingInstancesLinter 6.73ms
+	parsing 5.39ms
+	process pre-definitions 5.44ms
+	ring 9.2ms
+	share common exprs 3.59ms
+	simp 20.8ms
+	tactic execution 124ms
+	tacticAnalysis 17.5ms
+	type checking 60.4ms
+	typeclass inference 348ms
+ℹ [3048/3076] Replayed OAI.Analysis.Cuntz.Cutoff
+info: stderr:
+cumulative profiling times:
+	.olean serialization 88.9ms
+	C code generation 0.167ms
+	attribute application 0.376ms
+	congr simp thm 2.13ms
+	dsimp 0.531ms
+	elaboration 101ms
+	fix level params 2.83ms
+	import 1.89s
+	initialization 25ms
+	instantiate metavars 3.17ms
+	interpretation 364ms
+	let-to-have transformation 0.196ms
+	linting 26ms
+	module linting 0.00113ms
+	norm_num 30ms
+	overlappingInstancesLinter 8.38ms
+	parsing 10.6ms
+	process pre-definitions 20.3ms
+	ring 13ms
+	share common exprs 9.17ms
+	simp 52.1ms
+	tactic execution 626ms
+	tacticAnalysis 27.9ms
+	type checking 252ms
+	typeclass inference 882ms
+ℹ [3049/3076] Replayed OAI.Analysis.Cuntz.Regularization
+info: stderr:
+cumulative profiling times:
+	.olean serialization 101ms
+	C code generation 0.326ms
+	aesop 23.8ms
+	attribute application 1.33ms
+	blocked (unaccounted) 5.36ms
+	compilation (IR) 0.0579ms
+	compilation (LCNF base) 2.12ms
+	compilation (LCNF impure) 0.304ms
+	compilation (LCNF mono) 0.83ms
+	congr simp thm 5.34ms
+	dsimp 0.405ms
+	elaboration 145ms
+	fix level params 3.07ms
+	import 1.85s
+	initialization 24.8ms
+	instantiate metavars 3.9ms
+	interpretation 513ms
+	let-to-have transformation 0.28ms
+	linting 25.3ms
+	module linting 0.00116ms
+	norm_num 44.4ms
+	overlappingInstancesLinter 13.6ms
+	parsing 12.7ms
+	process pre-definitions 23.8ms
+	ring 10.9ms
+	share common exprs 10.5ms
+	simp 43.3ms
+	tactic execution 572ms
+	tacticAnalysis 31.3ms
+	type checking 373ms
+	typeclass inference 984ms
+ℹ [3051/3076] Replayed OAI.Analysis.Cuntz.Squares
+info: stderr:
+cumulative profiling times:
+	.olean serialization 92.6ms
+	C code generation 0.196ms
+	attribute application 0.86ms
+	congr simp thm 2.78ms
+	dsimp 3.49ms
+	elaboration 93.2ms
+	fix level params 2.08ms
+	import 1.86s
+	initialization 24.7ms
+	instantiate metavars 2.43ms
+	interpretation 377ms
+	let-to-have transformation 0.198ms
+	linting 21.8ms
+	module linting 0.00129ms
+	norm_num 4.81ms
+	overlappingInstancesLinter 6.76ms
+	parsing 8.61ms
+	process pre-definitions 18.2ms
+	ring 6.72ms
+	share common exprs 6.75ms
+	simp 67.4ms
+	tactic execution 531ms
+	tacticAnalysis 24.7ms
+	type checking 131ms
+	typeclass inference 857ms
+ℹ [3052/3076] Replayed OAI.Analysis.Cuntz.RegularizedState
+info: stderr:
+cumulative profiling times:
+	.olean serialization 82.5ms
+	C code generation 0.142ms
+	attribute application 1.84ms
+	congr simp thm 1.01ms
+	elaboration 129ms
+	fix level params 0.79ms
+	import 1.93s
+	initialization 24.3ms
+	instantiate metavars 0.569ms
+	interpretation 290ms
+	let-to-have transformation 0.214ms
+	linting 11.6ms
+	module linting 0.00132ms
+	overlappingInstancesLinter 14.8ms
+	parsing 6.33ms
+	process pre-definitions 5.8ms
+	share common exprs 2.41ms
+	simp 17.4ms
+	tactic execution 56.1ms
+	tacticAnalysis 19.3ms
+	type checking 30ms
+	typeclass inference 189ms
+ℹ [3053/3076] Replayed OAI.Analysis.Cuntz.Commutative
+info: stderr:
+cumulative profiling times:
+	.olean serialization 93.2ms
+	C code generation 0.156ms
+	attribute application 1.23ms
+	congr simp thm 6.57ms
+	elaboration 108ms
+	fix level params 1.88ms
+	import 1.92s
+	initialization 24.5ms
+	instantiate metavars 1.18ms
+	interpretation 300ms
+	let-to-have transformation 0.267ms
+	linting 29.1ms
+	module linting 0.00112ms
+	overlappingInstancesLinter 6.14ms
+	parsing 19.1ms
+	process pre-definitions 41.5ms
+	share common exprs 5.11ms
+	simp 35.8ms
+	tactic execution 331ms
+	tacticAnalysis 35ms
+	type checking 381ms
+	typeclass inference 1.14s
+ℹ [3055/3076] Replayed OAI.Analysis.Cuntz.SquareCutoff
+info: stderr:
+cumulative profiling times:
+	.olean serialization 93.8ms
+	C code generation 0.154ms
+	attribute application 1.31ms
+	blocked (unaccounted) 17.7ms
+	congr simp thm 3.12ms
+	dsimp 0.873ms
+	elaboration 49.4ms
+	fix level params 1.72ms
+	import 1.91s
+	initialization 24.9ms
+	instantiate metavars 1.97ms
+	interpretation 264ms
+	let-to-have transformation 0.162ms
+	linting 17.8ms
+	module linting 0.00112ms
+	overlappingInstancesLinter 5.32ms
+	parsing 6.78ms
+	process pre-definitions 8.09ms
+	share common exprs 5.03ms
+	simp 104ms
+	tactic execution 487ms
+	tacticAnalysis 19.7ms
+	type checking 144ms
+	typeclass inference 955ms
+ℹ [3056/3076] Replayed OAI.Analysis.Cuntz.Distribution
+info: stderr:
+cumulative profiling times:
+	.olean serialization 88ms
+	C code generation 0.153ms
+	attribute application 4.08ms
+	congr simp thm 2.46ms
+	dsimp 9.29ms
+	elaboration 95.4ms
+	fix level params 1.72ms
+	import 1.9s
+	initialization 25ms
+	instantiate metavars 1.71ms
+	interpretation 464ms
+	let-to-have transformation 0.192ms
+	linting 29.2ms
+	module linting 0.00124ms
+	norm_num 2.24ms
+	overlappingInstancesLinter 10.7ms
+	parsing 13.6ms
+	process pre-definitions 27.7ms
+	ring 9.71ms
+	share common exprs 6.55ms
+	simp 68.5ms
+	tactic execution 548ms
+	tacticAnalysis 41.6ms
+	type checking 220ms
+	typeclass inference 778ms
+ℹ [3057/3076] Replayed OAI.Analysis.Cuntz.Translation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 94.6ms
+	C code generation 0.148ms
+	aesop 47.1ms
+	attribute application 1.37ms
+	congr simp thm 3.9ms
+	dsimp 0.349ms
+	elaboration 99.4ms
+	fix level params 2.48ms
+	import 1.92s
+	initialization 24.5ms
+	instantiate metavars 2.2ms
+	interpretation 367ms
+	let-to-have transformation 0.271ms
+	linting 24.8ms
+	module linting 0.0011ms
+	norm_num 1.42ms
+	overlappingInstancesLinter 9.3ms
+	parsing 10.7ms
+	process pre-definitions 15.3ms
+	ring 23.4ms
+	share common exprs 9ms
+	simp 137ms
+	tactic execution 607ms
+	tacticAnalysis 29ms
+	type checking 271ms
+	typeclass inference 1.03s
+ℹ [3058/3076] Replayed OAI.Analysis.Cuntz.Spectral
+info: stderr:
+cumulative profiling times:
+	.olean serialization 101ms
+	C code generation 0.151ms
+	attribute application 1.81ms
+	congr simp thm 9.06ms
+	dsimp 3.6ms
+	elaboration 187ms
+	fix level params 3.4ms
+	import 1.88s
+	initialization 25.3ms
+	instantiate metavars 2.88ms
+	interpretation 319ms
+	let-to-have transformation 0.393ms
+	linting 26.1ms
+	module linting 0.00127ms
+	norm_num 1.19ms
+	overlappingInstancesLinter 12.6ms
+	parsing 14ms
+	process pre-definitions 18.9ms
+	ring 11.6ms
+	share common exprs 11.4ms
+	simp 118ms
+	tactic execution 612ms
+	tacticAnalysis 33.3ms
+	type checking 278ms
+	typeclass inference 1.86s
+ℹ [3060/3076] Replayed OAI.Analysis.Cuntz.Measure
+info: stderr:
+cumulative profiling times:
+	.olean serialization 127ms
+	C code generation 0.276ms
+	aesop 20.2ms
+	attribute application 3.2ms
+	blocked (unaccounted) 572ms
+	compilation (IR) 0.0402ms
+	compilation (LCNF base) 2.24ms
+	compilation (LCNF impure) 0.212ms
+	compilation (LCNF mono) 0.525ms
+	congr simp thm 10.3ms
+	elaboration 232ms
+	fix level params 4.3ms
+	import 1.9s
+	initialization 24ms
+	instantiate metavars 2.9ms
+	interpretation 436ms
+	let-to-have transformation 0.852ms
+	linting 28.2ms
+	module linting 0.00118ms
+	norm_num 0.244ms
+	overlappingInstancesLinter 14.1ms
+	parsing 16.3ms
+	process pre-definitions 50.4ms
+	ring 2.03ms
+	share common exprs 17.3ms
+	simp 102ms
+	tactic execution 686ms
+	tacticAnalysis 37.5ms
+	type checking 744ms
+	typeclass inference 2.91s
+ℹ [3061/3076] Replayed OAI.Analysis.Quasitrace.Matrix
+info: stderr:
+cumulative profiling times:
+	.olean serialization 81.3ms
+	C code generation 0.511ms
+	attribute application 1.57ms
+	compilation (IR) 0.198ms
+	compilation (LCNF base) 2.64ms
+	compilation (LCNF impure) 4.13ms
+	compilation (LCNF mono) 8.34ms
+	congr simp thm 6.57ms
+	elaboration 59.4ms
+	fix level params 0.576ms
+	import 1.9s
+	initialization 25ms
+	instantiate metavars 0.346ms
+	interpretation 289ms
+	let-to-have transformation 0.138ms
+	linting 19.9ms
+	module linting 0.00136ms
+	overlappingInstancesLinter 20ms
+	parsing 6.7ms
+	process pre-definitions 18.9ms
+	share common exprs 1.42ms
+	simp 114ms
+	tactic execution 130ms
+	tacticAnalysis 23.2ms
+	type checking 36.3ms
+	typeclass inference 181ms
+ℹ [3062/3076] Replayed OAI.Analysis.Quasitrace.Extension
+info: stderr:
+cumulative profiling times:
+	.olean serialization 91.8ms
+	C code generation 0.14ms
+	attribute application 2.45ms
+	congr simp thm 3.33ms
+	elaboration 81.3ms
+	fix level params 1.5ms
+	import 1.9s
+	initialization 24.4ms
+	instantiate metavars 1.26ms
+	interpretation 349ms
+	let-to-have transformation 0.242ms
+	linting 35.8ms
+	module linting 0.00137ms
+	norm_num 0.991ms
+	overlappingInstancesLinter 11.9ms
+	parsing 16.6ms
+	process pre-definitions 8.43ms
+	ring 7.72ms
+	share common exprs 4.55ms
+	simp 54.7ms
+	tactic execution 298ms
+	tacticAnalysis 32.8ms
+	type checking 130ms
+	typeclass inference 850ms
+ℹ [3063/3076] Replayed OAI.Analysis.Quasitrace.Compactness
+info: stderr:
+cumulative profiling times:
+	.olean serialization 126ms
+	C code generation 0.761ms
+	attribute application 0.366ms
+	blocked (unaccounted) 324ms
+	compilation (IR) 0.452ms
+	compilation (LCNF base) 3.72ms
+	compilation (LCNF impure) 2.24ms
+	compilation (LCNF mono) 6.7ms
+	congr simp thm 11.7ms
+	elaboration 278ms
+	fix level params 1.28ms
+	import 2s
+	initialization 24.4ms
+	instantiate metavars 1.3ms
+	interpretation 381ms
+	let-to-have transformation 0.162ms
+	linting 28.3ms
+	module linting 0.00128ms
+	norm_num 7.76ms
+	overlappingInstancesLinter 24.4ms
+	parsing 12.3ms
+	process pre-definitions 32.2ms
+	ring 12.3ms
+	share common exprs 3.86ms
+	simp 84.4ms
+	tactic execution 249ms
+	tacticAnalysis 47.2ms
+	type checking 266ms
+	typeclass inference 638ms
+ℹ [3065/3076] Replayed OAI.Analysis.Cuntz.Quasitrace
+info: stderr:
+cumulative profiling times:
+	.olean serialization 108ms
+	C code generation 0.293ms
+	aesop 25.5ms
+	attribute application 2.88ms
+	blocked (unaccounted) 402ms
+	compilation (IR) 0.0413ms
+	compilation (LCNF base) 1.92ms
+	compilation (LCNF impure) 0.171ms
+	compilation (LCNF mono) 0.444ms
+	congr simp thm 4ms
+	dsimp 1.51ms
+	elaboration 174ms
+	fix level params 3.11ms
+	import 1.85s
+	initialization 27.3ms
+	instantiate metavars 1.89ms
+	interpretation 344ms
+	let-to-have transformation 8.17ms
+	linting 25.5ms
+	module linting 0.00128ms
+	norm_num 0.896ms
+	overlappingInstancesLinter 19.5ms
+	parsing 16.5ms
+	process pre-definitions 30.4ms
+	share common exprs 9.77ms
+	simp 47.1ms
+	tactic execution 562ms
+	tacticAnalysis 29.7ms
+	type checking 390ms
+	typeclass inference 2.13s
+ℹ [3066/3076] Replayed OAI.Analysis.Quasitrace.Defect
+info: stderr:
+cumulative profiling times:
+	.olean serialization 91.1ms
+	C code generation 0.698ms
+	attribute application 0.861ms
+	compilation (IR) 0.355ms
+	compilation (LCNF base) 3.86ms
+	compilation (LCNF impure) 1.87ms
+	compilation (LCNF mono) 21.4ms
+	congr simp thm 6.41ms
+	elaboration 99ms
+	fix level params 1.99ms
+	import 2.02s
+	initialization 25.3ms
+	instantiate metavars 2.69ms
+	interpretation 703ms
+	let-to-have transformation 0.295ms
+	linting 51.1ms
+	module linting 0.00124ms
+	norm_num 71ms
+	overlappingInstancesLinter 25.8ms
+	parsing 13.5ms
+	process pre-definitions 15.2ms
+	ring 43ms
+	share common exprs 17.3ms
+	simp 111ms
+	tactic execution 254ms
+	tacticAnalysis 43.4ms
+	type checking 121ms
+	typeclass inference 880ms
+ℹ [3075/3076] Replayed OAI.Geometry.ComplexBundle.Sections
+info: stderr:
+cumulative profiling times:
+	.olean serialization 77.6ms
+	C code generation 0.58ms
+	attribute application 0.0728ms
+	compilation (IR) 0.182ms
+	compilation (LCNF base) 4.06ms
+	compilation (LCNF impure) 0.938ms
+	compilation (LCNF mono) 1.82ms
+	congr simp thm 0.645ms
+	dsimp 20.7ms
+	elaboration 78.5ms
+	fix level params 1.26ms
+	import 1.68s
+	initialization 27.8ms
+	instantiate metavars 1.05ms
+	interpretation 278ms
+	let-to-have transformation 0.156ms
+	linting 25.8ms
+	module linting 0.00132ms
+	overlappingInstancesLinter 12.1ms
+	parsing 9.54ms
+	process pre-definitions 21.6ms
+	share common exprs 3.68ms
+	simp 33.3ms
+	tactic execution 111ms
+	tacticAnalysis 30.3ms
+	type checking 48.2ms
+	typeclass inference 420ms
+ℹ [3436/3487] Replayed OAI.AlgebraicTopology.IntegralHomology.Sections
+info: stderr:
+cumulative profiling times:
+	.olean serialization 79.3ms
+	C code generation 0.175ms
+	attribute application 0.116ms
+	congr simp thm 15.9ms
+	dsimp 12.2ms
+	elaboration 448ms
+	fix level params 1.22ms
+	import 1.94s
+	initialization 46.4ms
+	instantiate metavars 1.08ms
+	interpretation 344ms
+	let-to-have transformation 0.221ms
+	linting 28ms
+	module linting 0.00139ms
+	overlappingInstancesLinter 18ms
+	parsing 13.7ms
+	process pre-definitions 21.2ms
+	share common exprs 4.21ms
+	simp 77.8ms
+	tactic execution 238ms
+	tacticAnalysis 37.2ms
+	type checking 68.7ms
+	typeclass inference 593ms
+ℹ [3470/3487] Replayed OAI.AlgebraicTopology.IntegralHomology.Quotient
+info: stderr:
+cumulative profiling times:
+	.olean serialization 36ms
+	C code generation 0.173ms
+	attribute application 1.51ms
+	congr simp thm 4.54ms
+	elaboration 73.3ms
+	fix level params 0.761ms
+	import 1.3s
+	initialization 24.8ms
+	instantiate metavars 0.201ms
+	interpretation 261ms
+	let-to-have transformation 0.133ms
+	linting 12.1ms
+	module linting 0.00132ms
+	overlappingInstancesLinter 11.1ms
+	parsing 7.37ms
+	process pre-definitions 23.7ms
+	share common exprs 2.56ms
+	simp 140ms
+	tactic execution 121ms
+	tacticAnalysis 16.7ms
+	type checking 91.8ms
+	typeclass inference 291ms
+ℹ [3539/3808] Replayed OAI.Analysis.MatrixScaling.Determinant
+info: stderr:
+cumulative profiling times:
+	.olean serialization 109ms
+	C code generation 1ms
+	attribute application 0.205ms
+	blocked (unaccounted) 0.109ms
+	compilation (IR) 0.38ms
+	compilation (LCNF base) 4.03ms
+	compilation (LCNF impure) 4.94ms
+	compilation (LCNF mono) 6.24ms
+	congr simp thm 12.4ms
+	dsimp 10ms
+	elaboration 179ms
+	fix level params 5.64ms
+	import 1.84s
+	initialization 24.2ms
+	instantiate metavars 6.8ms
+	interpretation 970ms
+	let-to-have transformation 2.73ms
+	linting 64.4ms
+	module linting 0.00138ms
+	norm_num 225ms
+	overlappingInstancesLinter 13.1ms
+	parsing 25.2ms
+	process pre-definitions 48.2ms
+	ring 77.7ms
+	share common exprs 28.5ms
+	simp 466ms
+	tactic execution 554ms
+	tacticAnalysis 92ms
+	type checking 338ms
+	typeclass inference 1.61s
+ℹ [3541/3808] Replayed OAI.Analysis.MatrixScaling.Spectrum
+info: stderr:
+cumulative profiling times:
+	.olean serialization 103ms
+	C code generation 0.175ms
+	attribute application 0.369ms
+	congr simp thm 8.97ms
+	dsimp 2.01ms
+	elaboration 124ms
+	fix level params 2.64ms
+	import 1.87s
+	initialization 24.5ms
+	instantiate metavars 4.7ms
+	interpretation 405ms
+	let-to-have transformation 0.388ms
+	linting 29.8ms
+	module linting 0.00131ms
+	norm_num 1.09ms
+	overlappingInstancesLinter 9.9ms
+	parsing 15.1ms
+	process pre-definitions 23.8ms
+	ring 20.7ms
+	share common exprs 14.9ms
+	simp 267ms
+	tactic execution 1.47s
+	tacticAnalysis 40.3ms
+	type checking 302ms
+	typeclass inference 2.05s
+ℹ [3542/3808] Replayed OAI.Analysis.MatrixScaling.Bounds
+info: stderr:
+cumulative profiling times:
+	.olean serialization 106ms
+	C code generation 0.191ms
+	attribute application 0.388ms
+	congr simp thm 18.4ms
+	dsimp 16.6ms
+	elaboration 202ms
+	fix level params 1.62ms
+	import 1.85s
+	initialization 24.7ms
+	instantiate metavars 3.42ms
+	interpretation 558ms
+	let-to-have transformation 2.79ms
+	linting 82.5ms
+	module linting 0.00168ms
+	norm_num 41.2ms
+	overlappingInstancesLinter 16.1ms
+	parsing 22.1ms
+	process pre-definitions 43.5ms
+	ring 22.4ms
+	share common exprs 18.2ms
+	simp 117ms
+	tactic execution 575ms
+	tacticAnalysis 93.1ms
+	type checking 310ms
+	typeclass inference 854ms
+ℹ [3544/3808] Replayed OAI.Analysis.MatrixScaling.Gram
+info: stderr:
+cumulative profiling times:
+	.olean serialization 87.7ms
+	C code generation 0.497ms
+	attribute application 0.337ms
+	compilation (IR) 0.129ms
+	compilation (LCNF base) 1.15ms
+	compilation (LCNF impure) 0.636ms
+	compilation (LCNF mono) 1.15ms
+	congr simp thm 10.5ms
+	dsimp 0.916ms
+	elaboration 126ms
+	fix level params 1.69ms
+	import 1.81s
+	initialization 25.2ms
+	instantiate metavars 2.54ms
+	interpretation 457ms
+	let-to-have transformation 0.192ms
+	linting 33.1ms
+	module linting 0.00127ms
+	norm_num 1.5ms
+	overlappingInstancesLinter 7.77ms
+	parsing 15.4ms
+	process pre-definitions 15.1ms
+	ring 43.6ms
+	share common exprs 14ms
+	simp 278ms
+	tactic execution 396ms
+	tacticAnalysis 58.4ms
+	type checking 104ms
+	typeclass inference 875ms
+ℹ [3545/3808] Replayed OAI.Analysis.MatrixScaling.Geodesic
+info: stderr:
+cumulative profiling times:
+	.olean serialization 81.6ms
+	C code generation 0.144ms
+	attribute application 0.103ms
+	blocked (unaccounted) 0.148ms
+	congr simp thm 9.48ms
+	dsimp 0.592ms
+	elaboration 79.3ms
+	fix level params 1.06ms
+	import 1.94s
+	initialization 24.6ms
+	instantiate metavars 3.48ms
+	interpretation 469ms
+	let-to-have transformation 0.2ms
+	linting 29.5ms
+	module linting 0.00151ms
+	norm_num 1.12ms
+	overlappingInstancesLinter 6.75ms
+	parsing 14.8ms
+	process pre-definitions 20.1ms
+	ring 15.8ms
+	share common exprs 9.18ms
+	simp 473ms
+	tactic execution 394ms
+	tacticAnalysis 33.7ms
+	type checking 97.3ms
+	typeclass inference 657ms
+ℹ [3546/3808] Replayed OAI.Analysis.MatrixScaling.Minimizer
+info: stderr:
+cumulative profiling times:
+	.olean serialization 72.1ms
+	C code generation 0.142ms
+	attribute application 0.0487ms
+	congr simp thm 0.712ms
+	elaboration 46.1ms
+	fix level params 0.448ms
+	import 1.82s
+	initialization 24.6ms
+	instantiate metavars 0.753ms
+	interpretation 269ms
+	let-to-have transformation 0.157ms
+	linting 14ms
+	module linting 0.00125ms
+	norm_num 21.4ms
+	overlappingInstancesLinter 3.84ms
+	parsing 6.2ms
+	process pre-definitions 4.56ms
+	ring 4.35ms
+	share common exprs 3.36ms
+	simp 5.43ms
+	tactic execution 73.1ms
+	tacticAnalysis 17.6ms
+	type checking 44.3ms
+	typeclass inference 131ms
+ℹ [3547/3808] Replayed OAI.Analysis.MatrixScaling.Critical
+info: stderr:
+cumulative profiling times:
+	.olean serialization 86.4ms
+	C code generation 0.365ms
+	attribute application 0.0937ms
+	compilation (IR) 0.0874ms
+	compilation (LCNF base) 1.28ms
+	compilation (LCNF impure) 0.462ms
+	compilation (LCNF mono) 0.705ms
+	congr simp thm 4.02ms
+	dsimp 2.61ms
+	elaboration 61.4ms
+	fix level params 0.996ms
+	import 1.81s
+	initialization 24.2ms
+	instantiate metavars 2.5ms
+	interpretation 344ms
+	let-to-have transformation 0.224ms
+	linting 20.6ms
+	module linting 0.00135ms
+	norm_num 28.2ms
+	overlappingInstancesLinter 3.58ms
+	parsing 10.5ms
+	process pre-definitions 11.3ms
+	share common exprs 7.82ms
+	simp 224ms
+	tactic execution 217ms
+	tacticAnalysis 28.8ms
+	type checking 116ms
+	typeclass inference 710ms
+ℹ [3553/3808] Replayed OAI.Analysis.MatrixScaling.Continuous
+info: stderr:
+cumulative profiling times:
+	.olean serialization 85.6ms
+	C code generation 0.163ms
+	attribute application 0.0849ms
+	congr simp thm 0.776ms
+	dsimp 1.08ms
+	elaboration 125ms
+	fix level params 1.18ms
+	import 1.82s
+	initialization 24.5ms
+	instantiate metavars 2.48ms
+	interpretation 323ms
+	let-to-have transformation 0.302ms
+	linting 23.6ms
+	module linting 0.00059ms
+	norm_num 14.9ms
+	overlappingInstancesLinter 5.25ms
+	parsing 12.8ms
+	process pre-definitions 13.5ms
+	share common exprs 7ms
+	simp 2.11ms
+	tactic execution 304ms
+	tacticAnalysis 33.7ms
+	type checking 191ms
+	typeclass inference 827ms
+ℹ [3554/3808] Replayed OAI.Analysis.MatrixScaling.Canonical
+info: stderr:
+cumulative profiling times:
+	.olean serialization 83.3ms
+	C code generation 0.323ms
+	attribute application 0.135ms
+	compilation (IR) 0.0716ms
+	compilation (LCNF base) 0.857ms
+	compilation (LCNF impure) 0.375ms
+	compilation (LCNF mono) 0.531ms
+	congr simp thm 3.26ms
+	elaboration 113ms
+	fix level params 0.951ms
+	import 1.82s
+	initialization 24.6ms
+	instantiate metavars 1.42ms
+	interpretation 304ms
+	let-to-have transformation 0.335ms
+	linting 26.8ms
+	module linting 0.00151ms
+	norm_num 0.169ms
+	overlappingInstancesLinter 6.22ms
+	parsing 12.6ms
+	process pre-definitions 15.8ms
+	ring 2.14ms
+	share common exprs 5.8ms
+	simp 133ms
+	tactic execution 158ms
+	tacticAnalysis 33.3ms
+	type checking 198ms
+	typeclass inference 599ms
+ℹ [3555/3808] Replayed OAI.Analysis.MatrixScaling.Expansion
+info: stderr:
+cumulative profiling times:
+	.olean serialization 124ms
+	C code generation 0.608ms
+	attribute application 0.127ms
+	compilation (IR) 0.209ms
+	compilation (LCNF base) 12.9ms
+	compilation (LCNF impure) 1.04ms
+	compilation (LCNF mono) 6.04ms
+	congr simp thm 2ms
+	dsimp 7.42ms
+	elaboration 229ms
+	fix level params 3.17ms
+	import 1.82s
+	initialization 24.3ms
+	instantiate metavars 3.2ms
+	interpretation 489ms
+	let-to-have transformation 0.391ms
+	linting 61.8ms
+	module linting 0.00117ms
+	overlappingInstancesLinter 19.2ms
+	parsing 20.4ms
+	process pre-definitions 48.1ms
+	share common exprs 12ms
+	simp 48.1ms
+	tactic execution 533ms
+	tacticAnalysis 54ms
+	type checking 339ms
+	typeclass inference 1.57s
+ℹ [3557/3808] Replayed OAI.Geometry.ComplexBundle.Frames
+info: stderr:
+cumulative profiling times:
+	.olean serialization 136ms
+	C code generation 0.614ms
+	attribute application 0.29ms
+	compilation (IR) 0.27ms
+	compilation (LCNF base) 6.62ms
+	compilation (LCNF impure) 1.32ms
+	compilation (LCNF mono) 7.22ms
+	congr simp thm 14.7ms
+	elaboration 246ms
+	fix level params 3.28ms
+	import 1.81s
+	initialization 24.5ms
+	instantiate metavars 2.46ms
+	interpretation 383ms
+	let-to-have transformation 0.768ms
+	linting 41.4ms
+	module linting 0.00117ms
+	norm_num 0.19ms
+	overlappingInstancesLinter 19.4ms
+	parsing 18.7ms
+	process pre-definitions 34.1ms
+	ring 3.01ms
+	share common exprs 12.7ms
+	simp 260ms
+	tactic execution 474ms
+	tacticAnalysis 53.2ms
+	type checking 374ms
+	typeclass inference 1.94s
+ℹ [3558/3808] Replayed OAI.Geometry.ComplexBundle.Hom
+info: stderr:
+cumulative profiling times:
+	.olean serialization 104ms
+	C code generation 0.438ms
+	attribute application 3.75ms
+	compilation (IR) 0.141ms
+	compilation (LCNF base) 3.57ms
+	compilation (LCNF impure) 0.67ms
+	compilation (LCNF mono) 1.51ms
+	congr simp thm 3.18ms
+	elaboration 259ms
+	fix level params 1.38ms
+	import 1.9s
+	initialization 24.3ms
+	instantiate metavars 1.62ms
+	interpretation 371ms
+	let-to-have transformation 4.83ms
+	linting 37.3ms
+	module linting 0.00132ms
+	overlappingInstancesLinter 14.4ms
+	parsing 17.9ms
+	process pre-definitions 31.1ms
+	share common exprs 5.6ms
+	simp 43.4ms
+	tactic execution 153ms
+	tacticAnalysis 50.8ms
+	type checking 270ms
+	typeclass inference 762ms
+ℹ [3559/3808] Replayed OAI.Geometry.ComplexBundle.Coordinates
+info: stderr:
+cumulative profiling times:
+	.olean serialization 129ms
+	C code generation 0.164ms
+	attribute application 0.112ms
+	congr simp thm 1.74ms
+	dsimp 1.96ms
+	elaboration 268ms
+	fix level params 1.85ms
+	import 1.79s
+	initialization 24.6ms
+	instantiate metavars 1.12ms
+	interpretation 292ms
+	let-to-have transformation 3.75ms
+	linting 26.7ms
+	module linting 0.00142ms
+	overlappingInstancesLinter 11.5ms
+	parsing 11.1ms
+	process pre-definitions 15.1ms
+	share common exprs 6.67ms
+	simp 16.7ms
+	tactic execution 280ms
+	tacticAnalysis 42.3ms
+	type checking 254ms
+	typeclass inference 1.1s
+ℹ [3560/3808] Replayed OAI.Geometry.ComplexBundle.Maps
+info: stderr:
+cumulative profiling times:
+	.olean serialization 158ms
+	C code generation 0.25ms
+	attribute application 0.155ms
+	congr simp thm 10.7ms
+	dsimp 5.95ms
+	elaboration 316ms
+	fix level params 4.66ms
+	import 1.83s
+	initialization 24.3ms
+	instantiate metavars 3.5ms
+	interpretation 368ms
+	let-to-have transformation 0.797ms
+	linting 44.7ms
+	module linting 0.00112ms
+	overlappingInstancesLinter 15.5ms
+	parsing 19.4ms
+	process pre-definitions 22ms
+	share common exprs 12.9ms
+	simp 164ms
+	tactic execution 584ms
+	tacticAnalysis 63ms
+	type checking 355ms
+	typeclass inference 1.87s
+ℹ [3561/3808] Replayed OAI.Geometry.BundleTests.Multiplicities
+info: stderr:
+cumulative profiling times:
+	.olean serialization 50.3ms
+	C code generation 0.328ms
+	attribute application 0.0631ms
+	compilation (IR) 0.0867ms
+	compilation (LCNF base) 1.63ms
+	compilation (LCNF impure) 0.386ms
+	compilation (LCNF mono) 0.517ms
+	congr simp thm 1.56ms
+	elaboration 24.7ms
+	fix level params 0.49ms
+	import 1.25s
+	initialization 24.6ms
+	instantiate metavars 1.15ms
+	interpretation 334ms
+	let-to-have transformation 0.08ms
+	linting 20.4ms
+	module linting 0.00131ms
+	norm_num 5.28ms
+	overlappingInstancesLinter 10.8ms
+	parsing 3.3ms
+	process pre-definitions 8.91ms
+	ring 37.4ms
+	share common exprs 6.17ms
+	simp 55.7ms
+	tactic execution 100ms
+	tacticAnalysis 14.8ms
+	type checking 122ms
+	typeclass inference 146ms
+ℹ [3563/3808] Replayed OAI.Geometry.ComplexBundle.Projection
+info: stderr:
+cumulative profiling times:
+	.olean serialization 95.6ms
+	C code generation 0.511ms
+	attribute application 0.209ms
+	compilation (IR) 0.195ms
+	compilation (LCNF base) 2.04ms
+	compilation (LCNF impure) 3.94ms
+	compilation (LCNF mono) 1.63ms
+	congr simp thm 19.6ms
+	elaboration 233ms
+	fix level params 1.65ms
+	import 1.84s
+	initialization 24.4ms
+	instantiate metavars 2.64ms
+	interpretation 495ms
+	let-to-have transformation 0.54ms
+	linting 31.1ms
+	module linting 0.00132ms
+	overlappingInstancesLinter 16.2ms
+	parsing 17ms
+	process pre-definitions 37.8ms
+	share common exprs 17.8ms
+	simp 210ms
+	tactic execution 792ms
+	tacticAnalysis 55.9ms
+	type checking 353ms
+	typeclass inference 1.26s
+ℹ [3564/3808] Replayed OAI.Geometry.ComplexBundle.ProjectionBundle
+info: stderr:
+cumulative profiling times:
+	.olean serialization 94ms
+	C code generation 0.17ms
+	attribute application 1.75ms
+	congr simp thm 1.07ms
+	dsimp 2.49ms
+	elaboration 267ms
+	fix level params 1.13ms
+	import 1.86s
+	initialization 25.2ms
+	instantiate metavars 1.92ms
+	interpretation 303ms
+	let-to-have transformation 0.537ms
+	linting 22.1ms
+	module linting 0.00146ms
+	norm_num 0.178ms
+	overlappingInstancesLinter 5.38ms
+	parsing 12.4ms
+	process pre-definitions 51.5ms
+	ring 2.29ms
+	share common exprs 8.33ms
+	simp 64.4ms
+	tactic execution 401ms
+	tacticAnalysis 38.6ms
+	type checking 432ms
+	typeclass inference 549ms
+ℹ [3568/3808] Replayed OAI.Geometry.BundleTests.Base
+info: stderr:
+cumulative profiling times:
+	.olean serialization 93.6ms
+	C code generation 0.765ms
+	attribute application 2.82ms
+	compilation (IR) 0.447ms
+	compilation (LCNF base) 5.57ms
+	compilation (LCNF impure) 2ms
+	compilation (LCNF mono) 3.45ms
+	congr simp thm 7.7ms
+	dsimp 0.609ms
+	elaboration 82.2ms
+	fix level params 1.05ms
+	import 1.8s
+	initialization 25.1ms
+	instantiate metavars 1.76ms
+	interpretation 583ms
+	let-to-have transformation 1.12ms
+	linting 18.5ms
+	module linting 0.00106ms
+	norm_num 5.44ms
+	overlappingInstancesLinter 5.09ms
+	parsing 8.87ms
+	process pre-definitions 17.3ms
+	ring 30.9ms
+	share common exprs 9.91ms
+	simp 157ms
+	tactic execution 152ms
+	tacticAnalysis 25.3ms
+	type checking 214ms
+	typeclass inference 655ms
+ℹ [3569/3808] Replayed OAI.Geometry.ComplexBundle.DirectSum
+info: stderr:
+cumulative profiling times:
+	.olean serialization 158ms
+	C code generation 0.659ms
+	attribute application 13.2ms
+	blocked (unaccounted) 250ms
+	compilation (IR) 0.304ms
+	compilation (LCNF base) 11.6ms
+	compilation (LCNF impure) 1.43ms
+	compilation (LCNF mono) 7.61ms
+	congr simp thm 3.45ms
+	dsimp 2.94ms
+	elaboration 750ms
+	fix level params 8.43ms
+	import 1.76s
+	initialization 28ms
+	instantiate metavars 3.6ms
+	interpretation 488ms
+	let-to-have transformation 1.24ms
+	linting 86.9ms
+	module linting 0.00132ms
+	overlappingInstancesLinter 24.9ms
+	parsing 31ms
+	process pre-definitions 98.1ms
+	share common exprs 19.7ms
+	simp 144ms
+	tactic execution 771ms
+	tacticAnalysis 71.5ms
+	type checking 1.25s
+	typeclass inference 1.61s
+ℹ [3570/3808] Replayed OAI.Geometry.ComplexBundle.Pullback
+info: stderr:
+cumulative profiling times:
+	.olean serialization 71.5ms
+	C code generation 0.518ms
+	attribute application 1.52ms
+	compilation (IR) 0.234ms
+	compilation (LCNF base) 4.89ms
+	compilation (LCNF impure) 1.15ms
+	compilation (LCNF mono) 3.27ms
+	elaboration 94.6ms
+	fix level params 0.628ms
+	import 1.95s
+	initialization 27.6ms
+	instantiate metavars 0.906ms
+	interpretation 238ms
+	let-to-have transformation 0.24ms
+	linting 10.1ms
+	module linting 0.00118ms
+	overlappingInstancesLinter 4.9ms
+	parsing 7.86ms
+	process pre-definitions 19.7ms
+	share common exprs 3.12ms
+	tactic execution 127ms
+	tacticAnalysis 18.3ms
+	type checking 165ms
+	typeclass inference 210ms
+ℹ [3571/3808] Replayed OAI.Geometry.BundleTests.Bundles
+info: stderr:
+cumulative profiling times:
+	.olean serialization 82.9ms
+	C code generation 0.297ms
+	attribute application 2.86ms
+	compilation (IR) 0.0529ms
+	compilation (LCNF base) 0.573ms
+	compilation (LCNF impure) 0.283ms
+	compilation (LCNF mono) 0.422ms
+	congr simp thm 1.15ms
+	elaboration 149ms
+	fix level params 0.767ms
+	import 1.82s
+	initialization 24.8ms
+	instantiate metavars 0.594ms
+	interpretation 256ms
+	let-to-have transformation 8.62ms
+	linting 15.3ms
+	module linting 0.00125ms
+	norm_num 0.185ms
+	overlappingInstancesLinter 4.89ms
+	parsing 8.18ms
+	process pre-definitions 13ms
+	ring 2.45ms
+	share common exprs 4.48ms
+	simp 326ms
+	tactic execution 80.4ms
+	tacticAnalysis 21ms
+	type checking 176ms
+	typeclass inference 423ms
+ℹ [3573/3808] Replayed OAI.Geometry.ComplexBundle.Grassmann
+info: stderr:
+cumulative profiling times:
+	.olean serialization 122ms
+	C code generation 1.01ms
+	attribute application 9.36ms
+	compilation (IR) 0.405ms
+	compilation (LCNF base) 12.1ms
+	compilation (LCNF impure) 2.06ms
+	compilation (LCNF mono) 7.57ms
+	congr simp thm 23.4ms
+	elaboration 326ms
+	fix level params 1.91ms
+	import 1.75s
+	initialization 24.8ms
+	instantiate metavars 7.46ms
+	interpretation 463ms
+	let-to-have transformation 0.895ms
+	linting 64.3ms
+	module linting 0.00111ms
+	overlappingInstancesLinter 21.8ms
+	parsing 37.3ms
+	process pre-definitions 77.1ms
+	share common exprs 23.4ms
+	simp 285ms
+	tactic execution 1.28s
+	tacticAnalysis 57.6ms
+	type checking 750ms
+	typeclass inference 3.06s
+ℹ [3581/3808] Replayed OAI.Geometry.ComplexBundle.GrassmannManifold
+info: stderr:
+cumulative profiling times:
+	.olean serialization 86.9ms
+	C code generation 0.334ms
+	attribute application 6.63ms
+	compilation (IR) 0.0687ms
+	compilation (LCNF base) 2.85ms
+	compilation (LCNF impure) 0.362ms
+	compilation (LCNF mono) 0.764ms
+	congr simp thm 5.11ms
+	dsimp 2.31ms
+	elaboration 225ms
+	fix level params 1.36ms
+	import 1.78s
+	initialization 24.4ms
+	instantiate metavars 2.39ms
+	interpretation 307ms
+	let-to-have transformation 3.49ms
+	linting 21.4ms
+	module linting 0.00132ms
+	overlappingInstancesLinter 7.66ms
+	parsing 11ms
+	process pre-definitions 27.5ms
+	share common exprs 10.1ms
+	simp 115ms
+	tactic execution 425ms
+	tacticAnalysis 31.2ms
+	type checking 676ms
+	typeclass inference 1.36s
+ℹ [3589/3808] Replayed OAI.Geometry.ComplexBundle.Projective
+info: stderr:
+cumulative profiling times:
+	.olean serialization 97ms
+	C code generation 0.158ms
+	attribute application 2.05ms
+	blocked (unaccounted) 344ms
+	congr simp thm 2.49ms
+	dsimp 2.63ms
+	elaboration 188ms
+	fix level params 2.06ms
+	import 1.93s
+	initialization 25.1ms
+	instantiate metavars 3.61ms
+	interpretation 348ms
+	let-to-have transformation 1.23ms
+	linting 36.8ms
+	module linting 0.00111ms
+	norm_num 1.65ms
+	overlappingInstancesLinter 10ms
+	parsing 15ms
+	process pre-definitions 43.5ms
+	share common exprs 13ms
+	simp 35ms
+	tactic execution 888ms
+	tacticAnalysis 37.2ms
+	type checking 815ms
+	typeclass inference 3.21s
+ℹ [3592/3808] Replayed OAI.Geometry.ComplexBundle.RealModel
+info: stderr:
+cumulative profiling times:
+	.olean serialization 112ms
+	C code generation 0.738ms
+	attribute application 3.63ms
+	blocked (unaccounted) 769ms
+	compilation (IR) 0.31ms
+	compilation (LCNF base) 4.87ms
+	compilation (LCNF impure) 1.57ms
+	compilation (LCNF mono) 3.71ms
+	congr simp thm 9.49ms
+	elaboration 279ms
+	fix level params 2.58ms
+	import 1.82s
+	initialization 24.6ms
+	instantiate metavars 2.13ms
+	interpretation 286ms
+	let-to-have transformation 0.436ms
+	linting 20.1ms
+	module linting 0.0014ms
+	norm_num 0.311ms
+	overlappingInstancesLinter 12.4ms
+	parsing 11.2ms
+	process pre-definitions 45.5ms
+	ring 3.86ms
+	share common exprs 8.98ms
+	simp 123ms
+	tactic execution 402ms
+	tacticAnalysis 34ms
+	type checking 566ms
+	typeclass inference 1.93s
+ℹ [3593/3808] Replayed OAI.Geometry.ComplexBundle.SmoothLine
+info: stderr:
+cumulative profiling times:
+	.olean serialization 108ms
+	C code generation 0.32ms
+	attribute application 2.28ms
+	blocked (unaccounted) 116ms
+	compilation (IR) 0.082ms
+	compilation (LCNF base) 3ms
+	compilation (LCNF impure) 0.427ms
+	compilation (LCNF mono) 0.939ms
+	congr simp thm 0.657ms
+	dsimp 2.6ms
+	elaboration 459ms
+	fix level params 2.09ms
+	import 1.83s
+	initialization 24.8ms
+	instantiate metavars 2.08ms
+	interpretation 321ms
+	let-to-have transformation 0.702ms
+	linting 28.3ms
+	module linting 0.00128ms
+	overlappingInstancesLinter 9.92ms
+	parsing 13.5ms
+	process pre-definitions 35.7ms
+	share common exprs 11.6ms
+	simp 49.2ms
+	tactic execution 884ms
+	tacticAnalysis 35.7ms
+	type checking 1.07s
+	typeclass inference 2.52s
+ℹ [3594/3808] Replayed OAI.Geometry.ComplexBundle.Tuples
+info: stderr:
+cumulative profiling times:
+	.olean serialization 181ms
+	C code generation 0.738ms
+	attribute application 0.109ms
+	blocked (unaccounted) 135ms
+	compilation (IR) 0.324ms
+	compilation (LCNF base) 9.16ms
+	compilation (LCNF impure) 1.46ms
+	compilation (LCNF mono) 4.46ms
+	congr simp thm 22.4ms
+	elaboration 326ms
+	fix level params 2.43ms
+	import 1.8s
+	initialization 24.2ms
+	instantiate metavars 3.04ms
+	interpretation 326ms
+	let-to-have transformation 0.209ms
+	linting 44.7ms
+	module linting 0.00126ms
+	norm_num 10.7ms
+	overlappingInstancesLinter 14.7ms
+	parsing 12.3ms
+	process pre-definitions 57.8ms
+	share common exprs 7.89ms
+	simp 294ms
+	tactic execution 390ms
+	tacticAnalysis 27.8ms
+	type checking 533ms
+	typeclass inference 1.06s
+ℹ [3595/3808] Replayed OAI.Geometry.ComplexBundle.LineStage
+info: stderr:
+cumulative profiling times:
+	.olean serialization 115ms
+	C code generation 0.575ms
+	attribute application 4.12ms
+	blocked (unaccounted) 160ms
+	compilation (IR) 0.29ms
+	compilation (LCNF base) 4.42ms
+	compilation (LCNF impure) 1.31ms
+	compilation (LCNF mono) 2.76ms
+	congr simp thm 1.3ms
+	dsimp 3.31ms
+	elaboration 139ms
+	fix level params 2.34ms
+	import 1.85s
+	initialization 24.8ms
+	instantiate metavars 1.69ms
+	interpretation 314ms
+	let-to-have transformation 32.3ms
+	linting 22.6ms
+	module linting 0.0013ms
+	norm_num 0.277ms
+	overlappingInstancesLinter 10.1ms
+	parsing 14ms
+	process pre-definitions 32.7ms
+	ring 2.79ms
+	share common exprs 6.9ms
+	simp 35.9ms
+	tactic execution 314ms
+	tacticAnalysis 34.5ms
+	type checking 424ms
+	typeclass inference 505ms
+ℹ [3596/3808] Replayed OAI.Geometry.ComplexBundle.Orthonormal
+info: stderr:
+cumulative profiling times:
+	.olean serialization 142ms
+	C code generation 0.276ms
+	attribute application 3.45ms
+	blocked (unaccounted) 107ms
+	compilation (IR) 0.0343ms
+	compilation (LCNF base) 1.99ms
+	compilation (LCNF impure) 0.16ms
+	compilation (LCNF mono) 0.444ms
+	congr simp thm 5.37ms
+	dsimp 4.71ms
+	elaboration 244ms
+	fix level params 2.75ms
+	import 1.83s
+	initialization 24.9ms
+	instantiate metavars 2.08ms
+	interpretation 316ms
+	let-to-have transformation 1.97ms
+	linting 25.2ms
+	module linting 0.00139ms
+	overlappingInstancesLinter 7.52ms
+	parsing 11.9ms
+	process pre-definitions 32.2ms
+	share common exprs 9.07ms
+	simp 7.61ms
+	tactic execution 395ms
+	tacticAnalysis 33.8ms
+	type checking 605ms
+	typeclass inference 816ms
+ℹ [3597/3808] Replayed OAI.Geometry.ComplexBundle.Hyperplane
+info: stderr:
+cumulative profiling times:
+	.olean serialization 147ms
+	C code generation 1.12ms
+	attribute application 6.21ms
+	compilation (IR) 0.378ms
+	compilation (LCNF base) 8.13ms
+	compilation (LCNF impure) 1.88ms
+	compilation (LCNF mono) 4.56ms
+	congr simp thm 2.49ms
+	dsimp 12.3ms
+	elaboration 386ms
+	fix level params 3.15ms
+	import 1.84s
+	initialization 24.9ms
+	instantiate metavars 3.98ms
+	interpretation 405ms
+	let-to-have transformation 10.5ms
+	linting 41.5ms
+	module linting 0.00125ms
+	norm_num 0.159ms
+	overlappingInstancesLinter 11.8ms
+	parsing 27.5ms
+	process pre-definitions 70.9ms
+	ring 1.88ms
+	share common exprs 18.6ms
+	simp 86.8ms
+	tactic execution 671ms
+	tacticAnalysis 62.1ms
+	type checking 691ms
+	typeclass inference 1.35s
+ℹ [3598/3808] Replayed OAI.Geometry.ComplexBundle.HyperplaneProduct
+info: stderr:
+cumulative profiling times:
+	.olean serialization 86ms
+	C code generation 0.351ms
+	attribute application 0.129ms
+	compilation (IR) 0.0898ms
+	compilation (LCNF base) 1.69ms
+	compilation (LCNF impure) 0.484ms
+	compilation (LCNF mono) 0.782ms
+	congr simp thm 0.373ms
+	elaboration 128ms
+	fix level params 0.673ms
+	import 1.84s
+	initialization 24.9ms
+	instantiate metavars 0.677ms
+	interpretation 245ms
+	let-to-have transformation 0.403ms
+	linting 11.6ms
+	module linting 0.00121ms
+	overlappingInstancesLinter 6.61ms
+	parsing 7.57ms
+	process pre-definitions 23.1ms
+	share common exprs 4.62ms
+	simp 19ms
+	tactic execution 247ms
+	tacticAnalysis 19.5ms
+	type checking 461ms
+	typeclass inference 3.13s
+ℹ [3604/3808] Replayed OAI.Geometry.ComplexBundle.ZeroSign
+info: stderr:
+cumulative profiling times:
+	.olean serialization 144ms
+	C code generation 0.167ms
+	attribute application 0.861ms
+	congr simp thm 6.87ms
+	elaboration 204ms
+	fix level params 2.82ms
+	import 1.86s
+	initialization 24.5ms
+	instantiate metavars 1.62ms
+	interpretation 319ms
+	let-to-have transformation 0.819ms
+	linting 25.7ms
+	module linting 0.00114ms
+	norm_num 1.19ms
+	overlappingInstancesLinter 13.9ms
+	parsing 12.4ms
+	process pre-definitions 31.4ms
+	share common exprs 11.9ms
+	simp 74.5ms
+	tactic execution 431ms
+	tacticAnalysis 34.8ms
+	type checking 499ms
+	typeclass inference 6.5s
+ℹ [3612/3808] Replayed OAI.AlgebraicTopology.IntegralHomology.ProjectivePuncture
+info: stderr:
+cumulative profiling times:
+	.olean serialization 134ms
+	C code generation 0.76ms
+	attribute application 1.9ms
+	blocked (unaccounted) 340ms
+	compilation (IR) 0.248ms
+	compilation (LCNF base) 13.8ms
+	compilation (LCNF impure) 1.11ms
+	compilation (LCNF mono) 3.16ms
+	congr simp thm 8.53ms
+	elaboration 423ms
+	fix level params 2.65ms
+	import 1.77s
+	initialization 34.4ms
+	instantiate metavars 5.51ms
+	interpretation 482ms
+	let-to-have transformation 14.9ms
+	linting 65.5ms
+	module linting 0.00122ms
+	overlappingInstancesLinter 13.6ms
+	parsing 33.4ms
+	process pre-definitions 148ms
+	share common exprs 24.4ms
+	simp 132ms
+	tactic execution 767ms
+	tacticAnalysis 59.3ms
+	type checking 531ms
+	typeclass inference 1.58s
+ℹ [3660/3808] Replayed OAI.Analysis.Kaplansky.Shift
+info: stderr:
+cumulative profiling times:
+	.olean serialization 201ms
+	C code generation 0.274ms
+	attribute application 0.183ms
+	compilation (IR) 0.0268ms
+	compilation (LCNF base) 0.565ms
+	compilation (LCNF impure) 0.128ms
+	compilation (LCNF mono) 0.184ms
+	congr simp thm 45.1ms
+	elaboration 386ms
+	fix level params 5.52ms
+	import 1.84s
+	initialization 24.9ms
+	instantiate metavars 7.13ms
+	interpretation 425ms
+	let-to-have transformation 5.31ms
+	linting 45.7ms
+	module linting 0.0012ms
+	norm_num 4.9ms
+	overlappingInstancesLinter 12.4ms
+	parsing 15.9ms
+	process pre-definitions 42ms
+	ring 8.8ms
+	share common exprs 20.7ms
+	simp 434ms
+	tactic execution 680ms
+	tacticAnalysis 29.7ms
+	type checking 601ms
+	typeclass inference 4.97s
+ℹ [3661/3808] Replayed OAI.Analysis.Kaplansky.Words
+info: stderr:
+cumulative profiling times:
+	.olean serialization 112ms
+	C code generation 0.412ms
+	attribute application 0.51ms
+	compilation (IR) 0.118ms
+	compilation (LCNF base) 6.83ms
+	compilation (LCNF impure) 0.614ms
+	compilation (LCNF mono) 0.965ms
+	congr simp thm 11.4ms
+	elaboration 161ms
+	fix level params 2.85ms
+	import 1.82s
+	initialization 24.6ms
+	instantiate metavars 2.14ms
+	interpretation 340ms
+	let-to-have transformation 0.59ms
+	linting 25.5ms
+	module linting 0.00119ms
+	overlappingInstancesLinter 20.3ms
+	parsing 9.82ms
+	process pre-definitions 36.4ms
+	share common exprs 7.16ms
+	simp 75ms
+	tactic execution 455ms
+	tacticAnalysis 28.1ms
+	type checking 313ms
+	typeclass inference 1.33s
+ℹ [3662/3808] Replayed OAI.Analysis.Kaplansky.BundleWords
+info: stderr:
+cumulative profiling times:
+	.olean serialization 199ms
+	C code generation 0.302ms
+	attribute application 3.31ms
+	blocked (unaccounted) 94.3ms
+	compilation (IR) 0.0574ms
+	compilation (LCNF base) 0.484ms
+	compilation (LCNF impure) 0.386ms
+	compilation (LCNF mono) 0.457ms
+	congr simp thm 6.54ms
+	elaboration 287ms
+	fix level params 3.96ms
+	import 1.83s
+	initialization 23.8ms
+	instantiate metavars 3.64ms
+	interpretation 285ms
+	let-to-have transformation 13.2ms
+	linting 21.5ms
+	module linting 0.00118ms
+	overlappingInstancesLinter 4.75ms
+	parsing 15.1ms
+	process pre-definitions 45.2ms
+	share common exprs 11ms
+	simp 76.1ms
+	tactic execution 765ms
+	tacticAnalysis 30.7ms
+	type checking 1.03s
+	typeclass inference 1.21s
+ℹ [3665/3808] Replayed OAI.Analysis.Kaplansky.Products
+info: stderr:
+cumulative profiling times:
+	.olean serialization 104ms
+	C code generation 0.442ms
+	attribute application 9.24ms
+	blocked (unaccounted) 844ms
+	compilation (IR) 0.138ms
+	compilation (LCNF base) 2.82ms
+	compilation (LCNF impure) 0.572ms
+	compilation (LCNF mono) 0.958ms
+	congr simp thm 0.233ms
+	dsimp 1.74ms
+	elaboration 346ms
+	fix level params 2.82ms
+	import 1.94s
+	initialization 26.2ms
+	instantiate metavars 2.11ms
+	interpretation 505ms
+	let-to-have transformation 40.1ms
+	linting 48.3ms
+	module linting 0.00173ms
+	norm_num 0.69ms
+	overlappingInstancesLinter 27.6ms
+	parsing 19.9ms
+	process pre-definitions 51.7ms
+	ring 17.1ms
+	share common exprs 8.84ms
+	simp 220ms
+	tactic execution 511ms
+	tacticAnalysis 86.2ms
+	type checking 601ms
+	typeclass inference 2.64s
+ℹ [3666/3808] Replayed OAI.Analysis.Kaplansky.Polynomials
+info: stderr:
+cumulative profiling times:
+	.olean serialization 88.2ms
+	C code generation 0.394ms
+	attribute application 0.598ms
+	blocked (unaccounted) 0.0486ms
+	compilation (IR) 0.128ms
+	compilation (LCNF base) 1.92ms
+	compilation (LCNF impure) 0.679ms
+	compilation (LCNF mono) 2.16ms
+	congr simp thm 1.64ms
+	elaboration 45.4ms
+	fix level params 1.17ms
+	import 1.94s
+	initialization 24.9ms
+	instantiate metavars 1ms
+	interpretation 261ms
+	let-to-have transformation 0.159ms
+	linting 10.5ms
+	module linting 0.00148ms
+	overlappingInstancesLinter 8.11ms
+	parsing 6.27ms
+	process pre-definitions 8.3ms
+	share common exprs 2.72ms
+	simp 332ms
+	tactic execution 221ms
+	tacticAnalysis 29.5ms
+	type checking 61.7ms
+	typeclass inference 368ms
+ℹ [3667/3808] Replayed OAI.Geometry.ComplexBundle.StageMaps
+info: stderr:
+cumulative profiling times:
+	.olean serialization 95.8ms
+	C code generation 0.22ms
+	attribute application 0.756ms
+	blocked (unaccounted) 99.2ms
+	compilation (IR) 0.0336ms
+	compilation (LCNF base) 0.56ms
+	compilation (LCNF impure) 0.152ms
+	compilation (LCNF mono) 0.217ms
+	congr simp thm 4.58ms
+	elaboration 62ms
+	fix level params 0.726ms
+	import 1.81s
+	initialization 23.8ms
+	instantiate metavars 0.331ms
+	interpretation 232ms
+	let-to-have transformation 7.03ms
+	linting 11.3ms
+	module linting 0.00134ms
+	overlappingInstancesLinter 6.71ms
+	parsing 5.18ms
+	process pre-definitions 17.6ms
+	share common exprs 2.19ms
+	simp 7.88ms
+	tactic execution 106ms
+	tacticAnalysis 14.7ms
+	type checking 320ms
+	typeclass inference 204ms
+ℹ [3668/3808] Replayed OAI.Analysis.Kaplansky.BundlePolynomials
+info: stderr:
+cumulative profiling times:
+	.olean serialization 154ms
+	C code generation 0.685ms
+	attribute application 0.219ms
+	blocked (unaccounted) 6.13ms
+	compilation (IR) 0.337ms
+	compilation (LCNF base) 3.82ms
+	compilation (LCNF impure) 1.73ms
+	compilation (LCNF mono) 3.11ms
+	congr simp thm 8.01ms
+	elaboration 347ms
+	fix level params 3.6ms
+	import 1.91s
+	initialization 24.7ms
+	instantiate metavars 2.2ms
+	interpretation 308ms
+	let-to-have transformation 31.5ms
+	linting 24.4ms
+	module linting 0.00138ms
+	overlappingInstancesLinter 6.87ms
+	parsing 14.9ms
+	process pre-definitions 50.7ms
+	share common exprs 11ms
+	simp 149ms
+	tactic execution 407ms
+	tacticAnalysis 35.2ms
+	type checking 667ms
+	typeclass inference 1.76s
+ℹ [3671/3808] Replayed OAI.Analysis.Kaplansky.ShiftAlgebra
+info: stderr:
+cumulative profiling times:
+	.olean serialization 361ms
+	C code generation 0.156ms
+	attribute application 1.95ms
+	blocked (unaccounted) 30.2ms
+	dsimp 4.09ms
+	elaboration 272ms
+	fix level params 1.97ms
+	import 1.92s
+	initialization 25.2ms
+	instantiate metavars 1.04ms
+	interpretation 270ms
+	let-to-have transformation 351ms
+	linting 23.1ms
+	module linting 0.00133ms
+	overlappingInstancesLinter 9.07ms
+	parsing 9.44ms
+	process pre-definitions 24.3ms
+	share common exprs 13.6ms
+	tactic execution 278ms
+	tacticAnalysis 22.2ms
+	type checking 1.3s
+	typeclass inference 4.02s
+ℹ [3703/3808] Replayed OAI.Geometry.ComplexBundle.Evaluation
+info: stderr:
+cumulative profiling times:
+	.olean serialization 401ms
+	C code generation 0.619ms
+	attribute application 4.69ms
+	compilation (IR) 0.2ms
+	compilation (LCNF base) 6.16ms
+	compilation (LCNF impure) 0.863ms
+	compilation (LCNF mono) 6.39ms
+	congr simp thm 25.9ms
+	dsimp 7.64ms
+	elaboration 1.35s
+	fix level params 22.4ms
+	import 1.89s
+	initialization 24.6ms
+	instantiate metavars 16.4ms
+	interpretation 702ms
+	let-to-have transformation 7.53ms
+	linting 126ms
+	module linting 0.0011ms
+	norm_num 1.13ms
+	overlappingInstancesLinter 45.3ms
+	parsing 37.8ms
+	process pre-definitions 193ms
+	ring 17.5ms
+	share common exprs 60.2ms
+	simp 349ms
+	tactic execution 1.5s
+	tacticAnalysis 138ms
+	type checking 2.22s
+	typeclass inference 12.6s
+ℹ [3704/3808] Replayed OAI.Geometry.ComplexBundle.Kernel
+info: stderr:
+cumulative profiling times:
+	.olean serialization 223ms
+	C code generation 0.5ms
+	attribute application 2.08ms
+	blocked (unaccounted) 459ms
+	compilation (IR) 0.108ms
+	compilation (LCNF base) 2.92ms
+	compilation (LCNF impure) 0.535ms
+	compilation (LCNF mono) 1.08ms
+	congr simp thm 3.18ms
+	dsimp 3.05ms
+	elaboration 1.21s
+	fix level params 10.8ms
+	import 1.8s
+	initialization 24.1ms
+	instantiate metavars 3.94ms
+	interpretation 568ms
+	let-to-have transformation 4.75ms
+	linting 106ms
+	module linting 0.00122ms
+	overlappingInstancesLinter 64ms
+	parsing 35.4ms
+	process pre-definitions 172ms
+	share common exprs 25.7ms
+	simp 18.3ms
+	tactic execution 1.23s
+	tacticAnalysis 95.6ms
+	type checking 1.33s
+	typeclass inference 4.81s
+ℹ [3705/3808] Replayed OAI.Geometry.ComplexBundle.Incidence
+info: stderr:
+cumulative profiling times:
+	.olean serialization 210ms
+	C code generation 0.484ms
+	attribute application 3.63ms
+	blocked (unaccounted) 4.83s
+	compilation (IR) 0.117ms
+	compilation (LCNF base) 10.6ms
+	compilation (LCNF impure) 0.51ms
+	compilation (LCNF mono) 1.43ms
+	congr simp thm 3.9ms
+	elaboration 1.19s
+	fix level params 6.02ms
+	import 1.85s
+	initialization 24.4ms
+	instantiate metavars 9.69ms
+	interpretation 399ms
+	let-to-have transformation 3.76ms
+	linting 55.2ms
+	module linting 0.00131ms
+	overlappingInstancesLinter 14.7ms
+	parsing 15ms
+	process pre-definitions 102ms
+	share common exprs 49.5ms
+	simp 204ms
+	tactic execution 5.92s
+	tacticAnalysis 52.8ms
+	type checking 8.68s
+	typeclass inference 20.9s
+ℹ [3716/3808] Replayed OAI.Geometry.ComplexBundle.Avoidance
+info: stderr:
+cumulative profiling times:
+	.olean serialization 165ms
+	C code generation 0.21ms
+	attribute application 3.97ms
+	congr simp thm 6.01ms
+	elaboration 403ms
+	fix level params 5.36ms
+	import 1.86s
+	initialization 25ms
+	instantiate metavars 6.56ms
+	interpretation 408ms
+	let-to-have transformation 2.02ms
+	linting 53.7ms
+	module linting 0.00141ms
+	overlappingInstancesLinter 16.7ms
+	parsing 19.5ms
+	process pre-definitions 70.2ms
+	share common exprs 28.3ms
+	simp 67.3ms
+	tactic execution 959ms
+	tacticAnalysis 54ms
+	type checking 3.01s
+	typeclass inference 4.43s
+ℹ [3717/3808] Replayed OAI.Geometry.ComplexBundle.PointExpansion
+info: stderr:
+cumulative profiling times:
+	.olean serialization 90.5ms
+	C code generation 0.168ms
+	attribute application 0.106ms
+	congr simp thm 4.25ms
+	elaboration 65.6ms
+	fix level params 1.46ms
+	import 1.76s
+	initialization 24.4ms
+	instantiate metavars 3.68ms
+	interpretation 470ms
+	let-to-have transformation 0.329ms
+	linting 23ms
+	module linting 0.00125ms
+	norm_num 3.57ms
+	overlappingInstancesLinter 5.29ms
+	parsing 9.15ms
+	process pre-definitions 16.4ms
+	ring 12.6ms
+	share common exprs 10.1ms
+	simp 93.4ms
+	tactic execution 340ms
+	tacticAnalysis 26.7ms
+	type checking 385ms
+	typeclass inference 1.56s
+ℹ [3718/3808] Replayed OAI.Geometry.ComplexBundle.OpenIncidence
+info: stderr:
+cumulative profiling times:
+	.olean serialization 137ms
+	C code generation 0.206ms
+	attribute application 0.286ms
+	congr simp thm 3.38ms
+	elaboration 326ms
+	fix level params 7.01ms
+	import 1.76s
+	initialization 24.6ms
+	instantiate metavars 15.1ms
+	interpretation 340ms
+	let-to-have transformation 1.8ms
+	linting 58.3ms
+	module linting 0.00122ms
+	overlappingInstancesLinter 8.57ms
+	parsing 12.5ms
+	process pre-definitions 40.7ms
+	share common exprs 48.2ms
+	simp 161ms
+	tactic execution 1.77s
+	tacticAnalysis 41.4ms
+	type checking 5.73s
+	typeclass inference 13.5s
+ℹ [3719/3808] Replayed OAI.Geometry.ComplexBundle.BundleIncidence
+info: stderr:
+cumulative profiling times:
+	.olean serialization 106ms
+	C code generation 0.17ms
+	attribute application 0.0351ms
+	congr simp thm 0.11ms
+	elaboration 208ms
+	fix level params 3.67ms
+	import 1.88s
+	initialization 24.4ms
+	instantiate metavars 5.41ms
+	interpretation 273ms
+	let-to-have transformation 0.435ms
+	linting 27.8ms
+	module linting 0.00117ms
+	overlappingInstancesLinter 8.28ms
+	parsing 9.05ms
+	process pre-definitions 14.8ms
+	share common exprs 12.7ms
+	simp 1.51ms
+	tactic execution 1.07s
+	tacticAnalysis 31.1ms
+	type checking 1.17s
+	typeclass inference 3.5s
+ℹ [3720/3808] Replayed OAI.Geometry.ComplexBundle.Replacement
+info: stderr:
+cumulative profiling times:
+	.olean serialization 174ms
+	C code generation 0.687ms
+	attribute application 10.5ms
+	blocked (unaccounted) 237ms
+	compilation (IR) 0.229ms
+	compilation (LCNF base) 7.42ms
+	compilation (LCNF impure) 1.21ms
+	compilation (LCNF mono) 4.05ms
+	congr simp thm 19.4ms
+	elaboration 524ms
+	fix level params 8.52ms
+	import 2.28s
+	initialization 24.8ms
+	instantiate metavars 10.5ms
+	interpretation 1.64s
+	let-to-have transformation 1.15ms
+	linting 96.9ms
+	module linting 0.00132ms
+	norm_num 333ms
+	overlappingInstancesLinter 21.4ms
+	parsing 30.9ms
+	process pre-definitions 73.4ms
+	ring 103ms
+	share common exprs 47.1ms
+	simp 481ms
+	tactic execution 747ms
+	tacticAnalysis 75.2ms
+	type checking 680ms
+	typeclass inference 3.02s
+ℹ [3721/3808] Replayed OAI.Geometry.BundleTests.Smooth
+info: stderr:
+cumulative profiling times:
+	.olean serialization 97.9ms
+	C code generation 0.317ms
+	attribute application 2.43ms
+	compilation (IR) 0.0883ms
+	compilation (LCNF base) 0.78ms
+	compilation (LCNF impure) 0.4ms
+	compilation (LCNF mono) 0.414ms
+	congr simp thm 1.51ms
+	elaboration 183ms
+	fix level params 0.695ms
+	import 1.97s
+	initialization 24.7ms
+	instantiate metavars 0.779ms
+	interpretation 412ms
+	let-to-have transformation 1.11ms
+	linting 24.2ms
+	module linting 0.00115ms
+	norm_num 1.08ms
+	overlappingInstancesLinter 8.41ms
+	parsing 11.5ms
+	process pre-definitions 16.4ms
+	ring 7.77ms
+	share common exprs 6.58ms
+	simp 35.4ms
+	tactic execution 106ms
+	tacticAnalysis 35.3ms
+	type checking 313ms
+	typeclass inference 915ms
+ℹ [3722/3808] Replayed OAI.Geometry.ComplexBundle.CoordinatesMetric
+info: stderr:
+cumulative profiling times:
+	.olean serialization 77.8ms
+	C code generation 0.147ms
+	attribute application 2.05ms
+	congr simp thm 2.12ms
+	elaboration 221ms
+	fix level params 0.672ms
+	import 1.96s
+	initialization 24.8ms
+	instantiate metavars 0.479ms
+	interpretation 272ms
+	let-to-have transformation 94.2ms
+	linting 10.7ms
+	module linting 0.00129ms
+	overlappingInstancesLinter 4.54ms
+	parsing 4.79ms
+	process pre-definitions 24.3ms
+	share common exprs 2.63ms
+	simp 20.6ms
+	tactic execution 235ms
+	tacticAnalysis 15.2ms
+	type checking 395ms
+	typeclass inference 678ms
+ℹ [3723/3808] Replayed OAI.Geometry.BundleTests.Assembly
+info: stderr:
+cumulative profiling times:
+	.olean serialization 111ms
+	C code generation 0.388ms
+	attribute application 0.167ms
+	blocked (unaccounted) 1.13s
+	compilation (IR) 0.0941ms
+	compilation (LCNF base) 1.01ms
+	compilation (LCNF impure) 0.475ms
+	compilation (LCNF mono) 0.717ms
+	congr simp thm 0.577ms
+	elaboration 167ms
+	fix level params 1.36ms
+	import 1.88s
+	initialization 25.1ms
+	instantiate metavars 6.59ms
+	interpretation 289ms
+	let-to-have transformation 0.946ms
+	linting 24.4ms
+	module linting 0.00139ms
+	norm_num 0.221ms
+	overlappingInstancesLinter 3.46ms
+	parsing 9.9ms
+	process pre-definitions 11.8ms
+	share common exprs 14.2ms
+	simp 17.4ms
+	tactic execution 818ms
+	tacticAnalysis 28.3ms
+	type checking 687ms
+	typeclass inference 2.17s
+ℹ [3724/3808] Replayed OAI.Geometry.BundleTests.Normalized
+info: stderr:
+cumulative profiling times:
+	.olean serialization 102ms
+	C code generation 0.496ms
+	attribute application 1.97ms
+	compilation (IR) 0.158ms
+	compilation (LCNF base) 5.27ms
+	compilation (LCNF impure) 0.794ms
+	compilation (LCNF mono) 5.04ms
+	congr simp thm 1.67ms
+	elaboration 222ms
+	fix level params 1.16ms
+	import 1.95s
+	initialization 24.9ms
+	instantiate metavars 1.99ms
+	interpretation 298ms
+	let-to-have transformation 39.9ms
+	linting 24.9ms
+	module linting 0.00152ms
+	overlappingInstancesLinter 4.77ms
+	parsing 12.8ms
+	process pre-definitions 33.2ms
+	share common exprs 6.88ms
+	simp 41.1ms
+	tactic execution 666ms
+	tacticAnalysis 28.4ms
+	type checking 354ms
+	typeclass inference 531ms
+ℹ [3725/3808] Replayed OAI.Geometry.BundleTests.Sequence
+info: stderr:
+cumulative profiling times:
+	.olean serialization 101ms
+	C code generation 0.585ms
+	attribute application 4.11ms
+	compilation (IR) 0.173ms
+	compilation (LCNF base) 4.5ms
+	compilation (LCNF impure) 0.782ms
+	compilation (LCNF mono) 1.6ms
+	congr simp thm 4.44ms
+	elaboration 205ms
+	fix level params 1.15ms
+	import 1.98s
+	initialization 25.3ms
+	instantiate metavars 1.73ms
+	interpretation 326ms
+	let-to-have transformation 36.5ms
+	linting 78ms
+	module linting 0.0014ms
+	overlappingInstancesLinter 7.55ms
+	parsing 18.3ms
+	process pre-definitions 55.6ms
+	share common exprs 17.8ms
+	simp 43.2ms
+	tactic execution 938ms
+	tacticAnalysis 30.5ms
+	type checking 458ms
+	typeclass inference 438ms
+ℹ [3726/3808] Replayed OAI.Analysis.Kaplansky.TestAlgebra
+info: stderr:
+cumulative profiling times:
+	.olean serialization 229ms
+	C code generation 0.243ms
+	attribute application 9.61ms
+	compilation (IR) 0.0334ms
+	compilation (LCNF base) 9.53ms
+	compilation (LCNF impure) 0.14ms
+	compilation (LCNF mono) 0.998ms
+	congr simp thm 3.92ms
+	elaboration 773ms
+	fix level params 1.59ms
+	import 1.97s
+	initialization 24.9ms
+	instantiate metavars 2.28ms
+	interpretation 328ms
+	let-to-have transformation 12.8ms
+	linting 25.5ms
+	module linting 0.00117ms
+	norm_num 3.58ms
+	overlappingInstancesLinter 4.47ms
+	parsing 8.89ms
+	process pre-definitions 123ms
+	share common exprs 40.4ms
+	simp 26.6ms
+	tactic execution 4.4s
+	tacticAnalysis 18.7ms
+	type checking 6.35s
+	typeclass inference 4.74s
+ℹ [3727/3808] Replayed OAI.Geometry.BundleTests.Retained
+info: stderr:
+cumulative profiling times:
+	.olean serialization 128ms
+	C code generation 0.807ms
+	attribute application 9.66ms
+	compilation (IR) 0.383ms
+	compilation (LCNF base) 14.9ms
+	compilation (LCNF impure) 8.7ms
+	compilation (LCNF mono) 4.32ms
+	congr simp thm 7.28ms
+	dsimp 16.2ms
+	elaboration 227ms
+	fix level params 4.41ms
+	import 1.97s
+	initialization 25.3ms
+	instantiate metavars 1.98ms
+	interpretation 516ms
+	let-to-have transformation 0.652ms
+	linting 70.7ms
+	module linting 0.00141ms
+	overlappingInstancesLinter 25.2ms
+	parsing 38.9ms
+	process pre-definitions 62.8ms
+	share common exprs 14ms
+	simp 171ms
+	tactic execution 775ms
+	tacticAnalysis 57.8ms
+	type checking 559ms
+	typeclass inference 708ms
+ℹ [3728/3808] Replayed OAI.Analysis.Kaplansky.MatrixImage
+info: stderr:
+cumulative profiling times:
+	.olean serialization 112ms
+	C code generation 0.395ms
+	attribute application 0.134ms
+	compilation (IR) 0.0734ms
+	compilation (LCNF base) 1.02ms
+	compilation (LCNF impure) 0.337ms
+	compilation (LCNF mono) 0.725ms
+	congr simp thm 10.4ms
+	elaboration 565ms
+	fix level params 1.41ms
+	import 2.02s
+	initialization 25.9ms
+	instantiate metavars 1.09ms
+	interpretation 350ms
+	let-to-have transformation 16.7ms
+	linting 20.6ms
+	module linting 0.00126ms
+	norm_num 0.432ms
+	overlappingInstancesLinter 10.1ms
+	parsing 11.3ms
+	process pre-definitions 33.8ms
+	ring 5.31ms
+	share common exprs 6.55ms
+	simp 22.1ms
+	tactic execution 244ms
+	tacticAnalysis 28.8ms
+	type checking 293ms
+	typeclass inference 470ms
+ℹ [3729/3808] Replayed OAI.Analysis.Kaplansky.Operators
+info: stderr:
+cumulative profiling times:
+	.olean serialization 73.6ms
+	C code generation 0.511ms
+	attribute application 0.523ms
+	compilation (IR) 0.118ms
+	compilation (LCNF base) 1.68ms
+	compilation (LCNF impure) 0.605ms
+	compilation (LCNF mono) 1.41ms
+	congr simp thm 7.15ms
+	elaboration 119ms
+	fix level params 1.89ms
+	import 1.77s
+	initialization 24.2ms
+	instantiate metavars 1.48ms
+	interpretation 516ms
+	let-to-have transformation 2.95ms
+	linting 26.2ms
+	module linting 0.00124ms
+	norm_num 5.51ms
+	overlappingInstancesLinter 9.17ms
+	parsing 8.73ms
+	process pre-definitions 16.5ms
+	ring 31.7ms
+	share common exprs 9.88ms
+	simp 354ms
+	tactic execution 170ms
+	tacticAnalysis 26.7ms
+	type checking 147ms
+	typeclass inference 1.49s
+ℹ [3730/3808] Replayed OAI.Analysis.Kaplansky.MatrixTest
+info: stderr:
+cumulative profiling times:
+	.olean serialization 699ms
+	C code generation 0.143ms
+	attribute application 0.337ms
+	congr simp thm 3.48ms
+	elaboration 664ms
+	fix level params 1.51ms
+	import 2.08s
+	initialization 52.7ms
+	instantiate metavars 3.12ms
+	interpretation 236ms
+	let-to-have transformation 5.25ms
+	linting 26.7ms
+	module linting 0.00134ms
+	overlappingInstancesLinter 1.64ms
+	parsing 7.56ms
+	process pre-definitions 123ms
+	share common exprs 39.1ms
+	simp 73.4ms
+	tactic execution 5.41s
+	tacticAnalysis 14.2ms
+	type checking 2.18s
+	typeclass inference 7.92s
+ℹ [3731/3808] Replayed OAI.Analysis.Kaplansky.PolynomialTest
+info: stderr:
+cumulative profiling times:
+	.olean serialization 101ms
+	C code generation 0.138ms
+	attribute application 0.454ms
+	congr simp thm 0.607ms
+	dsimp 2.28ms
+	elaboration 79.9ms
+	fix level params 1.06ms
+	import 1.96s
+	initialization 24.6ms
+	instantiate metavars 2.5ms
+	interpretation 621ms
+	let-to-have transformation 1.97ms
+	linting 12.7ms
+	module linting 0.00117ms
+	norm_num 22.2ms
+	overlappingInstancesLinter 1.28ms
+	parsing 4.42ms
+	process pre-definitions 10.7ms
+	ring 14ms
+	share common exprs 16.1ms
+	simp 5.49ms
+	tactic execution 3.27s
+	tacticAnalysis 11.4ms
+	type checking 1.18s
+	typeclass inference 4.49s
+ℹ [3732/3808] Replayed OAI.Geometry.ComplexBundle.Complement
+info: stderr:
+cumulative profiling times:
+	.olean serialization 205ms
+	C code generation 0.444ms
+	attribute application 8.26ms
+	compilation (IR) 0.115ms
+	compilation (LCNF base) 1.49ms
+	compilation (LCNF impure) 0.559ms
+	compilation (LCNF mono) 0.868ms
+	congr simp thm 0.844ms
+	dsimp 12.1ms
+	elaboration 597ms
+	fix level params 9.97ms
+	import 1.79s
+	initialization 24ms
+	instantiate metavars 7.19ms
+	interpretation 406ms
+	let-to-have transformation 2.38ms
+	linting 47ms
+	module linting 0.00145ms
+	overlappingInstancesLinter 13.8ms
+	parsing 21.9ms
+	process pre-definitions 112ms
+	share common exprs 37.7ms
+	simp 26.2ms
+	tactic execution 3.27s
+	tacticAnalysis 58.1ms
+	type checking 1.49s
+	typeclass inference 4.48s
+ℹ [3733/3808] Replayed OAI.Geometry.BundleTests.Complement
+info: stderr:
+cumulative profiling times:
+	.olean serialization 94.1ms
+	C code generation 0.34ms
+	attribute application 0.717ms
+	compilation (IR) 0.109ms
+	compilation (LCNF base) 1.59ms
+	compilation (LCNF impure) 0.541ms
+	compilation (LCNF mono) 1.78ms
+	elaboration 100ms
+	fix level params 0.65ms
+	import 1.92s
+	initialization 24.6ms
+	instantiate metavars 0.623ms
+	interpretation 247ms
+	let-to-have transformation 2.11ms
+	linting 9.42ms
+	module linting 0.00124ms
+	overlappingInstancesLinter 3.64ms
+	parsing 4.17ms
+	process pre-definitions 7.46ms
+	share common exprs 5.96ms
+	tactic execution 114ms
+	tacticAnalysis 12.6ms
+	type checking 617ms
+	typeclass inference 2.61s
+ℹ [3735/3808] Replayed OAI.Geometry.ComplexBundle.Tensor
+info: stderr:
+cumulative profiling times:
+	.olean serialization 89.9ms
+	C code generation 0.34ms
+	attribute application 0.138ms
+	compilation (IR) 0.0555ms
+	compilation (LCNF base) 0.613ms
+	compilation (LCNF impure) 0.3ms
+	compilation (LCNF mono) 0.473ms
+	congr simp thm 0.399ms
+	dsimp 2.68ms
+	elaboration 194ms
+	fix level params 1.36ms
+	import 1.82s
+	initialization 24.5ms
+	instantiate metavars 1.64ms
+	interpretation 290ms
+	let-to-have transformation 0.397ms
+	linting 24.3ms
+	module linting 0.00128ms
+	norm_num 0.507ms
+	overlappingInstancesLinter 6.86ms
+	parsing 14ms
+	process pre-definitions 43.5ms
+	ring 12.7ms
+	share common exprs 7.36ms
+	simp 15.9ms
+	tactic execution 278ms
+	tacticAnalysis 36.1ms
+	type checking 244ms
+	typeclass inference 434ms
+Build completed successfully (3808 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.KaplanskyConsequences.stable_finiteness_bundle, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.Analysis.Kaplansky.StableFiniteness
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Lean default kernel replay skipped by configuration (skip_builtin_kernel)
+Your solution is okay!
