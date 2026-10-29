@@ -1,0 +1,14 @@
+staged 162418 artifacts
+2026/10/29 13:51:33 INFO  :   783.624 MiB / 783.624 MiB, 100%, 1.064 KiB/s, ETA 0s (chk#235340/245405)
+2026/10/29 13:52:03 INFO  :   783.624 MiB / 783.624 MiB, 100%, 157 B/s, ETA 0s (chk#258949/269013)
+2026/10/29 13:52:33 INFO  :   783.651 MiB / 783.651 MiB, 100%, 376 B/s, ETA 0s (chk#282255/284616)
+2026/10/29 13:52:36 ERROR : Attempt 2/3 succeeded
+2026/10/29 13:52:36 INFO  :   783.651 MiB / 783.651 MiB, 100%, 309 B/s, ETA 0s
+
+real	9m34.051s
+user	2m53.448s
+sys	0m49.649s
+Elapsed time:         0.8s
+
+uploaded
+exit 0

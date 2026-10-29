@@ -69,17 +69,18 @@ of `OAI`.
 
 ## A download cache of the compiled library: skip the build
 
-**You do not have to compile the OAI library yourself.** The compiled files of all 122,458 modules
-are published as a Lake artifact cache (Lean 4.34.1, openai/math commit `fd4aeeb2ee`, x86-64
-Linux). `lake build` of any result then downloads only the modules that result needs, instead of
+**You do not have to compile the OAI library yourself.** The compiled files of every module are
+published as a Lake artifact cache (Lean 4.34.1, x86-64 Linux) for two openai/math commits:
+`7ef5c0cc5` (2026-10-26, 162,417 modules) and `fd4aeeb2ee` (2026-10-07, 122,458 modules).
+`lake build` of any result then downloads only the modules that result needs, instead of
 compiling them:
 
 - **Time:** compiling everything took about 330 CPU-hours, and the closure of one large result
   can be thousands of modules. The test below built two small results (129 modules) in 50
   seconds with no module compiled, against about 7.5 minutes without the cache.
-- **Storage:** the compiled files of the whole library are about 93 GB; the cache holds them in
-  4.3 GiB of compressed per-module bundles, and you download just the ones a result needs (2.8 MB
-  for the test above).
+- **Storage:** the compiled files of the library at `fd4aeeb2ee` are about 93 GB; the cache holds
+  both commits in about 5.1 GiB of compressed per-module bundles, and you download just the ones a
+  result needs (2.8 MB for the test above).
   The local cache directory can be moved to a larger disk with `LAKE_CACHE_DIR`; see "On a
   machine with little disk" in the recipe.
 
