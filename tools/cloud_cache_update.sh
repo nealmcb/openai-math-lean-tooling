@@ -15,7 +15,7 @@
 cd "$(dirname "$(readlink -f "$0")")/.." || exit 1
 BASE=$PWD; REV=$(git -C src rev-parse --short=9 HEAD); R=$BASE/results/cache-$REV; OUT=$BASE/scratch/cache-$REV; mkdir -p "$R" "$OUT"
 exec 9> "$R/lock"; flock -n 9 || { echo "already running"; exit 0; }
-[ -f "$R/CACHE-DONE" ] && { echo "already done"; exit 0; }
+[ -f "$R/CACHE-DONE" ] && { echo "already done"; [ -n "$FROM_BOOT" ] && { sleep 600; sudo shutdown -h now "already done"; }; exit 0; }   # see tools/cloud_boot_hook.sh
 export PATH=$HOME/.elan/bin:$PATH
 log() { echo "$(date -Is) $*" | tee -a "$R/driver.log"; }
 git -C src checkout -- lean/ComparatorChallenges

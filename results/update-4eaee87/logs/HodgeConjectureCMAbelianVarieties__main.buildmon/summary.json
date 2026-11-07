@@ -1,0 +1,57 @@
+{
+ "label": "HodgeConjectureCMAbelianVarieties/main-build",
+ "cmd": [
+  "lake",
+  "build",
+  "ComparatorChallenges.HodgeConjectureCMAbelianVarieties.Challenge",
+  "ComparatorChallenges.HodgeConjectureCMAbelianVarieties.Solution"
+ ],
+ "started": "2026-11-05T19:15:33+00:00",
+ "wall_s": 17.218,
+ "exit_code": 0,
+ "vm_max_map_count": 1048576,
+ "samples": 78,
+ "interval_s": 0.2,
+ "peak_per_process_vmas_sampled": 5993,
+ "peak_concurrent_processes": 2,
+ "peak_sum_vmas_sampled": 5993,
+ "peak_sum_rss_bytes": 2324234240,
+ "min_mem_available_kb": 125634396,
+ "oom_kills_during": 0,
+ "classification": "success",
+ "top_processes": [
+  {
+   "pid": 3738,
+   "comm": "lake",
+   "cmd": "/home/ubuntu/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake build ComparatorChallenges.HodgeConjectureCMAbelianVarieties.Challenge ComparatorChallenges.HodgeConjectureCMAbelianVarieties.Solution",
+   "max_vmas": 5993,
+   "max_rss": 2324234240,
+   "cpu_s": 28.27,
+   "minflt": 261884,
+   "majflt": 0,
+   "rchar": 1363764684,
+   "wchar": 4835071
+  },
+  {
+   "pid": 3848,
+   "comm": "git",
+   "cmd": "git diff --exit-code HEAD",
+   "max_vmas": 64,
+   "max_rss": 9990144,
+   "cpu_s": 0.03,
+   "minflt": 1106,
+   "majflt": 0,
+   "rchar": 182424,
+   "wchar": 471041
+  }
+ ],
+ "note": "sampled peaks are lower bounds; verify thresholds with boundary runs",
+ "export_bytes_total": 0,
+ "export_bytes_largest": 0,
+ "export_processes": 0,
+ "export_timeline": [],
+ "export_done_s": null,
+ "kernel_timeline": [],
+ "children_cpu_user_s": 20.58,
+ "children_cpu_sys_s": 9.94
+}

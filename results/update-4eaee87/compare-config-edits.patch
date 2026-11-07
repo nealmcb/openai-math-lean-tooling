@@ -1,0 +1,12 @@
+diff --git a/lean/ComparatorChallenges/HodgeConjectureCMAbelianVarieties/main.json b/lean/ComparatorChallenges/HodgeConjectureCMAbelianVarieties/main.json
+index 7a3ee084f..82f38c76a 100644
+--- a/lean/ComparatorChallenges/HodgeConjectureCMAbelianVarieties/main.json
++++ b/lean/ComparatorChallenges/HodgeConjectureCMAbelianVarieties/main.json
+@@ -10,5 +10,6 @@
+     "Quot.sound",
+     "Classical.choice"
+   ],
+-  "enable_nanoda": false
++  "enable_nanoda": true,
++  "skip_builtin_kernel": true
+ }

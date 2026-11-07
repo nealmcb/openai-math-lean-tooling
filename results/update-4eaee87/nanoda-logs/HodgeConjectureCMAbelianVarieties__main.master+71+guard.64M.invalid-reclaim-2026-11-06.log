@@ -1,0 +1,8 @@
+
+--- stderr
+Running as unit: run-u2.service; invocation ID: 55e96db668594811ac18c981bc8df10b
+Failed to query unit state: Connection reset by peer
+Finished with result: success
+CPU time consumed: 0
+Memory peak: 256.0K
+Memory swap peak: 0B

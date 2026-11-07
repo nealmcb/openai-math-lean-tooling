@@ -1,0 +1,11 @@
+2026-11-06T18:16:19+00:00 start: openai/math 4eaee8754; builds master+71+guard.64M=/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M; specs HodgeConjectureCMAbelianVarieties/main:16:100G:7200
+2026-11-06T18:31:31+00:00 start: openai/math 4eaee8754; builds master+71+guard.64M=/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M; specs HodgeConjectureCMAbelianVarieties/main:16:100G:7200
+{"config": "HodgeConjectureCMAbelianVarieties/main", "label": "master+71+guard.64M", "export_bytes": 6370292692, "rc": 0, "wall_s": 468.6, "rss_gib": null}
+2026-11-06T18:48:52+00:00 nanoda_ab exit 0
+2026-11-06T18:48:52+00:00 shutting down in 3 minutes
+2026-11-06T19:20:52+00:00 start: openai/math 4eaee8754; builds master+71+guard.64M=/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M; specs HodgeConjectureCMAbelianVarieties/main:16:100G:7200
+2026-11-06T19:26:52+00:00 start: openai/math 4eaee8754; builds master+71+guard.64M=/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M; specs HodgeConjectureCMAbelianVarieties/main:16:100G:7200
+2026-11-06T19:37:40+00:00 start: openai/math 4eaee8754; builds master+71+guard.64M=/home/srv/s/math/openai-math/scratch/bin/nanoda.master+71+guard.64M; specs HodgeConjectureCMAbelianVarieties/main:16:100G:7200
+{"config": "HodgeConjectureCMAbelianVarieties/main", "label": "master+71+guard.64M", "export_bytes": 6370292692, "rc": 0, "wall_s": 1954.1, "rss_gib": 20.54}
+2026-11-06T20:19:50+00:00 nanoda_ab exit 0
+2026-11-06T20:19:50+00:00 shutting down in 3 minutes

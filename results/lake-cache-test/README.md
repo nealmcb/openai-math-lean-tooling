@@ -1,4 +1,4 @@
-# Lake artifact cache for the openai/math Lean library (all modules, two commits)
+# Lake artifact cache for the openai/math Lean library (all modules, three commits)
 
 A Lake artifact cache of the complete OAI build, stored as compressed per-module bundles (zstd,
 about 20x smaller than the raw files) in a Cloudflare R2 bucket, which only needs to serve them as
@@ -8,15 +8,16 @@ verification of the proofs; it only saves compile time, and Lake's 64-bit hashes
 cryptographic.
 
 Contents of the bucket `openai-math-lean` (scope `openai-math/lean-4.34.1`; Lean 4.34.1, Mathlib
-`d13f23b7`, x86-64 Linux), for two openai/math commits:
+`d13f23b7`, x86-64 Linux), for three openai/math commits:
 - `r/openai-math/lean-4.34.1/REV.jsonl`: the mappings of one commit, one line per module: input
   hash, then the name of its bundle.
+  - `4eaee87548250b2682affda7d05d947c05554bae` (2026-10-30): 162,418 lines, 7.5 MB.
   - `7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a` (2026-10-26): 162,418 lines (162,417 modules plus
     the root `OAI`), 7.5 MB.
   - `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb` (2026-10-07): 122,459 lines, 5.6 MB.
 - `a/openai-math/lean-4.34.1/HASH.art`: one bundle per distinct module build (zstd-compressed
-  `.olean`, `.ilean`, `.c` and trace), 162,675 in all, about 5.1 GiB, 38 KB on average. The two
-  commits share the bundles of every module whose inputs did not change. (The raw files of the
+  `.olean`, `.ilean`, `.c` and trace), 162,789 in all, about 5.1 GiB, 38 KB on average. The
+  commits share the bundles of every module whose inputs, or compiled outputs, did not change. (The raw files of the
   laptop's build of 115,196 modules at `fd4aeeb2ee` are 93 GB.)
 
 The `.olean` files embed the Lean version, so they load only with exactly Lean 4.34.1. The cache
@@ -25,8 +26,8 @@ covers only the OAI modules; Mathlib and the other dependencies come from their 
 
 ## Quick use
 
-In a checkout of openai/math at commit `7ef5c0cc5` or `fd4aeeb2ee` with `lake update` done, put
-this in
+In a checkout of openai/math at commit `4eaee8754`, `7ef5c0cc5` or `fd4aeeb2ee` with `lake update`
+done, put this in
 `~/.lake/config.toml` (once):
 
 ```
@@ -117,7 +118,7 @@ for a plain `lake cache get`, which downloads everything listed.
 Building the whole library needs far more disk than most machines have (see section 6 of the
 report). With the cache you never build or keep the whole library: check out only the
 directories of the results you want, and Lake downloads and unpacks just their import closures.
-- The cache is compressed, about 5.1 GiB for both commits, and only the bundles a build needs
+- The cache is compressed, about 5.1 GiB for all three commits, and only the bundles a build needs
   are downloaded (2.8 MB for the 129 modules above).
 - With `LAKE_ARTIFACT_CACHE=true` Lake also copies each dependency's outputs (Mathlib's, about
   7 GB) into its local cache directory. With elan that directory is
@@ -152,4 +153,7 @@ The `7ef5c0cc5` revision was made the same way by `tools/cloud_cache_update.sh` 
 machine whose data volume held the `fd4aeeb2ee` build: it built the 1,540 modules no earlier run
 had compiled (`lake build OAI`), converted all 162,418 in 2,249 s, and the upload sent the 40,216
 new bundles (0.77 GiB) in 9.5 minutes, rclone skipping those already in the bucket. Logs:
-`results/cache-7ef5c0cc5/`.
+`results/cache-7ef5c0cc5/`. For `4eaee8754` a check had already rebuilt the closure of the Hodge
+configuration, so `lake build OAI` compiled only the root; the conversion took 1,105 s, and of the
+346 modules whose input hashes changed only 114 had new outputs (3.2 MiB uploaded). Logs:
+`results/cache-4eaee8754/`.
