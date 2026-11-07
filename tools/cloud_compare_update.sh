@@ -13,17 +13,18 @@
 #      records to results/update-7ef5c0c/compare.jsonl and keeps Comparator's full output in results/update-7ef5c0c/logs/;
 #   3. sudo shutdown -h +3 at the end unless results/update-7ef5c0c/NOSHUTDOWN exists.
 # Resumable: run_comparator_batch.py skips configurations already accepted in compare.jsonl. Writes COMPARE-DONE at the end.
-# Usage: cloud_compare_update.sh   (env NANODA, BIG, REST override the defaults below)
+# Usage: cloud_compare_update.sh   (env NANODA, BIG, REST and RESULTS override the defaults below; REST may be empty;
+#        CACHE_AFTER=1 refreshes the Lake cache bundles afterwards, see tools/cloud_cache_update.sh)
 cd "$(dirname "$(readlink -f "$0")")/.." || exit 1
-BASE=$PWD; R=$BASE/results/update-7ef5c0c; mkdir -p "$R"
+BASE=$PWD; R=${RESULTS:-$BASE/results/update-7ef5c0c}; mkdir -p "$R"   # RESULTS: another results directory (e.g. for a later openai/math commit)
 exec 9> "$R/compare.lock"; flock -n 9 || { echo "already running"; exit 0; }
-[ -f "$R/COMPARE-DONE" ] && { echo "already done"; exit 0; }
+[ -f "$R/COMPARE-DONE" ] && { echo "already done"; [ -n "$FROM_BOOT" ] && { sleep 600; sudo shutdown -h now "already done"; }; exit 0; }   # see tools/cloud_boot_hook.sh
 export PATH=$BASE/ext/bin:$BASE/ext/lean4export/.lake/build/bin:$HOME/.elan/bin:$PATH
 export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/run/user/$(id -u)}
 export COMPARATOR_BIN=$BASE/ext/comparator-skip/.lake/build/bin/comparator
 export COMPARATOR_NANODA=${NANODA:-$BASE/scratch/bin/nanoda.master+71+guard.64M}
 BIG=${BIG:-"HodgeConjectureCMAbelianVarieties/main"}
-REST=${REST:-"SubexponentialSAT LocalSmoothing DefocusingNLS MaximalSeshadriConstants LittleFinitistic FinitisticAsymmetry KaplanskyStableFiniteness KaplanskyQuasitrace OccupiedOverlap ElementaryPositivity LogKodairaFiberNegative HarmonicGrowth SpinAngle"}
+REST=${REST-"SubexponentialSAT LocalSmoothing DefocusingNLS MaximalSeshadriConstants LittleFinitistic FinitisticAsymmetry KaplanskyStableFiniteness KaplanskyQuasitrace OccupiedOverlap ElementaryPositivity LogKodairaFiberNegative HarmonicGrowth SpinAngle"}
 log() { echo "$(date -Is) $*" | tee -a "$R/compare-driver.log"; }
 rm -f "$R/NOSHUTDOWN"   # left by the nanoda run; this run stops the machine itself
 
@@ -46,4 +47,6 @@ python3 -I "$B" "$BASE/src/lean" "$R/compare.jsonl" $REST >> "$R/compare-rest.ou
 wait $P1 $P2
 log "done: $(python3 -I -c 'import json,sys,collections; print(dict(collections.Counter(json.loads(l).get("outcome") for l in open(sys.argv[1]))))' "$R/compare.jsonl")"
 date -Is > "$R/COMPARE-DONE"; sync
+# CACHE_AFTER=1: go on to build the rest of the library and convert it for the Lake cache (tools/cloud_cache_update.sh, which shuts down)
+[ -n "$CACHE_AFTER" ] && { log "continuing with tools/cloud_cache_update.sh"; exec tools/cloud_cache_update.sh; }
 [ -f "$R/NOSHUTDOWN" ] || { log "shutting down in 3 minutes"; sudo shutdown -h +3 "cloud_compare_update ended"; }

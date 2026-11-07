@@ -9,7 +9,8 @@ lines. Each stage runs in a transient systemd unit with a memory cap, no swap an
 Needs the closure of every solution built under src/lean (restore it from the Lake cache with tools/restore_ir_for.py --from-cache, or use a machine with the full build).
 --stop-on-regression compares every later build with the first one (the baseline) and, at the first configuration where a later build fails although the baseline passed, or takes more
 than twice the baseline's wall time and over 60 s, or more than twice its peak memory and over 4 GiB, writes a line with "regression" to the output and starts no further configuration
-(those already running finish). A run in which systemd-run itself fails ("Failed to connect to bus", as when a spot instance is being reclaimed) is not a result: it is not
+(those already running finish). A run in which systemd-run itself fails or loses the unit ("Failed to connect to bus", "Failed to query unit state", or no exit summary from
+/usr/bin/time, as when a spot instance is being reclaimed) is not a result: it is not
 recorded, no further configuration starts, and the exit code is 3. --resume skips the configurations that already have a record for every build in the output file (a run interrupted by a spot reclaim
 loses only the configurations in flight), and refuses to continue if the file already holds a "regression" line. Each record carries the sha256 of the build's binary and a "host" entry (EC2 instance id, type, lifecycle and zone, CPU model, threads per core, memory, boot id);
 `--print-host` prints that entry as one JSON line and exits. --base DIR overrides the checkout whose src/lean, ext/ and scratch/ are used (default: the checkout this script is in).
@@ -117,7 +118,10 @@ def one(s):
     for label, path in builds:
         started = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
         p, w, cpu, rss = stage([path, cfg], mem, tmo)
-        if 'Failed to connect to bus' in p.stderr + p.stdout:   # systemd-run itself failed (the machine is going down, or has no user manager): not a result of the build
+        # systemd-run itself failed, or lost the unit before it ended (the machine is going down, or has no user manager): not a result
+        # of the build. /usr/bin/time's TIME line is written only when the checker exits, so its absence means the run did not finish
+        # (2026-11-06: a reclaim during the Hodge check gave "Failed to query unit state" and exit 0 with no TIME line).
+        if any(m in p.stderr + p.stdout for m in ('Failed to connect to bus', 'Failed to query unit state')) or not any(l.startswith('TIME ') for l in p.stderr.splitlines()):
             infra_failed.set(); stop.set(); os.remove(cfg); os.remove(exp); return
         logf = f"{os.path.dirname(os.path.abspath(opt['--out']))}/nanoda-logs/{n.replace('/', '__')}.{label}.log"   # the full output, not only the tail
         os.makedirs(os.path.dirname(logf), exist_ok=True); open(logf, 'w').write(p.stdout + '\n--- stderr\n' + p.stderr)

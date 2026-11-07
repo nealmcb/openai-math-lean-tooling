@@ -70,8 +70,9 @@ of `OAI`.
 ## A download cache of the compiled library: skip the build
 
 **You do not have to compile the OAI library yourself.** The compiled files of every module are
-published as a Lake artifact cache (Lean 4.34.1, x86-64 Linux) for two openai/math commits:
-`7ef5c0cc5` (2026-10-26, 162,417 modules) and `fd4aeeb2ee` (2026-10-07, 122,458 modules).
+published as a Lake artifact cache (Lean 4.34.1, x86-64 Linux) for three openai/math commits:
+`4eaee8754` (2026-10-30) and `7ef5c0cc5` (2026-10-26), 162,417 modules each, and `fd4aeeb2ee`
+(2026-10-07, 122,458 modules).
 `lake build` of any result then downloads only the modules that result needs, instead of
 compiling them:
 
@@ -79,7 +80,7 @@ compiling them:
   can be thousands of modules. The test below built two small results (129 modules) in 50
   seconds with no module compiled, against about 7.5 minutes without the cache.
 - **Storage:** the compiled files of the library at `fd4aeeb2ee` are about 93 GB; the cache holds
-  both commits in about 5.1 GiB of compressed per-module bundles, and you download just the ones a
+  all three commits in about 5.1 GiB of compressed per-module bundles, and you download just the ones a
   result needs (2.8 MB for the test above).
   The local cache directory can be moved to a larger disk with `LAKE_CACHE_DIR`; see "On a
   machine with little disk" in the recipe.
@@ -168,6 +169,14 @@ Ubuntu 22.04.5 with the default limit of 65530.
 **Everything checks, with Lean's kernel.** Comparator accepted all 416 configurations
 (`results/cmp-all/configs.csv`) and rejects the negative controls in `controls/`. The slowest check took
 10.9 hours of active time (`PlanarPacking`); 329 of 416 took under 10 minutes.
+
+**Later openai/math commits.** Of the 20 configurations that the 2026-10-26 update (`7ef5c0cc5`)
+added or changed, Comparator accepts 19. It rejected `HodgeConjectureCMAbelianVarieties/main` at
+the statement comparison, because the solution stated the theorem with OAI's own copies of the
+challenge's definitions. OpenAI revised the challenge on 2026-10-29 (`4eaee8754`); there the
+comparison passes and nanoda accepts the proof. In the nanoda checks of the 20, `SubexponentialSAT`
+needs the `Nat.succ` guard proposed in nanoda_lib issue 61. Details:
+[results/update-7ef5c0c/RUNS.md](results/update-7ef5c0c/RUNS.md).
 
 ### Nanoda: much faster, with a few configurations that still fail or need a deeper stack on upstream's latest version
 
@@ -285,7 +294,8 @@ unless the pipeline's archiving is used.
 
 ## Status and limits
 
-Comparator has accepted all 416 configurations, the whole library (every `OAI` module, including
+Comparator has accepted all 416 configurations at `fd4aeeb2ee`, and those the later commits added or
+changed as described under "Findings so far"; the whole library (every `OAI` module, including
 the root `import OAI`) has been built and the root import measured (section 3d of the report), and
 the second-kernel study (nanoda) covers the paired sweep, the long configurations and the modules no
 solution imports (sections 3f and 3h; 15 configurations and one further declaration failed in the pinned nanoda,

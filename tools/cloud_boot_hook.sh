@@ -13,4 +13,6 @@ SWEEP=/home/srv/s/math/openai-math/tools/cloud_nanoda_let_sweep.sh; OUT=/home/sr
 for _ in $(seq 120); do mountpoint -q /home/srv && break; sleep 5; done
 mountpoint -q /home/srv || { echo "$(date -Is) /home/srv not mounted" >> /home/ubuntu/boot-hook.log; exit 1; }
 echo "$(date -Is) boot: starting $SWEEP" >> /home/ubuntu/boot-hook.log
-nohup setsid "$SWEEP" >> "$OUT" 2>&1 < /dev/null &
+# FROM_BOOT tells a job that finished earlier to shut the machine down again: a persistent spot request restarts an instance that
+# shut itself down, which would otherwise sit idle (2026-11-05); only a stop from outside (the AWS API) disables the request
+FROM_BOOT=1 nohup setsid "$SWEEP" >> "$OUT" 2>&1 < /dev/null &

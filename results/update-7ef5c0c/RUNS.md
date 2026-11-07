@@ -75,6 +75,31 @@ accepts its export; what fails is the match with the challenge's statement. The 
 raised on the Lean Zulip by Joseph Myers and Kevin Buzzard, without a Comparator run:
 https://leanprover.zulipchat.com/#narrow/channel/583339-AI-authored-projects/topic/OpenAI.20releases.20solutions.20to.20hundreds.20of.20problems/with/635342154
 
+## Hodge after OpenAI's namespace fix (openai/math 4eaee87)
+
+On 2026-10-29 openai/math commit `204e5f8f8` ("Align CM Hodge comparator declarations with the Lean
+solution", merged as `4eaee8754`) moved the challenge's helper library and `CM.lean` into the `OAI`
+namespaces the solution uses, so that `Challenge.lean` now states the theorem with
+`OAI.AlgebraicGeometry.Foundations.ProjectiveSpaceIs.IsProjective`,
+`OAI.AlgebraicGeometry.ComplexMultiplication.Definitions.HasComplexMultiplication` and
+`OAI.AlgebraicGeometry.ComplexPoint.Basic.ComplexSchemePoint.algebraicCycleClassSpan`; 21 OAI files
+changed as well. The challenge was revised to match the solution, not the other way round.
+
+Checks at `4eaee8754` (`../update-4eaee87/`):
+
+- **Lean's kernel** accepted every module during the build of the challenge and the solution.
+- **Comparator** (set up as above: `skip_builtin_kernel`, nanoda `master+71+guard.64M`) passes the
+  statement comparison and goes on to `Running nanoda kernel on solution`
+  (`logs/HodgeConjectureCMAbelianVarieties__main.mon/stdout.log`). Its nanoda stage ended without a
+  verdict: the process was killed with no output, cause not recorded.
+- **nanoda alone** (`tools/cloud_nanoda_run.sh`, `tools/nanoda_ab.py`, `master+71+guard.64M`, 16
+  threads, 100G cap, on-demand r7a.4xlarge) accepts the solution's 6.37 GB export: exit 0 in 1,954
+  s, 8.0 CPU-hours, 20.5 GiB peak (`nanoda.jsonl`, full output in `nanoda-logs/`).
+
+`nanoda.invalid-reclaim-2026-11-06.jsonl` and its log are not a result: a spot reclaim during the
+check made `systemd-run` report exit 0 without nanoda's exit summary. `tools/nanoda_ab.py` now
+treats such a run as a machine failure.
+
 ## Machines and gaps
 
 Laptop (`yl`, 16 threads); cloud: spot r6a.8xlarge (reclaimed four times, the driver resumed
