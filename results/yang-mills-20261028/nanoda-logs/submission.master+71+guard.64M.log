@@ -1,0 +1,10 @@
+
+--- stderr
+Running as unit: run-u6.service; invocation ID: 3910a5a39f3f41889b00dc8d951529fe
+TIME 165.52 1088.29 9.29 7700232
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 2min 45.522s
+CPU time consumed: 18min 17.591s
+Memory peak: 256.0K
+Memory swap peak: 0B

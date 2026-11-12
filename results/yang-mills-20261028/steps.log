@@ -1,0 +1,13 @@
+Results: /home/ubuntu/work/YM/submissions/openai-20261028/runs/20261111T040457.520872Z/result.json
+dependency-cache: started
+dependency-cache: passed
+submission-build: started
+submission-build: passed
+Results: /home/ubuntu/work/YM/submissions/openai-20261028/runs/20261111T040458.650255Z/result.json
+✔ [2/6] Built Export (3.3s)
+✔ [3/6] Built Main (799ms)
+✔ [4/6] Built Main:c.o (314ms)
+✔ [5/6] Built Export:c.o (2.9s)
+✔ [6/6] Built lean4export:exe (44s)
+Build completed successfully (6 jobs).
+systemd-run failed (no user bus); stopped without recording the interrupted runs
