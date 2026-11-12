@@ -19,12 +19,15 @@ configurations running at once; --cpus N and --mem-budget GIB add a budget (the 
 Configurations start in the order given, but one that does not fit yet lets later ones start in the free cores and memory, so put the largest first and the small ones fill in
 around them as the big ones finish.
 Usage: nanoda_ab.py --build LABEL=PATH [--build LABEL=PATH ...] [--jobs 4] [--threads 4] [--mem 30G] [--timeout 3600] [--cpus N] [--mem-budget GIB] [--out results/nanoda-ab.jsonl] [--base DIR] [--stop-on-regression] [--resume] CONFIG [CONFIG ...]
-       (CONFIG may also be @FILE, one configuration per line)
+       [--project LEAN_ROOT --configs DIR --exporter LEAN4EXPORT_BIN_DIR] [--stack-bytes N]
+       (CONFIG may also be @FILE, one configuration per line. --project, --configs and --exporter run on another Lean project than
+       openai/math; --stack-bytes sets nanoda's stack_size_bytes, read by nanoda_lib master since 8de7e0c)
 """
 import os, sys, json, time, subprocess, datetime, threading
 from concurrent.futures import ThreadPoolExecutor
 base = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')); root = base + '/src/lean'
-builds, names, opt, i, a = [], [], {'--jobs': '4', '--threads': '4', '--mem': '30G', '--timeout': '3600', '--out': base + '/results/nanoda-ab.jsonl', '--base': None, '--cpus': '0', '--mem-budget': '0'}, 0, sys.argv[1:]
+builds, names, opt, i, a = [], [], {'--jobs': '4', '--threads': '4', '--mem': '30G', '--timeout': '3600', '--out': base + '/results/nanoda-ab.jsonl', '--base': None, '--cpus': '0', '--mem-budget': '0',
+                                   '--project': None, '--configs': None, '--exporter': None, '--stack-bytes': None}, 0, sys.argv[1:]
 stop_on_regression = '--stop-on-regression' in a; resume = '--resume' in a; a = [x for x in a if x not in ('--stop-on-regression', '--resume')]
 while i < len(a):
     if a[i] == '--build': label, path = a[i + 1].split('=', 1); builds.append((label, os.path.abspath(path))); i += 2
@@ -35,10 +38,14 @@ def parse_spec(s):   # NAME or NAME:THREADS:MEM:TIMEOUT
     f = s.split(':'); return dict(name=f[0], threads=int(f[1]) if len(f) > 1 else int(opt['--threads']), mem=f[2] if len(f) > 2 else opt['--mem'], timeout=f[3] if len(f) > 3 else opt['--timeout'])
 specs = [parse_spec(s) for s in names]
 if opt['--base']: base = os.path.abspath(opt['--base']); root = base + '/src/lean'
+# another Lean project than openai/math (2026-11-10, the Yang-Mills submission): its root, the directory holding the NAME.json Comparator
+# configurations, and the bin directory of a lean4export built for that project's Lean version
+if opt['--project']: root = os.path.abspath(opt['--project'])
+configs = os.path.abspath(opt['--configs']) if opt['--configs'] else root + '/ComparatorChallenges'
 QUOT = ['Quot', 'Quot.mk', 'Quot.lift', 'Quot.ind']
 PRIM = ['Nat.add', 'Nat.sub', 'Nat.mul', 'Nat.pow', 'Nat.gcd', 'Nat.div', 'Nat.mod', 'Nat.beq', 'Nat.ble', 'Nat.land', 'Nat.lor', 'Nat.xor', 'Nat.shiftLeft',
         'Nat.shiftRight', 'String.ofList', 'Char.ofNat', 'List', 'eagerReduce', 'Nat', 'String', 'String.mk', 'Char', 'optParam', 'autoParam', 'semiOutParam', 'outParam']
-env_path = f"{base}/ext/lean4export/.lake/build/bin:{os.path.expanduser('~')}/.elan/bin:{os.environ['PATH']}"
+env_path = f"{os.path.abspath(opt['--exporter']) if opt['--exporter'] else base + '/ext/lean4export/.lake/build/bin'}:{os.path.expanduser('~')}/.elan/bin:{os.environ['PATH']}"
 W = base + '/scratch/ab'; os.makedirs(W, exist_ok=True); lock = threading.Lock()
 def commit_of(binpath):
     d = binpath
@@ -100,7 +107,7 @@ def regression(runs):
 def one(s):
     n, threads, mem, tmo = s['name'], s['threads'], s['mem'], s['timeout']
     if stop.is_set(): return
-    c = json.load(open(f'{root}/ComparatorChallenges/{n}.json')); exp = f'{W}/{n.replace("/", "__")}.{os.getpid()}.export'   # "/" for a config in a subdirectory (Hodge); the pid keeps two concurrent runs from sharing one export
+    c = json.load(open(f'{configs}/{n}.json')); exp = f'{W}/{n.replace("/", "__")}.{os.getpid()}.export'   # "/" for a config in a subdirectory (Hodge); the pid keeps two concurrent runs from sharing one export
     targets = QUOT + c['theorem_names'] + c.get('permitted_axioms', []) + PRIM + (c.get('definition_names') or [])
     p, wall, _, _ = stage(['bash', '-c', f'cd {root} && lake env lean4export {c["solution_module"]} -- ' + ' '.join(targets) + f' > {exp}'], mem, tmo)
     size = os.path.getsize(exp) if os.path.exists(exp) else 0
@@ -113,22 +120,29 @@ def one(s):
     export_failures.clear()
     cfg = f'{W}/{n.replace("/", "__")}.{os.getpid()}.json'
     json.dump(dict(use_stdin=False, export_file_path=exp, permitted_axioms=c.get('permitted_axioms', []), unpermitted_axiom_hard_error=True, num_threads=threads,
-                   nat_extension=True, string_extension=True), open(cfg, 'w'))
+                   nat_extension=True, string_extension=True,
+                   # nanoda_lib master since 8de7e0c (PR 78) reads the checker threads' stack size from the config; older builds ignore it
+                   **({'stack_size_bytes': int(opt['--stack-bytes'])} if opt['--stack-bytes'] else {})), open(cfg, 'w'))
     runs = {}
     for label, path in builds:
         started = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
         p, w, cpu, rss = stage([path, cfg], mem, tmo)
+        # systemd's verdict on the unit ("Finished with result: success | exit-code | signal | oom-kill | timeout"). When the unit hits its
+        # memory cap or runtime limit, systemd stops the whole unit, /usr/bin/time included, so those runs have no TIME line but are real
+        # results (2026-11-11: nanoda master on the Yang-Mills export, oom-kill at a 50G cap).
+        unit_result = next((l.split(':', 1)[1].strip() for l in p.stderr.splitlines() if l.startswith('Finished with result:')), None)
         # systemd-run itself failed, or lost the unit before it ended (the machine is going down, or has no user manager): not a result
-        # of the build. /usr/bin/time's TIME line is written only when the checker exits, so its absence means the run did not finish
-        # (2026-11-06: a reclaim during the Hodge check gave "Failed to query unit state" and exit 0 with no TIME line).
-        if any(m in p.stderr + p.stdout for m in ('Failed to connect to bus', 'Failed to query unit state')) or not any(l.startswith('TIME ') for l in p.stderr.splitlines()):
+        # of the build. /usr/bin/time's TIME line is written only when the checker exits, so otherwise its absence means the run did not
+        # finish (2026-11-06: a reclaim during the Hodge check gave "Failed to query unit state" and exit 0 with no TIME line).
+        if (any(m in p.stderr + p.stdout for m in ('Failed to connect to bus', 'Failed to query unit state'))
+                or (unit_result not in ('oom-kill', 'timeout') and not any(l.startswith('TIME ') for l in p.stderr.splitlines()))):
             infra_failed.set(); stop.set(); os.remove(cfg); os.remove(exp); return
         logf = f"{os.path.dirname(os.path.abspath(opt['--out']))}/nanoda-logs/{n.replace('/', '__')}.{label}.log"   # the full output, not only the tail
         os.makedirs(os.path.dirname(logf), exist_ok=True); open(logf, 'w').write(p.stdout + '\n--- stderr\n' + p.stderr)
         info = path + '.info'   # written by tools/build_nanoda_variant.sh: base commit, merged branches, patches, stack
         rec = dict(config=n, label=label, commit=commits[label], build=open(info).read().strip() if os.path.exists(info) else None, log=os.path.relpath(logf, base),
                    sha256=shas[label], host=HOST, started=started, threads=threads, mem_cap=mem, timeout_s=int(tmo), export_s=round(wall, 1), export_bytes=size,
-                   rc=p.returncode, wall_s=round(w, 1), cpu_s=cpu and round(cpu, 1), rss_gib=rss and round(rss, 2), tail=(p.stdout + p.stderr).strip().splitlines()[-3:])
+                   rc=p.returncode, unit_result=unit_result, wall_s=round(w, 1), cpu_s=cpu and round(cpu, 1), rss_gib=rss and round(rss, 2), tail=(p.stdout + p.stderr).strip().splitlines()[-3:])
         record(rec); runs[label] = rec
     why = regression(runs) if stop_on_regression else None
     if why: record(dict(config=n, regression=why)); stop.set()

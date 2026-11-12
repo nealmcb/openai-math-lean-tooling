@@ -1,0 +1,16 @@
+2026-11-11T04:04:55+00:00 start: YM 55ba9fc362, 32 CPUs, 61 GiB, disk 140G free
+2026-11-11T04:04:55+00:00 clone: start
+2026-11-11T04:04:57+00:00 exit 0
+2026-11-11T04:04:57+00:00 YM at 55ba9fc36293b3f4d52c6b1f813169a0be76ee98
+2026-11-11T04:04:57+00:00 1 integrity: start
+2026-11-11T04:04:58+00:00 exit 0
+2026-11-11T04:04:58+00:00 2 build: start
+2026-11-11T05:36:29+00:00 exit 0
+2026-11-11T05:36:30+00:00 3 lean4export 4e7915201d3f9f04470d9eae002fa695f7cdc589: start
+2026-11-11T05:37:20+00:00 exit 0
+2026-11-11T05:37:20+00:00 lean4export 4e7915201d3f9f04470d9eae002fa695f7cdc589, toolchain leanprover/lean4:v4.32.0
+2026-11-11T05:37:20+00:00 4 nanoda master=/home/ubuntu/work/tooling/bin/nanoda.master: start
+2026-11-11T06:05:59+00:00 exit 3
+2026-11-11T06:05:59+00:00 machine failure under the run; not marking done
+2026-11-11T06:29:22+00:00 4 nanoda master+71+guard.64M started by hand (56G cap) after master hit its 50G cap (oom-kill at 06:05)
+2026-11-12T16:08:22+00:00 which-fix runs started: master+71 and master+guard, 64 MiB stack, 16 threads, 56G cap, 40 min limit

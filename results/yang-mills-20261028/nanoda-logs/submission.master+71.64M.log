@@ -1,0 +1,10 @@
+
+--- stderr
+Running as unit: run-u3.service; invocation ID: 475e03e485204ce18d28875efceea7a9
+TIME 167.33 1085.90 9.16 7749472
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 2min 47.339s
+CPU time consumed: 18min 15.065s
+Memory peak: 288.0K
+Memory swap peak: 0B
