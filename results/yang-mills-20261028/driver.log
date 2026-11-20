@@ -14,3 +14,4 @@
 2026-11-11T06:05:59+00:00 machine failure under the run; not marking done
 2026-11-11T06:29:22+00:00 4 nanoda master+71+guard.64M started by hand (56G cap) after master hit its 50G cap (oom-kill at 06:05)
 2026-11-12T16:08:22+00:00 which-fix runs started: master+71 and master+guard, 64 MiB stack, 16 threads, 56G cap, 40 min limit
+2026-11-12T16:32:41+00:00 guard-only run restarted after a spot reclaim at about 16:20

@@ -96,6 +96,16 @@ yourself, which costs the compile time the cache saves, and compare the `.olean`
 `cmp`: in the 16 modules I rebuilt in a different directory, the `.olean` files were
 byte-identical, so a difference is worth investigating.
 
+**Large downloads:** the cache's public `r2.dev` address rate-limits bulk downloads. Lake keeps
+the error response as if it were a bundle and then compiles that module, which changes the keys of
+everything importing it. If a build with the cache compiles modules, see "If modules are compiled
+anyway" in the recipe.
+
+The same bucket holds a cache of the **OpenAI Yang-Mills submission** (`yang-mills-group/YM` at
+`55ba9fc`, Lean 4.32.0, 9,470 modules, about 400 MiB): its 1.5-hour build takes about 1.5 minutes
+with no module compiled. Recipe and test:
+[results/yang-mills-20261028/cache/README.md](results/yang-mills-20261028/cache/README.md).
+
 ## If you want to check one result
 
 Most real mathematicians won't need or care about most of this. Checking a single proof or even

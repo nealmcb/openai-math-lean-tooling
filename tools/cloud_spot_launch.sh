@@ -18,6 +18,13 @@ ID=${EXISTING_INSTANCE:-$(aws ec2 run-instances $P --image-id "$AMI" --instance-
   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=experiment-spot},{Key=project,Value=experiment}]' \
   --query 'Instances[0].InstanceId' --output text)} || exit 1
 echo "instance $ID"
+# AWS stops the instance after IDLE_HOURS of idle CPU (tools/cloud_guard.sh; 2026-11-19, an unguarded instance idled six days). An API
+# stop keeps the data volume attached and does not make the persistent request relaunch. No guard, no instance.
+"$HERE"/cloud_guard.sh arm "$ID" stop "${IDLE_HOURS:-2}" || {
+  [ -n "$EXISTING_INSTANCE" ] && { echo "could not arm the idle guard for $ID"; exit 1; }
+  R=$(aws ec2 describe-instances $P --instance-ids "$ID" --query 'Reservations[0].Instances[0].SpotInstanceRequestId' --output text)
+  aws ec2 cancel-spot-instance-requests $P --spot-instance-request-ids "$R" > /dev/null; aws ec2 terminate-instances $P --instance-ids "$ID" > /dev/null
+  echo "could not arm the idle guard; cancelled $R and terminated $ID"; exit 1; }
 aws ec2 wait instance-running $P --instance-ids "$ID"
 # a stopped instance (the on-demand one) may still hold the data volume: detach it there first
 OLD=$(aws ec2 describe-volumes $P --volume-ids $VOL --query 'Volumes[0].Attachments[0].InstanceId' --output text)

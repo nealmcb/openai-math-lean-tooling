@@ -113,6 +113,31 @@ GB) into the cache directory, which accounts for part of the build time; delete
 (`LAKE_CONFIG` or `~/.lake/config.toml`), not in environment variables; environment variables work
 for a plain `lake cache get`, which downloads everything listed.
 
+## If modules are compiled anyway
+
+The bucket's public `r2.dev` address rate-limits bulk downloads (Cloudflare "error code: 1015")
+and sometimes refuses connections. Lake keeps the error response, or an empty file, as if it were
+the bundle; it then fails to unpack it ("bad .ltar file") and compiles the module, and later runs
+skip the bad file as already downloaded. A module compiled locally need not be byte-identical to
+the cached one, and when it differs, the cache keys of everything that imports it change, so the
+compiles cascade. Found 2026-11-13 with the Yang-Mills cache
+(`../yang-mills-20261028/cache/README.md`), where downloading all 9,470 bundles at once failed for
+most of them. The small closures above have not hit it, but a large closure can.
+
+The fix is to delete every bad file and download again. Bundles start with the bytes `LTR3` (if
+`LAKE_CACHE_DIR` is not set, the directory is `~/.elan/toolchains/<toolchain>/lake/cache`):
+
+```
+for f in "$LAKE_CACHE_DIR"/artifacts/*.ltar; do [ "$(head -c 4 "$f")" = LTR3 ] || rm -f "$f"; done
+```
+
+Then delete the project's `.lake/build/lib/lean/OAI` (or start from a fresh checkout), so that
+modules compiled locally do not change the keys, and run `lake build` again. Repeat until the build
+log shows no "Built OAI" lines. For a large closure it is faster to download everything first,
+repeating `lake cache get --scope=openai-math/lean-4.34.1` and the clean-up above until it exits 0
+with no bad files, as in the Yang-Mills recipe; that fetches every bundle of the commit, several
+GiB.
+
 ## On a machine with little disk
 
 Building the whole library needs far more disk than most machines have (see section 6 of the

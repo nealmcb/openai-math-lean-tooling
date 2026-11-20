@@ -6,8 +6,11 @@
 # OpenAI Yang-Mills Lean code) the build must not reach the openai/math data volume or any AWS credentials. The instance comes from the
 # usual image (elan, Python), keeps the experiment security group (SSH from the laptop only), and is a persistent spot request with stop
 # behaviour, so a reclaim stops it with its disks and AWS starts it again when capacity returns. The scratch disk (gp3, SIZE GiB) is
-# deleted when the instance is terminated. Prints "up INSTANCE ADDRESS" or exits 1 when no type in TYPES has capacity.
-# Usage: cloud_spot_scratch_launch.sh [SIZE_GIB=150]   (env TYPES: instance types to try in order)
+# deleted when the instance is terminated. A CloudWatch alarm (tools/cloud_guard.sh) stops the instance after IDLE_HOURS of idle CPU,
+# keeping its disks; when done, copy the results off, then cancel the spot request and terminate the instance (a persistent request
+# relaunches a terminated instance unless it is cancelled first), and run `cloud_guard.sh sweep`. Prints "up INSTANCE ADDRESS" or exits
+# 1 when no type in TYPES has capacity.
+# Usage: [IDLE_HOURS=2] cloud_spot_scratch_launch.sh [SIZE_GIB=150]   (env TYPES: instance types to try in order)
 SIZE=${1:-150}
 P="--profile experiment --region us-east-1"
 AMI=ami-06544a48507ad4250
@@ -23,6 +26,12 @@ for t in $TYPES; do
   echo "$t: no capacity"; ID=
 done
 [ -n "$ID" ] || { echo "no capacity"; exit 1; }
+# AWS stops the instance after IDLE_HOURS of idle CPU, whether or not anyone comes back to it (2026-11-19: an unguarded test instance
+# idled for six days, ~$33). No guard, no instance: if the alarm cannot be made, cancel the request and terminate.
+"$(dirname "$(readlink -f "$0")")"/cloud_guard.sh arm "$ID" stop "${IDLE_HOURS:-2}" || {
+  R=$(aws ec2 describe-instances $P --instance-ids "$ID" --query 'Reservations[0].Instances[0].SpotInstanceRequestId' --output text)
+  aws ec2 cancel-spot-instance-requests $P --spot-instance-request-ids "$R" > /dev/null; aws ec2 terminate-instances $P --instance-ids "$ID" > /dev/null
+  echo "could not arm the idle guard; cancelled $R and terminated $ID"; exit 1; }
 aws ec2 wait instance-running $P --instance-ids "$ID"
 IP=$(aws ec2 describe-instances $P --instance-ids "$ID" --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
 SSH="ssh -i $KEY -o StrictHostKeyChecking=no -o ConnectTimeout=10 -o ConnectionAttempts=20"
