@@ -1,0 +1,25 @@
+== 00:49:35 clone https://github.com/yang-mills-group/YM at 55ba9fc36293b3f4d52c6b1f813169a0be76ee98
+== 00:49:35 dependencies: lake exe cache get
+No files to download
+Already decompressed 8639 file(s)
+
+real	0m37.956s
+user	0m4.691s
+sys	0m4.738s
+== 00:50:13 our mappings: lake cache get --scope=yang-mills-openai-20261028/lean-4.32.0 --mappings-only
+
+real	0m3.171s
+user	0m0.991s
+sys	0m1.009s
+== 00:50:17 lake build WilsonReference WilsonConstruction
+
+real	14m32.265s
+user	14m40.309s
+sys	2m17.126s
+lake build exit 0; modules compiled: 83 (should be 0)
+⚠ [18043/18126] Built YM.FullVolume.Relay.Fold (139s)
+ℹ [18044/18126] Built YM.FullVolume.Relay.Vault (20s)
+⚠ [18045/18126] Built YM.FullVolume.Relay.Billow (17s)
+ℹ [18046/18126] Built YM.FullVolume.Relay.Ticket (31s)
+ℹ [18047/18126] Built YM.FullVolume.Relay.Summary (21s)
+exit 0

@@ -3,7 +3,9 @@
 # Purpose: lay out the files as Lake's custom-endpoint cache expects: artifacts a/SCOPE/HASH.art (hardlinks of cache/artifacts/HASH.ltar, only those named in map-all.jsonl) and the mapping r/SCOPE/REV.jsonl,
 # where REV is the Git commit of the OAI checkout. Artifacts go first, the mapping last, so a consumer never sees a mapping that points to missing files. Never prints credentials.
 set -eu
-D=$(realpath "${1:?dir}"); BUCKET=${2:?bucket}; SCOPE=${3:?scope}; REV=${4:?rev}; . ~/.r2env; export PATH=$HOME/bin:$PATH
+# ~/.r2env (from push_r2_env.sh) on a cloud machine; on the laptop the configured rclone remote "r2" is used instead. Never copy
+# the credentials to a machine that compiled untrusted code: copy the bundles off it and upload from here (2026-11-12, Yang-Mills).
+D=$(realpath "${1:?dir}"); BUCKET=${2:?bucket}; SCOPE=${3:?scope}; REV=${4:?rev}; [ -f ~/.r2env ] && . ~/.r2env; export PATH=$HOME/bin:$PATH
 S="$D/stage"; rm -rf "$S"; mkdir -p "$S/a/$SCOPE" "$S/r/$SCOPE"
 python3 -I - "$D" "$S/a/$SCOPE" <<'PY'
 import sys, os, json
