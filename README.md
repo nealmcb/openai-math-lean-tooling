@@ -316,6 +316,14 @@ thermally limited machine while other work was running, and some include periods
 paused (the tables use active time); the cloud timings come from one instance type, and the CPU-hour
 totals are rough estimates.
 
+**Planned, not run: Alpöge's Lean proof of the Riemann hypothesis.** Levent Alpöge published a
+proof of RH and of GRH for Dirichlet L-functions as Lean code on 2026-11-20. Claude proposed
+checking it the way this project checks openai/math results: a challenge module that imports only
+Mathlib, Lean 4.37's `lake comparator --paranoid` (Lean's kernel plus five independent checkers)
+judging exports built with the
+project's own Lean 4.33.1, current nanoda builds, and a Lake cache of the build. It runs only if
+Neal approves it: [results/alpoge-rh-20261120/CHECK-PLAN.md](results/alpoge-rh-20261120/CHECK-PLAN.md).
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
