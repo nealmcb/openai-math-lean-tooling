@@ -12,7 +12,8 @@
 #                                 for one-time spot or on-demand instances with nothing worth keeping. Missing data (a stopped
 #                                 instance) does not count as idle.
 #   sweep                         delete the idle alarms whose instance is gone, then list every instance that is running, or stopped
-#                                 but still holding disks, with its age and whether an alarm guards it.
+#                                 but still holding disks, with its age and whether an alarm guards it, and every unattached
+#                                 volume (still billed).
 # Setup, once per account: the alarm's EC2 action needs the service-linked role AWSServiceRoleForCloudWatchEvents, which the
 # experiment user cannot create; an administrator runs `aws iam create-service-linked-role --aws-service-name events.amazonaws.com`.
 # Usage: cloud_guard.sh arm INSTANCE_ID [stop|terminate] [IDLE_HOURS] | cloud_guard.sh sweep
@@ -42,6 +43,10 @@ sweep)
     g=$(echo "$alarms" | tr "\t" "\n" | grep -- "-$id\$" || { [ "$state" = stopped ] && echo "(stopped: paying for disks only)" || echo UNGUARDED; })
     gib=$(aws ec2 describe-volumes $P --filters Name=attachment.instance-id,Values="$id" --query 'sum(Volumes[].Size)' --output text)
     echo "$state $id $type ${life/None/on-demand} launched ${age} h ago, ${gib} GiB of disks  $g"
-  done;;
+  done
+  # a volume that was detached and reattached loses DeleteOnTermination, so it outlives its instance (2026-11-20: the 150 GiB
+  # Yang-Mills scratch disk was left behind this way)
+  aws ec2 describe-volumes $P --filters Name=status,Values=available --query 'Volumes[].[VolumeId,Size,VolumeType,CreateTime]' --output text |
+  while read -r v s t c; do echo "unattached $v $s GiB $t, created ${c%%T*}"; done;;
 *) sed -n '2,22p' "$0"; exit 2;;
 esac
